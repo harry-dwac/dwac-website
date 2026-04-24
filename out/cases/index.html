@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Illustrative Cases - DWAC</title>
+  <meta name="description" content="DWAC Illustrative Cases - Real-world digital dispute scenarios demonstrating our arbitration approach"/>
+  <meta name="keywords" content="digital arbitration cases, blockchain dispute, smart contract, AI copyright, virtual asset"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; color: #334155; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+    header { background: #0f172a; color: white; padding: 1rem 0; }
+    nav { max-width: 80rem; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #22d3ee; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: #cbd5e1; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #22d3ee; }
+    main { flex: 1; }
+    .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 4rem 1rem; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.25rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
+    .container { max-width: 80rem; margin: 0 auto; padding: 3rem 1rem; }
+    .note { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem 1.5rem; margin-bottom: 2rem; border-radius: 0 8px 8px 0; }
+    .case-card { background: white; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .case-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .case-number { background: #22d3ee; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+    .case-title { font-size: 1.5rem; font-weight: 600; color: #0f172a; }
+    .case-section { margin-bottom: 1.5rem; }
+    .case-section h3 { color: #0f172a; font-size: 1.1rem; margin-bottom: 0.75rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+    .case-section p, .case-section li { color: #475569; }
+    .case-section ul { list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem; }
+    .case-section li { margin-bottom: 0.25rem; }
+    .outcome { background: #ecfeff; border: 1px solid #a5f3fc; padding: 1.25rem; border-radius: 8px; margin-top: 1rem; }
+    .outcome h4 { color: #0e7490; margin-bottom: 0.5rem; }
+    .takeaway { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 1rem 1.5rem; border-radius: 0 8px 8px 0; margin-top: 1rem; }
+    .takeaway strong { color: #166534; }
+    .summary { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 3rem 1rem; border-radius: 12px; margin-top: 3rem; }
+    .summary h2 { font-size: 1.75rem; margin-bottom: 1.5rem; text-align: center; }
+    .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 800px; margin: 0 auto; }
+    .principle { background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; }
+    .principle h4 { color: #22d3ee; margin-bottom: 0.5rem; }
+    footer { background: #0f172a; color: #94a3b8; padding: 3rem 1rem; margin-top: auto; }
+    .footer-content { max-width: 80rem; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+    .footer-section h4 { color: white; margin-bottom: 1rem; }
+    .footer-section a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.5rem; }
+    .footer-section a:hover { color: #22d3ee; }
+    .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1e293b; }
+    .divider { border: none; border-top: 2px solid #e2e8f0; margin: 3rem 0; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .case-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">DWAC</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <a href="/cases/">Case Studies</a>
+        <a href="/news/">News</a>
+        <a href="/arbitrators/join/">Join as Arbitrator</a>
+        <a href="/charter/">Charter</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Illustrative Cases</h1>
+      <p>Learn how DWAC resolves digital world disputes through these representative case studies</p>
+    </section>
+
+    <div class="container">
+      <div class="note">
+        <strong>Note:</strong> These are illustrative cases based on common digital world disputes. All names, amounts, and specific details are fictional and for educational purposes only.
+      </div>
+
+      <!-- Case 1 -->
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-number">1</div>
+          <h2 class="case-title">Cross-border Digital Platform Account Dispute</h2>
+        </div>
+        
+        <div class="case-section">
+          <h3>Dispute Background</h3>
+          <p>A user from Country A had their account suspended by a digital platform headquartered in Country B, allegedly for violating platform policies. The user claimed the suspension was wrongful and sought reinstatement plus compensation for lost business revenue totaling $50,000.</p>
+        </div>
+
+        <div class="case-section">
+          <h3>Key Issues</h3>
+          <ul>
+            <li>Whether the platform's suspension decision was procedurally fair</li>
+            <li>Whether the user's due process rights were violated</li>
+            <li>Applicable law: User's location vs. Platform's terms of service</li>
+            <li>Evidence: Digital logs, communications, and account activity</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>Arbitration Process</h3>
+          <ul>
+            <li><strong>Arbitrator:</strong> Single arbitrator with expertise in digital platform governance</li>
+            <li><strong>Procedural Language:</strong> English</li>
+            <li><strong>Hearing:</strong> Virtual hearing conducted via secure video platform</li>
+            <li><strong>Evidence:</strong> Electronic documents, server logs, and testimony</li>
+          </ul>
+        </div>
+
+        <div class="outcome">
+          <h4>Outcome</h4>
+          <p>The arbitrator found that:</p>
+          <ul>
+            <li>The platform failed to provide adequate notice and opportunity to respond</li>
+            <li>The suspension was partially justified but procedurally defective</li>
+            <li><strong>Award:</strong> Account reinstated; $15,000 compensation for lost revenue; no punitive damages</li>
+          </ul>
+        </div>
+
+        <div class="takeaway">
+          <strong>Key Takeaway:</strong> Digital platforms must ensure procedural fairness even in policy enforcement actions.
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-number">2</div>
+          <h2 class="case-title">Smart Contract Performance Dispute</h2>
+        </div>
+        
+        <div class="case-section">
+          <h3>Dispute Background</h3>
+          <p>Two parties entered into a smart contract for the delivery of digital services worth 2 ETH (approximately $4,000 at the time). The contract automatically released payment upon delivery confirmation. Party A claimed services were not delivered as specified; Party B argued the automated confirmation proved performance.</p>
+        </div>
+
+        <div class="case-section">
+          <h3>Key Issues</h3>
+          <ul>
+            <li>Interpretation of "satisfactory delivery" in smart contract code</li>
+            <li>Whether automated confirmation is conclusive evidence</li>
+            <li>Gap between code execution and contractual intent</li>
+            <li>Applicable standards for digital service quality</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>Arbitration Process</h3>
+          <ul>
+            <li><strong>Arbitrators:</strong> Three arbitrators (tech expert, legal expert, industry practitioner)</li>
+            <li><strong>Procedural Language:</strong> English</li>
+            <li><strong>Evidence:</strong> Smart contract code, on-chain transactions, communications, expert testimony</li>
+          </ul>
+        </div>
+
+        <div class="outcome">
+          <h4>Outcome</h4>
+          <p>The tribunal found that:</p>
+          <ul>
+            <li>The smart contract code was ambiguous on quality standards</li>
+            <li>Automated confirmation was not conclusive evidence of satisfactory performance</li>
+            <li><strong>Award:</strong> Partial refund of 0.8 ETH; code modification recommendations for future contracts</li>
+          </ul>
+        </div>
+
+        <div class="takeaway">
+          <strong>Key Takeaway:</strong> Smart contracts require clear specification of performance standards; automation does not eliminate the need for dispute resolution mechanisms.
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-number">3</div>
+          <h2 class="case-title">Virtual Asset Ownership Dispute</h2>
+        </div>
+        
+        <div class="case-section">
+          <h3>Dispute Background</h3>
+          <p>A dispute arose over ownership of a valuable virtual asset (in-game item) worth approximately $12,000. Party A claimed to have legitimately purchased the asset; Party B claimed the asset was stolen from their account and subsequently sold.</p>
+        </div>
+
+        <div class="case-section">
+          <h3>Key Issues</h3>
+          <ul>
+            <li>Determining rightful ownership of virtual assets</li>
+            <li>Good faith purchaser vs. original owner rights</li>
+            <li>Platform's role in asset transfer and verification</li>
+            <li>Applicable law: Virtual world rules vs. real-world property law</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>Arbitration Process</h3>
+          <ul>
+            <li><strong>Arbitrator:</strong> Single arbitrator with gaming industry expertise</li>
+            <li><strong>Procedural Language:</strong> Chinese</li>
+            <li><strong>Evidence:</strong> Transaction logs, account history, platform records, communications</li>
+          </ul>
+        </div>
+
+        <div class="outcome">
+          <h4>Outcome</h4>
+          <p>The arbitrator found that:</p>
+          <ul>
+            <li>The asset was indeed stolen from Party B's account</li>
+            <li>Party A was a good faith purchaser but not the rightful owner</li>
+            <li>The platform had inadequate security measures</li>
+            <li><strong>Award:</strong> Asset returned to Party B; Party A compensated $3,000 by platform; platform to improve security</li>
+          </ul>
+        </div>
+
+        <div class="takeaway">
+          <strong>Key Takeaway:</strong> Virtual assets can be subject to real-world property principles; platforms bear responsibility for security.
+        </div>
+      </div>
+
+      <!-- Case 4 -->
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-number">4</div>
+          <h2 class="case-title">AI-Generated Content Copyright Dispute</h2>
+        </div>
+        
+        <div class="case-section">
+          <h3>Dispute Background</h3>
+          <p>A company used AI to generate marketing content that closely resembled a competitor's branded materials. The competitor claimed copyright infringement and sought damages of $100,000 plus injunction.</p>
+        </div>
+
+        <div class="case-section">
+          <h3>Key Issues</h3>
+          <ul>
+            <li>Copyright ownership of AI-generated content</li>
+            <li>Standard for "substantial similarity" in AI outputs</li>
+            <li>Responsibility: AI user vs. AI developer vs. AI itself</li>
+            <li>Appropriate remedies</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>Arbitration Process</h3>
+          <ul>
+            <li><strong>Arbitrators:</strong> Three arbitrators (IP law expert, AI technology expert, industry representative)</li>
+            <li><strong>Procedural Language:</strong> English</li>
+            <li><strong>Evidence:</strong> AI training data, output comparison, expert analysis, damages calculation</li>
+          </ul>
+        </div>
+
+        <div class="outcome">
+          <h4>Outcome</h4>
+          <p>The tribunal found that:</p>
+          <ul>
+            <li>AI-generated content can infringe existing copyrights</li>
+            <li>The company failed to implement adequate safeguards</li>
+            <li>The AI developer was not liable (terms of service disclaimer valid)</li>
+            <li><strong>Award:</strong> $25,000 damages; injunction against further use; company to implement AI content review process</li>
+          </ul>
+        </div>
+
+        <div class="takeaway">
+          <strong>Key Takeaway:</strong> Users of AI tools bear responsibility for outputs; due diligence required even with automated generation.
+        </div>
+      </div>
+
+      <!-- Case 5 -->
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-number">5</div>
+          <h2 class="case-title">Cross-border E-commerce Transaction Dispute</h2>
+        </div>
+        
+        <div class="case-section">
+          <h3>Dispute Background</h3>
+          <p>A buyer in Country A ordered custom-made digital products from a seller in Country B, paying $8,000. The seller delivered products that the buyer claimed did not match specifications. The seller argued specifications were ambiguous and delivery was accepted.</p>
+        </div>
+
+        <div class="case-section">
+          <h3>Key Issues</h3>
+          <ul>
+            <li>Contract interpretation: What constituted "acceptable delivery"?</li>
+            <li>Cross-border jurisdiction and applicable law</li>
+            <li>Digital product quality assessment</li>
+            <li>Whether acceptance was final</li>
+          </ul>
+        </div>
+
+        <div class="case-section">
+          <h3>Arbitration Process</h3>
+          <ul>
+            <li><strong>Arbitrator:</strong> Single arbitrator experienced in cross-border digital commerce</li>
+            <li><strong>Procedural Language:</strong> English (with Chinese translation support)</li>
+            <li><strong>Evidence:</strong> Contract terms, communications, product samples, expert assessment</li>
+          </ul>
+        </div>
+
+        <div class="outcome">
+          <h4>Outcome</h4>
+          <p>The arbitrator found that:</p>
+          <ul>
+            <li>The specifications were ambiguous; both parties shared responsibility</li>
+            <li>Delivery was partially deficient</li>
+            <li><strong>Award:</strong> Seller to revise products within 30 days; buyer to pay additional $1,000 for expanded scope; each party bears own costs</li>
+          </ul>
+        </div>
+
+        <div class="takeaway">
+          <strong>Key Takeaway:</strong> Clear specifications are critical in cross-border digital transactions; mediation-style solutions can preserve business relationships.
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="summary">
+        <h2>Key Principles from DWAC Cases</h2>
+        <div class="principles">
+          <div class="principle">
+            <h4>1. Procedural Fairness</h4>
+            <p>Due process matters, even in digital contexts</p>
+          </div>
+          <div class="principle">
+            <h4>2. Technical Expertise</h4>
+            <p>Arbitrators understand technology and digital ecosystems</p>
+          </div>
+          <div class="principle">
+            <h4>3. Practical Solutions</h4>
+            <p>Awards designed to be enforceable and effective</p>
+          </div>
+          <div class="principle">
+            <h4>4. Balanced Approach</h4>
+            <p>Considering rights of all parties: users, platforms, creators</p>
+          </div>
+          <div class="principle">
+            <h4>5. Evolving Standards</h4>
+            <p>Adapting legal principles to new digital realities</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align: center; margin-top: 2rem; color: #64748b;">
+        For more information about filing a case with DWAC, contact: <a href="mailto:arbitration@dwac.net" style="color: #22d3ee;">arbitration@dwac.net</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>DWAC</h4>
+        <p>Digital World Arbitration Centre - The first permanent international arbitration institution dedicated to resolving digital world disputes.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="/about/">About Us</a>
+        <a href="/cases/">Case Studies</a>
+        <a href="/news/">News</a>
+        <a href="/arbitrators/join/">Become an Arbitrator</a>
+        <a href="/membership/">Membership</a>
+        <a href="/charter/">Digital World Charter</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <a href="/contact/">Get in Touch</a>
+        <span>Email: info@dwac.io</span>
+        <span>Domain: dwac.io</span>
+      </div>
+      <div class="footer-section">
+        <h4>Language</h4>
+        <a href="/zh-tw/cases/">中文</a>
+        <a href="/cases/">English</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Digital World Arbitration Centre (DWAC). All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
