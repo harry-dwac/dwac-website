@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - DWAC Arbitration Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e8e8e8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.1rem;
+        }
+
+        .search-box {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            padding-left: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .search-box input::placeholder {
+            color: #888;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .category-tab {
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            background: transparent;
+            color: #e8e8e8;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .category-tab:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff;
+        }
+
+        .category-tab.active {
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .faq-section {
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .faq-item.hidden {
+            display: none;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            flex: 1;
+            color: #fff;
+        }
+
+        .faq-question .category-label {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(0, 212, 255, 0.15);
+            color: #00d4ff;
+            white-space: nowrap;
+        }
+
+        .toggle-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(0, 212, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .toggle-icon::before,
+        .toggle-icon::after {
+            content: '';
+            position: absolute;
+            background: #00d4ff;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-icon::before {
+            width: 10px;
+            height: 2px;
+        }
+
+        .toggle-icon::after {
+            width: 2px;
+            height: 10px;
+        }
+
+        .faq-item.active .toggle-icon::after {
+            transform: rotate(90deg);
+        }
+
+        .faq-item.active .toggle-icon {
+            background: rgba(0, 212, 255, 0.4);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 25px 25px;
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: transparent;
+            color: #e8e8e8;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .lang-btn.active {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+
+            .category-tabs {
+                gap: 8px;
+            }
+
+            .category-tab {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button class="lang-btn active">English</button>
+        <button class="lang-btn" onclick="location.href='../zh-tw/faq/index.html'">繁體中文</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">DWAC</div>
+            <h1>Frequently Asked Questions</h1>
+            <p class="subtitle">Find answers to common questions about DWAC Arbitration Services</p>
+        </header>
+
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Search questions...">
+        </div>
+
+        <div class="category-tabs">
+            <button class="category-tab active" data-category="all">All Questions</button>
+            <button class="category-tab" data-category="general">General</button>
+            <button class="category-tab" data-category="fees">Fees</button>
+            <button class="category-tab" data-category="procedure">Procedure</button>
+            <button class="category-tab" data-category="enforcement">Enforcement</button>
+        </div>
+
+        <div id="faqContainer">
+            <!-- General Questions -->
+            <div class="faq-section" data-category="general">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>1. What is DWAC?</h3>
+                        <span class="category-label">General</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC (Domain Name World Arbitration Center) is an international arbitration institution specializing in domain name disputes and digital intellectual property conflicts. Established in 2015, DWAC provides neutral, efficient, and cost-effective dispute resolution services for businesses and individuals worldwide. Our arbitration decisions are recognized and enforceable in over 150 countries under international conventions.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>2. What types of disputes does DWAC handle?</h3>
+                        <span class="category-label">General</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC handles various types of disputes including: Domain name disputes (UDRP proceedings, new gTLD disputes), Trademark infringement related to domain names, Cybersquatting cases, Brand protection disputes, Intellectual property conflicts in the digital space, Social media handle disputes, and Email address disputes related to trademarks.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>3. What is the legal effect of DWAC arbitration decisions?</h3>
+                        <span class="category-label">General</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC arbitration decisions carry the same legal weight as court judgments under the ICANN UDRP framework. Once a decision is rendered, the registry operator will implement the required changes (such as transferring or canceling the domain) within 10 business days. The decision is binding and recognized in more than 150 countries under international treaties.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>4. How long does the arbitration process take?</h3>
+                        <span class="category-label">General</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The standard DWAC arbitration process takes approximately 45-60 days from filing to decision. Expedited procedures can be completed within 14-21 days for an additional fee. Complex cases involving multiple parties or extensive evidence may require additional time. Our online platform allows for faster document exchange and hearings compared to traditional arbitration.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fees Questions -->
+            <div class="faq-section" data-category="fees">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>5. How are arbitration fees calculated?</h3>
+                        <span class="category-label">Fees</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC fees are calculated based on the number of domains involved and the claim amount. For single domain disputes: $1,300 USD (standard) or $1,800 USD (expedited). For multiple domains (2-5): $2,500 USD. For cases exceeding 5 domains: $2,500 USD plus $300 USD per additional domain. The filing fee includes arbitrator compensation, administrative costs, and platform usage fees.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>6. Who bears the arbitration costs?</h3>
+                        <span class="category-label">Fees</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            In principle, the losing party shall bear all arbitration costs. However, if the complainant's claims are only partially successful, the arbitral tribunal has discretion to allocate costs proportionally. In cases of bad faith registration discovered during proceedings, the tribunal may order the respondent to reimburse the complainant's reasonable legal costs. Early settlements or withdrawals may result in different cost arrangements.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>7. Can I apply for a fee reduction?</h3>
+                        <span class="category-label">Fees</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, DWAC offers fee reduction programs for qualifying parties. Small businesses with annual revenue under $100,000 USD may apply for a 30% fee reduction. Individual complainants facing financial hardship can request a reduction of up to 50% by submitting proof of financial status. Non-profit organizations and educational institutions are eligible for special rates. Please submit your reduction application along with supporting documents during the filing process.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Procedure Questions -->
+            <div class="faq-section" data-category="procedure">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>8. How do I submit an arbitration application?</h3>
+                        <span class="category-label">Procedure</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            To file an arbitration application: 1) Register an account on the DWAC portal; 2) Complete the complaint form with domain details, complainant information, and grounds for complaint; 3) Upload supporting evidence (trademark certificates, evidence of bad faith use, etc.); 4) Pay the filing fee; 5) Submit the application. You will receive a confirmation email within 24 hours. The entire process can be completed online through our secure platform.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>9. How do I select an arbitrator?</h3>
+                        <span class="category-label">Procedure</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC maintains a panel of over 200 qualified arbitrators from around the world. For standard cases, you may select an arbitrator from our roster or request DWAC to appoint one. For expedited proceedings, a single arbitrator will be appointed by DWAC. When selecting an arbitrator, consider their expertise in your specific dispute type, language proficiency, and availability. All arbitrators on our panel are neutral and have been vetted for independence.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>10. Can the arbitration proceedings be conducted online?</h3>
+                        <span class="category-label">Procedure</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, DWAC offers fully online arbitration proceedings. Our digital platform supports: Online submission of documents and evidence; Secure document sharing between parties; Virtual hearings via video conference; Real-time case status tracking; Digital signatures for official documents. Online proceedings reduce costs and time significantly. For parties in different time zones, we offer asynchronous hearing options. Only in rare cases requiring physical evidence examination will in-person hearings be scheduled.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enforcement Questions -->
+            <div class="faq-section" data-category="enforcement">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>11. How is the arbitration decision enforced?</h3>
+                        <span class="category-label">Enforcement</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Once DWAC renders a decision, enforcement is automatic for ICANN-accredited registries. The decision is transmitted directly to the relevant domain registrar, who must implement the ordered action (transfer, cancellation, or status change) within 10 business days. For non-ICANN domains or cross-border enforcement, the winning party may need to file for recognition in local courts. DWAC provides all necessary documentation for court proceedings in any jurisdiction.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>12. In which countries can the decision be enforced?</h3>
+                        <span class="category-label">Enforcement</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC decisions can be enforced in over 150 countries worldwide. This includes all signatory countries of the New York Convention (1958) on the recognition and enforcement of foreign arbitral awards. Major jurisdictions include the United States, European Union member states, United Kingdom, China, Japan, Australia, Canada, and most Asia-Pacific nations. For enforcement in non-signatory countries, DWAC works with local legal partners to facilitate recognition through bilateral treaties or local court procedures.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults">
+            <p>No matching questions found. Please try a different search term.</p>
+        </div>
+
+        <footer>
+            <p>Need more help? Contact us at <a href="mailto:support@dwac.com">support@dwac.com</a></p>
+            <p style="margin-top: 10px;">
+                <a href="../index.html">Home</a> | <a href="../about.html">About DWAC</a> | <a href="../contact.html">Contact</a>
+            </p>
+            <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">© 2024 DWAC. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't already open
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Category filter
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                const category = tab.dataset.category;
+                const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                
+                filterFAQs(category, searchTerm);
+            });
+        });
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const activeCategory = document.querySelector('.category-tab.active').dataset.category;
+            
+            filterFAQs(activeCategory, searchTerm);
+        });
+
+        function filterFAQs(category, searchTerm) {
+            let visibleCount = 0;
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const itemCategory = item.closest('.faq-section').dataset.category;
+                const questionText = item.querySelector('h3').textContent.toLowerCase();
+                const answerText = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                const matchesCategory = category === 'all' || itemCategory === category;
+                const matchesSearch = questionText.includes(searchTerm) || answerText.includes(searchTerm);
+                
+                if (matchesCategory && matchesSearch) {
+                    item.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            
+            // Show/hide no results message
+            document.getElementById('noResults').classList.toggle('show', visibleCount === 0);
+        }
+
+        // Keyboard accessibility
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.setAttribute('tabindex', '0');
+            question.setAttribute('role', 'button');
+            question.setAttribute('aria-expanded', 'false');
+            
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

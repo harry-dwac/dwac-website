@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常見問題 - DWAC 仲裁服務</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang TC', 'Microsoft JhengHei', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e8e8e8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.1rem;
+        }
+
+        .search-box {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            padding-left: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .search-box input::placeholder {
+            color: #888;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .category-tab {
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            background: transparent;
+            color: #e8e8e8;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .category-tab:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff;
+        }
+
+        .category-tab.active {
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .faq-section {
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .faq-item.hidden {
+            display: none;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            flex: 1;
+            color: #fff;
+        }
+
+        .faq-question .category-label {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(0, 212, 255, 0.15);
+            color: #00d4ff;
+            white-space: nowrap;
+        }
+
+        .toggle-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(0, 212, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .toggle-icon::before,
+        .toggle-icon::after {
+            content: '';
+            position: absolute;
+            background: #00d4ff;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-icon::before {
+            width: 10px;
+            height: 2px;
+        }
+
+        .toggle-icon::after {
+            width: 2px;
+            height: 10px;
+        }
+
+        .faq-item.active .toggle-icon::after {
+            transform: rotate(90deg);
+        }
+
+        .faq-item.active .toggle-icon {
+            background: rgba(0, 212, 255, 0.4);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 25px 25px;
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: transparent;
+            color: #e8e8e8;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .lang-btn.active {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+
+            .category-tabs {
+                gap: 8px;
+            }
+
+            .category-tab {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="location.href='../faq/index.html'">English</button>
+        <button class="lang-btn active">繁體中文</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">DWAC</div>
+            <h1>常見問題</h1>
+            <p class="subtitle">尋找關於 DWAC 仲裁服務的常見問題解答</p>
+        </header>
+
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="搜尋問題...">
+        </div>
+
+        <div class="category-tabs">
+            <button class="category-tab active" data-category="all">所有問題</button>
+            <button class="category-tab" data-category="general">一般問題</button>
+            <button class="category-tab" data-category="fees">費用問題</button>
+            <button class="category-tab" data-category="procedure">程序問題</button>
+            <button class="category-tab" data-category="enforcement">執行問題</button>
+        </div>
+
+        <div id="faqContainer">
+            <!-- 一般問題 -->
+            <div class="faq-section" data-category="general">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>1. DWAC 是什麼機構？</h3>
+                        <span class="category-label">一般問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC（Domain Name World Arbitration Center，域名世界仲裁中心）是一家專門處理域名爭議和數位智慧財產權糾紛的國際仲裁機構。DWAC 成立於 2015 年，為全球企業和個人提供中立、高效且經濟實惠的爭議解決服務。我們的仲裁裁決根據國際公約在超過 150 個國家具有承認和執行效力。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>2. DWAC 受理哪些類型的爭議？</h3>
+                        <span class="category-label">一般問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC 處理的爭議類型包括：域名爭議（UDRP 程序、新頂級網域爭議）、與域名相關的商標侵權案件、網路蟑螂（Cybersquatting）案件、品牌保護爭議、數位空間的智慧財產權衝突、社群媒體帳號爭議，以及與商标相关的电子邮件地址争议。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>3. DWAC 仲裁裁決的法律效力？</h3>
+                        <span class="category-label">一般問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC 仲裁裁決在 ICANN UDRP 框架下具有與法院判決同等的法律效力。裁決作出後，註冊管理機構將在 10 個工作日內執行所需變更（如轉讓或註銷域名）。裁決具有約束力，並可根據國際條約在超過 150 個國家獲得承認和執行。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>4. 仲裁程序需要多長時間？</h3>
+                        <span class="category-label">一般問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            標準 DWAC 仲裁程序從提交到裁決約需 45 至 60 天。加急程序可在 14 至 21 天內完成，但需支付額外費用。涉及多方或大量證據的複雜案件可能需要更多時間。我們的線上平台允許更快速的文件交換和聽證，相較於傳統仲裁可大幅節省時間。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 費用問題 -->
+            <div class="faq-section" data-category="fees">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>5. 仲裁費用如何計算？</h3>
+                        <span class="category-label">費用問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC 費用根據涉及的域名數量和索賠金額計算。單一域名爭議：標準程序 1,300 美元或加急程序 1,800 美元；多個域名（2-5 個）：2,500 美元；超過 5 個域名：2,500 美元加上每個額外域名 300 美元。申請費用包含仲裁員報酬、行政成本及平台使用費。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>6. 費用由誰承擔？</h3>
+                        <span class="category-label">費用問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            原則上，敗訴方應承擔全部仲裁費用。然而，若申訴人的請求僅部分成功，仲裁庭有權按比例分配費用。在程序中發現惡意註冊的情況下，仲裁庭可命令被申訴人賠償申訴人合理的律師費用。提前和解或撤回可能導致不同的費用安排。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>7. 可以申請費用減免嗎？</h3>
+                        <span class="category-label">費用問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            是的，DWAC 為符合資格的當事人提供費用減免方案。年營業額低於 10 萬美元的小型企業可申請 30% 的費用減免。面臨經濟困難的個人申訴人，可提交財務狀況證明申請高達 50% 的減免。非營利組織和教育機構有資格享受特別費率。請在提交申請時一併提交減免申請及相關證明文件。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 程序問題 -->
+            <div class="faq-section" data-category="procedure">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>8. 如何提交仲裁申請？</h3>
+                        <span class="category-label">程序問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            提交仲裁申請的步驟：1) 在 DWAC 入口網站註冊帳戶；2) 填寫申訴表單，包含域名詳情、申訴人資訊及申訴理由；3) 上傳支持證據（商標證書、惡意使用證據等）；4) 支付申請費用；5) 提交申請。您將在 24 小時內收到確認電子郵件。整个流程可通过我们的安全平台在线完成。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>9. 如何選擇仲裁員？</h3>
+                        <span class="category-label">程序問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC 擁有來自世界各地的 200 多名合格仲裁員組成的專家小組。對於標準案件，您可以從我們的名冊中選擇仲裁員，或請求 DWAC 指定一名仲裁員。對於加急程序，DWAC 將指定一名仲裁員。在選擇仲裁員時，請考慮其處理您特定爭議類型的專業知識、語言能力及可用時間。我們小組的所有仲裁員均為中立人士，並已通過獨立性審查。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>10. 仲裁程序可以線上進行嗎？</h3>
+                        <span class="category-label">程序問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            是的，DWAC 提供全線上仲裁程序。我們的數位平台支援：線上提交文件和證據；當事人之間的安全文件共享；透過視訊會議進行的虛擬聽證會；即時案件狀態追蹤；官方文件數位簽章。線上程序可大幅降低成本和時間。對於不同時區的當事人，我們提供非同步聽證選項。只有在少數需要實物證據檢驗的情況下，才會安排親自聽證。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 執行問題 -->
+            <div class="faq-section" data-category="enforcement">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>11. 仲裁裁決如何執行？</h3>
+                        <span class="category-label">執行問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC 作出裁決後，執行對於 ICANN 認可的註冊機構而言是自動進行的。裁決直接傳送至相關域名註冊商，註冊商須在 10 個工作日內執行裁決命令的行動（轉讓、註銷或狀態變更）。對於非 ICANN 域名或跨境執行，勝訴方可能需要在當地法院申請承認。DWAC 提供在任何司法管轄區進行法院程序所需的所有必要文件。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>12. 裁決可以在哪些國家執行？</h3>
+                        <span class="category-label">執行問題</span>
+                        <div class="toggle-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            DWAC 裁決可在全球超過 150 個國家執行。這包括所有 1958 年《紐約公約》的簽署國，該公約關於外國仲裁裁決的承認和執行。主要司法管轄區包括美國、歐盟成員國、英國、中國、日本、澳洲、加拿大及大多數亞太地區國家。對於在非簽署國的執行，DWAC 與當地法律合作夥伴共同努力，透過雙邊條約或當地法院程序促進承認。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults">
+            <p>找不到符合的問題，請嘗試不同的搜尋關鍵字。</p>
+        </div>
+
+        <footer>
+            <p>需要更多幫助？請聯絡我們 <a href="mailto:support@dwac.com">support@dwac.com</a></p>
+            <p style="margin-top: 10px;">
+                <a href="../zh-tw/index.html">首頁</a> | <a href="../zh-tw/about.html">關於 DWAC</a> | <a href="../zh-tw/contact.html">聯絡我們</a>
+            </p>
+            <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">© 2024 DWAC. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't already open
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Category filter
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                const category = tab.dataset.category;
+                const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                
+                filterFAQs(category, searchTerm);
+            });
+        });
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const activeCategory = document.querySelector('.category-tab.active').dataset.category;
+            
+            filterFAQs(activeCategory, searchTerm);
+        });
+
+        function filterFAQs(category, searchTerm) {
+            let visibleCount = 0;
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const itemCategory = item.closest('.faq-section').dataset.category;
+                const questionText = item.querySelector('h3').textContent.toLowerCase();
+                const answerText = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                const matchesCategory = category === 'all' || itemCategory === category;
+                const matchesSearch = questionText.includes(searchTerm) || answerText.includes(searchTerm);
+                
+                if (matchesCategory && matchesSearch) {
+                    item.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            
+            // Show/hide no results message
+            document.getElementById('noResults').classList.toggle('show', visibleCount === 0);
+        }
+
+        // Keyboard accessibility
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.setAttribute('tabindex', '0');
+            question.setAttribute('role', 'button');
+            question.setAttribute('aria-expanded', 'false');
+            
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
