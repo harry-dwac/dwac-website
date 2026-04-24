@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fee Calculator - DWAC</title>
+  <meta name="description" content="Calculate DWAC arbitration fees - filing fees, arbitrator fees, and administrative costs"/>
+  <meta name="keywords" content="arbitration fees, cost calculator, DWAC pricing, dispute resolution costs"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; color: #334155; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+    header { background: #0f172a; color: white; padding: 1rem 0; }
+    nav { max-width: 80rem; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #22d3ee; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: #cbd5e1; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #22d3ee; }
+    main { flex: 1; }
+    .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 4rem 1rem; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.25rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
+    .container { max-width: 60rem; margin: 0 auto; padding: 3rem 1rem; }
+    
+    .calculator { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+    .calculator h2 { font-size: 1.5rem; color: #0f172a; margin-bottom: 1.5rem; }
+    
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; font-weight: 500; color: #0f172a; margin-bottom: 0.5rem; }
+    .form-group input, .form-group select { width: 100%; padding: 0.75rem 1rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #22d3ee; }
+    
+    .radio-group { display: flex; gap: 1.5rem; }
+    .radio-option { display: flex; align-items: center; gap: 0.5rem; }
+    .radio-option input { width: auto; }
+    
+    .calculate-btn { width: 100%; padding: 1rem; background: #22d3ee; color: #0f172a; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .calculate-btn:hover { background: #06b6d4; }
+    
+    .results { background: #f8fafc; border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem; }
+    .results h3 { color: #0f172a; margin-bottom: 1rem; }
+    .fee-row { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0; }
+    .fee-row:last-child { border-bottom: none; }
+    .fee-label { color: #64748b; }
+    .fee-value { font-weight: 600; color: #0f172a; }
+    .total-row { background: #0f172a; color: white; margin: 1rem -1.5rem -1.5rem; padding: 1rem 1.5rem; border-radius: 0 0 12px 12px; }
+    .total-row .fee-label, .total-row .fee-value { color: white; }
+    .total-row .fee-value { font-size: 1.5rem; color: #22d3ee; }
+    
+    .note { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem 1.5rem; border-radius: 0 8px 8px 0; margin-top: 2rem; font-size: 0.9rem; color: #92400e; }
+    
+    .fee-table { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: 2rem; }
+    .fee-table h3 { color: #0f172a; margin-bottom: 1rem; }
+    .fee-table table { width: 100%; border-collapse: collapse; }
+    .fee-table th, .fee-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
+    .fee-table th { background: #f8fafc; font-weight: 600; color: #0f172a; }
+    
+    footer { background: #0f172a; color: #94a3b8; padding: 3rem 1rem; margin-top: auto; }
+    .footer-content { max-width: 80rem; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+    .footer-section h4 { color: white; margin-bottom: 1rem; }
+    .footer-section a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.5rem; }
+    .footer-section a:hover { color: #22d3ee; }
+    .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1e293b; }
+    
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .radio-group { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">DWAC</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <a href="/arbitrators/">Arbitrators</a>
+        <a href="/cases/">Case Studies</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Fee Calculator</h1>
+      <p>Estimate your arbitration costs with our transparent fee structure</p>
+    </section>
+
+    <div class="container">
+      <div class="calculator">
+        <h2>Calculate Your Fees</h2>
+        
+        <div class="form-group">
+          <label for="amount">Dispute Amount (USD)</label>
+          <input type="number" id="amount" placeholder="Enter amount (e.g., 50000)" min="0">
+        </div>
+        
+        <div class="form-group">
+          <label>Number of Arbitrators</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="arbitrators" value="1" checked> Single Arbitrator
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="arbitrators" value="3"> Three Arbitrators
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Procedure Type</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="procedure" value="standard" checked> Standard
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="procedure" value="expedited"> Expedited (+$200)
+            </label>
+          </div>
+        </div>
+        
+        <button class="calculate-btn" onclick="calculateFees()">Calculate Fees</button>
+        
+        <div class="results" id="results" style="display: none;">
+          <h3>Fee Estimate</h3>
+          <div class="fee-row">
+            <span class="fee-label">Filing Fee</span>
+            <span class="fee-value" id="filing-fee">$0</span>
+          </div>
+          <div class="fee-row">
+            <span class="fee-label">Arbitrator Fee</span>
+            <span class="fee-value" id="arbitrator-fee">$0</span>
+          </div>
+          <div class="fee-row">
+            <span class="fee-label">Administrative Fee</span>
+            <span class="fee-value" id="admin-fee">$0</span>
+          </div>
+          <div class="total-row">
+            <div class="fee-row">
+              <span class="fee-label">Estimated Total</span>
+              <span class="fee-value" id="total-fee">$0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="note">
+        <strong>Note:</strong> This is an estimate for reference only. Actual fees may vary based on case complexity, arbitrator selection, and other factors. For a precise fee quote, please contact arbitration@dwac.net.
+      </div>
+      
+      <div class="fee-table">
+        <h3>Filing Fee Schedule</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Dispute Amount</th>
+              <th>Filing Fee</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>≤ $10,000</td><td>$100</td></tr>
+            <tr><td>$10,001 - $50,000</td><td>$250</td></tr>
+            <tr><td>$50,001 - $100,000</td><td>$500</td></tr>
+            <tr><td>$100,001 - $500,000</td><td>$1,000</td></tr>
+            <tr><td>$500,001 - $1,000,000</td><td>$2,000</td></tr>
+            <tr><td>> $1,000,000</td><td>$3,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="fee-table">
+        <h3>Arbitrator Fee Guide</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Dispute Amount</th>
+              <th>Single Arbitrator</th>
+              <th>Three Arbitrators</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>≤ $50,000</td><td>$500 - $2,000</td><td>$1,250 - $5,000</td></tr>
+            <tr><td>$50,001 - $200,000</td><td>$2,000 - $5,000</td><td>$5,000 - $12,500</td></tr>
+            <tr><td>$200,001 - $500,000</td><td>$5,000 - $10,000</td><td>$12,500 - $25,000</td></tr>
+            <tr><td>$500,001 - $1,000,000</td><td>$10,000 - $20,000</td><td>$25,000 - $50,000</td></tr>
+            <tr><td>> $1,000,000</td><td>1-2% of amount</td><td>2.5-5% of amount</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>DWAC</h4>
+        <p>Digital World Arbitration Centre</p>
+        <p>Bringing justice to the digital world</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="/about/">About Us</a>
+        <a href="/arbitrators/">Arbitrators</a>
+        <a href="/cases/">Case Studies</a>
+        <a href="/faq/">FAQ</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <a href="mailto:arbitration@dwac.net">arbitration@dwac.net</a>
+        <a href="/contact/">Contact Form</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Digital World Arbitration Centre. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function calculateFees() {
+      const amount = parseFloat(document.getElementById('amount').value) || 0;
+      const arbitrators = parseInt(document.querySelector('input[name="arbitrators"]:checked').value);
+      const procedure = document.querySelector('input[name="procedure"]:checked').value;
+      
+      // Filing fee
+      let filingFee;
+      if (amount <= 10000) filingFee = 100;
+      else if (amount <= 50000) filingFee = 250;
+      else if (amount <= 100000) filingFee = 500;
+      else if (amount <= 500000) filingFee = 1000;
+      else if (amount <= 1000000) filingFee = 2000;
+      else filingFee = 3000;
+      
+      // Arbitrator fee (base for single)
+      let arbitratorFeeBase;
+      if (amount <= 50000) arbitratorFeeBase = 1250;
+      else if (amount <= 200000) arbitratorFeeBase = 3500;
+      else if (amount <= 500000) arbitratorFeeBase = 7500;
+      else if (amount <= 1000000) arbitratorFeeBase = 15000;
+      else arbitratorFeeBase = amount * 0.015;
+      
+      // Apply multiplier for three arbitrators
+      const arbitratorFee = arbitrators === 3 ? arbitratorFeeBase * 2.5 : arbitratorFeeBase;
+      
+      // Administrative fee
+      let adminFee = 500;
+      if (procedure === 'expedited') adminFee += 200;
+      
+      // Total
+      const total = filingFee + arbitratorFee + adminFee;
+      
+      // Display results
+      document.getElementById('filing-fee').textContent = '$' + filingFee.toLocaleString();
+      document.getElementById('arbitrator-fee').textContent = '$' + Math.round(arbitratorFee).toLocaleString();
+      document.getElementById('admin-fee').textContent = '$' + adminFee.toLocaleString();
+      document.getElementById('total-fee').textContent = '$' + Math.round(total).toLocaleString();
+      document.getElementById('results').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
