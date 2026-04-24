@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Apply for Arbitration | DWAC</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #c9a227;
+            --light: #f7fafc;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --success: #38a169;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .lang-switch a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .lang-switch a:hover, .lang-switch a.active {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Step Card */
+        .step-card {
+            position: relative;
+            margin-bottom: 40px;
+            width: calc(50% - 40px);
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .step-card:nth-child(odd) {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .step-card:nth-child(even) {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 35px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .step-card:nth-child(odd)::before {
+            right: -52px;
+        }
+
+        .step-card:nth-child(even)::before {
+            left: -52px;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .step-card:nth-child(odd) .step-number {
+            left: -20px;
+        }
+
+        .step-card:nth-child(even) .step-number {
+            right: -20px;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .step-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .step-section {
+            margin-bottom: 15px;
+        }
+
+        .step-section h4 {
+            color: var(--secondary);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-section h4::before {
+            content: '';
+            width: 4px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .step-section ul {
+            list-style: none;
+            padding-left: 12px;
+        }
+
+        .step-section li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text);
+        }
+
+        .step-section li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .time-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .time-badge::before {
+            content: '⏱';
+            margin-right: 6px;
+        }
+
+        /* Action Cards */
+        .action-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .action-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--accent);
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .action-card .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .action-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .action-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #d4a82a);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #d4a82a, var(--accent));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.4);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 60px;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .faq-section h2 {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            padding-left: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item.active p {
+            max-height: 200px;
+            padding-left: 15px;
+        }
+
+        /* Contact Bar */
+        .contact-bar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+            border-radius: 16px;
+        }
+
+        .contact-bar h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact-bar p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .step-card {
+                width: calc(100% - 50px);
+                margin-left: 50px !important;
+                margin-right: 0 !important;
+            }
+
+            .step-card::before {
+                left: -42px !important;
+                right: auto !important;
+            }
+
+            .step-card:nth-child(odd) .step-number,
+            .step-card:nth-child(even) .step-number {
+                left: -10px;
+                right: auto;
+            }
+
+            .action-section {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .step-card:nth-child(1) { animation-delay: 0.1s; }
+        .step-card:nth-child(2) { animation-delay: 0.2s; }
+        .step-card:nth-child(3) { animation-delay: 0.3s; }
+        .step-card:nth-child(4) { animation-delay: 0.4s; }
+        .step-card:nth-child(5) { animation-delay: 0.5s; }
+        .step-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switch">
+        <a href="#" class="active">EN</a>
+        <a href="../zh-tw/how-to-apply/">繁體</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>How to Apply for Arbitration</h1>
+        <p>A comprehensive guide to the arbitration process, from filing your application to enforcing the award</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Timeline Steps -->
+        <div class="timeline">
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h2 class="step-title">Submit Arbitration Application</h2>
+                <p class="step-description">
+                    Initiate the arbitration process by submitting a formal application to DWAC. Your application must include all required documents and meet the specified criteria for acceptance.
+                </p>
+                
+                <div class="step-section">
+                    <h4>Required Documents</h4>
+                    <ul>
+                        <li>Signed arbitration agreement or contract clause</li>
+                        <li>Completed Application Form (Form ARB-01)</li>
+                        <li>Statement of claim with supporting evidence</li>
+                        <li>Copies of relevant contracts and correspondence</li>
+                        <li>Power of attorney (if represented by counsel)</li>
+                    </ul>
+                </div>
+
+                <div class="step-section">
+                    <h4>Key Points</h4>
+                    <ul>
+                        <li>Ensure the arbitration clause covers the dispute</li>
+                        <li>Submit in duplicate plus one copy for each respondent</li>
+                        <li>Electronic filing accepted via portal</li>
+                    </ul>
+                </div>
+
+                <div class="time-badge">Processing: 5-10 business days</div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h2 class="step-title">Pay Filing Fees</h2>
+                <p class="step-description">
+                    Upon acceptance of your application, you will receive an invoice for filing fees. Payment must be completed before the case proceeds to the next stage.
+                </p>
+                
+                <div class="step-section">
+                    <h4>Fees Structure</h4>
+                    <ul>
+                        <li>Filing fee based on claim amount</li>
+                        <li>Arbitrator appointment fee</li>
+                        <li>Administrative charges</li>
+                        <li>Refundable deposit for hearing costs</li>
+                    </ul>
+                </div>
+
+                <div class="step-section">
+                    <h4>Payment Methods</h4>
+                    <ul>
+                        <li>Bank transfer (SWIFT/TT)</li>
+                        <li>Credit card (Visa, MasterCard)</li>
+                        <li>Online payment portal</li>
+                    </ul>
+                </div>
+
+                <div class="time-badge">Due: Within 15 days of invoice</div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h2 class="step-title">Appoint Arbitrators</h2>
+                <p class="step-description">
+                    Arbitrators are appointed according to the rules specified in your arbitration agreement. DWAC maintains a panel of experienced arbitrators from diverse backgrounds.
+                </p>
+                
+                <div class="step-section">
+                    <h4>Appointment Process</h4>
+                    <ul>
+                        <li>Party-appointed arbitrators (if applicable)</li>
+                        <li>Institution-appointed arbitrators</li>
+                        <li>Presiding arbitrator/Sole arbitrator selection</li>
+                        <li>Arbitrator independence declaration</li>
+                    </ul>
+                </div>
+
+                <div class="step-section">
+                    <h4>Arbitrator Qualifications</h4>
+                    <ul>
+                        <li>Minimum 10 years of relevant experience</li>
+                        <li>Legal or industry expertise</li>
+                        <li>Fluency in arbitration language</li>
+                    </ul>
+                </div>
+
+                <div class="time-badge">Timeline: 10-20 business days</div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h2 class="step-title">Hearings</h2>
+                <p class="step-description">
+                    The arbitral tribunal conducts hearings where parties present their case. Both written submissions and oral arguments are considered.
+                </p>
+                
+                <div class="step-section">
+                    <h4>Hearing Procedures</h4>
+                    <ul>
+                        <li>Pre-hearing conference and procedural order</li>
+                        <li>Document production phase</li>
+                        <li>Written witness statements and expert reports</li>
+                        <li>Oral hearings with cross-examination</li>
+                        <li>Closing submissions</li>
+                    </ul>
+                </div>
+
+                <div class="step-section">
+                    <h4>Venue Options</h3>
+                    <ul>
+                        <li>Physical hearing at DWAC premises</li>
+                        <li>Virtual/online hearings</li>
+                        <li>Hearing at neutral location</li>
+                    </ul>
+                </div>
+
+                <div class="time-badge">Duration: 1-5 days depending on complexity</div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h2 class="step-title">Award Rendering</h2>
+                <p class="step-description">
+                    After considering all evidence and arguments, the tribunal deliberates and issues the final award. The award is final and binding (subject to limited grounds for challenge).
+                </p>
+                
+                <div class="step-section">
+                    <h4>Award Components</h4>
+                    <ul>
+                        <li>Summary of facts and issues</li>
+                        <li>Reasoning and legal analysis</li>
+                        <li>Determination on costs</li>
+                        <li>Final decision on claims</li>
+                    </ul>
+                </div>
+
+                <div class="step-section">
+                    <h4>Post-Award Options</h4>
+                    <ul>
+                        <li>Correction of clerical errors</li>
+                        <li>Interpretation of award</li>
+                        <li>Challenge proceedings (limited grounds)</li>
+                    </ul>
+                </div>
+
+                <div class="time-badge">Rendering: 30-60 days after hearings</div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <h2 class="step-title">Award Enforcement</h2>
+                <p class="step-description">
+                    DWAC awards are enforceable globally under the New York Convention. The winning party may seek enforcement in any of the 170+ signatory states.
+                </p>
+                
+                <div class="step-section">
+                    <h4>Enforcement Process</h4>
+                    <ul>
+                        <li>Obtain certified copy of award</li>
+                        <li>Apply to local court for recognition</li>
+                        <li>Address any challenges to enforcement</li>
+                        <li>Execute against debtor's assets</li>
+                    </ul>
+                </div>
+
+                <div class="step-section">
+                    <h4>Enforcement Assistance</h4>
+                    <ul>
+                        <li>Authentication and certification services</li>
+                        <li>Translation services (if needed)</li>
+                        <li>Coordination with local counsel</li>
+                    </ul>
+                </div>
+
+                <div class="time-badge">Varies by jurisdiction</div>
+            </div>
+        </div>
+
+        <!-- Action Cards -->
+        <div class="action-section">
+            <div class="action-card">
+                <div class="icon">📥</div>
+                <h3>Download Application Templates</h3>
+                <p>Access ready-to-use templates for arbitration applications and supporting documents</p>
+                <a href="#" class="btn btn-primary">
+                    <span>⬇</span> Download Templates
+                </a>
+            </div>
+
+            <div class="action-card">
+                <div class="icon">📧</div>
+                <h3>Contact Our Team</h3>
+                <p>Have questions? Our arbitration experts are ready to assist you</p>
+                <a href="mailto:arbitration@dwac.org" class="btn btn-secondary">
+                    <span>✉</span> Send Inquiry
+                </a>
+            </div>
+
+            <div class="action-card">
+                <div class="icon">📚</div>
+                <h3>View FAQ</h3>
+                <p>Find answers to commonly asked questions about the arbitration process</p>
+                <a href="#faq" class="btn btn-primary">
+                    <span>❓</span> View FAQ
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h4>What types of disputes can be submitted to arbitration?</h4>
+                <p>DWAC handles commercial disputes including contract breaches, partnership disagreements, construction disputes, intellectual property conflicts, and trade matters. The dispute must fall within the scope of your arbitration agreement.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How long does the arbitration process take?</h4>
+                <p>The duration varies based on case complexity. Simple cases may conclude in 6-12 months, while complex disputes may take 18-24 months or longer. Emergency arbitration procedures are available for urgent matters.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What are the costs involved?</h4>
+                <p>Costs include filing fees (scaled to claim amount), arbitrator fees (based on hourly rates or fixed fees), and administrative expenses. DWAC provides fee calculators on our website. Each party typically bears its own legal costs.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Can I use emergency arbitration for urgent relief?</h4>
+                <p>Yes, DWAC offers emergency arbitrator procedures for situations requiring urgent interim relief before the full tribunal is constituted. Applications for emergency relief can be filed at any time.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Is the arbitration award confidential?</h4>
+                <p>Yes, DWAC arbitration proceedings are confidential unless parties agree otherwise or disclosure is required by law. This confidentiality extends to the award, submissions, and all hearing-related materials.</p>
+            </div>
+        </div>
+
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <h2>Need Further Assistance?</h2>
+            <p>Our arbitration specialists are here to help you navigate the process</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>arbitration@dwac.org</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                    <span>💬</span>
+                    <span>Live Chat Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 DWAC - Dispute Resolution and Arbitration Center. All rights reserved.</p>
+    </footer>
+
+    <!-- FAQ Toggle Script -->
+    <script>
+        document.querySelectorAll('.faq-item h4').forEach(item => {
+            item.addEventListener('click', () => {
+                item.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
