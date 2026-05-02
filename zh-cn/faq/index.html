@@ -339,7 +339,7 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            DWAC（Digital World Arbitration Centre，数字世界仲裁中心）是一家专门处理数字世界争议的先锋仲裁机构。DWAC 成立于 2026 年，為全球企業和個人提供中立、高效且經濟實惠的争议解决服务。我們的仲裁裁決根據國際公約在超過 150 個國家具有承認和執行效力。
+                            DWAC（Digital World 仲裁 Centre，数字世界仲裁中心）是一家专门处理数字世界争议的先锋仲裁机构。DWAC 成立于 2026 年，為全球企業和個人提供中立、高效且經濟實惠的争议解决服务。我們的仲裁裁決根據國際公約在超過 150 個國家具有承認和執行效力。
                         </div>
                     </div>
                 </div>
@@ -507,12 +507,12 @@
             <p style="margin-top: 10px;">
                 <a href="../zh-tw/index.html">首页</a> | <a href="../zh-tw/about.html">关于 DWAC</a> | <a href="../zh-tw/contact.html">聯絡我們</a>
             </p>
-            <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">© 2024 DWAC. All rights reserved.</p>
+            <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">© 2024 DWAC. 保留所有權利。</p>
         </footer>
     </div>
 
     <script>
-        // FAQ Accordion functionality
+        // 常見問題 Accordion functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const item = question.parentElement;
@@ -539,27 +539,27 @@
                 tab.classList.add('active');
                 
                 const category = tab.dataset.category;
-                const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                const searchTerm = document.getElementById('searchInput').value.to低erCase();
                 
-                filterFAQs(category, searchTerm);
+                filter常見問題s(category, searchTerm);
             });
         });
 
         // Search functionality
         document.getElementById('searchInput').addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
+            const searchTerm = e.target.value.to低erCase();
             const activeCategory = document.querySelector('.category-tab.active').dataset.category;
             
-            filterFAQs(activeCategory, searchTerm);
+            filter常見問題s(activeCategory, searchTerm);
         });
 
-        function filterFAQs(category, searchTerm) {
+        function filter常見問題s(category, searchTerm) {
             let visibleCount = 0;
             
             document.querySelectorAll('.faq-item').forEach(item => {
                 const itemCategory = item.closest('.faq-section').dataset.category;
-                const questionText = item.querySelector('h3').textContent.toLowerCase();
-                const answerText = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                const questionText = item.querySelector('h3').textContent.to低erCase();
+                const answerText = item.querySelector('.faq-answer-content').textContent.to低erCase();
                 
                 const matchesCategory = category === 'all' || itemCategory === category;
                 const matchesSearch = questionText.includes(searchTerm) || answerText.includes(searchTerm);
