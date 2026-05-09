@@ -187,34 +187,34 @@ export default function LawUnificationStrategy() {
                 </thead>
                 <tbody className="text-gray-300">
                   <tr className="border-b border-slate-700/50 bg-gold-500/[0.02]">
-                    <td className="py-3 px-4 font-bold text-gold-400" rowSpan={5}>Near-term<br/><span className="text-xs text-gray-400">1-3 years</span></td>
+                    <td className="py-3 px-4 font-bold text-gold-400" rowSpan={5}>Near-term<br/><span className="text-xs text-gray-400">1–3 years</span></td>
                     <td className="py-3 px-4">Establish specialized cross-strait case tribunals in Beijing, Shanghai, Guangzhou, and Fujian</td>
-                    <td className="py-3 px-4 text-gray-400">By 2025</td>
+                    <td className="py-3 px-4 text-gray-400">By 2027</td>
                   </tr>
                   <tr className="border-b border-slate-700/50 bg-gold-500/[0.02]">
-                    <td className="py-3 px-4">SPC and SPP each issue 2-3 batches of guiding cases on cross-strait matters</td>
+                    <td className="py-3 px-4">SPC and SPP each issue 2–3 batches of guiding cases on cross-strait matters</td>
                     <td className="py-3 px-4 text-gray-400">Annually</td>
                   </tr>
                   <tr className="border-b border-slate-700/50 bg-gold-500/[0.02]">
-                    <td className="py-3 px-4">Handle 20-30 high-impact cases annually focusing on telecommunications fraud and cross-border asset recovery</td>
+                    <td className="py-3 px-4">Handle 20–30 high-impact cases annually focusing on telecommunications fraud and cross-border asset recovery</td>
                     <td className="py-3 px-4 text-gray-400">Ongoing</td>
                   </tr>
                   <tr className="border-b border-slate-700/50 bg-gold-500/[0.02]">
-                    <td className="py-3 px-4">Sign or upgrade judicial cooperation agreements with Myanmar, Cambodia, Philippines</td>
-                    <td className="py-3 px-4 text-gray-400">2025-2026</td>
+                    <td className="py-3 px-4">Sign or upgrade judicial cooperation agreements with Myanmar, Cambodia, and the Philippines</td>
+                    <td className="py-3 px-4 text-gray-400">2027–2028</td>
                   </tr>
                   <tr className="border-b border-slate-700/50 bg-gold-500/[0.02]">
                     <td className="py-3 px-4">Establish a reporting system for cross-strait case adjudication rules</td>
-                    <td className="py-3 px-4 text-gray-400">By 2025</td>
+                    <td className="py-3 px-4 text-gray-400">By 2027</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
-                    <td className="py-3 px-4 font-bold text-gold-400" rowSpan={5}>Mid-term<br/><span className="text-xs text-gray-400">3-5 years</span></td>
+                    <td className="py-3 px-4 font-bold text-gold-400" rowSpan={5}>Mid-term<br/><span className="text-xs text-gray-400">3–5 years</span></td>
                     <td className="py-3 px-4">Issue SPC judicial interpretation on recognition and enforcement of Taiwan region civil judgments</td>
-                    <td className="py-3 px-4 text-gray-400">2027</td>
+                    <td className="py-3 px-4 text-gray-400">2028</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
                     <td className="py-3 px-4">Extend jurisdiction to IP, e-commerce, and financial disputes</td>
-                    <td className="py-3 px-4 text-gray-400">2027-2028</td>
+                    <td className="py-3 px-4 text-gray-400">2028–2029</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
                     <td className="py-3 px-4">Establish normalized exchange mechanisms for legal communities across the Strait</td>
@@ -222,24 +222,24 @@ export default function LawUnificationStrategy() {
                   </tr>
                   <tr className="border-b border-slate-700/50">
                     <td className="py-3 px-4">Train 200+ specialized cross-strait judicial professionals</td>
-                    <td className="py-3 px-4 text-gray-400">2028</td>
+                    <td className="py-3 px-4 text-gray-400">2029</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
                     <td className="py-3 px-4">Draft the Special Procedures Act for Cross-Strait Judicial Assistance</td>
-                    <td className="py-3 px-4 text-gray-400">2029</td>
+                    <td className="py-3 px-4 text-gray-400">2030</td>
                   </tr>
                   <tr>
-                    <td className="py-3 px-4 font-bold text-gold-400" rowSpan={4}>Long-term<br/><span className="text-xs text-gray-400">5-10 years</span></td>
+                    <td className="py-3 px-4 font-bold text-gold-400" rowSpan={4}>Long-term<br/><span className="text-xs text-gray-400">5–10 years</span></td>
                     <td className="py-3 px-4">Form a comprehensive cross-strait jurisdictional rule system covering criminal, civil, commercial, and administrative matters</td>
-                    <td className="py-3 px-4 text-gray-400">By 2030</td>
+                    <td className="py-3 px-4 text-gray-400">By 2031</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-4">Full coverage of rule-of-law functions across cross-strait economic, social, and cultural domains</td>
-                    <td className="py-3 px-4 text-gray-400">By 2030</td>
+                    <td className="py-3 px-4 text-gray-400">By 2031</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-4">Taiwan compatriots form widespread instrumental recognition of mainland rule of law</td>
-                    <td className="py-3 px-4 text-gray-400">After 2030</td>
+                    <td className="py-3 px-4 text-gray-400">After 2031</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-4">As conditions permit, promote cross-strait mutual recognition agreement for civil and commercial judgments</td>

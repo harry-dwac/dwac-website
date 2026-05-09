@@ -89,7 +89,7 @@ export default function LawUnificationReport() {
                     <h3 className="text-lg font-bold text-gold-400 mb-3">Limitations of Traditional Approaches</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {[
-                        { title: 'Political Negotiation', issue: 'Lack of mutual trust, asymmetrical bargaining positions, internal political constraints, external interference', verdict: 'Core issues exposed prematurely,陷入 zero-sum dilemma' },
+                        { title: 'Political Negotiation', issue: 'Lack of mutual trust, asymmetrical bargaining positions, internal political constraints, external interference', verdict: 'Core issues exposed prematurely, trapped in zero-sum dilemma' },
                         { title: 'Economic Integration', issue: 'Separation of economic rationality from political identity, double-edged nature of dependency, uneven distribution', verdict: 'Close economic ties do not necessarily lead to political unification' },
                         { title: 'Military Deterrence', issue: 'Casualties, social upheaval, external intervention, difficulty winning hearts and minds', verdict: 'Should be positioned as deterrence and failsafe, not primary tool' },
                         { title: 'Cultural Identity', issue: 'Too slow, identity erosion, gap between identity and action', verdict: 'Long-term value but insufficient for pressing challenges' },
