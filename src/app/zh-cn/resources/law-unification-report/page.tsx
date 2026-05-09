@@ -92,7 +92,7 @@ export default function LawUnificationReport() {
                     <h3 className="text-lg font-bold text-gold-400 mb-3">第二节 传统路径的局限性分析</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {[
-                        { title: '政治谈判路径', issue: '互信基础缺失、谈判筹码不对等、内部政治制约、外部势力干预', verdict: '核心问题提前暴露在谈判桌上，陷入零和博弈困境' },
+                        { title: '政治谈判路径', issue: '互信基础缺失、谈判筹码不对等、内部政治制约、外部势力干预', verdict: '核心问题提前暴露，陷入零和博弈困境' },
                         { title: '经济融合路径', issue: '经济理性与政治认同分离、依赖关系的双刃剑效应、分配不均', verdict: '经济联系密切不必然导致政治统一' },
                         { title: '军事威慑路径', issue: '人员伤亡、社会动荡、外部干预、民心争取困难', verdict: '应定位为威慑和兜底，而非主动推进的主要工具' },
                         { title: '文化认同路径', issue: '缓不济急、认同侵蚀、认同与行动的张力', verdict: '长远有价值，但难以应对紧迫的现实挑战' },

@@ -190,7 +190,7 @@ export default function LawUnificationStrategy() {
                   <tr className="border-b border-slate-700/50 bg-gold-500/[0.02]">
                     <td className="py-3 px-4 font-bold text-gold-400" rowSpan={5}>近期<br/><span className="text-xs text-gray-400">1-3年</span></td>
                     <td className="py-3 px-4">在北上广、福建等地法院设立涉台案件专门审判庭</td>
-                    <td className="py-3 px-4 text-gray-400">2025年底</td>
+                    <td className="py-3 px-4 text-gray-400">2027年底</td>
                   </tr>
                   <tr className="border-b border-slate-700/50 bg-gold-500/[0.02]">
                     <td className="py-3 px-4">最高法、最高检各发布2-3批涉台指导性案例</td>
@@ -202,20 +202,20 @@ export default function LawUnificationStrategy() {
                   </tr>
                   <tr className="border-b border-slate-700/50 bg-gold-500/[0.02]">
                     <td className="py-3 px-4">与缅甸、柬埔寨、菲律宾等国签署或升级司法合作文件</td>
-                    <td className="py-3 px-4 text-gray-400">2025-2026</td>
+                    <td className="py-3 px-4 text-gray-400">2027-2028年</td>
                   </tr>
                   <tr className="border-b border-slate-700/50 bg-gold-500/[0.02]">
                     <td className="py-3 px-4">建立涉台案件裁判规则报送制度</td>
-                    <td className="py-3 px-4 text-gray-400">2025年底</td>
+                    <td className="py-3 px-4 text-gray-400">2027年底</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
                     <td className="py-3 px-4 font-bold text-gold-400" rowSpan={5}>中期<br/><span className="text-xs text-gray-400">3-5年</span></td>
                     <td className="py-3 px-4">出台《关于涉台民商事判决认可与执行的若干规定》司法解释</td>
-                    <td className="py-3 px-4 text-gray-400">2027年</td>
+                    <td className="py-3 px-4 text-gray-400">2028年</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
                     <td className="py-3 px-4">将管辖范围扩展至知识产权、电子商务、金融纠纷</td>
-                    <td className="py-3 px-4 text-gray-400">2027-2028</td>
+                    <td className="py-3 px-4 text-gray-400">2028-2029年</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
                     <td className="py-3 px-4">建立两岸法律界常态化交流机制</td>
