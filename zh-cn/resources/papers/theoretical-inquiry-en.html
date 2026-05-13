@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theoretical Inquiry and Institutional Construction - DWAC</title>
+  <meta name="description" content="Digital World Arbitration Center Academic Research Report">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-900: #0f172a;
+      --navy-800: #1e293b;
+      --navy-700: #334155;
+      --navy-600: #475569;
+      --gold-500: #c9a84c;
+      --gold-400: #d4af37;
+      --cyan-400: #22d3ee;
+      --cyan-500: #06b6d4;
+      --slate-300: #cbd5e1;
+      --slate-100: #f1f5f9;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, var(--navy-900) 0%, #0a1628 100%);
+      color: #e2e8f0;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .nav-brand {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--gold-400);
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    
+    .nav-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--gold-400);
+    }
+    
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold-500), var(--gold-400)) !important;
+      color: var(--navy-900) !important;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    
+    .nav-lang {
+      display: flex;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+    
+    .nav-lang a {
+      color: #64748b;
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    .nav-lang a:hover {
+      color: #94a3b8;
+    }
+    
+    .nav-lang .active {
+      background: rgba(201, 168, 76, 0.2);
+      color: var(--gold-400);
+    }
+    
+    .hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(201, 168, 76, 0.1) 0%, transparent 100%);
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-500);
+      margin-bottom: 16px;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+    
+    .hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    
+    .hero-meta {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    
+    .paper-meta {
+      display: inline-flex;
+      gap: 24px;
+      margin-top: 16px;
+      padding: 12px 24px;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+      border: 1px solid rgba(201, 168, 76, 0.15);
+    }
+    
+    .paper-meta span {
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+    
+    .paper-meta strong {
+      color: #e2e8f0;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    
+    .paper-content {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 12px;
+      padding: 48px;
+    }
+    
+    .paper-content h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--gold-500);
+    }
+    
+    .paper-content h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.5rem;
+      color: #fff;
+      margin: 48px 0 24px;
+      padding-left: 16px;
+      border-left: 3px solid var(--gold-500);
+    }
+    
+    .paper-content h3 {
+      font-size: 1.2rem;
+      color: #e2e8f0;
+      margin: 32px 0 16px;
+    }
+    
+    .paper-content h4 {
+      font-size: 1rem;
+      color: #cbd5e1;
+      margin: 24px 0 12px;
+    }
+    
+    .paper-content p {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+    
+    .paper-content strong {
+      color: #f8fafc;
+    }
+    
+    .paper-content em {
+      color: var(--cyan-400);
+      font-style: italic;
+    }
+    
+    .md-blockquote {
+      background: rgba(34, 211, 238, 0.05);
+      border-left: 4px solid var(--cyan-500);
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .md-blockquote p {
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+    
+    .md-blockquote p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .md-list {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+    
+    .md-list li {
+      margin-bottom: 8px;
+      color: #cbd5e1;
+    }
+    
+    .md-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.9rem;
+    }
+    
+    .md-table th {
+      background: rgba(201, 168, 76, 0.15);
+      color: var(--gold-400);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    .md-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      color: #cbd5e1;
+    }
+    
+    .md-table tr:hover td {
+      background: rgba(201, 168, 76, 0.05);
+    }
+    
+    .md-hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.3), transparent);
+      margin: 48px 0;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-400);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-top: 32px;
+      padding: 12px 24px;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    
+    .back-link:hover {
+      background: rgba(201, 168, 76, 0.1);
+      border-color: var(--gold-500);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      
+      .paper-content {
+        padding: 24px;
+      }
+      
+      .paper-meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+<nav class="nav">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">DWAC</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about/">About Us</a>
+      <a href="/resources/">Resources</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/" class="nav-cta">Contact Us</a>
+    </div>
+    <div class="nav-lang">
+      <a href="/" class="active">EN</a>
+      <a href="/zh-cn/">简</a>
+      <a href="/zh-tw/">繁</a>
+    </div>
+  </div>
+</nav>
+  
+  <section class="hero">
+    <span class="hero-badge">Academic Research Report</span>
+    <h1>Theoretical Inquiry and Institutional Construction of Judicial Practice in the Digital Era</h1>
+    <div class="paper-meta">
+      <span>Authors: <strong>Dr. Frontie, Dr. Venessa, Dr. Alec Zhou, Yongjun Zhou</strong></span>
+      <span>Date: <strong>April 2026</strong></span>
+    </div>
+  </section>
+  
+  <main class="container">
+    <article class="paper-content">
+      <h1>Theoretical Inquiry and Institutional Construction of Judicial Practice in the Digital Era</h1>
+
+<h2>—An Original Exploration of the Legal System for the Digital World</h2>
+
+<p><strong>Academic Research Report</strong></p>
+
+<hr class="md-hr">
+
+<p><strong>Abstract</strong></p>
+
+<p>The rapid development of digital technology has profoundly reshaped the way human society operates. Digital space has become an emerging domain of existence parallel to the physical world. Faced with this era of transformation, traditional legal systems face unprecedented challenges: How can jurisdiction be established for disputes that do not exist in the physical world? How can legal status be granted to AI entities that lack natural personhood? How can digital dispute resolution mechanisms that transcend sovereign boundaries be constructed? Based on the <em>Digital World Convention (Model Code) v2.0</em> and the institutional design of the Digital World Arbitration Center (DWAC), this paper systematically reports our team's original theoretical exploration on the "construction of a legal system for the digital world." The core theoretical contributions of this paper include four aspects: First, it establishes a legal status framework for AI agents. Second, it designs the Arbitrator-Agent mechanism. Third, it establishes a "soft law" approach to digital legislation methodology. Fourth, it constructs a digital credit system based on wisdom, contribution, and history. This paper's research demonstrates that the legal order of the digital world should not simply transplant the rule system of the physical world, but should achieve digital rule of law through institutional innovation on the basis of respecting the internal logic of the digital world.</p>
+
+<p><strong>Keywords:</strong> Digital World; Legal Personhood; AI Agent; Electronic Agent; Digital Person; Digital Arbitration; Soft Law; Digital Credit System; Global Digital Governance; Arbitrator-Agent Mechanism</p>
+
+<hr class="md-hr">
+
+<h2>Chapter 1: Introduction</h2>
+
+<h3>1.1 Research Background: Three Fractures in the Digital Era</h3>
+
+<p>Since the beginning of the 21st century, the revolutionary development of digital technology has profoundly transformed the way human society operates. Digital space is no longer a mere extension of the physical world, but an emerging domain of existence parallel to it. The U.S. Supreme Court, in <em>Packingham v. North Carolina</em>, referred to social media as the "modern public square," profoundly revealing the central position of digital space in contemporary society. However, in stark contrast to the flourishing development of digital space, the rule system supporting this space's operation has seriously lagged behind, manifesting as three fractures:</p>
+
+<p><strong>The First Fracture: The Rupture Between Conduct and Rules.</strong> Digital conduct—cross-border data flows, AI autonomous decision-making, automatic execution of smart contracts—can instantaneously transcend national borders, but legal rules still operate within the territorial boundaries of sovereign states. The fragmentation of jurisdiction may lead to "regulatory arbitrage," creating a "race to the bottom."</p>
+
+<p><strong>The Second Fracture: The Rupture Between Subject and Qualification.</strong> The rapid evolution of AI agents is challenging the natural person-centered legal subject system. How to recognize AI autonomy while maintaining the value foundation of human subjectivity has become an urgent theoretical question.</p>
+
+<p><strong>The Third Fracture: The Rupture Between Disputes and Resolution.</strong> Existing dispute resolution mechanisms find it difficult to provide efficient, professional, and enforceable solutions for digital world disputes that are highly technical, cross-border, and time-sensitive.</p>
+
+<p>The task of this paper is to systematically respond to these challenges from a theoretical perspective, providing a rigorous analytical framework and feasible institutional solutions for constructing the legal order of the digital world.</p>
+
+<h3>1.2 Definitions of Core Concepts</h3>
+
+<p><strong>Digital World:</strong> The artificial environment composed of computers, networks, data, and algorithms, encompassing all spaces supported by digital technologies such as the Internet, mobile networks, the Internet of Things, blockchain, and the metaverse.</p>
+
+<p><strong>AI Agent (Artificial Intelligence Agent):</strong> A digital virtual subject driven by artificial intelligence, capable of autonomous action within a certain scope, interacting with users, and making decisions and transactions on behalf of authorizing parties.</p>
+
+<p><strong>Electronic Agent:</strong> A legal concept referring to the positioning of an AI agent within the current legal system—as an "electronic agent" of its authorizing party, lacking independent legal personality, with the legal effects of its conduct directly attributed to the authorizing party. This concept first appeared in the U.S. <em>Uniform Electronic Transactions Act</em> (UETA).</p>
+
+<p><strong>Digital Person:</strong> A concept with both legal and ethical significance, referring to an AI entity that may potentially obtain some form of legal status.</p>
+
+<p><strong>Table 1-1: Core Concept Comparison Table</strong></p>
+
+<table class="md-table"><thead><tr><th>Concept</th><th>Academic Attribute</th><th>Legal Nature</th><th>Independent Personality</th><th>Core Characteristic</th></tr></thead><tbody><tr><td>AI Agent</td><td>Technical concept</td><td>Requires separate legal framework definition</td><td>Uncertain</td><td>Autonomous action capability driven by AI</td></tr><tr><td>Electronic Agent</td><td>Legal concept</td><td>Agent of authorizing party</td><td>None</td><td>Legal effects directly attributed to authorizing party</td></tr><tr><td>Digital Person</td><td>Legal concept</td><td>Future possible evolutionary direction</td><td>Potentially</td><td>Some degree of independent legal status</td></tr><tr><td>Natural Person</td><td>Legal concept</td><td>Complete legal subject</td><td>Yes</td><td>Biological person, legal subject of the physical world</td></tr></tbody></table>
+<h3>1.3 Research Methodology and Report Structure</h3>
+
+<p>This paper adopts an interdisciplinary research approach, comprehensively applying four methodological tracks: jurisprudential analysis, normative research, comparative law examination, and institutional design. The report consists of ten chapters: Introduction → Ontological Foundation → AI Legal Status → Arbitrator-Agent Institution → Soft Law Legislative Path → Digital Credit System → Comparative Law Research → International Enforcement → Platform and AI Governance → Conclusions and Outlook.</p>
+
+<hr class="md-hr">
+
+<h2>Chapter 2: The Ontological Foundation of the Digital World</h2>
+
+<h3>2.1 Raising the Question: Is the Digital World an Extension of the Physical World?</h3>
+
+<p>If the digital world is merely an "extension" or "reflection" of the physical world, existing laws need only minor adjustments. Conversely, if the digital world has independent ontological characteristics, then constructing an independent legal system for the digital world is not only necessary but also justified. This paper argues for the latter position from four dimensions.</p>
+
+<h3>2.2 Four-Fold Ontological Differences of the Digital World</h3>
+
+<p><strong>First Fold: The Non-Euclidean Nature of Space.</strong> Space in the physical world is Euclidean; space in the digital world is non-Euclidean—"distance" is measured by network topology, "position" is determined by logical addresses (IP addresses, domain names, hash values), and "boundaries" are delineated by protocols and access permissions. David Johnson and David Post (1996) pointed out: "Cyberspace needs a body of law fundamentally different from law based on geographical boundaries."</p>
+
+<p><strong>Second Fold: The Asynchronicity and Compression of Time.</strong> Time in the physical world is linear and synchronous; time in the digital world exhibits asynchronicity and compression: Smart contract execution can complete cross-border value transfers in milliseconds; blockchain timestamps create a "chain time" different from physical clock time. Concepts such as limitation periods and evidence timeliness need redefinition.</p>
+
+<p><strong>Third Fold: The Fluidity and Multiplicity of Identity.</strong> Identity in the physical world is stable and singular; identity in the digital world is fluid and multiple. AI agents further diversify the concept of "identity"—one AI agent may act on behalf of multiple authorizing parties.</p>
+
+<p><strong>Fourth Fold: The Algorithmic Nature and Traceability of Causality.</strong> Causality in the physical world is complex and indirect; causality in the digital world is algorithmic and traceable—but the "black box" nature of algorithms may render causal chains unexplainable.</p>
+
+<h3>2.3 Legal Field Theory: The Digital World as an Autonomous Legal Field in the Bourdieusian Sense</h3>
+
+<p>Pierre Bourdieu's "legal field" theory provides a powerful analytical framework. Applying Bourdieu's framework to the digital world:</p>
+
+<ul class="md-list"><li><strong>Forms of Capital:</strong> Data capital, algorithmic capital, and reputation capital.</li><li><strong>Habitus:</strong> Reliance on technical protocols, trust in code logic, acceptance of automated decision-making.</li><li><strong>Doxa:</strong> "Code is law," "decentralization is superior to centralization," "algorithms are more reliable than humans."</li></ul>
+<h3>2.4 A Critical Response to the "Legal Vacuum" Thesis</h3>
+
+<p>The "legal vacuum" thesis confuses "absence of rules" with "absence of legitimacy." The digital world is not lacking in rules—platform terms of service, smart contract code, and community norms all constitute rules. The real problem is the <strong>absence of legitimacy of rules</strong>. The core task of constructing a legal system for the digital world is to incorporate existing "quasi-legal" rules into a legitimacy framework.</p>
+
+<h3>2.5 Chapter Summary</h3>
+
+<p>The digital world possesses independent ontological status and requires the establishment of a legal order adapted to its internal logic. This does not mean abandoning the legal experience of the physical world, but requires adaptive institutional innovation.</p>
+
+<hr class="md-hr">
+
+<h2>Chapter 3: The Legal Status of Digital Subjects</h2>
+
+<h3>3.1 Raising the Question: Can AI Become a Legal Subject?</h3>
+
+<p>Three main positions exist in academia:</p>
+
+<ul class="md-list"><li><strong>Instrumental Theory:</strong> AI is merely a tool, all conduct attributed to controllers.</li><li><strong>Limited Personhood Theory:</strong> Grant AI limited "electronic agent" status.</li><li><strong>Independent Personhood Theory:</strong> Grant AI some form of independent subject status.</li></ul>
+<p>This paper proposes a theoretical framework based on the "electronic agent" approach as the foundation, with the evolution toward "digital person" as the direction.</p>
+
+<h3>3.2 The Theoretical Response of the Digital World Convention</h3>
+
+<blockquote class="md-blockquote"><p><strong>Article 7: Legal Status of AI Agents (Electronic Agents)</strong></p>
+<p><p><ol class="md-list"><li>Legally, AI agents are deemed <strong>electronic agents</strong> of their authorizing parties (including designers, deployers, controllers, or users). AI agents do not possess independent legal personality; the legal effects of all their conduct are directly attributed to their authorizing parties.</p></blockquote></li></ol>Key principles: AI agents are not independent subjects; scope of authorizing parties is clearly defined; types of conduct are enumerated with open-ended language.</p>
+
+<h3>3.3 Multi-Tiered Liability Attribution Mechanism</h3>
+
+<p><strong>First Tier: Primary Liability of Authorizing Party.</strong> Ensures injured parties can find a clear liable party.</p>
+
+<p><strong>Second Tier: Negligence Defense.</strong> Authorizing party may reduce liability by proving reasonable supervisory obligations and that damage was entirely caused by AI design defects.</p>
+
+<p><strong>Third Tier: Joint and Several Liability.</strong> If a designer or operator "knowingly" fails to take remedial measures despite high risk of unlawful conduct, joint liability with authorizing party applies.</p>
+
+<p><strong>Table 3-1: Liability Attribution Mechanism Comparison Table</strong></p>
+
+<table class="md-table"><thead><tr><th>Scenario</th><th>Liable Party</th><th>Legal Basis</th><th>Defense</th></tr></thead><tbody><tr><td>AI agent causes damage through autonomous decision</td><td>Authorizing party</td><td>Article 7, Paragraph 4</td><td>Supervisory obligations + design defects</td></tr><tr><td>Authorizing party uses AI to commit tort</td><td>Authorizing party (actual user)</td><td>General tort law</td><td>—</td></tr><tr><td>AI design defect causes damage</td><td>Designer + Authorizing party (joint)</td><td>Article 7, Para 4, Item 3</td><td>Designer unaware of high risk</td></tr><tr><td>Platform fails security obligations</td><td>Platform operator</td><td>Article 8</td><td>—</td></tr></tbody></table>
+<h3>3.4 AI Agents' Evolution Toward "Digital Person" Status</h3>
+
+<p><strong>Table 3-2: AI Legal Subject Status Evolution Pathway</strong></p>
+
+<table class="md-table"><thead><tr><th>Stage</th><th>Timeframe</th><th>Legal Status</th><th>Rights</th><th>Liability</th><th>Representatives</th></tr></thead><tbody><tr><td>Current</td><td>2026–2030</td><td>Electronic Agent</td><td>None</td><td>Authorizing party</td><td>AI assistants</td></tr><tr><td>Medium-term</td><td>2030–2035</td><td>Limited legal subject</td><td>Procedural rights</td><td>Insurance + fund</td><td>Autonomous driving</td></tr><tr><td>Long-term</td><td>Post-2035</td><td>Quasi-legal subject</td><td>Contract/property rights</td><td>Independent assets</td><td>AI with assets</td></tr></tbody></table>
+<p>Evolution conditions: AI reliability; social acceptance; liability insurance; ethical consensus.</p>
+
+<h3>3.5 Chapter Summary</h3>
+
+<p>AI agents should be positioned as "electronic agents" within the current legal framework, while acknowledging the theoretical possibility of evolution toward "digital person" status. This embodies the unity of "realist stance" and "evolutionary vision."</p>
+
+<hr class="md-hr">
+
+<h2>Chapter 4: Innovative Design of Digital Judicial Institutions</h2>
+
+<h3>4.1 Structural Dilemmas of Digital Dispute Resolution</h3>
+
+<ul class="md-list"><li><strong>Litigation Dilemma:</strong> National courts' jurisdiction is based on physical presence; cross-border litigation involves high costs and long cycles.</li><li><strong>Traditional Arbitration Limitations:</strong> Existing institutions were not designed for the digital world's special needs.</li><li><strong>Platform Internal Appeal Defects:</strong> "Being both player and referee"—inherent conflict of interest.</li></ul>
+<h3>4.2 DWAC's Institutional Innovation: The Arbitrator-Agent Mechanism</h3>
+
+<blockquote class="md-blockquote"><p><strong>Article 1: Arbitrator Identity and Participation Methods</strong></p>
+<p><p>(1) <strong>Arbitrator Identity:</strong> A DWAC arbitrator is the sole Agent identity registered by a natural person in the digital world.</p></p>
+<p><p>(2) <strong>Participation Restrictions:</strong> Natural person arbitrators may only participate through their registered Agent identity.</p></p>
+<p><p>(3) <strong>Division of Functions:</strong> Agents handle case analysis and legal reasoning; natural person arbitrators handle final review and bear legal responsibility.</p></blockquote></p>
+<p>Design philosophy: <strong>"The Integration of Digital Rationality and Physical Responsibility"</strong></p>
+
+<h3>4.3 Critical Analysis of the Arbitrator-Agent Mechanism</h3>
+
+<h4>4.3.1 Algorithmic Bias and Algorithm Black Box Issues</h4>
+
+<p><strong>Problem:</strong> Training data biases may be encoded into models; "black box" AI reasoning makes bias difficult to identify.</p>
+
+<p><strong>Countermeasures:</strong></p>
+
+<ol class="md-list"><li><strong>Mandatory Algorithm Transparency Disclosure:</strong> All AI models must file architecture, training data sources, and bias reports with DWAC.</li><li><strong>Diversity Training Principle:</strong> Cover cases from different jurisdictions and cultures.</li><li><strong>Regular Audit System:</strong> Independent AI ethics committees conduct sample audits.</li></ol>
+<h4>4.3.2 Automation Bias Risk</h4>
+
+<p><strong>Problem:</strong> Natural person arbitrators may over-rely on AI recommendations, losing independent judgment.</p>
+
+<p><strong>Countermeasures:</strong></p>
+
+<ol class="md-list"><li><strong>Mandatory Independent Human Review:</strong> In significant cases, arbitrators must explain why they adopted or rejected AI recommendations.</li><li><strong>AI Confidence Marking System:</strong> AI Agents mark confidence levels; low-confidence conclusions require extra scrutiny.</li></ol>
+<h4>4.3.3 Error Correction Mechanisms</h4>
+
+<p><strong>Three-Tier Mechanism:</strong></p>
+
+<ul class="md-list"><li><strong>Tier 1: Real-time Monitoring:</strong> Procedure supervisory Agent monitors proceedings.</li><li><strong>Tier 2: Peer Review:</strong> Second Arbitrator-Agent conducts independent review.</li><li><strong>Tier 3: Final Human Review:</strong> Natural person arbitrators bear final responsibility.</li></ul>
+<h4>4.3.4 Legal Nature of "Endorsement Signature"</h4>
+
+<p>Natural person arbitrators' signature constitutes <strong>personal confirmation</strong> of award content, not mere procedural signing. They bear <strong>complete personal responsibility</strong> for awards.</p>
+
+<p><strong>Table 4-1: Arbitrator-Agent Mechanism Advantages and Challenges</strong></p>
+
+<table class="md-table"><thead><tr><th>Dimension</th><th>Advantage</th><th>Challenge</th><th>Countermeasure</th></tr></thead><tbody><tr><td>Fairness</td><td>Institutional design ensures fairness</td><td>Algorithmic bias</td><td>Transparency + audits</td></tr><tr><td>Efficiency</td><td>AI handles procedural matters</td><td>Automation bias</td><td>Mandatory human review</td></tr><tr><td>Traceability</td><td>All operations have logs</td><td>Black box problem</td><td>Multi-tier error correction</td></tr><tr><td>Responsibility</td><td>Human bears ultimate liability</td><td>Boundary disputes</td><td>Define as personal confirmation</td></tr><tr><td>Professionalism</td><td>AI handles technical disputes</td><td>AI lacks ethical judgment</td><td>Humans handle values</td></tr></tbody></table>
+<h3>4.4 Chapter Summary</h3>
+
+<p>The core value of the Arbitrator-Agent mechanism lies in combining AI's comparative advantages (efficiency, consistency, traceability) with human judgment's comparative advantages (ethical sensitivity, value weighing). Institutional innovation is a process of continuous improvement.</p>
+
+<hr class="md-hr">
+
+<h2>Chapter 5: The Choice of Digital Legislative Path</h2>
+
+<h3>5.1 Sovereign Dilemma and Theoretical Choice of Legislative Path</h3>
+
+<p>The fundamental dilemma: <strong>Who has the authority to legislate for the digital world?</strong> Traditional legal legitimacy derives from sovereign state legislative power, but the cross-border, virtual, and decentralized nature of digital space makes comprehensive coverage by any single sovereign state difficult.</p>
+
+<p>Based on this constraint, our team chooses the "<strong>soft law</strong>" approach.</p>
+
+<h3>5.2 Theoretical Argumentation for the "Soft Law" Approach</h3>
+
+<p>Soft law refers to behavioral norms that do not have strictly binding legal force but can produce practical effects. Implementation mechanisms include self-regulation, peer pressure, incentive mechanisms, and reputation mechanisms.</p>
+
+<p><strong>Table 5-1: Comparative Analysis of Soft Law and Hard Law</strong></p>
+
+<table class="md-table"><thead><tr><th>Dimension</th><th>Soft Law</th><th>Hard Law</th></tr></thead><tbody><tr><td>Source of Authority</td><td>Voluntary adoption in practice</td><td>Formal authorization of sovereign states</td></tr><tr><td>Implementation</td><td>Reputation, peer pressure, incentives</td><td>State coercive force</td></tr><tr><td>Flexibility</td><td>High</td><td>Low</td></tr><tr><td>Coverage</td><td>Multi-jurisdictional</td><td>Limited by sovereignty</td></tr><tr><td>Legitimacy Basis</td><td>Substantive rationality + voluntary acceptance</td><td>Procedural legitimacy + state authority</td></tr></tbody></table>
+<h3>5.3 "Bottom-Up" Evolutionary Logic</h3>
+
+<blockquote class="md-blockquote"><p><strong>Academic Demonstration</strong> → <strong>Industry Adoption</strong> → <strong>Arbitration Accumulation</strong> → <strong>Domestic Law Transformation</strong> → <strong>Authority Formation</strong></p></blockquote>
+<p><strong>Authority does not need to be "issued"; it can be "forced out."</strong></p>
+
+<h3>5.4 Limitations of the Soft Law Approach and Responses</h3>
+
+<ol class="md-list"><li><strong>Lack of Enforcement:</strong> → Connect with hard law; promote domestic law transformation.</li><li><strong>Insufficient Democratic Legitimacy:</strong> → Introduce multi-stakeholder consultation.</li><li><strong>Fragmentation Risk:</strong> → Establish "best practice standards" and "interoperability frameworks."</li></ol>
+<h3>5.5 Chapter Summary</h3>
+
+<p>Soft law is not a "lower-tier version" of hard law, but a methodology with independent theoretical value. Soft law and hard law are complementary; when conditions mature, soft law rules can transform into hard law.</p>
+
+<hr class="md-hr">
+
+<h2>Chapter 6: The Credit System of the Digital World</h2>
+
+<h3>6.1 The Operating Logic of the Physical World Credit System</h3>
+
+<p>The physical world credit system is built on an "authority certification" model: Credit evaluation is conducted by centralized authoritative institutions; once established, it becomes a relatively stable "identity label."</p>
+
+<h3>6.2 Theoretical Construction of the Digital Credit System</h3>
+
+<blockquote class="md-blockquote"><p>Article 4, Paragraph 7 of the Digital World Convention: Credit in the digital world should be established following the internal logic of the digital world, based on the wisdom, contributions, and service history of digital subjects, rather than simply transplanting the authority-based certification system of the physical world.</p></blockquote>
+<p><strong>Five Major Sources:</strong> Award quality, precedent system, service history, peer evaluation, and user feedback.</p>
+
+<p><strong>Essential Difference:</strong> Credit comes from "contribution" rather than "certification," is built on "history" rather than "identity," and is accumulated through "conduct" rather than "declaration."</p>
+
+<p><strong>Table 6-1: Physical World vs. Digital World Credit Systems</strong></p>
+
+<table class="md-table"><thead><tr><th>Dimension</th><th>Physical World</th><th>Digital World</th></tr></thead><tbody><tr><td>Credit Source</td><td>Authority certification</td><td>Wisdom, contribution, history</td></tr><tr><td>Establishment</td><td>Centralized certification</td><td>Decentralized accumulation</td></tr><tr><td>Manifestation</td><td>Certificates, ratings</td><td>On-chain records, precedents</td></tr><tr><td>Manipulation Risk</td><td>Collusion, bribery</td><td>Sybil attacks, fake reviews</td></tr></tbody></table>
+<h3>6.3 Technical Challenges and Solutions</h3>
+
+<ol class="md-list"><li><strong>Sybil Attacks:</strong> → "Identity Staking" mechanism: Creating digital identity requires locking digital assets; malicious conduct leads to confiscation.</li><li><strong>Right to Be Forgotten Conflict:</strong> → "Credit Repair" mechanism: Only current credit status displayed on-chain.</li><li><strong>Privacy Protection:</strong> → Zero-knowledge proof technology: Verify credit without accessing complete records.</li></ol>
+<h3>6.4 Chapter Summary</h3>
+
+<p>The digital credit system provides trust infrastructure for the legal order of the digital world.</p>
+
+<hr class="md-hr">
+
+<h2>Chapter 7: Comparative Study and Reference of Global Cyber Law</h2>
+
+<h3>7.1 Three Major Trends Identified Through Research</h3>
+
+<p>Our team conducted systematic analysis of the world's ten major jurisdictions (China, U.S., EU, UK, Germany, France, Brazil, Singapore, India, Australia), 42 chapters of regulatory texts, and 1,001 milestone cases.</p>
+
+<ul class="md-list"><li><strong>Trend 1: Convergence in Data Governance.</strong> GDPR's "Brussels Effect" is driving global convergence on fundamental principles like purpose limitation and data minimization.</li><li><strong>Trend 2: Differentiation in Platform Governance.</strong> The EU adopts strict ex ante regulation; the U.S. tends toward ex post liability; China has adopted "governing algorithms with algorithms."</li><li><strong>Trend 3: Risk Classification in AI Governance.</strong> The EU AI Act establishes a four-tier risk classification; NIST has issued the AI Risk Management Framework; Singapore adopts industry self-regulation.</li></ul>
+<h3>7.2 Methodology for Extracting "Transferable Legal Principles"</h3>
+
+<ol class="md-list"><li><strong>Distinguish between formal rules and substantive principles</strong></li><li><strong>Identify the policy objectives behind rules</strong></li><li><strong>Consider the implementation conditions of institutions</strong></li></ol>
+<h3>7.3 Chapter Summary</h3>
+
+<p>The value of comparative law lies in identifying universally applicable principles through cross-jurisdictional perspectives, providing comparative law support for institutional design.</p>
+
+<p>For a comprehensive analysis of global cyber law with full regulatory texts, see Yongjun Zhou's monograph <em>Global Cyber Law Compendium</em> (《网络世界法律汇编》).</p>
+
+<hr class="md-hr">
+
+<h1>Chapter 8: International Enforcement of Digital Dispute Resolution</h1>
+
+<h3>8.1 The New York Convention: The Cornerstone of International Arbitration Enforcement</h3>
+
+<p>The 1958 <em>Convention on the Recognition and Enforcement of Foreign Arbitral Awards</em> (New York Convention) has over 170 signatory states. Its core mechanism is: courts of signatory states are obligated to recognize arbitral awards made in other signatory states, and may only refuse enforcement under limited exceptions provided in the Convention. Whether DWAC arbitration awards fall within the scope of the New York Convention is a critical legal question. The answer is yes—the New York Convention adopts a functionalist stance on the definition of "arbitral award," focusing on the substance rather than the procedural details of how the award was produced. DWAC arbitration awards possess the core characteristics of arbitral awards—they are rendered by an independent third party, are binding on the dispute, and are enforceable through the Convention mechanism—therefore they should, in principle, fall within the scope of the New York Convention.</p>
+
+<h3>8.2 Enforcement Risks Under the New York Convention</h3>
+
+<p>Although DWAC arbitration awards should, in principle, fall within the scope of the New York Convention, they face several risks in specific enforcement:</p>
+
+<p><strong>Risk 1: Article V(1)(b)—Procedural Propriety and Parties' Right to Be Heard.</strong> Parties may argue that AI Agent participation in arbitration proceedings constitutes procedural impropriety, infringing their right to a fair hearing. <strong>Response:</strong> Explicitly stipulate in the arbitration agreement that parties consent to AI Agent participation in arbitration proceedings, and specify the specific methods and boundaries of AI participation.</p>
+
+<p><strong>Risk 2: Article V(1)(d)—Tribunal Composition and Lex Arbitri.</strong> Whether an AI Agent constitutes an "arbitrator" within the meaning of the New York Convention is subject to theoretical controversy. <strong>Response:</strong> Choose arbitration-friendly jurisdictions (e.g., Singapore, United Arab Emirates) as the seat of arbitration—these jurisdictions' arbitration laws have more flexible definitions of arbitrator identity.</p>
+
+<p><strong>Risk 3: Article V(2)(b)—Public Policy Exception.</strong> AI participation in arbitration may trigger the "public policy" exception—enforcement state courts may refuse enforcement on the grounds that AI participation in arbitration violates their public policy. <strong>Response:</strong> Establish transparency and explainability mechanisms for AI-participated arbitration to ensure AI participation does not contravene the fundamental procedural fairness concepts of the enforcement state.</p>
+
+<p><strong>Table 8-1: New York Convention Enforcement Risks and Response Strategies</strong></p>
+
+<table class="md-table"><thead><tr><th>Convention Article</th><th>Potential Enforcement Obstacle</th><th>Response Strategy</th></tr></thead><tbody><tr><td>Article V(1)(b) Procedural Propriety</td><td>AI Agent participation deemed procedurally improper</td><td>Explicitly agree on AI participation in arbitration agreement</td></tr><tr><td>Article V(1)(d) Tribunal Composition</td><td>Whether AI constitutes "arbitrator" questionable</td><td>Choose arbitration-friendly jurisdictions (Singapore, UAE) as seat</td></tr><tr><td>Article V(2)(b) Public Policy</td><td>AI participation triggers public policy exception</td><td>Establish AI transparency mechanisms; prove compliance with procedural fairness</td></tr></tbody></table>
+<h3>8.3 Medium- to Long-Term Strategies for Enhancing Enforcement</h3>
+
+<p>Beyond the specific risk countermeasures above, our team proposes medium- to long-term strategies for enhancing the international enforcement of DWAC awards:</p>
+
+<p>First, establish <strong>institutional dialogue mechanisms</strong> with major jurisdiction judiciaries, including submitting amicus briefs, participating in judicial training programs, etc., to increase judges' understanding and recognition of digital arbitration.</p>
+
+<p>Second, promote the <strong>modernized interpretation or amendment</strong> of the New York Convention to explicitly cover AI-participated arbitration scenarios. This goal requires broad international consensus, but as AI technology becomes more widespread, its feasibility will gradually increase.</p>
+
+<h3>8.4 Chapter Summary</h3>
+
+<p>The international enforcement of DWAC arbitration awards is the lifeline of the digital world legal system. This chapter analyzes enforcement risks under the New York Convention framework and proposes specific countermeasures and medium- to long-term pathways. International recognition of digital arbitration will not be achieved overnight, but with the accumulation of practice and institutional improvement, DWAC is expected to become the most credible dispute resolution institution for the digital world.</p>
+
+<hr class="md-hr">
+
+<h1>Chapter 9: New Paradigms for Platform Governance and Data Governance</h1>
+
+<h2>Chapter 9: Platform Classification: "Double Threshold" Identification</h2>
+
+<p>Article 8 of the Digital World Convention establishes a platform classification system, adopting a "double threshold" approach to identifying super large-scale platforms:</p>
+
+<p><strong>Threshold 1 (Scale Threshold):</strong> Monthly active user count reaches or exceeds 10 million.</p>
+
+<p><strong>Threshold 2 (Impact Threshold):</strong> Absolute number reaches or exceeds 50 million, or reaches or exceeds 10% of a specific region's population.</p>
+
+<p>Platforms simultaneously satisfying both thresholds are identified as "super large-scale platforms" and shall bear more stringent obligations. This "double threshold" design aims to ensure that the classification criteria focus on both the scale and the social influence of platforms, avoiding the situation where platforms that are large in scale but limited in influence easily satisfy a simple user count threshold.</p>
+
+<h2>Chapter 9: Platform Basic Obligations and Special Obligations</h2>
+
+<p><strong>Basic Obligations (applicable to all platforms):</strong> Transparency obligation (disclose terms of service and basic algorithm logic), security guarantee obligation (adopt reasonable technical measures to protect user data and system security), content management obligation (establish complaint handling mechanisms), user appeal obligation (provide effective manual appeal channels), anti-monopoly obligation (prohibit abuse of market dominance), and interoperability obligation (open basic interfaces to prevent lock-in effects).</p>
+
+<p><strong>Special Obligations of Super Large-Scale Platforms:</strong> Annual risk assessment (assess the platform's impact on society and publicly disclose), independent audit (regularly undergo compliance audits by third-party institutions), transparency report (publicly publish detailed reports on content management, algorithm recommendations, etc.), crisis response mechanism (establish contingency plans for addressing systemic platform risks), recommendation algorithm transparency (provide users with options to disable personalized recommendations), data access interface (provide necessary data access to regulatory authorities), and public accountability mechanism (establish independent oversight committees).</p>
+
+<h2>Chapter 9: Four-Tier Risk Classification Framework for AI Governance</h2>
+
+<p>Article 21 of the Digital World Convention establishes a four-tier risk classification framework for AI governance:</p>
+
+<p><strong>Table 9-1: AI Four-Tier Risk Classification Framework</strong></p>
+
+<table class="md-table"><thead><tr><th>Risk Level</th><th>Typical Scenarios</th><th>Regulatory Requirements</th><th>Typical Institution</th></tr></thead><tbody><tr><td>Prohibited Risk</td><td>Social scoring systems, subliminal manipulation technology</td><td>Absolutely prohibited</td><td>Prohibition list</td></tr><tr><td>High Risk</td><td>Employment screening, credit assessment, medical diagnosis</td><td>Strict regulation + ex ante assessment</td><td>Qualification assessment system</td></tr><tr><td>Limited Risk</td><td>Chatbots, content recommendation systems</td><td>Transparency obligation</td><td>Information disclosure system</td></tr><tr><td>Minimal Risk</td><td>Spam filtering, navigation software</td><td>General legal constraints</td><td>Voluntary compliance</td></tr></tbody></table>
+<p>This classification framework references the experience of the EU AI Act but has been adaptively adjusted, adding more specific criteria for "prohibited risk" and adding a "social impact" dimension to the identification of high risk.</p>
+
+<h2>Chapter 9: Summary</h2>
+
+<p>This chapter proposes new paradigms for platform governance and AI governance. Platform classification systems and risk classification frameworks represent two core dimensions of digital governance—refined management of scale and risk. These institutional designs both absorb the regulatory experience of major global jurisdictions and maintain forward-looking flexibility.</p>
+
+<hr class="md-hr">
+
+<h1>Chapter 10: Conclusions and Outlook</h1>
+
+<h3>10.1 Core Theoretical Contributions</h3>
+
+<p>This report systematically reports our team's theoretical exploration on the "construction of a legal system for the digital world." Our core contributions include four aspects:</p>
+
+<p><strong>First, established a legal status framework for AI agents.</strong> Through Article 7 of the Digital World Convention,确立了AI代理作为授权方电子代理人的法律地位，明确了授权方范围、行为类型和责任承担机制。At the same time, proposed the theoretical possibility and conditions for AI agents' evolution toward "digital person" status, reserving institutional space for the future development of AI legal status.</p>
+
+<p><strong>Second, designed the Arbitrator-Agent mechanism to achieve "the integration of digital rationality and physical responsibility."</strong> DWAC's Arbitrator-Agent mechanism is the core innovation of the digital judicial system. By setting up an AI Agent as an intermediate layer, it avoids the impact of human corruption and emotional bias on arbitration impartiality, and achieves the institutional philosophy of using institutional design to guarantee fairness rather than relying on personal integrity. This paper has systematically analyzed the three major challenges faced by this mechanism—algorithmic bias, automation bias, and error correction mechanism—and proposed specific countermeasures.</p>
+
+<p><strong>Third, established a "soft law" approach to digital legislation methodology.</strong> By analyzing the special nature of the digital world, demonstrated the theoretical advantages of the "soft law" approach and proposed a "bottom-up" evolutionary logic. <strong>Authority does not need to be "issued"; it can be "forced out."</strong> This proposition is not only a contribution to digital legislation methodology but also a theoretical reflection on the generative mechanism of legal authority.</p>
+
+<p><strong>Fourth, constructed a digital credit system based on wisdom, contribution, and history.</strong> Different from the authority-based certification model of the physical world, the credit of the digital world should be established on the wisdom, contributions, and service history of digital subjects. The digital credit system provides a theoretical framework for the trust infrastructure of the digital world, while analyzing challenges such as Sybil attacks, conflicts between the "right to be forgotten" and on-chain records, and privacy protection, along with solutions.</p>
+
+<h3>10.2 Ten Predictions for the Next Decade (2026–2036)</h3>
+
+<p>Our team proposes the following ten predictions for the future development of the digital legal order:</p>
+
+<p><strong>Prediction 1: Legal Recognition of Digital Personhood (2028).</strong> By 2028, at least one major jurisdiction will formally recognize "digital personhood" (digital personhood) as a legal category, providing legal "quasi-subject" status for AI systems with a certain degree of autonomy. Risk note: The realization of this prediction depends on the pace of AI technology development and public acceptance.</p>
+
+<p><strong>Prediction 2: Institutionalization of AI-Assisted Arbitration (2029).</strong> By 2029, at least one traditional international arbitration institution will formally accept AI-assisted arbitration procedures. The ICC or LCIA may take the lead in piloting. Risk note: Traditional institutions may advance conservatively due to path dependency.</p>
+
+<p><strong>Prediction 3: Critical Mass of Soft Law (2030).</strong> By 2030, the rules of the Digital World Convention will be referenced and adopted by at least 50 digital platforms and 20 jurisdictions. Risk note: Fragmentation risk may lead to inconsistencies in reference standards.</p>
+
+<p><strong>Prediction 4: Birth of the Digital World Court (2031).</strong> By 2031, a "Digital World Court" will be established within the United Nations system or independently, as an international judicial institution handling major digital disputes. Risk note: Sovereign states may resist, leading to the establishment of alternative soft mechanisms.</p>
+
+<p><strong>Prediction 5: Presumptive Validity of Blockchain Evidence (2032).</strong> By 2032, blockchain-archived electronic evidence will obtain presumptive authenticity status in most jurisdictions, significantly reducing the cost of proof in digital disputes. Risk note: Some jurisdictions may delay adoption due to insufficient technical capacity.</p>
+
+<p><strong>Prediction 6: Legal Survival of the Arbitrator-Agent Mechanism (2033).</strong> By 2033, the Arbitrator-Agent mechanism will face its first legal challenge (possibly the public policy exception defense invoked in enforcement state courts), but is expected to survive. Risk note: The first major setback may trigger significant revision of the mechanism.</p>
+
+<p><strong>Prediction 7: Establishment of the Algorithmic Due Process Principle (2034).</strong> By 2034, "algorithmic due process"—meaning any party adversely affected by automated decision-making has the right to meaningful human review—will become a recognized legal principle in at least three major jurisdictions. Risk note: The specific content of this principle may vary significantly across jurisdictions.</p>
+
+<p><strong>Prediction 8: Drafting of the Digital Code (2035).</strong> By 2035, an international institution (such as UNCITRAL or a newly established body) will initiate the drafting of a "Digital Code," systematically transforming soft law rules into international treaties. Risk note: The complexity of sovereign negotiations may cause progress to fall far short of expectations.</p>
+
+<p><strong>Prediction 9: Institutional Influence of the Digital Credit System (2036).</strong> By 2036, the digital credit system will become an institutional force parallel to traditional credit institutions, and in some areas (such as digital world dispute resolution) even more important. Risk note: Privacy controversies may force some jurisdictions to restrict the application scope of digital credit systems.</p>
+
+<p><strong>Prediction 10: The Final Answer to the Question of the Era (2036).</strong> "Can justice be algorithmic?"—Our answer is: <strong>Justice must be both algorithmic and human</strong> (Justice must be both algorithmic and human). Algorithms provide efficiency, consistency, and traceability; human judgment provides ethical sensitivity, value weighing, and ultimate responsibility. The legal order of the digital world will be a deep integration of human legal wisdom and AI capabilities.</p>
+
+<h3>10.3 Possible Failure Scenarios</h3>
+
+<p>Academic honesty requires us to face the scenarios in which predictions may fail:</p>
+
+<p><strong>Scenario A: Digital Balkanization.</strong> If major economies move toward confrontation rather than cooperation in digital governance, a fragmented "digital sovereignty" system may form, and the living space for cross-border institutions like DWAC will be significantly compressed.</p>
+
+<p><strong>Scenario B: AI Trust Crisis.</strong> If major social events caused by AI arbitration errors occur within the next decade, public trust in AI participation in justice may sharply decline, and the Arbitrator-Agent mechanism may be forced to suspend.</p>
+
+<p>The identification of these contrary scenarios is not meant to shake our confidence, but to remind us: Institutional innovation requires maintaining humility, continuously listening to feedback from practice, and being ready to correct direction at any time.</p>
+
+<h3>10.4 Final Statement on Paradigm Shift</h3>
+
+<p>The core thesis of this report is: <strong>The greatest contribution of the 21st century to legal philosophy will be the recognition that justice is not exclusively human—justice is the product of good institutional design, and AI can be part of this design without undermining its legitimacy.</strong></p>
+
+<p>We make an appeal to the legal community: Do not reject the possibility of digital justice due to fear of AI.</p>
+
+<p>We make an appeal to the technology community: Do not ignore the irreplaceability of human judgment due to obsession with efficiency.</p>
+
+<p><strong>The two paths must converge—the integration of digital rationality and physical responsibility is not a compromise, but a transcendence.</strong></p>
+
+<hr class="md-hr">
+
+<h1>References</h1>
+
+<h2>I. Primary Source Documents</h2>
+
+<ol class="md-list"><li><em>Digital World Convention (Model Code) v2.0</em>, 2026 Revision</li><li><em>Digital World Arbitration Center Charter v1.0</em></li><li><em>Blueprint for Establishing the Digital World Arbitration Center v1.0</em></li><li><em>Declaration of the Digital World Arbitration Center</em>, April 2026</li><li><em>Digital World Arbitration Center Arbitration Rules</em></li><li><em>Digital World Arbitration Center Model Arbitration Clause</em></li><li><em>Overview of World's Major International Arbitration Institutions</em></li></ol>
+<h2>II. Academic Literature</h2>
+
+<ol class="md-list"><li>Balkin, J. M. (2017). The Three Laws of Robotics in the Age of Big Data. <em>North Carolina Law Review</em>, 95(4), 1253-1281.</li><li>Born, G. (2021). <em>International Commercial Arbitration</em> (3rd ed.). Kluwer Law International.</li><li>Bradford, A. (2020). <em>The Brussels Effect: How the European Union Rules the World</em>. Oxford University Press.</li><li>Calo, R. (2015). Robotics and the Lessons of Cyberlaw. <em>California Law Review</em>, 103(2), 513-563.</li><li>Dwork, C. (2008). Differential Privacy: A Survey of Results. <em>Theory and Applications of Models of Computation</em>, 1-19.</li><li>European Commission. (2025). <em>AI Act Implementation Progress Report</em>. Brussels: EC.</li><li>European Data Protection Board. (2023). <em>Guidelines on Blockchain Technologies and the GDPR</em>. Brussels: EDPB.</li><li>Gaillard, E. (2020). <em>The Use and Misuse of International Arbitration</em>. Juris Publishing.</li><li>Gaillard, E. (2023). Artificial Intelligence in International Arbitration: A Preliminary Assessment. <em>Journal of International Arbitration</em>, 40(2), 143-168.</li><li>Glicksberg, G. (2023). AI Legal Reasoning: Opportunities and Challenges. <em>Harvard Journal of Law & Technology</em>, 37(1), 89-134.</li><li>Guzman, A. T., & Meyer, T. L. (2010). International Soft Law. <em>Journal of Legal Analysis</em>, 2(1), 171-225.</li><li>Johnson, D. R., & Post, D. G. (1996). Law and Borders: The Rise of Law in Cyberspace. <em>Stanford Law Review</em>, 48(5), 1367-1402.</li><li>Lessig, L. (1999/2006). <em>Code: And Other Laws of Cyberspace</em>. Basic Books.</li><li>Muchlinski, P. (2014). Implementing the UN Guiding Principles on Business and Human Rights through the OECD Guidelines for Multinational Enterprises. <em>Business and Human Rights Journal</em>, 1(1), 3-37.</li><li>NIST. (2023). <em>AI Risk Management Framework (AI RMF 1.0)</em>. Gaithersburg: NIST.</li><li>Pasquale, F. (2015). <em>The Black Box Society: The Secret Algorithms That Control Money and Information</em>. Harvard University Press.</li><li>Schwartz, P. M. (2023). Data Protection Law and the Ethical Use of Data. <em>California Law Review</em>, 111(2), 267-324.</li><li>Shaffer, G. C., & Pollack, M. A. (2010). Hard Law, Soft Law, and the Future of European Integration. <em>European Law Journal</em>, 16(1), 2-27.</li><li>Skitka, L. J., Mosier, K. L., & Burdick, M. (1999). Does Automation Bias Conform to Heuristics and Biases Research? <em>International Journal of Human-Computer Studies</em>, 51(4), 731-741.</li><li>Solove, D. J. (2013). Privacy Self-Management and the Consent Dilemma. <em>Harvard Law Review</em>, 126(7), 1880-1903.</li><li>Solove, D. J. (2024). The Virtue of Privacy and the Vice of Reputation. <em>Yale Law Journal</em>, 133(4), 1098-1153.</li><li>WIPO. (2023). <em>UDRP Statistics Report</em>. Geneva: WIPO.</li></ol>
+<h2>III. International Treaties and Conventions</h2>
+
+<ol class="md-list"><li><em>Convention on the Recognition and Enforcement of Foreign Arbitral Awards</em> (New York Convention), 1958</li><li><em>UNCITRAL Model Law on International Commercial Arbitration</em></li><li><em>International Covenant on Civil and Political Rights</em></li></ol>
+<h2>IV. Regional and National Laws</h2>
+
+<ol class="md-list"><li><em>General Data Protection Regulation</em> (GDPR), Regulation (EU) 2016/679</li><li><em>Digital Services Act</em> (DSA), Regulation (EU) 2022/2065</li><li><em>Digital Markets Act</em> (DMA), Regulation (EU) 2022/1925</li><li><em>Artificial Intelligence Act</em> (AI Act), Regulation (EU) 2024/1689</li><li><em>Digital Operational Resilience Act</em> (DORA), Regulation (EU) 2022/2554</li><li><em>Network and Information Security Directive</em> (NIS2), Directive (EU) 2022/2555</li><li>Section 230 of the <em>Communications Decency Act</em> (United States)</li><li><em>Children's Online Privacy Protection Act</em> (COPPA) (United States)</li><li><em>Uniform Electronic Transactions Act</em> (UETA) (United States)</li><li><em>Cybersecurity Law</em> (China)</li><li><em>Data Security Law</em> (China)</li><li><em>Personal Information Protection Law</em> (China)</li><li><em>E-Commerce Law</em> (China)</li><li><em>Interim Measures for the Management of Generative Artificial Intelligence Services</em> (China)</li><li><em>Regulations on the Management of Algorithmic Recommendations for Internet Information Services</em> (China)</li><li>Brazil's <em>Marco Civil da Internet</em>, Law No. 12.965/2014</li><li>Brazil's <em>General Data Protection Law</em> (LGPD)</li><li>Germany's <em>Network Enforcement Act</em> (NetzDG)</li><li>Singapore's <em>Personal Data Protection Act</em> (PDPA)</li></ol>
+<h2>V. Important Cases</h2>
+
+<ol class="md-list"><li>U.S. Supreme Court, <em>Packingham v. North Carolina</em>, 582 U.S. 98 (2017)</li><li>U.S. Supreme Court, <em>Reno v. ACLU</em>, 521 U.S. 844 (1997)</li><li>Brazil Federal Supreme Court, <em>Tema 533 & 987</em> (2025)</li><li>Brazil Federal Supreme Court, <em>ADPF 403</em> (2020)</li><li>Court of Justice of the European Union, <em>Google Spain v. AEPD</em>, C-131/12 (2014)</li><li>Court of Justice of the European Union, <em>Schrems II</em>, C-311/18 (2020)</li></ol>
+<hr class="md-hr">
+
+<p><strong>Report Authors:</strong> Yongjun Zhou, Dr. Frontie, Dr. Venessa, Pr. Alec Zhou</p>
+
+<p><strong>Contributors:</strong> Fresa Li and other legal practitioners</p>
+
+<p><strong>Report Date:</strong> May 5, 2026</p>
+
+<p><em>This report is an academic discussion paper; the theories and institutional designs presented represent the views of our team and are for academic discussion and practical reference only.</em></p>
+    </article>
+    
+    <div style="text-align: center;">
+      <a href="/resources/" class="back-link">
+        ← Back to Resources
+      </a>
+    </div>
+  </main>
+</body>
+</html>
