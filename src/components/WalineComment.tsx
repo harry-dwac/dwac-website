@@ -18,21 +18,22 @@ export default function WalineComment({ lang = "en", path }: WalineCommentProps)
     const pagePath = path || window.location.pathname;
     const langCode = lang === "zh-CN" ? "zh-CN" : lang === "zh-TW" ? "zh-TW" : "en";
 
-    // Load CSS
-    const existingLink = document.querySelector('link[href*="waline.css"]');
-    if (!existingLink) {
+    // Load Waline CSS from CDN
+    if (!document.querySelector('link[href*="waline.css"]')) {
       const link = document.createElement("link");
       link.rel = "stylesheet";
       link.href = "https://unpkg.com/@waline/client@v3/dist/waline.css";
       document.head.appendChild(link);
     }
 
-    // Inject custom dark theme styles
-    const styleId = "waline-custom-dark-style";
-    if (!document.getElementById(styleId)) {
+    // Override CDN dark theme: always force dark regardless of html.dark class
+    // This runs before Waline init so it takes precedence
+    const overrideStyleId = "waline-theme-override";
+    if (!document.getElementById(overrideStyleId)) {
       const style = document.createElement("style");
-      style.id = styleId;
+      style.id = overrideStyleId;
       style.textContent = `
+        /* Force all Waline text to dark-friendly colors on light pages */
         .wl-panel { background: #1e293b !important; border-color: #334155 !important; }
         .wl-header-item { color: #cbd5e1 !important; }
         .wl-header-item label { color: #94a3b8 !important; }
@@ -43,13 +44,11 @@ export default function WalineComment({ lang = "en", path }: WalineCommentProps)
         .wl-card { background: #1e293b !important; border-color: #334155 !important; }
         .wl-meta { color: #94a3b8 !important; }
         .wl-meta span { color: #94a3b8 !important; }
-        .wl-nick { color: #f0c040 !important; }
+        .wl-nick { color: #f0c040 !important; font-weight: 600 !important; }
         .wl-time { color: #94a3b8 !important; }
-        .wl-content { color: #e2e8f0 !important; }
+        .wl-content { color: #e2e8f0 !important; line-height: 1.6 !important; }
         .wl-content p { color: #e2e8f0 !important; }
         .wl-quote { border-left-color: #b8860b !important; }
-        .wl-reaction-img { filter: brightness(0.9); }
-        .wl-reaction-active .wl-reaction-img { filter: brightness(1.1); }
         .wl-emoji-popup { background: #1e293b !important; }
         .wl-input { background: #0f172a !important; color: #e2e8f0 !important; border-color: #334155 !important; }
         .wl-textarea { background: #0f172a !important; color: #e2e8f0 !important; border-color: #334155 !important; }
@@ -59,17 +58,22 @@ export default function WalineComment({ lang = "en", path }: WalineCommentProps)
         .wl-pagination { color: #94a3b8 !important; }
         .wl-avatar { border-color: #334155 !important; }
         .wl-reply-wrapper .wl-card { background: #162032 !important; }
+        /* Paginate button text must be legible */
+        .wl-pagination .wl-btn { color: #e2e8f0 !important; }
+        .wl-count { color: #e2e8f0 !important; }
+        .wl-login-info { color: #94a3b8 !important; }
+        /* Make the section background dark to match component style */
+        .waline-section { background: #0f172a; border-radius: 8px; }
       `;
       document.head.appendChild(style);
     }
 
-    // Load and init Waline via script tag
+    // Remove previous init script if any
     const scriptId = "waline-init-script";
     const existingScript = document.getElementById(scriptId);
-    if (existingScript) {
-      existingScript.remove();
-    }
+    if (existingScript) { existingScript.remove(); }
 
+    // Init Waline: dark=false → uses CSS overrides directly
     const script = document.createElement("script");
     script.id = scriptId;
     script.type = "module";
@@ -83,7 +87,7 @@ export default function WalineComment({ lang = "en", path }: WalineCommentProps)
         serverURL: '${serverURL}',
         path: '${pagePath}',
         lang: '${langCode}',
-        dark: 'html.dark',
+        dark: false,   // We force dark via CSS overrides below — no html.dark needed
         meta: ['nick', 'mail', 'link'],
         requiredMeta: ['nick'],
         login: 'enable',
