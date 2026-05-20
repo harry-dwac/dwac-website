@@ -57,12 +57,20 @@ export default function LawSchoolPage() {
               <p className="text-gray-600 mb-6">
                 Located within the DWAC ecosystem, we provide both foundational (90-day) and advanced (180-day) training programs for legal professionals and non-legal professionals alike.
               </p>
-              <Link
-                href="/law-school/courses/"
-                className="inline-block px-6 py-3 bg-gold-500 text-white rounded font-semibold hover:bg-gold-600 transition-colors"
-              >
-                Explore Programs →
-              </Link>
+              <div className="flex gap-3 mt-6">
+                <Link
+                  href="/law-school/student-record/"
+                  className="inline-block px-6 py-3 bg-gold-500 text-white rounded font-semibold hover:bg-gold-600 transition-colors"
+                >
+                  📋 Student Records
+                </Link>
+                <Link
+                  href="/law-school/courses/"
+                  className="inline-block px-6 py-3 border border-gold-500 text-gold-400 rounded font-semibold hover:bg-gold-50 hover:text-navy-800 transition-colors"
+                >
+                  Explore Programs →
+                </Link>
+              </div>
             </div>
             <div className="bg-gray-50 rounded-2xl p-12 text-center">
               <div className="text-8xl mb-4">⚖️</div>
