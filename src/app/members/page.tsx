@@ -2,17 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-
-const individualMembers = [
-  { initials: 'JW', name: 'Prof. James Wilson', expertise: 'International Commercial Arbitration', country: 'United Kingdom' },
-  { initials: 'LZ', name: 'Dr. Li Zhang', expertise: 'Digital Intellectual Property', country: 'China' },
-  { initials: 'SM', name: 'Sofia Martinez', expertise: 'E-Commerce Dispute Resolution', country: 'Spain' },
-  { initials: 'RK', name: 'Raj Krishnamurthy', expertise: 'Blockchain & Smart Contracts', country: 'India' },
-  { initials: 'AH', name: 'Prof. Anna Hansen', expertise: 'Online Dispute Resolution', country: 'Germany' },
-  { initials: 'KT', name: 'Kenji Tanaka', expertise: 'Cross-Border Data Disputes', country: 'Japan' },
-  { initials: 'OC', name: 'Olivia Chen', expertise: 'AI & Algorithmic Accountability', country: 'Singapore' },
-  { initials: 'MB', name: 'Dr. Michel Beaumont', expertise: 'International Private Law', country: 'France' },
-]
+import { individualMembers } from '@/data/profiles'
 
 const institutionalMembers = [
   { name: 'National University of Singapore', type: 'University', country: 'Singapore' },
@@ -37,9 +27,21 @@ export default function MembersPage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedType, setSelectedType] = useState('All')
 
+  const filteredMembers = individualMembers.filter(m =>
+    !searchQuery ||
+    m.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    m.specializations.some(s => s.toLowerCase().includes(searchQuery.toLowerCase())) ||
+    m.location.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+
+  const filteredInstitutional = institutionalMembers.filter(m =>
+    (selectedType === 'All' || m.type === selectedType) &&
+    (!searchQuery || m.name.toLowerCase().includes(searchQuery.toLowerCase()))
+  )
+
   return (
     <div className="flex flex-col">
-      {/* ===== HERO — Dark ===== */}
+      {/* Hero */}
       <section className="relative bg-gradient-navy py-20 lg:py-28">
         <div className="absolute inset-0 bg-grid-gold opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -51,27 +53,27 @@ export default function MembersPage() {
         </div>
       </section>
 
-      {/* ===== Stats — Dark ===== */}
+      {/* Stats */}
       <section className="bg-navy-950 py-12 border-t border-navy-800">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="font-serif text-3xl lg:text-4xl font-bold text-gold-400">120+</p>
+              <p className="font-serif text-3xl lg:text-4xl font-bold text-gold-400">{individualMembers.length}+</p>
               <p className="text-sm text-slate-400 mt-1">Individual Members</p>
             </div>
             <div>
-              <p className="font-serif text-3xl lg:text-4xl font-bold text-gold-400">35+</p>
+              <p className="font-serif text-3xl lg:text-4xl font-bold text-gold-400">{institutionalMembers.length}</p>
               <p className="text-sm text-slate-400 mt-1">Institutional Members</p>
             </div>
             <div>
-              <p className="font-serif text-3xl lg:text-4xl font-bold text-gold-400">28+</p>
+              <p className="font-serif text-3xl lg:text-4xl font-bold text-gold-400">{new Set([...individualMembers.map(m=>m.location.split(', ').pop()!), ...institutionalMembers.map(m=>m.country)]).size}</p>
               <p className="text-sm text-slate-400 mt-1">Countries</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== Directory — Light ===== */}
+      {/* Directory */}
       <section className="bg-slate-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Tabs */}
@@ -98,7 +100,7 @@ export default function MembersPage() {
             </button>
           </div>
 
-          {/* Search & Filter */}
+          {/* Search */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <div className="relative flex-1">
               <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -106,7 +108,7 @@ export default function MembersPage() {
               </svg>
               <input
                 type="text"
-                placeholder={tab === 'individual' ? 'Search by name, expertise...' : 'Search by institution name...'}
+                placeholder={tab === 'individual' ? 'Search by name, expertise, location...' : 'Search by institution name...'}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-lg text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500/30 transition-colors"
@@ -131,34 +133,39 @@ export default function MembersPage() {
             )}
           </div>
 
-          {/* Individual Members Grid */}
+          {/* Individual Members */}
           {tab === 'individual' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {individualMembers.map((member, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 rounded-xl p-6 text-center"
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {filteredMembers.map((member) => (
+                <Link
+                  key={member.slug}
+                  href={`/profile/${member.slug}/`}
+                  className="block bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 rounded-xl p-6"
                 >
-                  <div className="w-16 h-16 bg-gradient-navy rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-lg font-bold text-gold-400">{member.initials}</span>
-                  </div>
-                  <h3 className="font-serif text-base font-bold text-slate-900 mb-1">{member.name}</h3>
-                  <p className="text-xs text-gold-600 font-medium mb-2">{member.expertise}</p>
-                  <div className="flex items-center justify-center gap-1.5">
-                    <div className="w-5 h-3.5 bg-slate-200 rounded-sm flex items-center justify-center">
-                      <div className="w-3 h-2 bg-slate-400 rounded-sm" />
+                  <div className="flex items-start gap-5">
+                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${member.avatarColor} border border-slate-100 flex items-center justify-center flex-shrink-0`}>
+                      <span className="text-xl font-bold text-gold-400">{member.initials}</span>
                     </div>
-                    <span className="text-xs text-slate-400">{member.country}</span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-serif text-lg font-bold text-slate-900 mb-1">{member.name}</h3>
+                      <p className="text-xs text-gold-600 font-medium mb-2">{member.specializations.slice(0,2).join(' · ')}</p>
+                      <p className="text-sm text-gray-600 leading-relaxed mb-2">{member.shortBio}</p>
+                      <div className="flex items-center gap-2 text-xs text-slate-400">
+                        <span>📍 {member.location.split(', ').pop()}</span>
+                        <span>·</span>
+                        <span>💼 {member.cases}+ cases</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           )}
 
-          {/* Institutional Members Grid */}
+          {/* Institutional Members */}
           {tab === 'institutional' && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {institutionalMembers.map((member, idx) => (
+              {filteredInstitutional.map((member, idx) => (
                 <div
                   key={idx}
                   className="bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 rounded-xl p-6 flex items-start gap-4"
@@ -179,15 +186,19 @@ export default function MembersPage() {
               ))}
             </div>
           )}
+
+          <p className="text-center text-sm text-gray-400 mt-8">
+            Click on any member to view their full profile, qualifications, and experience.
+          </p>
         </div>
       </section>
 
-      {/* ===== CTA — Dark ===== */}
+      {/* CTA */}
       <section className="bg-gradient-navy py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-xs font-bold tracking-[3px] uppercase text-gold-500 mb-3 block">Join Us</span>
           <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">Become a Member</h2>
-          <p className="text-slate-400 max-w-xl mx-auto mb-8 leading-relaxed">
+          <p className="text-slate-300 max-w-xl mx-auto mb-8 leading-relaxed">
             Join a global community of arbitration professionals shaping the future of digital world dispute resolution.
           </p>
           <Link
