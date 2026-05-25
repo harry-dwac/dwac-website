@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>卷二 · 1001网络法案例卷 — 在线阅读 | DWAC Law School</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f5f5f5;color:#333}
+/* 顶部导航 */
+.topbar{position:fixed;top:0;left:0;right:0;height:48px;background:#1a1a2e;display:flex;align-items:center;padding:0 20px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.3)}
+.topbar a{color:#e0e0e0;text-decoration:none;font-size:13px;margin-right:18px;transition:color 0.2s}
+.topbar a:hover{color:#ffd700}
+.topbar .title{color:#fff;font-size:15px;font-weight:600;margin-right:30px}
+/* 主布局 */
+.main{display:flex;margin-top:48px;height:calc(100vh - 48px)}
+/* 左侧目录 */
+.toc{width:280px;background:#fff;border-right:1px solid #e0e0e0;overflow-y:auto;flex-shrink:0;padding:16px 0}
+.toc-title{padding:8px 16px;font-size:12px;color:#999;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.toc-part{padding:8px 16px;font-size:13px;color:#1a1a2e;cursor:pointer;transition:background 0.15s;font-weight:500;border-left:3px solid transparent}
+.toc-part:hover{background:#f0f4ff;border-left-color:#4a6ee0}
+.toc-part.active{background:#e8edff;border-left-color:#4a6ee0;color:#4a6ee0;font-weight:600}
+.toc-cases{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.toc-cases.open{max-height:2000px}
+.toc-case{display:block;padding:4px 16px 4px 28px;font-size:11.5px;color:#555;text-decoration:none;cursor:pointer;transition:background 0.15s;line-height:1.5}
+.toc-case:hover{background:#f0f4ff;color:#4a6ee0}
+/* 右侧内容区 */
+.content{flex:1;overflow-y:auto;padding:32px 40px;background:#fff}
+.content-inner{max-width:780px;margin:0 auto}
+/* 免费预览遮罩 */
+.preview-wrap{position:relative}
+.blur-overlay{position:absolute;bottom:0;left:0;right:0;height:320px;background:linear-gradient(transparent 0%,rgba(255,255,255,0.7) 30%,rgba(255,255,255,0.95) 70%,#fff 100%);pointer-events:none;z-index:10}
+/* 付费墙 */
+.paywall{display:none;text-align:center;padding:48px 24px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border-radius:12px;margin:32px 0;color:#fff}
+.paywall.show{display:block}
+.paywall-icon{font-size:48px;margin-bottom:16px}
+.paywall h2{font-size:22px;margin-bottom:12px;color:#ffd700}
+.paywall p{font-size:14px;color:#ccc;margin-bottom:24px;line-height:1.7}
+.paywall .price{font-size:36px;font-weight:700;color:#ffd700;margin:16px 0}
+.paywall .price span{font-size:16px;font-weight:400;color:#aaa}
+.paywall .btn{padding:12px 36px;background:linear-gradient(135deg,#ffd700,#ff9500);color:#1a1a2e;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;margin:8px;transition:transform 0.2s,box-shadow 0.2s}
+.paywall .btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,0.4)}
+.paywall .methods{display:flex;justify-content:center;gap:12px;margin-top:16px;flex-wrap:wrap}
+.paywall .method{padding:8px 16px;background:rgba(255,255,255,0.1);border-radius:6px;font-size:12px;color:#ccc}
+.badge{display:inline-block;padding:2px 8px;background:#4a6ee0;color:#fff;border-radius:4px;font-size:11px;margin-left:8px;font-weight:500}
+/* 阅读进度条 */
+.progress{position:fixed;top:48px;left:0;right:0;height:3px;background:#e0e0e0;z-index:99}
+.progress-bar{height:100%;background:linear-gradient(90deg,#4a6ee0,#ffd700);width:0%;transition:width 0.3s}
+/* 响应式 */
+@media(max-width:768px){
+  .toc{display:none}
+  .content{padding:20px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<div class="topbar">
+  <span class="title">📚 DWAC Law School</span>
+  <a href="/law-school/library/">← 书架</a>
+  <a href="#parts">卷二 · 案例卷</a>
+  <a href="#" onclick="scrollToTop()">回到顶部</a>
+</div>
+
+<!-- 阅读进度条 -->
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="main">
+
+  <!-- 左侧目录 -->
+  <div class="toc" id="toc">
+    <div class="toc-title">📑 目录导航</div>
+    <div class="toc-part active" onclick="scrollTo('part1')">第一部分 · 平台责任与内容审核 <span class="badge">95案例</span></div>
+    <div class="toc-cases open" id="cases1">
+      <a class="toc-case" onclick="scrollTo('case1.1')">案例1.1 Reno v. ACLU</a>
+      <a class="toc-case" onclick="scrollTo('case1.2')">案例1.2 Zeran v. AOL</a>
+      <a class="toc-case" onclick="scrollTo('case1.3')">案例1.3 巴西联邦最高法院</a>
+      <a class="toc-case" onclick="scrollTo('case1.4')">案例1.4 Google v. Gonzalez</a>
+      <a class="toc-case" onclick="scrollTo('case1.5')">案例1.5 NetChoice v. Paxton</a>
+      <a class="toc-case" style="color:#999;cursor:default">⋯⋯ 更多案例</a>
+    </div>
+    <div class="toc-part" onclick="scrollTo('part2')">第二部分 · 数据隐私与跨境 <span class="badge">120案例</span></div>
+    <div class="toc-cases" id="cases2">
+      <a class="toc-case" onclick="scrollTo('part2')">GDPR相关案例</a>
+      <a class="toc-case" onclick="scrollTo('part2')">跨境数据传输案例</a>
+      <a class="toc-case" style="color:#999;cursor:default">⋯⋯ 更多案例</a>
+    </div>
+    <div class="toc-part" onclick="scrollTo('part3')">第三部分 · AI与算法治理 <span class="badge">105案例</span></div>
+    <div class="toc-cases" id="cases3">
+      <a class="toc-case" onclick="scrollTo('part3')">AI责任与透明度</a>
+      <a class="toc-case" onclick="scrollTo('part3')">算法歧视与治理</a>
+      <a class="toc-case" style="color:#999;cursor:default">⋯⋯ 更多案例</a>
+    </div>
+    <div class="toc-part" onclick="scrollTo('part4')">第四部分 · 网络犯罪与安全 <span class="badge">105案例</span></div>
+    <div class="toc-part" onclick="scrollTo('part5')">第五部分 · 生物识别数据与隐私 <span class="badge">案例</span></div>
+    <div class="toc-part" onclick="scrollTo('part6')">第六部分 · 数据泄露与起诉 <span class="badge">案例</span></div>
+    <div class="toc-part" onclick="scrollTo('part7')">第七部分 · 儿童在线安全 <span class="badge">案例</span></div>
+    <div class="toc-part" onclick="scrollTo('part8')">第八部分 · 电商与消费者保护 <span class="badge">案例</span></div>
+    <div class="toc-part" onclick="scrollTo('part9')">第九部分 · 政府监控与人权 <span class="badge">案例</span></div>
+    <div class="toc-part" onclick="scrollTo('part10')">第十部分 · 就业与职场隐私 <span class="badge">案例</span></div>
+    <div class="toc-part" onclick="scrollTo('part11')">第十一部分 · 其他前沿案例 <span class="badge">案例</span></div>
+  </div>
+
+  <!-- 右侧内容区 -->
+  <div class="content" id="contentArea" onscroll="updateProgress()">
+    <div class="content-inner">
+
+      <h1 style="font-size:24px;color:#1a1a2e;border-bottom:2px solid #4a6ee0;padding-bottom:12px;margin-bottom:24px;">
+        📕 卷二 · 1001网络法案例卷
+      </h1>
+      <p style="color:#888;font-size:13px;margin-bottom:24px;">
+        Global Cyber Law Compendium Volume II — Landmark Court Decisions Worldwide<br>
+        编译：Dr. Zhou ｜ 案例总数：1,001 ｜ 语言：中文
+      </p>
+
+      <div class="preview-wrap" id="previewWrap">
+
+<!-- ========== 正文开始（前3000字免费） ========== -->
+
+<h2 style="color:#4a6ee0;margin-top:28px;" id="part1">第一部分 · 平台责任与内容审核</h2>
+<h3 style="color:#333;margin-top:18px;">第一章：从"盾牌"到"审查"的光谱</h3>
+
+<p style="line-height:1.9;margin-bottom:14px;">
+<b>平台责任</b>是网络法最核心的议题之一。全球各大司法管辖区均在追问：网络平台对其用户发布的内容，应当承担何种程度的法律责任？本部分收录了95个具有里程碑意义的判决，覆盖美国《通信规范法》第230条、欧盟《数字服务法》（DSA）、以及全球范围内的平台责任判例。
+</p>
+
+<h3 style="color:#333;margin-top:20px;" id="case1.1">案例1.1：雷诺诉美国公民自由联盟案（<i>Reno v. ACLU</i>，1997）</h3>
+<p style="line-height:1.9;margin-bottom:14px;">
+<b>法院</b>：美国联邦最高法院<br>
+<b>核心问题</b>：《通信规范法》（CDA）第223条对"猥亵"和"不雅"内容的限制是否违反第一修正案？<br>
+<b>判决要点</b>：最高法院以7:2裁定CDA相关内容违宪。判决指出，互联网是"独特的民主论坛"，政府不得以规制广播媒体的标准规制互联网。Stevens大法官撰写的多数意见强调，互联网内容的多样性使其不同于传统媒体，过于宽泛的内容审查将严重损害言论自由。
+</p>
+<blockquote style="margin:16px 0;padding:12px 16px;border-left:4px solid #4a6ee0;background:#f0f4ff;color:#555;font-style:italic;">
+"互联网上的言论受到宪法保护，政府不得施加比必要范围更广泛的限制。"—— Stevens 大法官，多数意见
+</blockquote>
+<p style="line-height:1.9;margin-bottom:14px;">
+<b>后续影响</b>：本案确立了互联网言论自由的宪法保护框架，为后续平台责任判例奠定了基础。尽管CDA第230条（平台免责条款）在本案中未被挑战，但Reno案所确立的"互联网特殊地位"理论，成为后来平台监管争议的重要参照。
+</p>
+
+<h3 style="color:#333;margin-top:20px;" id="case1.2">案例1.2：泽兰诉美国在线公司案（<i>Zeran v. America Online, Inc.</i>，1997）</h3>
+<p style="line-height:1.9;margin-bottom:14px;">
+<b>法院</b>：美国第四巡回上诉法院<br>
+<b>核心问题</b>：网络平台是否应对其用户发布的第三方内容承担责任？<br>
+<b>判决要点</b>：法院裁定AOL无需为第三方用户在其平台上发布的诽谤性内容承担责任。本案确立了平台作为"发布者"而非"出版者"的法律地位，为后来《通信规范法》第230条的司法解释奠定了重要基础。
+</p>
+<p style="line-height:1.9;margin-bottom:14px;">
+<b>事实背景</b>：1995年，Oklahoma City爆炸案发生后，有人在AOL上以原告Kenneth Zeran的名义发布广告，声称出售"纪念"T恤。Zeran收到大量愤怒电话后要求AOL删除，但类似帖子反复出现。Zeran起诉AOL疏忽大意，未能及时删除诽谤内容。
+</p>
+<blockquote style="margin:16px 0;padding:12px 16px;border-left:4px solid #4a6ee0;background:#f0f4ff;color:#555;font-style:italic;">
+"第230条反映了国会的明确判断：通过赋予平台豁免权，鼓励其自主进行内容审核，比让法院逐个判断平台责任更有利于互联网发展。"—— 法院意见
+</blockquote>
+
+<h3 style="color:#333;margin-top:20px;" id="case1.3">案例1.3：巴西联邦最高法院 — 主题533与987号（2025年6月）</h3>
+<p style="line-height:1.9;margin-bottom:14px;">
+<b>法院</b>：巴西联邦最高法院（STF）<br>
+<b>核心问题</b>：社交媒体平台是否必须遵守巴西法院的内容删除令，即使该内容在平台自治政策下被允许？<br>
+<b>判决要点</b>：2025年6月，巴西STF就主题533和987号进行全体庭审，讨论社交平台内容审核的司法边界。法院倾向于要求平台遵守司法删除令，同时强调平台自治权应受司法监督。本案仍在审理中，预计将对拉美地区平台治理产生深远影响。
+</p>
+
+<h3 style="color:#333;margin-top:20px;" id="case1.4">案例1.4：谷歌有限责任公司诉冈萨雷斯案（<i>Google LLC v. Gonzalez</i>，2023）</h3>
+<p style="line-height:1.9;margin-bottom:14px;">
+<b>法院</b>：美国联邦最高法院<br>
+<b>核心问题</b>：Section 230是否保护平台算法推荐第三方内容的行为？<br>
+<b>判决要点</b>：最高法院以9:0裁定Section 230保护平台的算法推荐行为。法院认为，算法推荐是"对第三方内容的整理和呈现"，属于第230条保护的"出版者"行为，而非创造新内容的"发言者"行为。
+</p>
+<blockquote style="margin:16px 0;padding:12px 16px;border-left:4px solid #4a6ee0;background:#f0f4ff;color:#555;font-style:italic;">
+"第230条不使用'发表'一词来限制其范围。它使用的是'出版者或发言者'这一更广泛的表述。"—— Thomas 大法官，全体一致意见
+</blockquote>
+<p style="line-height:1.9;margin-bottom:14px;">
+<b>影响</b>：本案与同时判决的<i>Twitter v. Taamneh</i>共同确认：平台算法推荐不使其丧失第230条保护。这为AI推荐系统在平台责任框架下的地位提供了重要先例。
+</p>
+
+<h3 style="color:#333;margin-top:20px;" id="case1.5">案例1.5：网络选择有限责任公司诉帕克斯顿案（<i>NetChoice, LLC v. Paxton</i>，2024）</h3>
+<p style="line-height:1.9;margin-bottom:14px;">
+<b>法院</b>：美国联邦最高法院<br>
+<b>核心问题</b>：德州和佛罗里达州限制平台内容审核权限的法律是否违反第一修正案？<br>
+<b>判决要点</b>：2024年7月，最高法院以6:3裁定将此案发回下级法院重审，未就实体问题作出裁决。法院认为上诉法院未正确分析平台编辑自由（第一修正案保护）与州政府监管利益之间的平衡。本案仍在诉讼进程中。
+</p>
+
+<!-- ========== 免费预览结束标记 ========== -->
+<div id="previewEnd"></div>
+</div><!-- /preview-wrap -->
+
+<!-- 渐变遮罩 -->
+<div class="blur-overlay" id="blurOverlay"></div>
+
+<!-- 付费墙 -->
+<div class="paywall" id="paywall">
+  <div class="paywall-icon">🔒</div>
+  <h2>解锁完整卷二 · 1001案例卷</h2>
+  <p>
+    您已阅读前 <b>3,000</b> 字预览内容<br>
+    完整版包含 <b>1,001</b> 个全球网络法里程碑判决<br>
+    覆盖美国、欧盟、中国、巴西、印度等主要司法管辖区
+  </p>
+  <div class="price">¥99 <span>/ 三卷合集永久访问</span></div>
+  <p style="font-size:13px;color:#aaa;">含卷一（条文卷）+ 卷二（案例卷）+ 卷三（学说卷，撰写中）</p>
+  <div>
+    <button class="btn" onclick="alert('支付功能接入中，请联系 admin@dwac.net')">微信支付</button>
+    <button class="btn" onclick="alert('支付功能接入中，请联系 admin@dwac.net')">支付宝</button>
+    <button class="btn" onclick="alert('支付功能接入中，请联系 admin@dwac.net')">数字人民币 e-CNY</button>
+  </div>
+  <div class="methods">
+    <span class="method">📥 付款后获取 EPUB + PDF 下载</span>
+    <span class="method">🌐 永久在线阅读权限</span>
+    <span class="method">🔄 后续更新免费</span>
+  </div>
+</div>
+
+<!-- ========== 付费内容（隐藏）========== -->
+<div id="paidContent" style="display:none;">
+<p style="text-align:center;color:#999;padding:32px;">付费内容加载中……</p>
+</div>
+
+      </div><!-- /content-inner -->
+    </div><!-- /content -->
+  </div><!-- /main -->
+
+<script>
+// 阅读进度条
+function updateProgress(){
+  var el = document.getElementById('contentArea');
+  var scrollPct = el.scrollTop / (el.scrollHeight - el.clientHeight) * 100;
+  document.getElementById('progressBar').style.width = scrollPct + '%';
+}
+function scrollToTop(){ document.getElementById('contentArea').scrollTo({top:0,behavior:'smooth'}); }
+
+// 目录点击滚动
+function scrollTo(id){
+  var el = document.getElementById(id);
+  if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); }
+  // 高亮当前part
+  document.querySelectorAll('.toc-part').forEach(function(p){ p.classList.remove('active'); });
+  event.currentTarget.classList.add('active');
+}
+
+// 付费墙触发
+var triggered = false;
+function checkPaywall(){
+  if(triggered) return;
+  var previewEnd = document.getElementById('previewEnd');
+  if(!previewEnd) return;
+  var rect = previewEnd.getBoundingClientRect();
+  if(rect.top < window.innerHeight * 1.2){
+    triggered = true;
+    document.getElementById('blurOverlay').style.display = 'none';
+    document.getElementById('paywall').classList.add('show');
+  }
+}
+window.addEventListener('scroll', checkPaywall);
+document.getElementById('contentArea').addEventListener('scroll', checkPaywall);
+checkPaywall();
+
+// TOC 折叠
+document.querySelectorAll('.toc-part').forEach(function(part){
+  part.addEventListener('click', function(){
+    var next = this.nextElementSibling;
+    if(next && next.classList.contains('toc-cases')){
+      next.classList.toggle('open');
+    }
+  });
+});
+</script>
+</body>
+</html>
