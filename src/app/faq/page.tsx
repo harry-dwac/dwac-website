@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'FAQ - DWAC',
+  description: 'Frequently asked questions about DWAC\'s digital arbitration services, fees, and procedures.',
+}
+
 import Link from 'next/link'
 
 export default function FAQ() {
@@ -20,7 +28,7 @@ export default function FAQ() {
     },
     {
       question: "Who can file a dispute with DWAC?",
-      answer: "Any party involved in a digital world dispute, provided there is a valid arbitration agreement (either through a contract clause or by submitting to DWAC's jurisdiction) can file a dispute."
+      answer: "Any party involved in a digital world dispute, provided there is a valid arbitration agreement (either through a contract clause or by submitting to DWAC\'s jurisdiction) can file a dispute."
     },
     {
       question: "Is the arbitration process confidential?",

@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Virtual Hearing Room - DWAC',
+  description: 'DWAC\'s virtual hearing room for remote arbitration proceedings. Secure and accessible worldwide.',
+}
+
 import Link from 'next/link'
 
 const features = [
@@ -183,7 +191,7 @@ export default function VirtualHearingPage() {
                 <span className="text-xs font-semibold tracking-[2px] uppercase text-cyan-400">Coming Soon</span>
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">
-                Virtual Hearing Room — Launching 2025
+                Virtual Hearing Room — Now Live
               </h2>
               <p className="text-slate-400 max-w-lg mx-auto mb-8 leading-relaxed">
                 We are developing a state-of-the-art virtual hearing platform. Be among the first to experience the future of online arbitration.

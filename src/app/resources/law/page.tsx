@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Legal Resources - DWAC',
+  description: 'Comprehensive legal resources for digital arbitration. Legislation, case law, and scholarly articles.',
+}
+
 import Link from 'next/link'
 
 interface ResourceCardProps {
@@ -61,7 +69,7 @@ const categories = [
         title: 'WIPO Copyright Treaty (WCT)',
         desc: 'WIPO internet treaties addressing copyright in digital environments. Essential for cross-border IP disputes.',
         tags: [{ text: 'International' }, { text: 'WIPO' }, { text: 'Global', type: 'region' as const }],
-        links: [{ text: '🌐 Official Text', href: 'https://www.wipo.int/treaties/en/ip/wct/' }, { text: '📋 Related Forms', href: '/resources/forms/' }],
+        links: [{ text: '🌐 Official Text', href: 'https://www.wipo.int/treaties/en/ip/wct/' }, { text: '📋 Related Forms', href: '/how-to-apply/' }],
       },
       {
         icon: '🌐',
@@ -166,7 +174,7 @@ const categories = [
         title: 'UNCITRAL ODR Guidelines',
         desc: 'UN body guidelines for consumer ODR covering principles, procedures, and implementation frameworks for online dispute resolution.',
         tags: [{ text: 'ODR' }, { text: 'International' }, { text: 'Global', type: 'region' as const }],
-        links: [{ text: '🌐 Official Text', href: 'https://uncitral.un.org/en/texts/consumers' }, { text: '⚖️ DWAC Process', href: '/arbitration-flow/' }],
+        links: [{ text: '🌐 Official Text', href: 'https://uncitral.un.org/en/texts/consumers' }, { text: '⚖️ DWAC Process', href: '/how-to-apply/' }],
       },
       {
         icon: '🌐',
@@ -236,7 +244,7 @@ const categories = [
         title: 'New York Convention (1958)',
         desc: 'The cornerstone treaty for recognizing and enforcing foreign arbitral awards across 170+ signatory nations. Essential for cross-border arbitration enforcement.',
         tags: [{ text: 'Treaty' }, { text: '170+ Nations', type: 'region' as const }],
-        links: [{ text: '🌐 Official Text', href: 'https://uncitral.un.org/en/texts/arbitration/newyorkconvention' }, { text: '⚖️ DWAC Process', href: '/arbitration-flow/' }],
+        links: [{ text: '🌐 Official Text', href: 'https://uncitral.un.org/en/texts/arbitration/newyorkconvention' }, { text: '⚖️ DWAC Process', href: '/how-to-apply/' }],
       },
       {
         icon: '📜',
@@ -311,7 +319,7 @@ export default function LawPage() {
           <p className="text-gray-300 leading-relaxed">
             Explore our complete resource library:<br />
             �?<Link href="/resources/" className="text-gold-400 hover:underline">Resource Centre Homepage</Link> �?All DWAC resources<br />
-            �?<Link href="/resources/forms/" className="text-gold-400 hover:underline">Application Forms</Link> �?ARB-001 to ARB-008<br />
+            �?<Link href="/how-to-apply/" className="text-gold-400 hover:underline">Application Forms</Link> �?ARB-001 to ARB-008<br />
             �?<Link href="/resources/contracts/" className="text-gold-400 hover:underline">Contract Templates</Link> �?10 templates across 5 categories<br />
             �?<Link href="/resources/publications/" className="text-gold-400 hover:underline">Publications</Link> �?Harry's authoritative texts<br />
             �?<Link href="/fee-calculator/" className="text-gold-400 hover:underline">Fee Calculator</Link> �?Arbitration cost estimation<br />

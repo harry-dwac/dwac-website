@@ -24,8 +24,8 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/about/" className="text-gray-500 hover:text-gold-400 transition-colors">About Us</Link></li>
               <li><Link href="/rules/" className="text-gray-500 hover:text-gold-400 transition-colors">Arbitration Rules</Link></li>
-              <li><Link href="/arbitrators/join/" className="text-gray-500 hover:text-gold-400 transition-colors">Become an Arbitrator</Link></li>
-              <li><Link href="/membership/" className="text-gray-500 hover:text-gold-400 transition-colors">Membership</Link></li>
+              <li><span className="text-gray-600 cursor-not-allowed" title="Coming Q2 2026">Become an Arbitrator <span className="text-xs text-gray-700">(Coming Soon)</span></span></li>
+              <li><span className="text-gray-600 cursor-not-allowed" title="Coming Q2 2026">Membership <span className="text-xs text-gray-700">(Coming Soon)</span></span></li>
               <li><Link href="/charter/" className="text-gray-500 hover:text-gold-400 transition-colors">Digital World Charter</Link></li>
             </ul>
           </div>
@@ -38,7 +38,7 @@ export default function Footer() {
               <li><Link href="/fees/" className="text-gray-500 hover:text-gold-400 transition-colors">Fee Schedule</Link></li>
               <li><Link href="/fee-calculator/" className="text-gray-500 hover:text-gold-400 transition-colors">Fee Calculator</Link></li>
               <li><Link href="/model-clause/" className="text-gray-500 hover:text-gold-400 transition-colors">Model Clause</Link></li>
-              <li><Link href="/evidence-guidance/" className="text-gray-500 hover:text-gold-400 transition-colors">Evidence Guidance</Link></li>
+              <li><span className="text-gray-600 cursor-not-allowed" title="Coming Q2 2026">Evidence Guidance <span className="text-xs text-gray-700">(Coming Soon)</span></span></li>
             </ul>
           </div>
 
@@ -55,14 +55,21 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="mt-12 pt-8 border-t border-gold-subtle/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} Digital World Arbitration Centre (DWAC). All rights reserved.
-          </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p className="text-xs text-gray-600">
+              © {new Date().getFullYear()} Digital World Arbitration Centre (DWAC). All rights reserved.
+            </p>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">Privacy Policy</Link>
+              <Link href="/terms/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">Terms of Service</Link>
+            </div>
+          </div>
+          {/* Language - hidden until Chinese version ready */}
+          {/* <div className="flex items-center gap-4">
             <Link href="/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">EN</Link>
             <Link href="/zh-cn/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">简体中文</Link>
             <Link href="/zh-tw/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">繁體中文</Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

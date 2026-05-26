@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Model Arbitration Clause - DWAC',
+  description: 'Standard model arbitration clauses for digital world disputes. Free to use in your contracts.',
+}
+
 import Link from 'next/link'
 
 export default function ModelClause() {

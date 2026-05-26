@@ -1,10 +1,17 @@
 import Link from 'next/link'
 
+interface ResourceItem {
+  name: string
+  href: string
+  free?: boolean
+  lang?: string
+}
+
 interface ResourceCategoryProps {
   icon: React.ReactNode
   title: string
   description: string
-  items: { name: string; free: boolean }[]
+  items: ResourceItem[]
 }
 
 function ResourceCategory({ icon, title, description, items }: ResourceCategoryProps) {
@@ -24,14 +31,19 @@ function ResourceCategory({ icon, title, description, items }: ResourceCategoryP
           <li key={idx} className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0">
             <div className="flex items-center gap-3">
               <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2d" />
               </svg>
-              <span className="text-sm text-slate-700">{item.name}</span>
+              <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-700 hover:text-gold-600 transition-colors underline-offset-2 hover:underline">
+                {item.name}
+              </a>
+              {item.lang && (
+                <span className="text-xs px-1.5 py-0.5 bg-navy-900/5 text-navy-700 rounded">{item.lang}</span>
+              )}
             </div>
             {item.free ? (
-              <span className="text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full">Free</span>
+              <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full hover:bg-emerald-100 transition-colors">Free</a>
             ) : (
-              <span className="text-xs font-semibold px-2.5 py-1 bg-gold-500/[0.06] text-gold-600 rounded-full">Download</span>
+              <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold px-2.5 py-1 bg-gold-500/[0.06] text-gold-600 rounded-full hover:bg-gold-500/10 transition-colors">Download</a>
             )}
           </li>
         ))}
@@ -50,11 +62,11 @@ const categories: ResourceCategoryProps[] = [
     title: 'Forms & Templates',
     description: 'Standardized application and procedural forms for initiating and managing arbitration proceedings.',
     items: [
-      { name: 'Request for Arbitration (ARB-001)', free: false },
-      { name: 'Statement of Defense (ARB-002)', free: false },
-      { name: 'Evidence Submission Form (ARB-003)', free: false },
-      { name: 'Arbitrator Declaration Form (ARB-004)', free: false },
-      { name: 'Membership Application (MEM-001)', free: true },
+      { name: 'Request for Arbitration (ARB-001)', href: '/resources/contracts/', free: false },
+      { name: 'Statement of Defense (ARB-002)', href: '/resources/contracts/', free: false },
+      { name: 'Evidence Submission Form (ARB-003)', href: '/resources/contracts/', free: false },
+      { name: 'Arbitrator Declaration Form (ARB-004)', href: '/resources/contracts/', free: false },
+      { name: 'Membership Application (MEM-001)', href: '/resources/contracts/', free: true },
     ],
   },
   {
@@ -66,11 +78,11 @@ const categories: ResourceCategoryProps[] = [
     title: 'References & Guidelines',
     description: 'Authoritative references including arbitration rules, evidence guidance, and model clauses.',
     items: [
-      { name: 'DWAC Arbitration Rules (67 Articles)', free: true },
-      { name: 'Evidence Submission Guidelines', free: true },
-      { name: 'Model Arbitration Clause', free: true },
-      { name: 'Digital World Convention', free: true },
-      { name: 'Procedural Timeline Reference', free: true },
+      { name: 'DWAC Arbitration Rules (67 Articles)', href: '/rules/', free: true },
+      { name: 'Evidence Submission Guidelines', href: '/evidence-guidance/', free: true },
+      { name: 'Model Arbitration Clause', href: '/model-clause/', free: true },
+      { name: 'Digital World Convention', href: '/charter/', free: true },
+      { name: 'Procedural Timeline Reference', href: '/rules/', free: true },
     ],
   },
   {
@@ -82,9 +94,9 @@ const categories: ResourceCategoryProps[] = [
     title: 'Bilingual Glossary',
     description: 'Comprehensive English-Chinese terminology reference for international arbitration and digital law.',
     items: [
-      { name: 'Arbitration Terminology (EN-ZH)', free: true },
-      { name: 'Digital Law Glossary (EN-ZH)', free: true },
-      { name: 'Blockchain & Smart Contract Terms', free: true },
+      { name: 'Arbitration Terminology (EN-ZH)', href: '/resources/law/', free: true },
+      { name: 'Digital Law Glossary (EN-ZH)', href: '/resources/law/', free: true },
+      { name: 'Blockchain & Smart Contract Terms', href: '/resources/law/', free: true },
     ],
   },
   {
@@ -96,10 +108,10 @@ const categories: ResourceCategoryProps[] = [
     title: 'Research Papers',
     description: 'Academic papers and working papers on digital world arbitration, ODR, and cyber dispute resolution.',
     items: [
-      { name: 'Digital World Arbitration: Framework & Future', free: false },
-      { name: 'Online Dispute Resolution in the AI Era', free: false },
-      { name: 'Cross-Border Digital Commerce Disputes', free: false },
-      { name: 'Smart Contract Dispute Resolution Mechanisms', free: false },
+      { name: '数字时代司法实践的理论探究与制度建构', href: '/resources/papers/theoretical-inquiry-cn.html', free: true, lang: '中文' },
+      { name: 'Theoretical Inquiry and Institutional Construction in Digital Era Judicial Practice', href: '/resources/papers/theoretical-inquiry-en.html', free: true, lang: 'EN' },
+      { name: '数字时代司法实践的理论探究与制度建构 (Markdown)', href: '/resources/papers/theoretical-inquiry-cn.md', free: true, lang: 'MD' },
+      { name: 'Theoretical Inquiry and Institutional Construction (Markdown)', href: '/resources/papers/theoretical-inquiry-en.md', free: true, lang: 'MD' },
     ],
   },
   {
@@ -111,9 +123,11 @@ const categories: ResourceCategoryProps[] = [
     title: 'Publications',
     description: 'Academic books, monographs, and institutional publications on digital law and arbitration.',
     items: [
-      { name: 'Digital World Arbitration (Monograph)', free: false },
-      { name: 'DWAC Annual Report', free: true },
-      { name: 'Digital Law Research Whitepaper', free: false },
+      { name: '以司法管辖权延伸推动两岸法治统一', href: '/resources/publications/judicial-jurisdiction-cn.html', free: true, lang: '中文' },
+      { name: 'Promoting Cross-Strait Legal Unification via Judicial Jurisdiction Extension', href: '/resources/publications/judicial-jurisdiction-en.html', free: true, lang: 'EN' },
+      { name: '以法治统一推动两岸统一进程的策略建议', href: '/resources/publications/rule-of-law-unification-cn.html', free: true, lang: '中文' },
+      { name: 'Strategic Proposals for Cross-Strait Unification through Rule of Law', href: '/resources/publications/rule-of-law-unification-en.html', free: true, lang: 'EN' },
+      { name: 'Publications Index', href: '/resources/publications/', free: true },
     ],
   },
   {
@@ -125,9 +139,9 @@ const categories: ResourceCategoryProps[] = [
     title: 'Fee Schedules',
     description: 'Current fee tables, arbitration cost calculators, and payment guidelines.',
     items: [
-      { name: 'Arbitration Fee Schedule 2025', free: true },
-      { name: 'Administrative Fee Table', free: true },
-      { name: 'Fee Calculator Tool', free: true },
+      { name: 'Arbitration Fee Schedule 2025', href: '/fees/', free: true },
+      { name: 'Administrative Fee Table', href: '/fees/', free: true },
+      { name: 'Fee Calculator Tool', href: '/fee-calculator/', free: true },
     ],
   },
 ]

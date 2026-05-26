@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '关于DWAC - 数字世界仲裁中心',
+  description: '了解DWAC为数字世界建立法治的使命，通过公平高效的仲裁服务解决数字纠纷。',
+}
+
 import Link from 'next/link'
 
 export default function AboutZhCn() {

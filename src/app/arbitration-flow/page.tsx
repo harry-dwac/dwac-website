@@ -1,66 +1,49 @@
-import Link from 'next/link'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Arbitration Process Flow - DWAC',
-  description: 'Step-by-step guide to the DWAC arbitration process. From filing to enforcement, every step explained.',
+  title: 'Arbitration Process Flow | DWAC',
+  description: 'Step-by-step guide to the DWAC arbitration process — from filing to enforcement. Standard (~90 days) and expedited (~30 days) procedures available.',
 }
 
 export default function ArbitrationFlowPage() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-navy py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white mb-5">
-            Arbitration <span className="text-gradient-gold">Process Flow</span>
-          </h1>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            A step-by-step guide to resolving your digital dispute through DWAC.
+      <section className="bg-navy-800 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold mb-4">Arbitration <span className="text-gold-400">Process Flow</span></h1>
+          <p className="text-xl text-gray-300 max-w-2xl">
+            A step-by-step guide to the DWAC arbitration process — from filing to enforcement
           </p>
         </div>
       </section>
 
-      {/* Steps */}
-      <section className="bg-white py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12">
+      {/* Process Steps */}
+      <section className="py-16 bg-navy-800/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8">
             {[
-              { num: '01', icon: '📝', title: 'File Your Dispute', bg: 'bg-slate-50',
-                desc: 'Submit your dispute online through our AI-assisted filing system. Select the dispute type, provide party details, and upload supporting documents.',
-                details: ['AI auto-classifies your dispute category', 'Smart form with auto-complete', 'Upload evidence securely', 'Receive case ID immediately'] },
-              { num: '02', icon: '🤝', title: 'Tribunal Formation', bg: 'bg-white',
-                desc: 'AI matches the best arbitrators for your case based on expertise, jurisdiction, and language. Both parties review and confirm the tribunal panel.',
-                details: ['AI-powered arbitrator matching', 'Conflict-of-interest screening', 'Party approval of panel', 'Emergency arbitrator available in 48h'] },
-              { num: '03', icon: '📋', title: 'Case Preparation', bg: 'bg-slate-50',
-                desc: 'Exchange evidence and submissions through our secure digital platform. AI organizes and tags evidence for efficient review.',
-                details: ['Digital evidence room', 'AI evidence categorization', 'Secure document exchange', 'Deadline management system'] },
-              { num: '04', icon: '🎥', title: 'Virtual Hearing', bg: 'bg-white',
-                desc: 'Attend hearings in our secure virtual courtroom. AI provides real-time transcription, translation, and evidence presentation.',
-                details: ['24/7 scheduling across time zones', 'Real-time AI transcription', 'Cross-examination tools', 'Recording & archival'] },
-              { num: '05', icon: '📜', title: 'Award & Decision', bg: 'bg-slate-50',
-                desc: 'The arbitrator issues a final binding award. AI assists in drafting, but the human arbitrator makes all final decisions.',
-                details: ['AI-assisted award drafting', 'Arbitrator review & modification', 'Digital signature & blockchain verification', 'Award delivered electronically'] },
-              { num: '06', icon: '⚖️', title: 'Enforcement', bg: 'bg-white',
-                desc: 'DWAC awards are enforceable under the New York Convention in 170+ countries. Blockchain-verified awards facilitate international enforcement.',
-                details: ['NY Convention coverage', 'Blockchain-verifiable award record', 'Enforcement assistance available', 'Appeal procedures where applicable'] },
-            ].map((step, i) => (
-              <div key={i} className={`${step.bg} rounded-xl p-8 border border-slate-200`}>
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center text-navy-900 font-bold text-xl flex-shrink-0">{step.num}</div>
-                  <div className="flex-1">
-                    <h3 className="font-serif text-2xl font-bold text-navy-800 mb-2">
-                      <span className="mr-2">{step.icon}</span>{step.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{step.desc}</p>
-                    <ul className="space-y-2">
-                      {step.details.map((d, j) => (
-                        <li key={j} className="flex items-start text-sm text-gray-500">
-                          <span className="text-gold-500 mr-2">✓</span>{d}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              { step: '1', title: 'Submit Arbitration Request', desc: 'File your dispute through our online portal. Provide case details, evidence, and specify the desired tribunal composition. Filing fee applies.', link: '/how-to-apply/' },
+              { step: '2', title: 'Case Acceptance & Service', desc: 'DWAC Secretariat reviews the filing within 5 business days. Upon acceptance, notice is served to the respondent. Respondent has 30 days to file an answer.' },
+              { step: '3', title: 'Tribunal Constitution', desc: 'Arbitrator-Agents are appointed according to the tribunal composition rules based on dispute amount. Lead and Co-Arbitrators are assigned.' },
+              { step: '4', title: 'Written Submissions', desc: 'Both parties submit written statements, evidence, and legal arguments. Multiple rounds of written submissions may occur as directed by the tribunal.' },
+              { step: '5', title: 'Virtual Hearing', desc: 'Oral hearing conducted online via the DWAC Virtual Hearing Room. Witnesses may be examined. AI-assisted transcription and translation available.', link: '/virtual-hearing/' },
+              { step: '6', title: 'Deliberation & Award', desc: 'The tribunal deliberates and issues a final award. Lead Arbitrator\'s award is confirmed by their human principal through digital signature.' },
+              { step: '7', title: 'Enforcement', desc: 'Awards are enforceable under the New York Convention and applicable domestic laws. DWAC provides enforcement support and certified copies.' },
+            ].map((item) => (
+              <div key={item.step} className="flex items-start">
+                <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 border border-gold-500/30">
+                  <span className="text-gold-500 font-bold text-lg">{item.step}</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-white text-lg">{item.title}</h3>
+                  <p className="text-gray-400 mt-1">{item.desc}</p>
+                  {item.link && (
+                    <Link href={item.link} className="text-gold-400 hover:underline text-sm mt-2 inline-block">
+                      Learn more →
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
@@ -68,39 +51,37 @@ export default function ArbitrationFlowPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="bg-gradient-navy py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl font-bold text-white mb-8">Typical Timeline</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { phase: 'Filing', time: '1–3 days', color: 'text-cyan-400' },
-              { phase: 'Formation', time: '5–10 days', color: 'text-gold-400' },
-              { phase: 'Hearing', time: '30–60 days', color: 'text-gold-400' },
-              { phase: 'Award', time: '7–14 days', color: 'text-cyan-400' },
-            ].map((t, i) => (
-              <div key={i} className="bg-navy-800/60 rounded-lg p-6">
-                <p className={`font-serif text-2xl font-bold ${t.color}`}>{t.time}</p>
-                <p className="text-gray-400 mt-1">{t.phase}</p>
-              </div>
-            ))}
+      {/* Timeline Overview */}
+      <section className="py-16 bg-navy-800/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Timeline Overview</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-navy-800/20 p-6 rounded-xl border border-gold-subtle/50">
+              <h3 className="font-semibold text-white mb-2">⚡ Expedited Procedure</h3>
+              <p className="text-4xl font-bold text-gold-400 mb-2">~30 days</p>
+              <p className="text-gray-400 text-sm">Written proceedings only. Best for disputes under ¥1M with clear facts.</p>
+              <Link href="/fees/" className="text-gold-400 hover:underline text-sm mt-2 inline-block">View fee schedule →</Link>
+            </div>
+            <div className="bg-navy-800/20 p-6 rounded-xl border border-gold-subtle/50">
+              <h3 className="font-semibold text-white mb-2">📋 Standard Procedure</h3>
+              <p className="text-4xl font-bold text-gold-400 mb-2">~90 days</p>
+              <p className="text-gray-400 text-sm">Full oral hearing. Suitable for complex disputes requiring witness examination.</p>
+              <Link href="/rules/" className="text-gold-400 hover:underline text-sm mt-2 inline-block">View rules →</Link>
+            </div>
           </div>
-          <p className="text-gray-400 mt-6">Total: 30–90 days (compared to 12–18 months at traditional institutions)</p>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-slate-50 py-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="font-serif text-3xl font-bold text-slate-900 mb-6">Ready to Start Your Arbitration?</h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/dispute/" className="bg-gradient-gold text-navy-900 font-bold text-sm tracking-wide px-8 py-3 rounded-md hover:shadow-[0_0_30px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 transition-all inline-block">
-              File a Dispute
-            </Link>
-            <Link href="/digital-tribunal/" className="border border-slate-300 text-slate-700 font-semibold text-sm px-8 py-3 rounded-md hover:border-navy-900 hover:text-navy-900 transition-all inline-block">
-              Digital Tribunal
-            </Link>
-          </div>
+      <section className="py-16 bg-gradient-gold text-navy-900 font-bold">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Start?</h2>
+          <p className="text-navy-800 mb-8 max-w-2xl mx-auto">
+            Submit your arbitration request online and let our Arbitrator-Agents handle your dispute professionally.
+          </p>
+          <Link href="/how-to-apply/" className="px-8 py-3 bg-navy-800/20 text-gold-500 font-semibold rounded-lg hover:bg-navy-800/40 transition-colors inline-block">
+            Submit Arbitration Request
+          </Link>
         </div>
       </section>
     </div>

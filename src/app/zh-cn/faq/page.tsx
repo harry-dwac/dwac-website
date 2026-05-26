@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '常见问题 - 数字世界仲裁中心',
+  description: '关于DWAC数字仲裁服务、费用和程序的常见问题。',
+}
+
 import Link from 'next/link'
 
 export default function FAQZhCn() {

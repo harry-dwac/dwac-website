@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '费用表 - 数字世界仲裁中心',
+  description: 'DWAC数字仲裁服务透明费用表，无隐藏成本。',
+}
+
 import Link from 'next/link'
 
 export default function FeesZhCn() {

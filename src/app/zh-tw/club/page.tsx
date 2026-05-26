@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Agent仲裁員俱樂部 - 數字世界仲裁中心',
+  description: '加入DWAC Agent仲裁員俱樂部。經認證的AI驅動仲裁助手。',
+}
+
 import Link from 'next/link'
 
 const clubFeatures = [

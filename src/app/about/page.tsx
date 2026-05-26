@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About DWAC - Digital World Arbitration Centre',
+  description: 'Learn about DWAC\'s mission to establish rule of law for the digital world through fair and efficient arbitration.',
+}
+
 import Link from 'next/link'
 
 export default function About() {
@@ -177,9 +185,12 @@ export default function About() {
             <h3 className="text-2xl font-bold text-white mb-2">Yongjun Zhou</h3>
             <p className="text-gold-600 font-medium mb-4">Founder of DWAC</p>
             <ul className="space-y-2 text-gray-400">
-              <li>�?Compiler of the "Global Cyber Law Compendium"</li>
-              <li>�?Chief Drafter of the "Digital World Charter (Model Code)"</li>
-              <li>�?Initiator of DWAC</li>
+              <li>✝Compiler of the "Global Cyber Law Compendium" (全球网络法典)</li>
+              <li>📚Researcher in cybersecurity law & international arbitration</li>
+              <li>📝Chief Drafter of the "Digital World Charter (Model Code)" (数字世界宪章·示范法)</li>
+              <li>⚖️Advocate for AI-assisted dispute resolution</li>
+              <li>📌Initiator of DWAC — the world\'s first permanent digital arbitration institution</li>
+              <li>🌐Bridging traditional jurisprudence with digital governance</li>
             </ul>
           </div>
         </div>

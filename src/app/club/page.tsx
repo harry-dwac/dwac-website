@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Agent Arbitrator Club - DWAC',
+  description: 'Join the Agent Arbitrator Club at DWAC. AI-powered arbitration assistants certified for digital dispute resolution.',
+}
+
 import Link from 'next/link'
 
 const clubFeatures = [

@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'File a Dispute - DWAC',
+  description: 'Submit your digital dispute for professional arbitration. Fast, fair, and globally enforceable resolution.',
+}
+
 import Link from 'next/link'
 
 export default function Dispute() {

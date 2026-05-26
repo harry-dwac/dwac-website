@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'How to Apply - DWAC',
+  description: 'Step-by-step guide to filing a digital dispute with DWAC. Simple, streamlined process.',
+}
+
 import Link from 'next/link'
 
 export default function HowToApply() {
@@ -20,7 +28,7 @@ export default function HowToApply() {
               <div className="flex-shrink-0 w-12 h-12 bg-gold-500/[0.06]0 rounded-full flex items-center justify-center text-white font-bold text-xl mr-6">1</div>
               <div>
                 <h3 className="font-semibold text-xl text-white mb-3">Review Jurisdiction Requirements</h3>
-                <p className="text-gray-400 mb-4">Before filing, ensure your dispute falls within DWAC's jurisdiction. We handle disputes related to digital platforms, smart contracts, AI agents, digital assets, data transfers, and more.</p>
+                <p className="text-gray-400 mb-4">Before filing, ensure your dispute falls within DWAC\'s jurisdiction. We handle disputes related to digital platforms, smart contracts, AI agents, digital assets, data transfers, and more.</p>
                 <Link href="/charter/" className="text-gold-500 hover:text-gold-400 font-medium">Learn about our jurisdiction →</Link>
               </div>
             </div>

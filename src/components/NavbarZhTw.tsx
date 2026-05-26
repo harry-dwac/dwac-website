@@ -2,10 +2,12 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import SearchModal from './SearchModal'
 
 export default function NavbarZhTw() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [searchOpen, setSearchOpen] = useState(false)
 
   const handleMouseEnter = (name: string) => setActiveDropdown(name)
   const handleMouseLeave = () => setActiveDropdown(null)
@@ -30,6 +32,28 @@ export default function NavbarZhTw() {
           <div className="hidden xl:flex items-center gap-1">
             <Link href="/zh-tw/" className="hover-underline text-gray-400 hover:text-white text-sm font-medium px-2 py-1 transition-colors">首頁</Link>
 
+            {/* 法學院 dropdown — 醒目位置 */}
+            <div className="relative" onMouseEnter={() => handleMouseEnter('lawschool')} onMouseLeave={handleMouseLeave}>
+              <Link href="/law-school/" className="hover-underline text-gold-400 hover:text-gold-300 text-sm font-semibold px-2 py-1 transition-colors flex items-center gap-1">
+                法學院
+                <svg className="w-3.5 h-3.5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </Link>
+              {activeDropdown === 'lawschool' && (
+                <div className="absolute top-full left-0 mt-0 w-60 bg-navy-900/95 backdrop-blur-xl border border-gold-subtle rounded-lg shadow-2xl py-2 animate-fade-in">
+                  <Link href="/law-school/courses/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">課程項目</Link>
+                  <Link href="/law-school/community/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">社群</Link>
+                  <Link href="/law-school/resources/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">資源庫</Link>
+                  <Link href="/law-school/publications/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">出版物</Link>
+                  <div className="border-t border-gold-subtle/50 my-1" />
+                  <Link href="/zh-tw/members/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">會員名錄</Link>
+                  <Link href="/zh-tw/community/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">交流論壇</Link>
+                  <Link href="/zh-tw/club/" className="block px-4 py-2 text-sm text-gold-400 hover:text-gold-300 hover:bg-navy-800/60 transition-colors">智能仲裁員俱樂部 ↗</Link>
+                </div>
+              )}
+            </div>
+
             {/* 關於 dropdown */}
             <div className="relative" onMouseEnter={() => handleMouseEnter('about')} onMouseLeave={handleMouseLeave}>
               <button className="hover-underline text-gray-400 hover:text-white text-sm font-medium px-2 py-1 transition-colors flex items-center gap-1">
@@ -42,6 +66,7 @@ export default function NavbarZhTw() {
                 <div className="absolute top-full left-0 mt-0 w-52 bg-navy-900/95 backdrop-blur-xl border border-gold-subtle rounded-lg shadow-2xl py-2 animate-fade-in">
                   <Link href="/zh-tw/about/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">關於DWAC</Link>
                   <Link href="/zh-tw/tribunal/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">仲裁庭</Link>
+                  <Link href="/zh-tw/expertise/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">專業領域</Link>
                   <Link href="/zh-tw/membership-arbitrators/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">會員與仲裁員</Link>
                   <Link href="/zh-tw/charter/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">數位世界憲章</Link>
                 </div>
@@ -71,26 +96,17 @@ export default function NavbarZhTw() {
               )}
             </div>
 
-            {/* 社群 dropdown */}
-            <div className="relative" onMouseEnter={() => handleMouseEnter('community')} onMouseLeave={handleMouseLeave}>
-              <button className="hover-underline text-gray-400 hover:text-white text-sm font-medium px-2 py-1 transition-colors flex items-center gap-1">
-                社群
-                <svg className="w-3.5 h-3.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {activeDropdown === 'community' && (
-                <div className="absolute top-full left-0 mt-0 w-56 bg-navy-900/95 backdrop-blur-xl border border-gold-subtle rounded-lg shadow-2xl py-2 animate-fade-in">
-                  <Link href="/zh-tw/news/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">新聞資訊</Link>
-                  <Link href="/zh-tw/resources/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">資源中心</Link>
-                  <Link href="/zh-tw/members/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">會員名錄</Link>
-                  <Link href="/zh-tw/community/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">交流論壇</Link>
-                  <Link href="/zh-tw/club/" className="block px-4 py-2 text-sm text-gold-400 hover:text-gold-300 hover:bg-navy-800/60 transition-colors">智能仲裁員俱樂部 ↗</Link>
-                </div>
-              )}
-            </div>
+
 
             <Link href="/zh-tw/faq/" className="hover-underline text-gray-400 hover:text-white text-sm font-medium px-2 py-1 transition-colors">常見問題</Link>
+
+            <Link href="/zh-tw/digital-tribunal/" className="hover-underline text-cyan-400 hover:text-cyan-300 text-sm font-medium px-2 py-1 transition-colors">數字仲裁庭</Link>
+
+            <button onClick={() => setSearchOpen(true)} className="p-1.5 text-gray-400 hover:text-gold-400 transition-colors" aria-label="搜尋">
+              <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
 
             <Link href="/zh-tw/contact/" className="ml-2 px-4 py-1.5 text-xs font-semibold tracking-wide bg-gradient-gold text-navy-900 rounded hover:shadow-[0_0_20px_rgba(201,168,76,0.25)] transition-all">
               聯繫我們
@@ -140,9 +156,12 @@ export default function NavbarZhTw() {
               <Link href="/zh-tw/downloads/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">示範條款</Link>
               <Link href="/zh-tw/virtual-hearing/" onClick={() => setMobileOpen(false)} className="text-gold-400 hover:text-gold-300 pl-6 py-2 text-sm rounded-lg hover:bg-navy-800/60 transition-all">虛擬仲裁庭 ↗</Link>
 
-              <div className="px-3 pt-3 pb-1 text-[10px] font-bold tracking-[2px] uppercase text-gold-600">社群</div>
-              <Link href="/zh-tw/news/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">新聞資訊</Link>
-              <Link href="/zh-tw/resources/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">資源中心</Link>
+              <div className="px-3 pt-3 pb-1 text-[10px] font-bold tracking-[2px] uppercase text-gold-400">⚖️ 法學院</div>
+              <Link href="/law-school/" onClick={() => setMobileOpen(false)} className="text-gold-400 hover:text-gold-300 pl-6 py-2 text-sm font-semibold rounded-lg hover:bg-navy-700/50 transition-all">法學院主頁</Link>
+              <Link href="/law-school/courses/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">課程項目</Link>
+              <Link href="/law-school/community/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">社群</Link>
+              <Link href="/law-school/resources/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">資源庫</Link>
+              <Link href="/law-school/publications/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">出版物</Link>
               <Link href="/zh-tw/members/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">會員名錄</Link>
               <Link href="/zh-tw/community/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">交流論壇</Link>
               <Link href="/zh-tw/club/" onClick={() => setMobileOpen(false)} className="text-gold-400 hover:text-gold-300 pl-6 py-2 text-sm rounded-lg hover:bg-navy-800/60 transition-all">智能仲裁員俱樂部 ↗</Link>
@@ -159,6 +178,7 @@ export default function NavbarZhTw() {
           </div>
         )}
       </nav>
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} currentLang="zh-tw" />
     </header>
   )
 }

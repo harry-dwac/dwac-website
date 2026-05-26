@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '如何申請 - 數字世界仲裁中心',
+  description: '向DWAC提交數字爭議的分步指南。簡單高效。',
+}
+
 import Link from 'next/link'
 
 export default function HowToApplyZhTw() {

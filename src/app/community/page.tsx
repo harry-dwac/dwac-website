@@ -1,35 +1,43 @@
-import Link from 'next/link'
 
-const features = [
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Community - DWAC',
+  description: 'Join the DWAC community. Discuss digital arbitration, share insights, and connect with experts.',
+}
+
+import WalineComment from '@/components/WalineComment'
+
+const discussionCategories = [
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-      </svg>
-    ),
-    title: 'Discussion Board',
-    description: 'Engage in topic-based discussions on arbitration practice, digital law developments, and procedural innovations. Share insights and learn from the collective experience of the DWAC community.',
-    items: ['Procedural Questions', 'Case Strategy', 'Digital Evidence', 'Ethics & Standards'],
+    emoji: '🏛️',
+    name: 'Announcements',
+    description: 'Official DWAC news, updates, and important notices',
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-      </svg>
-    ),
-    title: 'Case Studies',
-    description: 'Anonymized case analyses contributed by DWAC arbitrators and practitioners. Study real-world scenarios, explore different approaches, and deepen your understanding of digital dispute resolution.',
-    items: ['E-Commerce Disputes', 'Platform Governance', 'Digital Asset Cases', 'Cross-Border Issues'],
+    emoji: '💬',
+    name: 'General',
+    description: 'Open discussion, introductions, and community conversations',
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-      </svg>
-    ),
-    title: 'Knowledge Base',
-    description: 'Collaborative articles, guides, and reference materials curated by the community. A living library that grows with the collective expertise of DWAC members worldwide.',
-    items: ['Practice Guides', 'Jurisdiction Surveys', 'Technology Reviews', 'Templates & Checklists'],
+    emoji: '💡',
+    name: 'Ideas',
+    description: 'Feature requests, suggestions, and innovation proposals',
+  },
+  {
+    emoji: '❓',
+    name: 'Q&A',
+    description: 'Questions about arbitration procedures and DWAC processes',
+  },
+  {
+    emoji: '📊',
+    name: 'Polls',
+    description: 'Community surveys and collective decision-making',
+  },
+  {
+    emoji: '🙌',
+    name: 'Show and Tell',
+    description: 'Share your work, achievements, and case experiences',
   },
 ]
 
@@ -48,136 +56,91 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* ===== About — Light ===== */}
+      {/* ===== Categories — Light ===== */}
       <section className="bg-slate-50 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">About the Forum</span>
-          <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-            Where Expertise Meets Collaboration
-          </h2>
-          <p className="text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8">
-            The DWAC Community Forum is designed to foster peer-to-peer knowledge exchange among arbitration professionals, researchers, and practitioners from around the world. Whether you&apos;re a seasoned arbitrator or new to digital dispute resolution, this platform connects you with colleagues who share your interests.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-            <div className="bg-white border border-slate-200 rounded-xl p-5">
-              <p className="font-serif text-2xl font-bold text-gold-500 mb-1">20+</p>
-              <p className="text-sm text-slate-500">Topic Categories</p>
-            </div>
-            <div className="bg-white border border-slate-200 rounded-xl p-5">
-              <p className="font-serif text-2xl font-bold text-gold-500 mb-1">500+</p>
-              <p className="text-sm text-slate-500">Expected Members</p>
-            </div>
-            <div className="bg-white border border-slate-200 rounded-xl p-5">
-              <p className="font-serif text-2xl font-bold text-gold-500 mb-1">Global</p>
-              <p className="text-sm text-slate-500">Multilingual Support</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== Features — Light ===== */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">Features</span>
+            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">Discussion Topics</span>
             <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              Forum Capabilities
+              Join the Conversation
             </h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              Three core modules designed to support every aspect of professional collaboration.
+              Browse discussions by category, ask questions, share your expertise, or start a new topic.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {discussionCategories.map((cat, idx) => (
               <div
                 key={idx}
-                className="bg-slate-50 border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 rounded-xl p-8"
+                className="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-navy-900/5 rounded-xl flex items-center justify-center text-gold-500 mb-5">
-                  {feature.icon}
-                </div>
-                <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed mb-5">{feature.description}</p>
-                <ul className="space-y-2">
-                  {feature.items.map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                      <svg className="w-4 h-4 text-gold-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <span className="text-2xl mb-3 block">{cat.emoji}</span>
+                <h3 className="font-serif text-lg font-bold text-slate-900 mb-1">{cat.name}</h3>
+                <p className="text-sm text-slate-500 leading-relaxed">{cat.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== Coming Soon — Dark ===== */}
-      <section className="bg-gradient-navy py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-navy-800/60 border border-gold-500/20 rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden">
-            {/* Decorative glow */}
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-gold-500/5 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gold-500/5 rounded-full blur-3xl" />
-
-            <div className="relative">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-gold-500/30 rounded-full mb-6">
-                <span className="w-2 h-2 bg-gold-500 rounded-full animate-pulse" />
-                <span className="text-xs font-semibold tracking-[2px] uppercase text-gold-400">Coming Soon</span>
-              </div>
-              <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">
-                Forum Launching Q3 2025
-              </h2>
-              <p className="text-slate-400 max-w-lg mx-auto mb-8 leading-relaxed">
-                We are building a world-class collaboration platform for the DWAC community. Registration will open to all active DWAC members prior to launch.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/membership/"
-                  className="bg-gradient-gold text-navy-900 font-bold text-sm tracking-wide px-8 py-3 rounded-md hover:shadow-[0_0_30px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 transition-all inline-block"
-                >
-                  Apply for Membership
-                </Link>
-                <Link
-                  href="/contact/"
-                  className="border border-gold-500/30 text-gold-400 font-semibold text-sm px-8 py-3 rounded-md hover:border-gold-500 hover:bg-gold-500/5 transition-all inline-block"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
+      {/* ===== Waline Comments ===== */}
+      <section className="bg-white py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">Forum</span>
+            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+              Discussions
+            </h2>
+            <p className="text-slate-500 max-w-xl mx-auto">
+              Share your thoughts, ask questions, or start a new discussion. No GitHub account required!
+            </p>
           </div>
+          <WalineComment lang="en" />
         </div>
       </section>
 
-      {/* ===== Requirements — Light ===== */}
+      {/* ===== Guidelines — Light ===== */}
       <section className="bg-slate-50 py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white border border-slate-200 rounded-xl p-8">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-gold-500/[0.06] rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            <h3 className="font-serif text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+              <svg className="w-6 h-6 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              Community Guidelines
+            </h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3 text-sm text-slate-600">
+                <svg className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-              </div>
-              <div>
-                <h3 className="font-serif text-lg font-bold text-slate-900 mb-2">Membership Required</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  The Community Forum is exclusively available to active DWAC members. To gain access, please complete the membership application process. Both individual and institutional memberships include full forum access.
-                </p>
-                <Link
-                  href="/membership/"
-                  className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-gold-600 hover:text-gold-500 transition-colors"
-                >
-                  Learn about membership
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
+                Be respectful and professional in all interactions
+              </li>
+              <li className="flex items-start gap-3 text-sm text-slate-600">
+                <svg className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Stay on topic and contribute constructively to discussions
+              </li>
+              <li className="flex items-start gap-3 text-sm text-slate-600">
+                <svg className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Anonymize case details before sharing — protect confidentiality
+              </li>
+              <li className="flex items-start gap-3 text-sm text-slate-600">
+                <svg className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Cite sources and give credit when referencing others&apos;s work
+              </li>
+              <li className="flex items-start gap-3 text-sm text-slate-600">
+                <svg className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Use the appropriate category for your discussion topic
+              </li>
+            </ul>
           </div>
         </div>
       </section>

@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Digital World Charter - DWAC',
+  description: 'The Digital World Charter: a foundational document for governing the digital world through rule of law.',
+}
+
 import Link from 'next/link'
 
 export default function Charter() {

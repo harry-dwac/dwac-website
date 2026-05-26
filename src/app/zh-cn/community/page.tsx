@@ -1,35 +1,43 @@
-import Link from 'next/link'
 
-const features = [
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '社区 - 数字世界仲裁中心',
+  description: '加入DWAC社区，讨论数字仲裁，分享见解，与专家交流。',
+}
+
+import WalineComment from '@/components/WalineComment'
+
+const discussionCategories = [
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-      </svg>
-    ),
-    title: '讨论区',
-    description: '就仲裁实践、数字法律发展和程序创新进行主题讨论。分享见解，从DWAC社区的集体经验中学习。',
-    items: ['程序问题', '案件策略', '数字证据', '伦理与标准'],
+    emoji: '🏛️',
+    name: '公告',
+    description: 'DWAC 官方新闻、更新和重要通知',
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-      </svg>
-    ),
-    title: '案例研究',
-    description: '由DWAC仲裁员和从业者贡献的匿名案例分析。研究真实场景，探索不同方法，加深对数字争议解决的理解。',
-    items: ['电子商务争议', '平台治理', '数字资产案例', '跨境问题'],
+    emoji: '💬',
+    name: '综合讨论',
+    description: '开放讨论、自我介绍和社区交流',
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-      </svg>
-    ),
-    title: '知识库',
-    description: '由社区策划的协作文章、指南和参考资料。一座随着DWAC全球会员集体专业知识不断成长的活图书馆。',
-    items: ['实务指南', '司法管辖区调研', '技术评论', '模板与清单'],
+    emoji: '💡',
+    name: '创意想法',
+    description: '功能请求、建议和创新提案',
+  },
+  {
+    emoji: '❓',
+    name: '问答',
+    description: '关于仲裁程序和 DWAC 流程的问题',
+  },
+  {
+    emoji: '📊',
+    name: '投票',
+    description: '社区调查和集体决策',
+  },
+  {
+    emoji: '🙌',
+    name: '成果展示',
+    description: '分享你的工作、成就和案例经验',
   },
 ]
 
@@ -41,142 +49,98 @@ export default function CommunityPage() {
         <div className="absolute inset-0 bg-grid-gold opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-xs font-bold tracking-[3px] uppercase text-gold-500 mb-3 block">社区</span>
-          <h1 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-5">交流论坛</h1>
+          <h1 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-5">社区论坛</h1>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            DWAC会员专属空间，用于交流思想、分享案例见解，并协作推进数字世界仲裁实践。
+            DWAC 成员交流思想、分享案例见解、协作推进数字世界仲裁实践的专属空间。
           </p>
         </div>
       </section>
 
-      {/* ===== About — Light ===== */}
+      {/* ===== Categories — Light ===== */}
       <section className="bg-slate-50 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">关于论坛</span>
-          <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-            当专业知识遇上协作
-          </h2>
-          <p className="text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8">
-            DWAC交流论坛旨在促进全球仲裁专业人员、研究者和从业者之间的同行知识交流。无论您是资深仲裁员还是数字争议解决的新人，这个平台都能将您与志同道合的同行连接起来。
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-            <div className="bg-white border border-slate-200 rounded-xl p-5">
-              <p className="font-serif text-2xl font-bold text-gold-500 mb-1">20+</p>
-              <p className="text-sm text-slate-500">话题类别</p>
-            </div>
-            <div className="bg-white border border-slate-200 rounded-xl p-5">
-              <p className="font-serif text-2xl font-bold text-gold-500 mb-1">500+</p>
-              <p className="text-sm text-slate-500">预期会员</p>
-            </div>
-            <div className="bg-white border border-slate-200 rounded-xl p-5">
-              <p className="font-serif text-2xl font-bold text-gold-500 mb-1">全球</p>
-              <p className="text-sm text-slate-500">多语言支持</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== Features — Light ===== */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">功能</span>
+            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">讨论主题</span>
             <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              论坛功能
+              加入讨论
             </h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              三大核心模块，支持专业协作的方方面面。
+              按分类浏览讨论，提出问题，分享专业知识，或发起新话题。
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {discussionCategories.map((cat, idx) => (
               <div
                 key={idx}
-                className="bg-slate-50 border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 rounded-xl p-8"
+                className="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-navy-900/5 rounded-xl flex items-center justify-center text-gold-500 mb-5">
-                  {feature.icon}
-                </div>
-                <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed mb-5">{feature.description}</p>
-                <ul className="space-y-2">
-                  {feature.items.map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                      <svg className="w-4 h-4 text-gold-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <span className="text-2xl mb-3 block">{cat.emoji}</span>
+                <h3 className="font-serif text-lg font-bold text-slate-900 mb-1">{cat.name}</h3>
+                <p className="text-sm text-slate-500 leading-relaxed">{cat.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== Coming Soon — Dark ===== */}
-      <section className="bg-gradient-navy py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-navy-800/60 border border-gold-500/20 rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden">
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-gold-500/5 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gold-500/5 rounded-full blur-3xl" />
-
-            <div className="relative">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-gold-500/30 rounded-full mb-6">
-                <span className="w-2 h-2 bg-gold-500 rounded-full animate-pulse" />
-                <span className="text-xs font-semibold tracking-[2px] uppercase text-gold-400">即将推出</span>
-              </div>
-              <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">
-                论坛将于2025年第三季度上线
-              </h2>
-              <p className="text-slate-400 max-w-lg mx-auto mb-8 leading-relaxed">
-                我们正在为DWAC社区打造世界级的协作平台。上线前将向所有活跃DWAC会员开放注册。
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/zh-cn/membership/"
-                  className="bg-gradient-gold text-navy-900 font-bold text-sm tracking-wide px-8 py-3 rounded-md hover:shadow-[0_0_30px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 transition-all inline-block"
-                >
-                  申请会员资格
-                </Link>
-                <Link
-                  href="/zh-cn/contact/"
-                  className="border border-gold-500/30 text-gold-400 font-semibold text-sm px-8 py-3 rounded-md hover:border-gold-500 hover:bg-gold-500/5 transition-all inline-block"
-                >
-                  联系我们
-                </Link>
-              </div>
-            </div>
+      {/* ===== Waline Comments ===== */}
+      <section className="bg-white py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">论坛</span>
+            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+              讨论区
+            </h2>
+            <p className="text-slate-500 max-w-xl mx-auto">
+              分享您的想法、提出问题或发起新讨论。无需 GitHub 账号！
+            </p>
           </div>
+          <WalineComment lang="zh-CN" />
         </div>
       </section>
 
-      {/* ===== Requirements — Light ===== */}
+      {/* ===== Guidelines — Light ===== */}
       <section className="bg-slate-50 py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white border border-slate-200 rounded-xl p-8">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-gold-500/[0.06] rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            <h3 className="font-serif text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+              <svg className="w-6 h-6 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              社区准则
+            </h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3 text-sm text-slate-600">
+                <svg className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-              </div>
-              <div>
-                <h3 className="font-serif text-lg font-bold text-slate-900 mb-2">需要会员资格</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  交流论坛仅对活跃DWAC会员开放。如需获取访问权限，请完成会员申请流程。个人和机构会员均享有完整的论坛访问权限。
-                </p>
-                <Link
-                  href="/zh-cn/membership/"
-                  className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-gold-600 hover:text-gold-500 transition-colors"
-                >
-                  了解会员资格
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
+                在所有互动中保持尊重和专业
+              </li>
+              <li className="flex items-start gap-3 text-sm text-slate-600">
+                <svg className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                围绕主题进行建设性讨论
+              </li>
+              <li className="flex items-start gap-3 text-sm text-slate-600">
+                <svg className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                分享案例前匿名化处理 — 保护机密性
+              </li>
+              <li className="flex items-start gap-3 text-sm text-slate-600">
+                <svg className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                引用他人成果时注明出处
+              </li>
+              <li className="flex items-start gap-3 text-sm text-slate-600">
+                <svg className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                将讨论放在适当的分类下
+              </li>
+            </ul>
           </div>
         </div>
       </section>

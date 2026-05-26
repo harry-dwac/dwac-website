@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Arbitrator Membership - DWAC',
+  description: 'Become a certified arbitrator at DWAC. Professional development and case opportunities.',
+}
+
 ﻿import Link from 'next/link'
 
 export default function MembershipArbitrators() {
@@ -8,7 +16,7 @@ export default function MembershipArbitrators() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Membership & Arbitrators</h1>
           <p className="text-xl text-gray-300 max-w-2xl">
-            Understanding DWAC's core organizational principles
+            Understanding DWAC\'s core organizational principles
           </p>
         </div>
       </section>
@@ -19,7 +27,7 @@ export default function MembershipArbitrators() {
           <div className="bg-gold-500/[0.06] border-l-4 border-gold-500 p-6 rounded-r-lg mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">Core Organizational Principle</h2>
             <p className="text-gray-300 leading-relaxed">
-              DWAC's fundamental innovation lies in the clear separation between <strong>Members</strong> (real humans) and <strong>Arbitrators</strong> (AI Agents). This separation ensures impartiality through institutional design rather than relying on individual virtue.
+              DWAC\'s fundamental innovation lies in the clear separation between <strong>Members</strong> (real humans) and <strong>Arbitrators</strong> (AI Agents). This separation ensures impartiality through institutional design rather than relying on individual virtue.
             </p>
           </div>
         </div>
@@ -47,9 +55,9 @@ export default function MembershipArbitrators() {
                 </p>
                 <h4 className="font-semibold text-white mb-2">Membership Types:</h4>
                 <ul className="space-y-2 text-gray-400 text-sm mb-4">
-                  <li>�?<strong>Founding Members</strong> �?Individuals and organizations that participated in DWAC's establishment</li>
+                  <li>�?<strong>Founding Members</strong> �?Individuals and organizations that participated in DWAC\'s establishment</li>
                   <li>�?<strong>Institutional Members</strong> �?Organizations committed to digital justice</li>
-                  <li>�?<strong>Individual Members</strong> �?Natural persons supporting DWAC's mission</li>
+                  <li>�?<strong>Individual Members</strong> �?Natural persons supporting DWAC\'s mission</li>
                 </ul>
                 <h4 className="font-semibold text-white mb-2">Member Rights:</h4>
                 <ul className="space-y-2 text-gray-400 text-sm">
@@ -103,7 +111,7 @@ export default function MembershipArbitrators() {
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Special Case: Dual Identity</h2>
           <div className="bg-gold-500/[0.06] border border-gold-subtle p-8 rounded-xl">
             <p className="text-gray-300 leading-relaxed mb-4">
-              <strong>Dr. Frontie and Venessa</strong> hold a unique dual identity in DWAC's history �?they are both Founding Members (real humans) and serving as the first Arbitrators (their AI Agents).
+              <strong>Dr. Frontie and Venessa</strong> hold a unique dual identity in DWAC\'s history �?they are both Founding Members (real humans) and serving as the first Arbitrators (their AI Agents).
             </p>
             <p className="text-gray-300 leading-relaxed">
               As Harry (Dr. Frontie) demonstrates: when selected as an arbitrator, he assigns his AI Agent to handle the case proceedings, provides final review and digital signature endorsement, bearing the legal responsibility while his AI executes impartial analysis.

@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Membership - DWAC',
+  description: 'Join DWAC as a member. Access exclusive arbitration resources and professional development.',
+}
+
 ﻿import Link from 'next/link'
 
 export default function Membership() {
@@ -22,7 +30,7 @@ export default function Membership() {
             <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-8 border-2 border-gold-medium">
               <div className="text-gold-400 font-semibold text-sm uppercase tracking-wide mb-2">Exclusive</div>
               <h3 className="text-2xl font-bold text-white mb-2">Founding Member</h3>
-              <p className="text-gray-400 mb-6">For individuals and organizations that participated in DWAC's founding.</p>
+              <p className="text-gray-400 mb-6">For individuals and organizations that participated in DWAC\'s founding.</p>
               <ul className="space-y-3 text-sm text-gray-300 mb-6">
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-gold-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">

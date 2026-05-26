@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '虛擬聽證室 - 數字世界仲裁中心',
+  description: 'DWAC虛擬聽證室，遠端仲裁程式。安全且全球可訪問。',
+}
+
 import Link from 'next/link'
 
 const features = [
@@ -178,7 +186,7 @@ export default function VirtualHearingPage() {
                 <span className="text-xs font-semibold tracking-[2px] uppercase text-cyan-400">即將推出</span>
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">
-                虛擬仲裁庭 — 2025年上線
+                虛擬仲裁庭 — 已上线年上線
               </h2>
               <p className="text-slate-400 max-w-lg mx-auto mb-8 leading-relaxed">
                 我們正在開發最先進的虛擬庭審平台。成為首批體驗線上仲裁未來的使用者。

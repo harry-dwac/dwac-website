@@ -55,9 +55,15 @@ export default function FooterZhTw() {
 
         {/* Divider */}
         <div className="mt-12 pt-8 border-t border-gold-subtle/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} 數位世界仲裁中心 (DWAC). 保留所有權利。
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p className="text-xs text-gray-600">
+              © {new Date().getFullYear()} 數位世界仲裁中心 (DWAC). 保留所有權利。
+            </p>
+            <div className="flex items-center gap-4">
+              <Link href="/zh-tw/privacy/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">隱私政策</Link>
+              <Link href="/zh-tw/terms/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">服務條款</Link>
+            </div>
+          </div>
           <div className="flex items-center gap-4">
             <Link href="/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">EN</Link>
             <Link href="/zh-cn/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">简体中文</Link>

@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Fee Schedule - DWAC',
+  description: 'DWAC\'s transparent fee schedule for digital arbitration services. No hidden costs.',
+}
+
 import Link from 'next/link'
 
 export default function Fees() {

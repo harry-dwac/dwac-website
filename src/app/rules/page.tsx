@@ -1,3 +1,11 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Arbitration Rules - DWAC',
+  description: 'DWAC\'s arbitration rules governing all proceedings. Fair, transparent, and internationally recognized.',
+}
+
 import Link from 'next/link'
 
 export default function RulesPage() {
