@@ -29,11 +29,17 @@ export default function Vol2Page() {
 
       <div className="max-w-4xl mx-auto w-full px-4 py-12">
         {/* Cover */}
-        <div className="bg-navy-700 rounded-xl p-12 text-center text-white mb-12">
-          <p className="text-gold-400 tracking-wide uppercase text-sm mb-2">DWAC Professional Library</p>
-          <h1 className="font-serif text-4xl font-bold mb-2">Volume 2</h1>
-          <p className="text-xl text-gray-300 mb-6">Advanced Practices & Case Studies</p>
-          <div className="w-24 h-1 bg-gold-400 mx-auto" />
+        <div className="rounded-xl overflow-hidden shadow-xl mb-12">
+          <picture>
+            <source media="(min-width: 1024px)" srcSet="/images/library/vol2-cover-en-1024.jpg" type="image/jpeg" />
+            <source media="(min-width: 768px)" srcSet="/images/library/vol2-cover-en-512.jpg" type="image/jpeg" />
+            <img
+              src="/images/library/vol2-cover-en-400.jpg"
+              alt="DWAC Professional Library Volume 2 Cover"
+              className="w-full h-auto"
+              loading="eager"
+            />
+          </picture>
         </div>
 
         {/* TOC */}
