@@ -133,14 +133,14 @@ export default function About() {
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">1</div>
                 <div className="ml-4">
-                  <h3 className="font-semibold text-lg text-white">2025</h3>
+                  <h3 className="font-semibold text-lg text-white">2026</h3>
                   <p className="text-gray-400">DWAC initiated and established</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">2</div>
                 <div className="ml-4">
-                  <h3 className="font-semibold text-lg text-white">Q4 2025</h3>
+                  <h3 className="font-semibold text-lg text-white">Q4 2026</h3>
                   <p className="text-gray-400">Founding Council composition completed</p>
                 </div>
               </div>

@@ -187,14 +187,14 @@ export default function VirtualHearingPage() {
 
             <div className="relative">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-cyan-400/30 rounded-full mb-6">
-                <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-                <span className="text-xs font-semibold tracking-[2px] uppercase text-cyan-400">Coming Soon</span>
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <span className="text-xs font-semibold tracking-[2px] uppercase text-green-400">Now Live</span>
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">
                 Virtual Hearing Room — Now Live
               </h2>
               <p className="text-slate-400 max-w-lg mx-auto mb-8 leading-relaxed">
-                We are developing a state-of-the-art virtual hearing platform. Be among the first to experience the future of online arbitration.
+                Our state-of-the-art virtual hearing platform is now available. Experience secure, professional online arbitration.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
