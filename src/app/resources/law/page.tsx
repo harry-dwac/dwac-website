@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Legal Resources - DWAC',
+  title: 'Legal Resources ',
   description: 'Comprehensive legal resources for digital arbitration. Legislation, case law, and scholarly articles.',
 }
 
