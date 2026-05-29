@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Arbitration Rules - DWAC',
+  title: 'Arbitration Rules ',
   description: 'DWAC\'s arbitration rules governing all proceedings. Fair, transparent, and internationally recognized.',
 }
 
