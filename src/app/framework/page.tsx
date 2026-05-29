@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Arbitrator-Agent Framework - DWAC',
+  title: 'Arbitrator-Agent Framework ',
   description: 'Defining the boundaries of AI Agent capability and responsibility attribution in digital world arbitration.',
 }
 
