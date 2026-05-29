@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Virtual Hearing Room - DWAC',
+  title: 'Virtual Hearing Room ',
   description: 'DWAC\'s virtual hearing room for remote arbitration proceedings. Secure and accessible worldwide.',
 }
 
