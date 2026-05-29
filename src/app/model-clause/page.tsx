@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Model Arbitration Clause - DWAC',
+  title: 'Model Arbitration Clause ',
   description: 'Standard model arbitration clauses for digital world disputes. Free to use in your contracts.',
 }
 
