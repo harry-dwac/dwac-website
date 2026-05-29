@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Apply - DWAC',
+  title: 'How to Apply ',
   description: 'Step-by-step guide to filing a digital dispute with DWAC. Simple, streamlined process.',
 }
 
