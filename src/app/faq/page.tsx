@@ -1,5 +1,6 @@
 
 import type { Metadata } from 'next'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'FAQ - DWAC',
@@ -7,6 +8,78 @@ export const metadata: Metadata = {
 }
 
 import Link from 'next/link'
+
+// FAQ Structured Data for Google Rich Results
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What types of disputes does DWAC handle?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'DWAC handles disputes arising from digital world activities including: cross-border digital platform disputes, smart contract performance issues, AI agent interactions, digital asset conflicts (NFTs, tokens, virtual property), data ownership disputes, platform service disputes, and other digital world disputes by agreement.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does the arbitration process take?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Standard cases are typically resolved within 90 days of tribunal constitution. For disputes under 1,000,000 RMB, our Simplified Procedure offers resolution within 30 days.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Are DWAC awards enforceable globally?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. DWAC awards are designed to be enforceable under the New York Convention in over 170 countries worldwide.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the costs associated with arbitration?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Arbitration costs include a filing fee based on the dispute amount and administrative fees. Please refer to our Fee Calculator or contact us for a detailed estimate based on your specific case.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Who can file a dispute with DWAC?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Any party involved in a digital world dispute, provided there is a valid arbitration agreement (either through a contract clause or by submitting to DWAC\'s jurisdiction) can file a dispute.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the arbitration process confidential?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. DWAC arbitration proceedings are private and confidential. Awards are not published without the consent of all parties involved.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a lawyer to participate in DWAC arbitration?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'While parties may choose to be represented by legal counsel, it is not mandatory. Parties may represent themselves in DWAC proceedings.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What languages are supported?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'DWAC proceedings can be conducted in multiple languages. English is the default, but other languages may be accepted based on the agreement of parties.'
+      }
+    }
+  ]
+}
 
 export default function FAQ() {
   const faqs = [
@@ -45,7 +118,14 @@ export default function FAQ() {
   ]
 
   return (
-    <div className="flex flex-col">
+    <>
+      {/* FAQ JSON-LD Structured Data */}
+      <Script
+        id="faq-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <div className="flex flex-col">
       {/* Hero */}
       <section className="bg-navy-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,6 +158,7 @@ export default function FAQ() {
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
