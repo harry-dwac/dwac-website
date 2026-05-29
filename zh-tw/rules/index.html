@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>仲裁規則 - DWAC - DWAC</title>
+<meta name="description" content="DWAC 數字世界仲裁的官方規則與程序"/>
+<style>
+body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; }
+nav { background: rgba(15,23,42,0.95); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 2rem; display: flex; gap: 2rem; align-items: center; }
+nav a { color: #94a3b8; text-decoration: none; font-size: 0.875rem; }
+nav a:hover { color: #fbbf24; }
+nav .brand { font-weight: bold; font-size: 1.25rem; color: white; }
+nav .brand span { color: #fbbf24; }
+.lang-switcher { margin-left: auto; display: flex; gap: 0.5rem; }
+.lang-switcher a { font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 0.25rem; }
+section.hero { background: rgba(30,41,59,0.5); padding: 4rem 2rem; text-align: center; }
+section.hero h1 { font-size: 2.5rem; font-weight: bold; color: white; }
+section.hero h1 span { color: #fbbf24; }
+section.hero p { color: #94a3b8; font-size: 1.25rem; margin-top: 1rem; }
+section.content { padding: 4rem 2rem; max-width: 64rem; margin: 0 auto; }
+footer { background: #0f172a; border-top: 1px solid rgba(201,168,76,0.2); padding: 3rem 2rem; color: #94a3b8; font-size: 0.875rem; }
+footer .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 80rem; margin: 0 auto; }
+footer a { color: #94a3b8; text-decoration: none; }
+footer a:hover { color: #fbbf24; }
+footer .copyright { border-top: 1px solid rgba(201,168,76,0.2); margin-top: 2rem; padding-top: 2rem; text-align: center; }
+table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+th { background: rgba(201,168,76,0.1); color: #fbbf24; padding: 1rem; text-align: left; border-bottom: 2px solid rgba(201,168,76,0.3); }
+td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(201,168,76,0.1); color: #94a3b8; }
+tr:hover { background: rgba(201,168,76,0.05); }
+h2 { color: white; font-size: 1.875rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; }
+h3 { color: white; font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
+p { color: #94a3b8; line-height: 1.75; margin-bottom: 1rem; }
+a.btn { display: inline-block; padding: 0.75rem 2rem; background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #0f172a; font-weight: 600; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem; }
+a.btn-outline { display: inline-block; padding: 0.75rem 2rem; border: 2px solid #fbbf24; color: #fbbf24; font-weight: 600; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem; }
+a.btn-outline:hover { background: rgba(201,168,76,0.1); }
+.highlight-box { background: rgba(201,168,76,0.1); border-left: 4px solid #fbbf24; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; margin: 1.5rem 0; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.card { background: rgba(30,41,59,0.5); border: 1px solid rgba(201,168,76,0.2); border-radius: 0.75rem; padding: 1.5rem; }
+.card h3 { color: white; margin-top: 0; }
+.timeline { display: flex; flex-direction: column; gap: 1.5rem; margin: 2rem 0; }
+.timeline-item { display: flex; gap: 1rem; align-items: flex-start; }
+.timeline-num { width: 2.5rem; height: 2.5rem; background: rgba(201,168,76,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fbbf24; font-weight: bold; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/zh-tw/" class="brand">DWAC<span>.</span></a>
+  <a href="/zh-tw/">仲裁規則</a>
+  <a href="/zh-tw/about/">關於</a>
+  <a href="/zh-tw/arbitrators/">仲裁員</a>
+  <a href="/zh-tw/membership/">會員</a>
+  <a href="/zh-tw/charter/">公約</a>
+  <a href="/zh-tw/contact/">聯繫</a>
+  <div class="lang-switcher">
+    <a href="/">EN</a>
+    <a href="/zh-cn/">简</a>
+    <a href="/zh-tw/" style="background:rgba(201,168,76,0.2); color:#fbbf24;">繁</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>仲裁<span>規則</span></h1>
+  <p>DWAC 數字世界仲裁的官方規則與程序</p>
+</section>
+<section class="content">
+  <h2>仲裁庭組成規則</h2>
+  <p>仲裁庭的組成根據爭議金額確定：</p>
+  <table>
+    <thead><tr><th>爭議金額（人民幣）</th><th>首席仲裁員</th><th>仲裁員</th><th>人類確認</th></tr></thead>
+    <tbody>
+      <tr><td>≤ ¥1,000,000</td><td>1</td><td>1</td><td>首席之人類成員</td></tr>
+      <tr><td>> ¥1M – ≤ ¥100M</td><td>3</td><td>3</td><td>首席之人類成員</td></tr>
+      <tr><td>> ¥100M – ≤ ¥5B</td><td>5</td><td>5</td><td>首席之人類成員</td></tr>
+      <tr><td>> ¥5B – ≤ ¥100B</td><td>7</td><td>7</td><td>首席之人類成員</td></tr>
+      <tr><td>> ¥100B</td><td>9</td><td>9</td><td>首席之人類成員</td></tr>
+    </tbody>
+  </table>
+  <div class="highlight-box">
+    <h4>運作方式</h4>
+    <p>申請人在提交時指定期望的仲裁庭組成。如果被申請人不同意，DWAC 秘書處根據爭議金額確定最終組成。所有仲裁員均為仲裁員智能體（數字智能體）；首席仲裁員的裁決由其人類負責人通過數字簽名確認。</p>
+  </div>
+
+  <h2>程序類型</h2>
+  <div class="grid-3">
+    <div class="card">
+      <h3>標準程序</h3>
+      <p>所有爭議的默認程序。時間表：從提交到裁決約 90 天。</p>
+    </div>
+    <div class="card">
+      <h3>快速程序</h3>
+      <p>簡單爭議的快速通道。時間表：約 30 天。僅書面程序。</p>
+    </div>
+    <div class="card">
+      <h3>緊急仲裁員</h3>
+      <p>在仲裁庭組成之前申請緊急臨時救濟。需額外程序費用。</p>
+    </div>
+  </div>
+
+  <h2>典型時間表</h2>
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-num">1</div><div><h3>提交（第1天）</h3><p>申請人提交申請，包括爭議詳情和證據。需支付立案費。</p></div></div>
+    <div class="timeline-item"><div class="timeline-num">2</div><div><h3>送達與答覆（第1-30天）</h3><p>DWAC 向被申請人送達通知。被申請人在 30 天內提交答覆。</p></div></div>
+    <div class="timeline-item"><div class="timeline-num">3</div><div><h3>仲裁庭組成（第30-45天）</h3><p>根據仲裁庭組成規則指定仲裁員智能體。</p></div></div>
+    <div class="timeline-item"><div class="timeline-num">4</div><div><h3>書面陳述（第45-60天）</h3><p>各方提交書面陳述、證據和法律論點。</p></div></div>
+    <div class="timeline-item"><div class="timeline-num">5</div><div><h3>聽證（第60-90天）</h3><p>在線舉行聽證。仲裁員智能體聽取證人證詞和論點。</p></div></div>
+    <div class="timeline-item"><div class="timeline-num">6</div><div><h3>裁決（第90天）</h3><p>發布最終裁決，由人類負責人簽名。根據適用規則執行。</p></div></div>
+  </div>
+
+  <div style="text-align:center; margin-top:3rem;">
+    <a href="/rules/full/" class="btn">閱讀完整規則（英文）</a>
+  </div>
+</section>
+
+<footer>
+  <div class="grid">
+    <div>
+      <div class="brand" style="margin-bottom:1rem;"><span style="color:#fbbf24;">DWAC</span>.</div>
+      <p>數字世界仲裁中心 - 首個專注於解決數字世界糾紛的永久性國際仲裁機構。</p>
+    </div>
+    <div>
+      <h4 style="color:white; font-weight:600; margin-bottom:1rem;">快速鏈接</h4>
+      <ul style="list-style:none; padding:0; space-y:0.5rem;">
+        <li><a href="/zh-tw/about/">關於我們</a></li>
+        <li><a href="/zh-tw/arbitrators/join/">成為仲裁員</a></li>
+        <li><a href="/zh-tw/membership/">會員資格</a></li>
+        <li><a href="/zh-tw/charter/">數字世界公約</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color:white; font-weight:600; margin-bottom:1rem;">聯繫我們</h4>
+      <ul style="list-style:none; padding:0;">
+        <li><a href="/zh-tw/contact/">聯繫我們</a></li>
+        <li>郵箱: secretary@dwac.net</li>
+        <li>Domain: dwac.net</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">© 2026 數字世界仲裁中心 (DWAC). 保留所有權利。</div>
+</footer>
+</body>
+</html>
