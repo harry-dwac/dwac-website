@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Case Types - DWAC',
+  title: 'Case Types ',
   description: 'Explore the types of digital disputes DWAC handles, from AI and blockchain to data privacy and cross-border e-commerce.',
 }
 
