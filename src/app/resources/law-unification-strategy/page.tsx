@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Strategic Recommendations on Advancing Cross-Strait Unification Through the Rule of Law | DWAC',
+  title: 'Strategic Recommendations on Advancing Cross-Strait Unification Through the Rule of Law ',
   description: 'Strategic recommendations on advancing cross-strait unification through the extension of judicial jurisdiction and the rule of law.',
 }
 
