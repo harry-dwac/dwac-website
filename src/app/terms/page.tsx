@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - DWAC',
+  title: 'Terms of Service ',
   description: 'DWAC\'s Terms of Service. By using our services, you agree to these terms.',
 }
 
