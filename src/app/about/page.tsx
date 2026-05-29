@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About DWAC - Digital World Arbitration Centre',
+  title: 'About - Digital World Arbitration Centre',
   description: 'Learn about DWAC\'s mission to establish rule of law for the digital world through fair and efficient arbitration.',
 }
 
