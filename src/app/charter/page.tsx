@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Digital World Charter - DWAC',
+  title: 'Digital World Charter ',
   description: 'The Digital World Charter: a foundational document for governing the digital world through rule of law.',
 }
 
