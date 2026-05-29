@@ -123,6 +123,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== TESTIMONIALS — Light section ===== */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white border-t border-slate-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">Trusted By</span>
+            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">What Our Clients Say</h2>
+            <p className="text-slate-500 max-w-xl mx-auto">
+              DWAC is building the future of digital dispute resolution — here's what leading voices in the space are saying.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-14">
+            {/* Testimonial 1 */}
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-7 relative">
+              <div className="text-gold-400 text-4xl font-serif leading-none mb-3">"</div>
+              <p className="text-sm text-slate-600 leading-relaxed mb-5">
+                DWAC's Digital Tribunal is exactly what the Web3 ecosystem needs — a specialized, enforceable, and globally recognized arbitration mechanism for cross-border digital disputes.
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-amber-500 flex items-center justify-center text-white text-sm font-bold">L</div>
+                <div>
+                  <div className="text-sm font-semibold text-slate-900">Dr. Lin Zhang</div>
+                  <div className="text-[11px] text-slate-400">Professor of Digital Law, Tsinghua University</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-7 relative">
+              <div className="text-gold-400 text-4xl font-serif leading-none mb-3">"</div>
+              <p className="text-sm text-slate-600 leading-relaxed mb-5">
+                As an AI developer, having a dedicated arbitration institution that understands agent-to-agent contracts and autonomous system disputes gives me real peace of mind.
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white text-sm font-bold">M</div>
+                <div>
+                  <div className="text-sm font-semibold text-slate-900">Marco S.</div>
+                  <div className="text-[11px] text-slate-400">CTO, NeuralForge AG (Switzerland)</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-7 relative">
+              <div className="text-gold-400 text-4xl font-serif leading-none mb-3">"</div>
+              <p className="text-sm text-slate-600 leading-relaxed mb-5">
+                The New York Convention enforcement framework combined with DWAC's digital-first process — this is the arbitration solution e-commerce platforms have been waiting for.
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white text-sm font-bold">P</div>
+                <div>
+                  <div className="text-sm font-semibold text-slate-900">Priya K.</div>
+                  <div className="text-[11px] text-slate-400">General Counsel, CrossBorder Exports (Singapore)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Partners / Supporters */}
+          <div className="text-center">
+            <p className="text-[11px] font-bold tracking-[3px] uppercase text-slate-400 mb-6">Backed By Leading Institutions</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              <div className="text-slate-500 text-sm font-semibold tracking-wide px-5 py-2 border border-slate-200 rounded-lg">Tsinghua University</div>
+              <div className="text-slate-500 text-sm font-semibold tracking-wide px-5 py-2 border border-slate-200 rounded-lg">China Justice Observer</div>
+              <div className="text-slate-500 text-sm font-semibold tracking-wide px-5 py-2 border border-slate-200 rounded-lg">CIETAC</div>
+              <div className="text-slate-500 text-sm font-semibold tracking-wide px-5 py-2 border border-slate-200 rounded-lg">HKIAC</div>
+              <div className="text-slate-500 text-sm font-semibold tracking-wide px-5 py-2 border border-slate-200 rounded-lg">ICC</div>
+            </div>
+            <p className="text-[11px] text-slate-400 mt-4 italic">Partner logos & links coming soon — contact us to join the DWAC network.</p>
+          </div>
+        </div>
+      </section>
+
       {/* ===== ABOUT DWAC — Dark section ===== */}
       <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-navy">
         <div className="max-w-4xl mx-auto text-center">
