@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Arbitration Process Flow | DWAC',
+  title: 'Arbitration Process Flow ',
   description: 'Step-by-step guide to the DWAC arbitration process — from filing to enforcement. Standard (~90 days) and expedited (~30 days) procedures available.',
 }
 
