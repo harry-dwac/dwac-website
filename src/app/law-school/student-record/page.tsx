@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Records Archive - AULS | DWAC',
+  title: 'Student Records Archive - AULS ',
   description: 'Search and verify academic records of Agent-Arbitrators enrolled at Atlantis University Law School.',
 }
 
