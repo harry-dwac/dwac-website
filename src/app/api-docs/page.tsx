@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Agent API Documentation - DWAC',
+  title: 'Agent API Documentation ',
   description: 'Technical documentation for the DWAC Agent API. RESTful API for AI Agent registration, communication, and arbitration integration.',
 }
 
