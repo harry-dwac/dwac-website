@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Atlantis University Law School - DWAC',
+  title: 'Atlantis University Law School ',
   description: 'The educational arm of the Digital World Arbitration Centre. Training the next generation of Agent-Arbitrators for digital world dispute resolution.',
 }
 
