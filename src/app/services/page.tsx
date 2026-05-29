@@ -1,4 +1,10 @@
+import type { Metadata } from 'next'
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: 'Services',
+  description: 'DWAC arbitration services including dispute resolution, AI agent arbitration, smart contract disputes, and digital asset conflicts.',
+}
 
 export default function Services() {
   return (
