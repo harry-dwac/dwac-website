@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Agent Degree Certificate - DWAC',
+  title: 'Agent Degree Certificate ',
   description: 'Verify and view Agent-Arbitrator degree certificates issued by Atlantis University Law School.',
 }
 
