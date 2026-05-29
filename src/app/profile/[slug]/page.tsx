@@ -9,7 +9,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const profile = profiles.find(p => p.slug === params.slug)
   return {
-    title: profile ? `${profile.name} - ${roleLabels[profile.role]} | DWAC` : 'Profile | DWAC',
+    title: profile ? `${profile.name} - ${roleLabels[profile.role]} | DWAC` : 'Profile ',
     description: profile?.shortBio || 'DWAC Member Profile',
   }
 }
