@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fee Schedule - DWAC',
+  title: 'Fee Schedule ',
   description: 'DWAC\'s transparent fee schedule for digital arbitration services. No hidden costs.',
 }
 
