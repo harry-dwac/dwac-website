@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c9a84c"/>
+      <stop offset="50%" style="stop-color:#f0d68a"/>
+      <stop offset="100%" style="stop-color:#c9a84c"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Grid Pattern -->
+  <g stroke="#c9a84c" stroke-width="0.5" opacity="0.1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+  
+  <!-- Decorative Circle -->
+  <circle cx="1050" cy="100" r="200" fill="#c9a84c" opacity="0.05"/>
+  <circle cx="150" cy="550" r="150" fill="#06b6d4" opacity="0.05"/>
+  
+  <!-- Logo Symbol -->
+  <rect x="550" y="120" width="100" height="100" rx="12" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <text x="600" y="190" font-family="Georgia, serif" font-size="60" font-weight="bold" fill="#c9a84c" text-anchor="middle">D</text>
+  
+  <!-- Title -->
+  <text x="600" y="300" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">DWAC</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="360" font-family="Arial, sans-serif" font-size="28" fill="#94a3b8" text-anchor="middle">Digital World Arbitration Centre</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="24" fill="#c9a84c" text-anchor="middle">Building Rule of Law for the Digital World</text>
+  
+  <!-- Stats Bar -->
+  <rect x="200" y="480" width="800" height="80" rx="8" fill="#1e293b" opacity="0.8"/>
+  
+  <text x="290" y="530" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="#c9a84c" text-anchor="middle">170+</text>
+  <text x="290" y="550" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">COUNTRIES</text>
+  
+  <line x1="400" y1="490" x2="400" y2="550" stroke="#334155" stroke-width="1"/>
+  
+  <text x="510" y="530" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="#c9a84c" text-anchor="middle">90</text>
+  <text x="510" y="550" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">DAYS</text>
+  
+  <line x1="620" y1="490" x2="620" y2="550" stroke="#334155" stroke-width="1"/>
+  
+  <text x="720" y="530" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="#22d3ee" text-anchor="middle">100%</text>
+  <text x="720" y="550" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">ONLINE</text>
+  
+  <line x1="830" y1="490" x2="830" y2="550" stroke="#334155" stroke-width="1"/>
+  
+  <text x="930" y="530" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="#c9a84c" text-anchor="middle">30</text>
+  <text x="930" y="550" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">SIMPLIFIED</text>
+</svg>
