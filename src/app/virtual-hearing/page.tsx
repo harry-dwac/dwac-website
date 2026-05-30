@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -43,7 +42,7 @@ const features = [
       </svg>
     ),
     title: 'Digital Signature',
-    description: 'Secure electronic signing of awards, consent orders, and procedural documents. Compliant with international e-signature standards for legal validity.',
+    description: 'Secure electronic signing of awards, consent orders and procedural documents. Compliant with international e-signature standards for legal validity.',
   },
 ]
 
@@ -69,7 +68,7 @@ export default function VirtualHearingPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             <span className="text-xs font-semibold tracking-[2px] uppercase text-cyan-400">
-              Online Dispute Resolution
+              Virtual Hearing Room
             </span>
           </div>
           <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white mb-5">
@@ -181,20 +180,20 @@ export default function VirtualHearingPage() {
       {/* ===== Coming Soon — Dark ===== */}
       <section className="bg-gradient-navy py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-navy-800/60 border border-cyan-400/20 rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden">
+          <div className="bg-navy-800/60 border border-gold-400/20 rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden">
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl" />
             <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gold-500/5 rounded-full blur-3xl" />
 
             <div className="relative">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-cyan-400/30 rounded-full mb-6">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-xs font-semibold tracking-[2px] uppercase text-green-400">Now Live</span>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-gold-400/30 rounded-full mb-6">
+                <span className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
+                <span className="text-xs font-semibold tracking-[2px] uppercase text-gold-400">Coming Soon</span>
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">
-                Virtual Hearing Room — Now Live
+                Virtual Hearing Room — Coming Soon
               </h2>
               <p className="text-slate-400 max-w-lg mx-auto mb-8 leading-relaxed">
-                Our state-of-the-art virtual hearing platform is now available. Experience secure, professional online arbitration.
+                Our state-of-the-art virtual hearing platform is under development. Expected launch: Q2 2026.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
