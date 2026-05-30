@@ -100,14 +100,14 @@ export default function Home() {
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 bg-gold-500/[0.06]0 rounded-full flex items-center justify-center text-white font-bold">✓</div>
                 <div className="ml-4">
-                  <h3 className="font-semibold text-lg text-white">2025年 - DWAC发起设立</h3>
+                  <h3 className="font-semibold text-lg text-white">2026年 - DWAC发起设立</h3>
                   <p className="text-gray-400">数字世界仲裁中心正式成立</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 bg-gold-500/[0.06]0 rounded-full flex items-center justify-center text-white font-bold">✓</div>
                 <div className="ml-4">
-                  <h3 className="font-semibold text-lg text-white">2025年Q4 - 创始理事会组建完成</h3>
+                  <h3 className="font-semibold text-lg text-white">2026年Q4 - 创始理事会组建完成</h3>
                   <p className="text-gray-400">首批创始理事会成员正式就位</p>
                 </div>
               </div>
