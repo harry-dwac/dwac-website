@@ -198,10 +198,10 @@ export default function VirtualHearingPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/contact/"
+                  href="/virtual-hearing/access/"
                   className="bg-gradient-gold text-navy-900 font-bold text-sm tracking-wide px-8 py-3 rounded-md hover:shadow-[0_0_30px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 transition-all inline-block"
                 >
-                  Request Early Access
+                  Enter Hearing Room
                 </Link>
                 <Link
                   href="/resources/"
