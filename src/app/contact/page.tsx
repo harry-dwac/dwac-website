@@ -1,45 +1,46 @@
-
 "use client"
 
 import { useState } from 'react'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: 'general', message: '' })
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
+  const [formData, setFormData] = useState({ 
+    name: '', 
+    email: '', 
+    subject: 'general', 
+    message: '' 
+  })
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setLoading(true)
-    setError('')
+    setStatus('submitting')
+    setErrorMsg('')
 
     try {
       const response = await fetch('https://api.dwac.net/contact/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message
-        })
+        body: JSON.stringify(formData)
       })
 
-      if (response.ok) {
-        setSubmitted(true)
-        setTimeout(() => setSubmitted(false), 5000)
+      const data = await response.json()
+
+      if (response.ok && data.status === 'submitted') {
+        setStatus('success')
+        setFormData({ name: '', email: '', subject: 'general', message: '' })
+        setTimeout(() => setStatus('idle'), 5000)
       } else {
-        throw new Error('Failed to submit')
+        throw new Error(data.message || 'Submission failed')
       }
-    } catch (err) {
-      // Fallback to mailto if API fails
+    } catch (error) {
+      console.error('Contact form error:', error)
+      setStatus('error')
+      setErrorMsg(error instanceof Error ? error.message : '提交失败，请稍后重试或直接发邮件到 secretary@dwac.net')
+      
+      // Fallback to mailto
       const mailto = `mailto:secretary@dwac.net?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
       window.open(mailto, '_blank')
-      setSubmitted(true)
-      setTimeout(() => setSubmitted(false), 5000)
-    } finally {
-      setLoading(false)
     }
   }
 
@@ -107,7 +108,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-white">Agent Club</h3>
-                      <a href="https://api.dwac.net" className="text-gold-400 hover:text-gold-300 transition-colors">api.dwac.net</a>
+                      <a href="https://dwac.net/agent-club" className="text-gold-400 hover:text-gold-300 transition-colors">dwac.net/agent-club</a>
                       <p className="text-slate-500 text-sm mt-1">For AI Agent arbitration participants</p>
                     </div>
                   </div>
@@ -128,109 +129,113 @@ export default function Contact() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-400">Sunday</span>
-                    <span className="text-slate-500">Closed</span>
+                    <span className="text-white font-medium">Closed</span>
                   </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-slate-700/50">
-                  <p className="text-slate-400 text-xs">Emergency arbitration requests are accepted 24/7 via email.</p>
-                </div>
-              </div>
-
-              {/* Quick Links */}
-              <div className="p-6 bg-navy-800/50 rounded-xl border border-slate-700/50">
-                <h3 className="font-semibold text-white mb-4">Quick Links</h3>
-                <div className="space-y-3">
-                  <a href="/dispute/" className="flex items-center text-gold-400 hover:text-gold-300 transition-colors font-medium">
-                    <span className="mr-2">⚖️</span> File a Dispute
-                  </a>
-                  <a href="/fee-calculator/" className="flex items-center text-gold-400 hover:text-gold-300 transition-colors font-medium">
-                    <span className="mr-2">💰</span> Fee Calculator
-                  </a>
-                  <a href="/arbitrators/join/" className="flex items-center text-gold-400 hover:text-gold-300 transition-colors font-medium">
-                    <span className="mr-2">🏛️</span> Become an Arbitrator
-                  </a>
-                  <a href="/virtual-hearing/" className="flex items-center text-gold-400 hover:text-gold-300 transition-colors font-medium">
-                    <span className="mr-2">🖥️</span> Virtual Hearing
-                  </a>
                 </div>
               </div>
             </div>
 
             {/* Contact Form - 3 cols */}
             <div className="lg:col-span-3">
-              <h2 className="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
-              <div className="bg-navy-800/30 p-8 rounded-2xl border border-slate-700/50">
-                {submitted ? (
+              <div className="bg-navy-800/30 rounded-2xl p-8 border border-slate-700/50">
+                <h2 className="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
+
+                {status === 'success' ? (
                   <div className="text-center py-12">
-                    <div className="text-5xl mb-4">✅</div>
-                    <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
-                    <p className="text-slate-400">Thank you for contacting us. We'll respond within 24 hours.</p>
+                    <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
+                    <p className="text-slate-400">Thank you for contacting us. We'll respond within 2 business days.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label className="block text-sm font-medium text-slate-300 mb-2">Full Name *</label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={e => setFormData({...formData, name: e.target.value})}
-                          className="w-full px-4 py-3 bg-navy-900/50 border border-slate-600 rounded-lg focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none text-white placeholder-slate-500 transition-colors"
-                          placeholder="Your name"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-slate-300 mb-2">Email *</label>
-                        <input
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={e => setFormData({...formData, email: e.target.value})}
-                          className="w-full px-4 py-3 bg-navy-900/50 border border-slate-600 rounded-lg focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none text-white placeholder-slate-500 transition-colors"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                    </div>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Name */}
                     <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-2">Subject</label>
+                      <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                        Your Name <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-4 py-3 bg-navy-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        placeholder="Enter your full name"
+                      />
+                    </div>
+
+                    {/* Email */}
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                        Email Address <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-4 py-3 bg-navy-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+
+                    {/* Subject */}
+                    <div>
+                      <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
+                        Subject <span className="text-red-400">*</span>
+                      </label>
                       <select
+                        id="subject"
+                        required
                         value={formData.subject}
-                        onChange={e => setFormData({...formData, subject: e.target.value})}
-                        className="w-full px-4 py-3 bg-navy-900/50 border border-slate-600 rounded-lg focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none text-white transition-colors"
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        className="w-full px-4 py-3 bg-navy-900/50 border border-slate-600 rounded-lg text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                       >
                         <option value="general">General Inquiry</option>
-                        <option value="dispute">Dispute Resolution</option>
-                        <option value="arbitration">Arbitration Inquiry</option>
+                        <option value="arbitration">Arbitration Case</option>
+                        <option value="membership">Membership</option>
                         <option value="partnership">Partnership</option>
-                        <option value="media">Media & Press</option>
-                        <option value="agent">AI Agent Registration</option>
+                        <option value="media">Media Inquiry</option>
                       </select>
                     </div>
+
+                    {/* Message */}
                     <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-2">Message *</label>
+                      <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                        Message <span className="text-red-400">*</span>
+                      </label>
                       <textarea
+                        id="message"
                         required
                         rows={6}
                         value={formData.message}
-                        onChange={e => setFormData({...formData, message: e.target.value})}
-                        className="w-full px-4 py-3 bg-navy-900/50 border border-slate-600 rounded-lg focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none text-white placeholder-slate-500 transition-colors resize-none"
-                        placeholder="Tell us how we can help..."
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full px-4 py-3 bg-navy-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors resize-none"
+                        placeholder="Tell us about your inquiry..."
                       />
                     </div>
+
+                    {/* Error Message */}
+                    {status === 'error' && (
+                      <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
+                        <p className="text-red-400 text-sm">{errorMsg}</p>
+                        <p className="text-slate-400 text-xs mt-2">已自动打开邮件客户端作为备份方案。</p>
+                      </div>
+                    )}
+
+                    {/* Submit Button */}
                     <button
                       type="submit"
-                      disabled={loading}
-                      className="w-full py-3.5 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-900 font-bold rounded-lg transition-all shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled={status === 'submitting'}
+                      className="w-full px-6 py-3 bg-gradient-gold text-white font-semibold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {loading ? '⏳ Sending...' : '📨 Send Message'}
+                      {status === 'submitting' ? 'Sending...' : 'Send Message'}
                     </button>
-                    {error && (
-                      <p className="text-sm text-red-400 text-center">{error}</p>
-                    )}
-                    <p className="text-sm text-slate-500 text-center">
-                      For urgent arbitration matters, email directly at <a href="mailto:secretary@dwac.net" className="text-gold-400 hover:text-gold-300">secretary@dwac.net</a>
-                    </p>
                   </form>
                 )}
               </div>
