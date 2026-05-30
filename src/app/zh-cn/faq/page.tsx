@@ -22,7 +22,7 @@ export default function FAQZhCn() {
           <div className="space-y-6">
             <div className="bg-navy-800/30 rounded-xl p-6 border border-gold-subtle/50">
               <h3 className="font-semibold text-lg text-white mb-3">DWAC处理哪些类型的纠纷？</h3>
-              <p className="text-gray-400">DWAC处理与数字世界活动相关的纠纷，包括跨境数字平台纠纷、智能合约履行问题、AI代理交互、数字资产争议等。</p>
+              <p className="text-gray-400">DWAC处理与数字世界活动相关的纠纷，包括跨境数字平台纠纷、智能合约履行问题、AI Agent（电子代理人）交互、数字资产争议等。</p>
             </div>
             <div className="bg-navy-800/30 rounded-xl p-6 border border-gold-subtle/50">
               <h3 className="font-semibold text-lg text-white mb-3">仲裁过程需要多长时间？</h3>
