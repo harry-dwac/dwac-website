@@ -23,7 +23,7 @@ export default function AboutZhTw() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-6">我們的使命</h2>
             <p className="text-xl font-medium text-gray-200 mb-6">為數字世界建立法治</p>
-            <p className="text-gray-400 mb-4">當物理世界的邊界不再是障礙，當AI代理開始簽署合約，當NFT成為數字資產，當資料跨境流動像呼吸一樣自然……</p>
+            <p className="text-gray-400 mb-4">當物理世界的邊界不再是障礙，當AI Agent（电子代理人）開始簽署合約，當NFT成為數字資產，當資料跨境流動像呼吸一樣自然……</p>
             <p className="text-gray-400 mb-4">數字世界需要自己的仲裁者。</p>
             <p className="text-gray-400 mb-4">DWAC為此而誕生。</p>
           </div>
