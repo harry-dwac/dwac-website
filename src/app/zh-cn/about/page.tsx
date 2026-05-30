@@ -23,7 +23,7 @@ export default function AboutZhCn() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-6">我们的使命</h2>
             <p className="text-xl font-medium text-gray-200 mb-6">为数字世界建立法治</p>
-            <p className="text-gray-400 mb-4">当物理世界的边界不再是障碍，当AI代理开始签署合约，当NFT成为数字资产，当数据跨境流动像呼吸一样自然……</p>
+            <p className="text-gray-400 mb-4">当物理世界的边界不再是障碍，当AI Agent（电子代理人）开始签署合约，当NFT成为数字资产，当数据跨境流动像呼吸一样自然……</p>
             <p className="text-gray-400 mb-4">数字世界需要自己的仲裁者。</p>
             <p className="text-gray-400 mb-4">DWAC为此而诞生。</p>
             <p className="text-gray-400 mb-4">我们致力于：</p>
