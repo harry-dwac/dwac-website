@@ -125,7 +125,7 @@ const categories: ResourceCategoryProps[] = [
     title: '收費標準',
     description: '當前費用表、仲裁成本計算器和付款指引。',
     items: [
-      { name: '2025年仲裁收費標準', free: true },
+      { name: '2026年仲裁收費標準', free: true },
       { name: '行政費用表', free: true },
       { name: '費用計算工具', free: true },
     ],
