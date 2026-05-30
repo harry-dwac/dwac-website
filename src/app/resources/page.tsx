@@ -139,7 +139,7 @@ const categories: ResourceCategoryProps[] = [
     title: 'Fee Schedules',
     description: 'Current fee tables, arbitration cost calculators, and payment guidelines.',
     items: [
-      { name: 'Arbitration Fee Schedule 2025', href: '/fees/', free: true },
+      { name: 'Arbitration Fee Schedule 2026', href: '/fees/', free: true },
       { name: 'Administrative Fee Table', href: '/fees/', free: true },
       { name: 'Fee Calculator Tool', href: '/fee-calculator/', free: true },
     ],
