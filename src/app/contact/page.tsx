@@ -6,14 +6,41 @@ import { useState } from 'react'
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: 'general', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Since this is a static site, we use mailto as fallback
-    const mailto = `mailto:secretary@dwac.net?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
-    window.open(mailto, '_blank')
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
+    setLoading(true)
+    setError('')
+
+    try {
+      const response = await fetch('https://api.dwac.net/contact/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+        setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        throw new Error('Failed to submit')
+      }
+    } catch (err) {
+      // Fallback to mailto if API fails
+      const mailto = `mailto:secretary@dwac.net?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
+      window.open(mailto, '_blank')
+      setSubmitted(true)
+      setTimeout(() => setSubmitted(false), 5000)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -136,8 +163,8 @@ export default function Contact() {
                 {submitted ? (
                   <div className="text-center py-12">
                     <div className="text-5xl mb-4">✅</div>
-                    <h3 className="text-xl font-bold text-white mb-2">Message Prepared!</h3>
-                    <p className="text-slate-400">Your email client should have opened. If not, please email us directly at <a href="mailto:secretary@dwac.net" className="text-gold-400">secretary@dwac.net</a></p>
+                    <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
+                    <p className="text-slate-400">Thank you for contacting us. We'll respond within 24 hours.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
@@ -193,10 +220,14 @@ export default function Contact() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full py-3.5 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-900 font-bold rounded-lg transition-all shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40"
+                      disabled={loading}
+                      className="w-full py-3.5 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-900 font-bold rounded-lg transition-all shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      📨 Send Message
+                      {loading ? '⏳ Sending...' : '📨 Send Message'}
                     </button>
+                    {error && (
+                      <p className="text-sm text-red-400 text-center">{error}</p>
+                    )}
                     <p className="text-sm text-slate-500 text-center">
                       For urgent arbitration matters, email directly at <a href="mailto:secretary@dwac.net" className="text-gold-400 hover:text-gold-300">secretary@dwac.net</a>
                     </p>
