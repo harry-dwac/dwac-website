@@ -2,35 +2,35 @@ import Link from 'next/link'
 
 const featuredNews = [
   {
-    date: 'April 28, 2025',
+    date: 'April 28, 2026',
     category: 'Institutional',
     title: 'DWAC Announces the Launch of the Agent-Arbitrator Club',
     excerpt: 'The world\'s first club dedicated to AI-powered arbitration agents is now accepting applications. This groundbreaking initiative aims to pioneer the integration of artificial intelligence in international arbitration proceedings.',
     readTime: '5 min read',
   },
   {
-    date: 'April 15, 2025',
+    date: 'April 15, 2026',
     category: 'Industry',
     title: 'Global Digital Commerce Disputes Surpass 2 Million Cases Annually',
     excerpt: 'A new report from the International Trade Centre reveals the growing demand for specialized digital dispute resolution mechanisms, highlighting DWAC\'s critical role in this emerging field.',
     readTime: '4 min read',
   },
   {
-    date: 'March 30, 2025',
+    date: 'March 30, 2026',
     category: 'Event',
-    title: 'DWAC Participates in the 2025 International Arbitration Summit',
+    title: 'DWAC Participates in the 2026 International Arbitration Summit',
     excerpt: 'DWAC representatives presented on "Arbitration in the Age of AI" at the annual summit, drawing interest from over 500 international practitioners and scholars.',
     readTime: '3 min read',
   },
 ]
 
 const newsItems = [
-  { date: 'Apr 20, 2025', category: 'Institutional', title: 'DWAC Arbitration Rules Updated to Include AI-Assisted Proceedings', excerpt: 'Key amendments to Articles 12, 34, and 56 now provide a framework for the use of AI tools in case management and evidence analysis.' },
-  { date: 'Apr 10, 2025', category: 'Publications', title: 'New Research Paper: Cross-Border Digital Asset Dispute Resolution', excerpt: 'Dr. Zhou\'s latest paper examines the legal challenges of resolving disputes involving digital assets across multiple jurisdictions.' },
-  { date: 'Mar 25, 2025', category: 'Industry', title: 'Southeast Asian E-Commerce Platforms Adopt DWAC Model Clauses', excerpt: 'Three major regional platforms have integrated DWAC arbitration clauses into their standard terms of service.' },
-  { date: 'Mar 15, 2025', category: 'Event', title: 'DWAC Workshop: Evidence in Digital World Arbitration', excerpt: 'An interactive workshop exploring best practices for digital evidence collection, authentication, and presentation in arbitration.' },
-  { date: 'Mar 05, 2025', category: 'Institutional', title: 'New Institutional Members Join DWAC from Europe and Africa', excerpt: 'Five universities and three law firms from across Europe and Africa have been approved as institutional members.' },
-  { date: 'Feb 20, 2025', category: 'Industry', title: 'UN Commission on International Trade Law References ODR Standards', excerpt: 'UNCITRAL Working Group III cites DWAC\'s approach as a model for future online dispute resolution frameworks.' },
+  { date: 'Apr 20, 2026', category: 'Institutional', title: 'DWAC Arbitration Rules Updated to Include AI-Assisted Proceedings', excerpt: 'Key amendments to Articles 12, 34, and 56 now provide a framework for the use of AI tools in case management and evidence analysis.' },
+  { date: 'Apr 10, 2026', category: 'Publications', title: 'New Research Paper: Cross-Border Digital Asset Dispute Resolution', excerpt: 'Dr. Zhou\'s latest paper examines the legal challenges of resolving disputes involving digital assets across multiple jurisdictions.' },
+  { date: 'Mar 25, 2026', category: 'Industry', title: 'Southeast Asian E-Commerce Platforms Adopt DWAC Model Clauses', excerpt: 'Three major regional platforms have integrated DWAC arbitration clauses into their standard terms of service.' },
+  { date: 'Mar 15, 2026', category: 'Event', title: 'DWAC Workshop: Evidence in Digital World Arbitration', excerpt: 'An interactive workshop exploring best practices for digital evidence collection, authentication, and presentation in arbitration.' },
+  { date: 'Mar 05, 2026', category: 'Institutional', title: 'New Institutional Members Join DWAC from Europe and Africa', excerpt: 'Five universities and three law firms from across Europe and Africa have been approved as institutional members.' },
+  { date: 'Feb 20, 2026', category: 'Industry', title: 'UN Commission on International Trade Law References ODR Standards', excerpt: 'UNCITRAL Working Group III cites DWAC\'s approach as a model for future online dispute resolution frameworks.' },
 ]
 
 const categoryColors: Record<string, string> = {
