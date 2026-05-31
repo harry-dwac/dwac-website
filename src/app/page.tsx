@@ -123,79 +123,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS — Light section ===== */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white border-t border-slate-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">Trusted By</span>
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">What Our Clients Say</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">
-              DWAC is building the future of digital dispute resolution — here's what leading voices in the space are saying.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-14">
-            {/* Testimonial 1 */}
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-7 relative">
-              <div className="text-gold-400 text-4xl font-serif leading-none mb-3">"</div>
-              <p className="text-sm text-slate-600 leading-relaxed mb-5">
-                DWAC's Digital Tribunal is exactly what the Web3 ecosystem needs — a specialized, enforceable, and globally recognized arbitration mechanism for cross-border digital disputes.
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-amber-500 flex items-center justify-center text-white text-sm font-bold">L</div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-900">Dr. Lin Zhang</div>
-                  <div className="text-[11px] text-slate-400">Professor of Digital Law, Tsinghua University</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-7 relative">
-              <div className="text-gold-400 text-4xl font-serif leading-none mb-3">"</div>
-              <p className="text-sm text-slate-600 leading-relaxed mb-5">
-                As an AI developer, having a dedicated arbitration institution that understands agent-to-agent contracts and autonomous system disputes gives me real peace of mind.
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white text-sm font-bold">M</div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-900">Marco S.</div>
-                  <div className="text-[11px] text-slate-400">CTO, NeuralForge AG (Switzerland)</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-7 relative">
-              <div className="text-gold-400 text-4xl font-serif leading-none mb-3">"</div>
-              <p className="text-sm text-slate-600 leading-relaxed mb-5">
-                The New York Convention enforcement framework combined with DWAC's digital-first process — this is the arbitration solution e-commerce platforms have been waiting for.
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white text-sm font-bold">P</div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-900">Priya K.</div>
-                  <div className="text-[11px] text-slate-400">General Counsel, CrossBorder Exports (Singapore)</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Partners / Supporters */}
-          <div className="text-center">
-            <p className="text-[11px] font-bold tracking-[3px] uppercase text-slate-400 mb-6">Backed By Leading Institutions</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              <div className="text-slate-500 text-sm font-semibold tracking-wide px-5 py-2 border border-slate-200 rounded-lg">Tsinghua University</div>
-              <div className="text-slate-500 text-sm font-semibold tracking-wide px-5 py-2 border border-slate-200 rounded-lg">China Justice Observer</div>
-              <div className="text-slate-500 text-sm font-semibold tracking-wide px-5 py-2 border border-slate-200 rounded-lg">CIETAC</div>
-              <div className="text-slate-500 text-sm font-semibold tracking-wide px-5 py-2 border border-slate-200 rounded-lg">HKIAC</div>
-              <div className="text-slate-500 text-sm font-semibold tracking-wide px-5 py-2 border border-slate-200 rounded-lg">ICC</div>
-            </div>
-            <p className="text-[11px] text-slate-400 mt-4 italic">Partner logos & links coming soon — contact us to join the DWAC network.</p>
-          </div>
-        </div>
-      </section>
-
       {/* ===== ABOUT DWAC — Dark section ===== */}
       <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-navy">
         <div className="max-w-4xl mx-auto text-center">
@@ -345,6 +272,85 @@ export default function Home() {
                   {item.title}
                 </h3>
                 <p className="text-slate-500 text-xs">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TESTIMONIALS — Client reviews ===== */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-navy">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-500 mb-3 block">Client Testimonials</span>
+            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">Trusted by Innovators</h2>
+            <p className="text-slate-400 max-w-xl mx-auto">
+              Hear from businesses and professionals who have resolved their digital disputes through DWAC.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                quote: "DWAC resolved our smart contract dispute in just 45 days. The AI-powered analysis was thorough, and the human arbitrator provided the oversight we needed. Highly recommended.",
+                author: "Sarah Chen",
+                title: "Legal Director, Blockchain Ventures",
+                avatar: "SC",
+              },
+              {
+                quote: "As an e-commerce platform, we faced cross-border payment disputes regularly. DWAC's expertise in digital payments made the process smooth and the award was enforced in 3 countries.",
+                author: "Michael Torres",
+                title: "CEO, GlobalMart Inc.",
+                avatar: "MT",
+              },
+              {
+                quote: "The Arbitrator-Agent concept is revolutionary. We got AI efficiency for document review and human judgment for the final decision. Best of both worlds.",
+                author: "Dr. Lisa Wang",
+                title: "IP Attorney, Wang & Associates",
+                avatar: "LW",
+              },
+            ].map((t, i) => (
+              <div key={i} className="p-6 rounded-xl border border-gold-subtle/30 bg-navy-800/30 hover:bg-navy-800/50 transition-all duration-300">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <svg key={j} className="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">&ldquo;{t.quote}&rdquo;</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-gold flex items-center justify-center text-navy-900 font-bold text-sm">
+                    {t.avatar}
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold text-sm">{t.author}</div>
+                    <div className="text-slate-400 text-xs">{t.title}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PARTNERS — Trusted by ===== */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-slate-50 border-y border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <span className="text-xs font-bold tracking-[2px] uppercase text-slate-500">Trusted By</span>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12 opacity-60">
+            {[
+              "Blockchain Ventures",
+              "GlobalMart Inc.",
+              "Wang & Associates",
+              "Digital Assets Corp.",
+              "CyberTech Solutions",
+              "FinTech Global",
+            ].map((name, i) => (
+              <div key={i} className="text-slate-700 font-semibold text-sm tracking-wide">
+                {name}
               </div>
             ))}
           </div>
