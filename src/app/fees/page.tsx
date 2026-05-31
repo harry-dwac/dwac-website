@@ -212,16 +212,95 @@ export default function Fees() {
 
       {/* Payment Methods */}
       <section className="py-16 bg-navy-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">Payment Methods</h2>
-          <div className="bg-navy-800/30 p-8 rounded-xl border border-gold-subtle/50">
-            <div className="flex items-center justify-center mb-4">
-              <svg className="w-12 h-12 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-              </svg>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">Payment Methods</h2>
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+            DWAC supports multiple payment channels for your convenience. All payments are processed securely.
+          </p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* WeChat Pay */}
+            <div className="bg-navy-800/30 p-6 rounded-xl border border-gold-subtle/50 hover:border-gold-medium transition-colors cursor-pointer group">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-green-500/10 rounded-xl flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                  <svg className="w-10 h-10 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.555a.59.59 0 01.213.628l-.39 1.48c-.019.074-.024.15-.012.224.012.075.044.146.092.206a.51.51 0 00.378.167.51.51 0 00.206-.043l1.992-.917a.59.59 0 01.417-.033c1.087.293 2.242.448 3.406.448h.24c-.127-.553-.193-1.126-.193-1.714 0-3.658 3.186-6.625 7.114-6.625.206 0 .41.008.612.021C16.51 4.688 12.95 2.188 8.691 2.188zm-2.87 4.28a.857.857 0 11-.001 1.715.857.857 0 01.001-1.714zm6.063 0a.857.857 0 110 1.714.857.857 0 010-1.714z"/>
+                    <path d="M23.999 14.729c0-3.338-3.132-6.046-6.997-6.046-3.864 0-6.996 2.708-6.996 6.046 0 3.337 3.132 6.045 6.996 6.045.938 0 1.836-.152 2.664-.426a.465.465 0 01.332.026l1.592.732a.406.406 0 00.492-.124.467.467 0 00.063-.47l-.312-1.18a.47.47 0 01.17-.5c1.463-1.076 2.396-2.688 2.396-4.503zm-9.385-1.358a.683.683 0 11.001-1.366.683.683 0 01-.001 1.366zm4.778 0a.683.683 0 110-1.366.683.683 0 010 1.366z"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-white font-semibold mb-2">WeChat Pay</h3>
+              <p className="text-center text-gray-400 text-sm">Scan QR code to pay</p>
+              <div className="mt-3 text-center">
+                <span className="inline-block px-2 py-1 bg-green-500/10 text-green-400 text-xs rounded">0.6% fee</span>
+              </div>
             </div>
-            <p className="text-center text-gray-300 font-medium">Bank Transfer</p>
-            <p className="text-center text-gray-400 text-sm mt-2">Wire transfer details will be provided upon case acceptance.</p>
+            
+            {/* Alipay */}
+            <div className="bg-navy-800/30 p-6 rounded-xl border border-gold-subtle/50 hover:border-gold-medium transition-colors cursor-pointer group">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
+                  <svg className="w-10 h-10 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21.422 15.358c-.942-.374-3.426-1.054-4.538-1.368-.118-.034-.2-.057-.24-.068a7.12 7.12 0 00-.11-.03l-.09-.025c.364-.65.687-1.352.96-2.107h-3.45V9.69h4.246V8.76h-4.246V6.66h-2.016c-.03 0-.054.024-.054.054V8.76H7.7v.93h4.246v1.168H7.7v.93h6.21c-.2.49-.424.958-.67 1.4a29.72 29.72 0 00-3.83-.548c-2.658-.166-4.358.55-4.802 2.032-.434 1.452.67 3.168 3.142 3.492 2.18.286 4.356-.528 5.882-2.076.654.308 1.352.584 2.086.822 1.84.6 4.18 1.238 5.158 1.496.98.258 1.722-.052 1.962-.654.24-.6-.096-1.31-.598-1.496zm-11.292 1.01c-1.424.382-2.612-.112-2.612-.112s.664-1.24 2.478-.958c.83.13 1.558.448 2.146.856-.518.078-1.212.214-2.012.214z"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-white font-semibold mb-2">Alipay</h3>
+              <p className="text-center text-gray-400 text-sm">Redirect to pay</p>
+              <div className="mt-3 text-center">
+                <span className="inline-block px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded">0.6% fee</span>
+              </div>
+            </div>
+            
+            {/* Bank Transfer */}
+            <div className="bg-navy-800/30 p-6 rounded-xl border border-gold-subtle/50 hover:border-gold-medium transition-colors cursor-pointer group">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-gold-500/10 rounded-xl flex items-center justify-center group-hover:bg-gold-500/20 transition-colors">
+                  <svg className="w-10 h-10 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-white font-semibold mb-2">Bank Transfer</h3>
+              <p className="text-center text-gray-400 text-sm">Upload voucher</p>
+              <div className="mt-3 text-center">
+                <span className="inline-block px-2 py-1 bg-gold-500/10 text-gold-400 text-xs rounded">No fee</span>
+              </div>
+            </div>
+            
+            {/* Credit Card */}
+            <div className="bg-navy-800/30 p-6 rounded-xl border border-gold-subtle/50 hover:border-gold-medium transition-colors cursor-pointer group">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-purple-500/10 rounded-xl flex items-center justify-center group-hover:bg-purple-500/20 transition-colors">
+                  <svg className="w-10 h-10 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-white font-semibold mb-2">Credit Card</h3>
+              <p className="text-center text-gray-400 text-sm">Visa/MC/JCB/UnionPay</p>
+              <div className="mt-3 text-center">
+                <span className="inline-block px-2 py-1 bg-purple-500/10 text-purple-400 text-xs rounded">1.5-2.9% fee</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Info box */}
+          <div className="mt-8 bg-navy-800/20 rounded-xl p-6 border border-gold-subtle/30">
+            <div className="flex items-start gap-3">
+              <svg className="w-6 h-6 text-gold-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h4 className="font-semibold text-white mb-2">Payment Information</h4>
+                <ul className="text-gray-400 text-sm space-y-1">
+                  <li>• Payment instructions will be provided after case submission</li>
+                  <li>• Bank transfer details sent via email upon case acceptance</li>
+                  <li>• All payments are processed through secure channels</li>
+                  <li>• Invoices provided upon request</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
