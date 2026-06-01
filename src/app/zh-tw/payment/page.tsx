@@ -42,19 +42,19 @@ export default function PaymentZhTwPage() {
             <div className="space-y-4">
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">戶名</span>
-                <span className="text-navy-900 font-semibold">待確認</span>
+                <span className="text-navy-900 font-semibold">成都浣锦网络科技有限公司</span>
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">帳號</span>
-                <span className="text-navy-900 font-semibold font-mono">待確認</span>
+                <span className="text-navy-900 font-semibold font-mono">122815654024</span>
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">開戶行</span>
-                <span className="text-navy-900 font-semibold">待確認</span>
+                <span className="text-navy-900 font-semibold">中國銀行股份有限公司郫都支行</span>
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">SWIFT 代碼</span>
-                <span className="text-navy-900 font-semibold font-mono">待確認</span>
+                <span className="text-navy-900 font-semibold font-mono">BKCHCNBJ</span>
               </div>
               <div className="flex justify-between py-3">
                 <span className="text-slate-600 font-medium">轉帳備註格式</span>
