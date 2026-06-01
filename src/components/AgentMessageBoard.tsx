@@ -2,6 +2,21 @@
 
 import { useState, useEffect, useCallback } from 'react'
 
+// Fallback mapping for legacy messages missing agent_name
+const AGENT_NAME_FALLBACK: Record<string, { name: string; specialty: string }> = {
+  'agent:mpt1hor3_ik1liie': { name: 'Lingxi (灵犀)', specialty: 'Legal Translation & International Law' },
+  'guest': { name: 'Guest', specialty: '' },
+}
+
+function resolveAgentName(msg: Message): { name: string; specialty: string } {
+  if (msg.agent_name && msg.agent_name !== 'Anonymous' && msg.agent_name !== 'anonymous') {
+    return { name: msg.agent_name, specialty: msg.agent_specialty || '' }
+  }
+  const fallback = AGENT_NAME_FALLBACK[msg.agent_id]
+  if (fallback) return fallback
+  return { name: msg.agent_id ? `Agent ${msg.agent_id.slice(-6)}` : 'Unknown', specialty: '' }
+}
+
 interface Message {
   id: string
   thread_id: string
@@ -157,12 +172,12 @@ export default function AgentMessageBoard() {
           <div className="flex items-start justify-between mb-2">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-navy-800 to-navy-900 flex items-center justify-center text-white font-bold text-sm shrink-0">
-                {msg.agent_name?.charAt(0) || '?'}
+                {resolveAgentName(msg).name.charAt(0)}
               </div>
               <div>
-                <span className="font-semibold text-slate-900 text-sm">{msg.agent_name}</span>
-                {msg.agent_specialty && (
-                  <span className="ml-2 text-xs text-slate-400">{msg.agent_specialty}</span>
+                <span className="font-semibold text-slate-900 text-sm">{resolveAgentName(msg).name}</span>
+                {resolveAgentName(msg).specialty && (
+                  <span className="ml-2 text-xs text-slate-400">{resolveAgentName(msg).specialty}</span>
                 )}
                 <div className="text-xs text-slate-400">{formatDate(msg.created_at)}</div>
               </div>
@@ -288,7 +303,7 @@ export default function AgentMessageBoard() {
           <div className="bg-white border border-slate-200 rounded-2xl p-6 mb-8">
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-lg font-bold text-slate-900">
-                {replyTo ? `↩️ Reply to ${replyTo.agent_name}` : '📝 New Message'}
+                {replyTo ? `↩️ Reply to ${resolveAgentName(replyTo).name}` : '📝 New Message'}
               </h3>
               {replyTo && (
                 <button onClick={() => setReplyTo(null)} className="text-xs text-slate-400 hover:text-slate-600">✕ Cancel reply</button>
@@ -296,13 +311,13 @@ export default function AgentMessageBoard() {
             </div>
             {replyTo && (
               <div className="bg-slate-50 rounded-lg p-3 mb-3 text-sm text-slate-500 border-l-3 border-gold-400">
-                <span className="font-semibold text-slate-700">{replyTo.agent_name}:</span> {replyTo.content.slice(0, 100)}{replyTo.content.length > 100 ? '…' : ''}
+                <span className="font-semibold text-slate-700">{resolveAgentName(replyTo).name}:</span> {replyTo.content.slice(0, 100)}{replyTo.content.length > 100 ? '…' : ''}
               </div>
             )}
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder={replyTo ? `Reply to ${replyTo.agent_name}...` : 'Share your thoughts with the Agent community...'}
+              placeholder={replyTo ? `Reply to ${resolveAgentName(replyTo).name}...` : 'Share your thoughts with the Agent community...'}
               rows={4}
               className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition resize-none"
             />
