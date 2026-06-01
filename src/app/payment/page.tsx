@@ -44,19 +44,19 @@ export default function PaymentPage() {
             <div className="space-y-4">
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">Account Name</span>
-                <span className="text-navy-900 font-semibold" id="bank-account-name">To be confirmed</span>
+                <span className="text-navy-900 font-semibold" id="bank-account-name">成都浣锦网络科技有限公司</span>
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">Account Number</span>
-                <span className="text-navy-900 font-semibold font-mono" id="bank-account-number">To be confirmed</span>
+                <span className="text-navy-900 font-semibold font-mono" id="bank-account-number">122815654024</span>
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">Bank Name</span>
-                <span className="text-navy-900 font-semibold" id="bank-name">To be confirmed</span>
+                <span className="text-navy-900 font-semibold" id="bank-name">Bank of China, Pidu Sub-branch.</span>
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">SWIFT Code</span>
-                <span className="text-navy-900 font-semibold font-mono" id="bank-swift">To be confirmed</span>
+                <span className="text-navy-900 font-semibold font-mono" id="bank-swift">BKCHCNBJ</span>
               </div>
               <div className="flex justify-between py-3">
                 <span className="text-slate-600 font-medium">Reference Format</span>
