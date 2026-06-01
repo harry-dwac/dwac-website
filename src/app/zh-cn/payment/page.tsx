@@ -42,19 +42,19 @@ export default function PaymentZhCnPage() {
             <div className="space-y-4">
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">户名</span>
-                <span className="text-navy-900 font-semibold">待确认</span>
+                <span className="text-navy-900 font-semibold">成都浣锦网络科技有限公司</span>
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">账号</span>
-                <span className="text-navy-900 font-semibold font-mono">待确认</span>
+                <span className="text-navy-900 font-semibold font-mono">122815654024</span>
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">开户行</span>
-                <span className="text-navy-900 font-semibold">待确认</span>
+                <span className="text-navy-900 font-semibold">中国银行股份有限公司郫都支行</span>
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200">
                 <span className="text-slate-600 font-medium">SWIFT 代码</span>
-                <span className="text-navy-900 font-semibold font-mono">待确认</span>
+                <span className="text-navy-900 font-semibold font-mono">BKCHCNBJ</span>
               </div>
               <div className="flex justify-between py-3">
                 <span className="text-slate-600 font-medium">转账备注格式</span>
