@@ -12,7 +12,7 @@ export default function HomeZhTw() {
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-4">DWAC</p>
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            首個專注於解決數字世界糾紛的永久性國際仲裁機構。公平、高效、全球可執行。
+            首個獨立的、非营利性的永久性國際仲裁機構，專注於解決數字世界糾紛。公平、公正、全球可執行。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/zh-tw/contact/" className="px-8 py-3 bg-gold-500/[0.06]0 hover:bg-gold-500 text-white font-semibold rounded-lg transition-colors">

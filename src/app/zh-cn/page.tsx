@@ -12,7 +12,7 @@ export default function Home() {
               仲裁中心
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
-              首个专注于解决数字世界纠纷的永久性国际仲裁机构。公平、高效、全球可执行。
+              独立的、非营利性的永久性国际仲裁机构，专注于解决数字世界纠纷。公平、高效、全球可执行。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/zh-cn/contact/" className="px-8 py-3 bg-gold-500/[0.06]0 hover:bg-gold-500 text-white font-semibold rounded-lg transition-colors">
