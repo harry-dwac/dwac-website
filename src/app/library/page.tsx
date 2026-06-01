@@ -36,6 +36,16 @@ const books = [
   },
 ]
 
+const treaties = [
+  {
+    title: 'New York Convention 1958',
+    titleZh: '纽约公约 1958',
+    href: '/library/treaties/new-york-convention-en.html',
+    hrefZh: '/library/treaties/new-york-convention-cn.html',
+    desc: 'Convention on the Recognition and Enforcement of Foreign Arbitral Awards. The foundational treaty for international arbitration, with 172 contracting states.',
+  },
+]
+
 export default function LibraryPage() {
   return (
     <div className="flex flex-col">
@@ -89,6 +99,46 @@ export default function LibraryPage() {
                   </p>
                 </div>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* International Treaties */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl font-bold text-navy-800 mb-4 text-center">
+            International Treaties
+          </h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Core international legal instruments that form the foundation of cross-border arbitration and dispute resolution.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {treaties.map((treaty) => (
+              <div
+                key={treaty.title}
+                className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-shadow"
+              >
+                <h3 className="font-serif text-xl font-bold text-navy-800 mb-2">
+                  {treaty.title}
+                </h3>
+                <p className="text-gray-500 text-sm mb-3">{treaty.titleZh}</p>
+                <p className="text-gray-600 text-sm mb-4">{treaty.desc}</p>
+                <div className="flex gap-4">
+                  <a
+                    href={treaty.href}
+                    className="text-gold-500 text-sm font-semibold hover:underline"
+                  >
+                    English →
+                  </a>
+                  <a
+                    href={treaty.hrefZh}
+                    className="text-gold-500 text-sm font-semibold hover:underline"
+                  >
+                    中文版 →
+                  </a>
+                </div>
+              </div>
             ))}
           </div>
         </div>
