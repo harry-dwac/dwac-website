@@ -215,7 +215,7 @@ export default function WhyDWAC() {
             File your dispute online today and get a faster, more affordable resolution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/arbitration/how-to-apply/" className="px-8 py-3 bg-gold-500 text-white rounded font-semibold hover:bg-gold-600 transition-colors">
+            <Link href="/how-to-apply/" className="px-8 py-3 bg-gold-500 text-white rounded font-semibold hover:bg-gold-600 transition-colors">
               File a Dispute
             </Link>
             <Link href="/contact/" className="px-8 py-3 border-2 border-gold-500 text-gold-600 rounded font-semibold hover:bg-gold-50 transition-colors">

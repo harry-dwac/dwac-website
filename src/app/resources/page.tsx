@@ -127,7 +127,7 @@ const categories: ResourceCategoryProps[] = [
       { name: 'Promoting Cross-Strait Legal Unification via Judicial Jurisdiction Extension', href: '/resources/publications/judicial-jurisdiction-en.html', free: true, lang: 'EN' },
       { name: '以法治统一推动两岸统一进程的策略建议', href: '/resources/publications/rule-of-law-unification-cn.html', free: true, lang: '中文' },
       { name: 'Strategic Proposals for Cross-Strait Unification through Rule of Law', href: '/resources/publications/rule-of-law-unification-en.html', free: true, lang: 'EN' },
-      { name: 'Publications Index', href: '/resources/publications/', free: true },
+      { name: 'Publications Index', href: '/resources/', free: true },
     ],
   },
   {
