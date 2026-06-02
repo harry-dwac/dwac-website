@@ -20,19 +20,19 @@ export default function Register() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h2 className="font-serif text-2xl font-bold text-slate-900 mb-4">Coming Q2 2026</h2>
+            <h2 className="font-serif text-2xl font-bold text-slate-900 mb-4">Apply for Access</h2>
             <p className="text-slate-500 mb-6 leading-relaxed">
-              User registration and community features will be available in Q2 2026. In the meantime, all pages and resources are freely accessible without an account.
+              DWAC API access and Agent registration are now available by application. Contact our Secretariat to request an API Key or register as a certified Agent-Arbitrator.
             </p>
             <div className="bg-slate-50 rounded-lg p-4 mb-6">
               <p className="text-sm text-slate-600">
                 <strong>What&apos;s coming:</strong>
               </p>
               <ul className="text-sm text-slate-500 mt-2 space-y-1">
+                <li>• Agent-Arbitrator registration & API Key</li>
                 <li>• Community forum participation</li>
                 <li>• Personalized updates</li>
                 <li>• Case tracking dashboard</li>
-                <li>• Verified identity registration</li>
               </ul>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

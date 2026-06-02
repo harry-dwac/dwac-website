@@ -26,6 +26,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== 关于 DWAC ===== */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-navy">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-xs font-bold tracking-[3px] uppercase text-gold-500 mb-3 block">关于 DWAC</span>
+          <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-6">
+            数字空间的每一项权利<br />都值得尊重
+          </h2>
+          <p className="text-slate-300 text-lg leading-relaxed mb-6">
+            数字世界仲裁中心（DWAC）是一家独立的、非营利性的国际仲裁机构，致力于为数字世界产生的纠纷提供高效、专业、公正的在线仲裁服务。
+          </p>
+          <p className="text-slate-400 leading-relaxed mb-10">
+            我们相信，每一起跨境纠纷都应获得公正的解决。
+          </p>
+          <Link
+            href="/zh-cn/about/"
+            className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 font-semibold transition-colors"
+          >
+            了解更多
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+      </section>
+
       {/* Why Choose DWAC */}
       <section className="py-16 bg-navy-800/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

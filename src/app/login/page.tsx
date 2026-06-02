@@ -20,7 +20,7 @@ export default function Login() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h2 className="font-serif text-2xl font-bold text-slate-900 mb-4">Coming Q2 2026</h2>
+            <h2 className="font-serif text-2xl font-bold text-slate-900 mb-4">Apply for Access</h2>
             <p className="text-slate-500 mb-6 leading-relaxed">
               User accounts and community features will be available in Q2 2026. In the meantime, all pages and resources are freely accessible without registration.
             </p>
