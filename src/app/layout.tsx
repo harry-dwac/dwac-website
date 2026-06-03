@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 import ErrorBoundary from '@/components/ErrorBoundary'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -153,15 +151,7 @@ export default function RootLayout({
 
         <div className="relative z-10">
           <ErrorBoundary>
-            <Navbar />
-          </ErrorBoundary>
-          <main className="flex-1">
-            <ErrorBoundary>
-              {children}
-            </ErrorBoundary>
-          </main>
-          <ErrorBoundary>
-            <Footer />
+            {children}
           </ErrorBoundary>
         </div>
       </body>
