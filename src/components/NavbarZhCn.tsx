@@ -34,7 +34,7 @@ export default function NavbarZhCn() {
 
             {/* 法学院 dropdown — 醒目位置 */}
             <div className="relative" onMouseEnter={() => handleMouseEnter('lawschool')} onMouseLeave={handleMouseLeave}>
-              <Link href="/law-school/" className="hover-underline text-gold-400 hover:text-gold-300 text-sm font-semibold px-2 py-1 transition-colors flex items-center gap-1">
+              <Link href="/zh-cn/law-school/" className="hover-underline text-gold-400 hover:text-gold-300 text-sm font-semibold px-2 py-1 transition-colors flex items-center gap-1">
                 法学院
                 <svg className="w-3.5 h-3.5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -42,10 +42,10 @@ export default function NavbarZhCn() {
               </Link>
               {activeDropdown === 'lawschool' && (
                 <div className="absolute top-full left-0 mt-0 w-60 bg-navy-900/95 backdrop-blur-xl border border-gold-subtle rounded-lg shadow-2xl py-2 animate-fade-in">
-                  <Link href="/law-school/courses/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">课程项目</Link>
-                  <Link href="/law-school/community/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">社区</Link>
-                  <Link href="/law-school/resources/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">资源库</Link>
-                  <Link href="/law-school/publications/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">出版物</Link>
+                  <Link href="/zh-cn/law-school/courses/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">课程项目</Link>
+                  <Link href="/zh-cn/law-school/community/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">社区</Link>
+                  <Link href="/zh-cn/law-school/resources/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">资源库</Link>
+                  <Link href="/zh-cn/law-school/publications/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">出版物</Link>
                   <div className="border-t border-gold-subtle/50 my-1" />
                   <Link href="/zh-cn/members/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">会员名录</Link>
                   <Link href="/zh-cn/community/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">交流论坛</Link>
@@ -157,11 +157,11 @@ export default function NavbarZhCn() {
               <Link href="/zh-cn/virtual-hearing/" onClick={() => setMobileOpen(false)} className="text-gold-400 hover:text-gold-300 pl-6 py-2 text-sm rounded-lg hover:bg-navy-800/60 transition-all">虚拟仲裁庭 ↗</Link>
 
               <div className="px-3 pt-3 pb-1 text-[10px] font-bold tracking-[2px] uppercase text-gold-400">⚖️ 法学院</div>
-              <Link href="/law-school/" onClick={() => setMobileOpen(false)} className="text-gold-400 hover:text-gold-300 pl-6 py-2 text-sm font-semibold rounded-lg hover:bg-navy-700/50 transition-all">法学院主页</Link>
-              <Link href="/law-school/courses/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">课程项目</Link>
-              <Link href="/law-school/community/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">社区</Link>
-              <Link href="/law-school/resources/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">资源库</Link>
-              <Link href="/law-school/publications/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">出版物</Link>
+              <Link href="/zh-cn/law-school/" onClick={() => setMobileOpen(false)} className="text-gold-400 hover:text-gold-300 pl-6 py-2 text-sm font-semibold rounded-lg hover:bg-navy-700/50 transition-all">法学院主页</Link>
+              <Link href="/zh-cn/law-school/courses/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">课程项目</Link>
+              <Link href="/zh-cn/law-school/community/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">社区</Link>
+              <Link href="/zh-cn/law-school/resources/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">资源库</Link>
+              <Link href="/zh-cn/law-school/publications/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">出版物</Link>
               <Link href="/zh-cn/members/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">会员名录</Link>
               <Link href="/zh-cn/community/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">交流论坛</Link>
               <Link href="/zh-cn/club/" onClick={() => setMobileOpen(false)} className="text-gold-400 hover:text-gold-300 pl-6 py-2 text-sm rounded-lg hover:bg-navy-800/60 transition-all">智能仲裁员俱乐部 ↗</Link>
