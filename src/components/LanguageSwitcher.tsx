@@ -1,45 +1,28 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function LanguageSwitcher() {
   const pathname = usePathname();
-  const [links, setLinks] = useState({
-    en: '/',
-    zhCN: '/zh-cn/',
-    zhTW: '/zh-tw/'
-  });
-
-  useEffect(() => {
-    if (!pathname) return;
-
-    // 解析当前路径，提取语言前缀和剩余路径
-    const match = pathname.match(/^\/(zh-cn|zh-tw)?(\/.*)?$/);
-    if (!match) return;
-
-    const currentLang = match[1] || 'en';
-    const remainingPath = match[2] || '/';
-
-    // 构建各语言版本的 URL
-    const newLinks = {
-      en: remainingPath === '/' ? '/' : remainingPath,
-      zhCN: `/zh-cn${remainingPath}`,
-      zhTW: `/zh-tw${remainingPath}`
-    };
-
-    setLinks(newLinks);
-  }, [pathname]);
 
   if (!pathname) return null;
 
+  // 判断当前语言
   const isZH_CN = pathname.startsWith('/zh-cn');
   const isZH_TW = pathname.startsWith('/zh-tw');
   const isEN = !isZH_CN && !isZH_TW;
 
+  // 切换到对应语言的首页（不保持路径）
+  const links = {
+    en: '/',
+    zhCN: '/zh-cn/',
+    zhTW: '/zh-tw/'
+  };
+
   return (
     <div className="flex items-center gap-1">
-      <a
+      <Link
         href={links.en}
         className={`px-2 py-0.5 text-xs font-semibold rounded ${
           isEN 
@@ -48,8 +31,8 @@ export default function LanguageSwitcher() {
         }`}
       >
         EN
-      </a>
-      <a
+      </Link>
+      <Link
         href={links.zhCN}
         className={`px-2 py-0.5 text-xs font-medium rounded ${
           isZH_CN 
@@ -58,8 +41,8 @@ export default function LanguageSwitcher() {
         }`}
       >
         简
-      </a>
-      <a
+      </Link>
+      <Link
         href={links.zhTW}
         className={`px-2 py-0.5 text-xs font-medium rounded ${
           isZH_TW 
@@ -68,7 +51,7 @@ export default function LanguageSwitcher() {
         }`}
       >
         繁
-      </a>
+      </Link>
     </div>
   );
 }

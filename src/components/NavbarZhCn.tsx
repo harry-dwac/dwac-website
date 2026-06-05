@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import SearchModal from './SearchModal'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function NavbarZhCn() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -117,9 +118,7 @@ export default function NavbarZhCn() {
           <div className="flex items-center gap-2">
             <Link href="/zh-cn/login/" className="hidden sm:inline-block px-2.5 py-1 text-xs font-medium rounded text-gray-400 hover:text-gold-400 transition-colors">登录</Link>
             <Link href="/zh-cn/register/" className="hidden sm:inline-block px-2.5 py-1 text-xs font-semibold rounded border border-gold-500/40 text-gold-400 hover:bg-gold-500/[0.05] transition-all">注册</Link>
-            <Link href="/" className="hidden sm:inline-block px-2 py-0.5 text-xs font-medium rounded bg-navy-600/50 text-gray-500 hover:text-gray-300 transition-colors">EN</Link>
-            <Link href="/zh-cn/" className="hidden sm:inline-block px-2 py-0.5 text-xs font-semibold rounded bg-gold-500/20 text-gold-400">简</Link>
-            <Link href="/zh-tw/" className="hidden sm:inline-block px-2 py-0.5 text-xs font-medium rounded bg-navy-600/50 text-gray-500 hover:text-gray-300 transition-colors">繁</Link>
+            <LanguageSwitcher />
 
             {/* Mobile Toggle */}
             <button
