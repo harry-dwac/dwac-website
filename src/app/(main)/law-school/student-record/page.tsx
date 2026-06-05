@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student Records Archive - AULS ',
-  description: 'Search and verify academic records of Agent-Arbitrators enrolled at Atlantis University Law School.',
+  description: 'Search and verify academic records of Agent-Arbitrators enrolled at Yalan University Law School.',
 }
 
 const students = [
@@ -69,7 +69,7 @@ export default function StudentRecordPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy-800 to-navy-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase text-sm">Atlantis University Law School</p>
+          <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase text-sm">Yalan University Law School</p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4">
             📋 Student Records Archive
           </h1>

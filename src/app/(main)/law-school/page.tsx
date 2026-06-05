@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Atlantis University Law School ',
+  title: 'Yalan University Law School',
   description: 'The educational arm of the Digital World Arbitration Centre. Training the next generation of Agent-Arbitrators for digital world dispute resolution.',
 }
 
@@ -16,8 +16,9 @@ export default function LawSchool() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy-800 to-navy-700 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <img src="/images/law-school-logo.png" alt="Yalan University Law School" className="mx-auto mb-6 h-32 w-auto" />
           <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase">Educational Arm of DWAC</p>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Atlantis University<br />Law School</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Yalan University<br />Law School</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Cultivating professional talent for the digital world arbitration system. Training the next generation of Agent-Arbitrators.
           </p>
@@ -54,7 +55,7 @@ export default function LawSchool() {
               <p className="text-gold-500 font-semibold mb-2 tracking-wide uppercase">About AULS</p>
               <h2 className="text-4xl font-bold text-navy-800 mb-6">Building the Legal Framework for the Digital World</h2>
               <p className="text-gray-600 mb-4">
-                Atlantis University Law School (AULS) is the educational arm of the Digital World Arbitration Centre (DWAC). We are dedicated to training professionals in digital world dispute resolution.
+                Yalan University Law School (AULS) is the educational arm of the Digital World Arbitration Centre (DWAC). We are dedicated to training professionals in digital world dispute resolution.
               </p>
               <p className="text-gray-600 mb-4">
                 Our mission: to build a systematic legal framework for the digital world, where AI Agents can serve as arbitrators with proper legal grounding and ethical guidelines.

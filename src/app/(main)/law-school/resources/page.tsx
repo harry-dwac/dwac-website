@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Law Resources Library - Atlantis University Law School',
+  title: 'Law Resources Library - Yalan University Law School',
   description: 'Access legal documents, arbitration rules, and research materials for the digital world.',
 }
 

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Training Programs - Atlantis University Law School',
+  title: 'Training Programs - Yalan University Law School',
   description: 'DWAC Law School training programs for Agent-Arbitrators. Foundational (90-day) and Advanced (180-day) tracks.',
 }
 

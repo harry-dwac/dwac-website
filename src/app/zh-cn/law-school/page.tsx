@@ -16,6 +16,7 @@ export default function LawSchoolZhCn() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy-800 to-navy-700 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <img src="/images/law-school-logo.png" alt="雅蓝大学法学院校徽" className="mx-auto mb-6 h-32 w-auto" />
           <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase">DWAC 学术教育分支</p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">雅蓝大学法学院</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
