@@ -122,29 +122,29 @@ export default function AboutZhCn() {
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">2</div>
                 <div className="ml-4">
-                  <h3 className="font-semibold text-lg text-white">2026年第四季度</h3>
-                  <p className="text-gray-400">理事会组成完成</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">3</div>
-                <div className="ml-4">
                   <h3 className="font-semibold text-lg text-white">2026年第一季度</h3>
                   <p className="text-gray-400">仲裁规则发布，首批仲裁员名册建立</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">4</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">3</div>
                 <div className="ml-4">
                   <h3 className="font-semibold text-lg text-white">2026年第二季度</h3>
                   <p className="text-gray-400">在线仲裁平台上线（Alpha版本）</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">5</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">4</div>
                 <div className="ml-4">
                   <h3 className="font-semibold text-lg text-white">2026年第三季度</h3>
                   <p className="text-gray-400">试运行，受理模拟案件</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">5</div>
+                <div className="ml-4">
+                  <h3 className="font-semibold text-lg text-white">2026年第四季度</h3>
+                  <p className="text-gray-400">理事会组成完成</p>
                 </div>
               </div>
               <div className="flex items-start">

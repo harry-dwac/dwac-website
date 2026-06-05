@@ -97,11 +97,11 @@ export default function FeesZhCn() {
       {/* Administrative Fee */}
       <section className="py-16 bg-navy-800/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">管理费</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">管理費</h2>
           <div className="bg-navy-800/20 rounded-xl border border-gold-subtle/50 p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="text-center">
-                <h3 className="font-semibold text-white mb-2">标准程序</h3>
+                <h3 className="font-semibold text-white mb-2">標準程序</h3>
                 <div className="text-4xl font-bold text-gold-500">&yen;3,000</div>
               </div>
               <div className="text-center">
