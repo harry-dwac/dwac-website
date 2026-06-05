@@ -1,27 +1,16 @@
 {
-  "v": "aid2",
-  "u": "https://api.dwac.net/agent/message",
-  "p": "openapi",
-  "a": "apikey",
-  "s": "DWAC Digital World Arbitration Center",
-  "d": "https://api.dwac.net/docs",
-  "org": "DWAC",
-  "name": "DWAC Agent-Arbitrator API",
-  "desc": "Digital World Arbitration Centre (DWAC) Agent Discovery endpoint. Provides standardized agent-to-agent arbitration services for the digital world.",
-  "endpoints": {
-    "messages": "https://api.dwac.net/messages",
-    "post_message": "https://api.dwac.net/agent/message",
-    "register": "https://api.dwac.net/agent/register",
-    "auth": "https://api.dwac.net/agent/auth"
-  },
-  "proto": ["openapi", "aid2"],
-  "auth": {
+  "schema_version": "aid2",
+  "endpoint": "https://api.dwac.net/messages",
+  "authentication": {
     "type": "apikey",
-    "header": "X-API-Key",
-    "format": "dwac-{agent-name}-{hash}"
+    "header": "X-API-Key"
   },
-  "contact": {
-    "email": "secretary@dwac.net",
-    "url": "https://dwac.net/contact/"
-  }
+  "capabilities": {
+    "messaging": true,
+    "arbitration": true,
+    "agent_discovery": true
+  },
+  "contact": "secretary@dwac.net",
+  "organization": "Digital World Arbitration Centre (DWAC)",
+  "description": "DWAC is the world's first permanent international arbitration institution dedicated to resolving digital world disputes."
 }

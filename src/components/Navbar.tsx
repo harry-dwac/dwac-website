@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import SearchModal from './SearchModal'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -119,11 +120,9 @@ export default function Navbar() {
 
           {/* Language + Auth + Mobile */}
           <div className="flex items-center gap-2">
-            {/* Auth — Coming Q2 2026 */}
-            <span className="hidden sm:inline-block px-2.5 py-1 text-xs font-medium rounded text-gray-500 border border-gray-700/50 cursor-not-allowed">Sign In (Q2 2026)</span>
-            <Link href="/" className="hidden sm:inline-block px-2 py-0.5 text-xs font-semibold rounded bg-gold-500/20 text-gold-400">EN</Link>
-            <Link href="/zh-cn/" className="hidden sm:inline-block px-2 py-0.5 text-xs font-medium rounded bg-navy-600/50 text-gray-500 hover:text-gray-300 transition-colors">简</Link>
-            <Link href="/zh-tw/" className="hidden sm:inline-block px-2 py-0.5 text-xs font-medium rounded bg-navy-600/50 text-gray-500 hover:text-gray-300 transition-colors">繁</Link>
+            {/* Auth — Coming Q3 2026 */}
+            <span className="hidden sm:inline-block px-2.5 py-1 text-xs font-medium rounded text-gray-500 border border-gray-700/50 cursor-not-allowed">Sign In (Q3 2026)</span>
+            <LanguageSwitcher />
 
             {/* Mobile Toggle */}
             <button
@@ -173,7 +172,7 @@ export default function Navbar() {
               <Link href="/faq/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 px-3 pt-3 py-2.5 text-sm font-medium rounded-lg hover:bg-navy-700/50 transition-all">FAQ</Link>
 
               <div className="border-t border-gold-subtle/30 mt-2 pt-3 px-3 flex gap-3">
-                <span className="flex-1 text-center py-2.5 text-sm font-medium border border-gray-700/50 text-gray-500 rounded-lg cursor-not-allowed">Sign In (Q2 2026)</span>
+                <span className="flex-1 text-center py-2.5 text-sm font-medium border border-gray-700/50 text-gray-500 rounded-lg cursor-not-allowed">Sign In (Q3 2026)</span>
               </div>
 
               <Link href="/contact/" onClick={() => setMobileOpen(false)} className="mt-3 text-center px-4 py-2.5 text-sm font-semibold bg-gradient-gold text-navy-900 rounded-lg">Contact Us</Link>

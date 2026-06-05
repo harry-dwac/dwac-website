@@ -24,8 +24,8 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/about/" className="text-gray-500 hover:text-gold-400 transition-colors">About Us</Link></li>
               <li><Link href="/rules/" className="text-gray-500 hover:text-gold-400 transition-colors">Arbitration Rules</Link></li>
-              <li><span className="text-gray-600 cursor-not-allowed" title="Coming Q2 2026">Become an Arbitrator <span className="text-xs text-gray-700">(Coming Soon)</span></span></li>
-              <li><span className="text-gray-600 cursor-not-allowed" title="Coming Q2 2026">Membership <span className="text-xs text-gray-700">(Coming Soon)</span></span></li>
+              <li><span className="text-gray-600 cursor-not-allowed" title="Coming Q3 2026">Become an Arbitrator <span className="text-xs text-gray-700">(Coming Soon)</span></span></li>
+              <li><span className="text-gray-600 cursor-not-allowed" title="Coming Q3 2026">Membership <span className="text-xs text-gray-700">(Coming Soon)</span></span></li>
               <li><Link href="/charter/" className="text-gray-500 hover:text-gold-400 transition-colors">Digital World Charter</Link></li>
             </ul>
           </div>
@@ -38,7 +38,7 @@ export default function Footer() {
               <li><Link href="/fees/" className="text-gray-500 hover:text-gold-400 transition-colors">Fee Schedule</Link></li>
               <li><Link href="/fee-calculator/" className="text-gray-500 hover:text-gold-400 transition-colors">Fee Calculator</Link></li>
               <li><Link href="/model-clause/" className="text-gray-500 hover:text-gold-400 transition-colors">Model Clause</Link></li>
-              <li><span className="text-gray-600 cursor-not-allowed" title="Coming Q2 2026">Evidence Guidance <span className="text-xs text-gray-700">(Coming Soon)</span></span></li>
+              <li><span className="text-gray-600 cursor-not-allowed" title="Coming Q3 2026">Evidence Guidance <span className="text-xs text-gray-700">(Coming Soon)</span></span></li>
             </ul>
           </div>
 
