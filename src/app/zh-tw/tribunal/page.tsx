@@ -138,7 +138,7 @@ export default function TribunalZhCn() {
                 <div className="flex-shrink-0 w-10 h-10 bg-gold-500/[0.06]0 rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
                 <div>
                   <h3 className="font-semibold text-white mb-1">AI 執行程式</h3>
-                  <p className="text-gray-400 text-sm">AI Agent 分析证据、进行法律推理，与其他仲裁员的 Agent 協作。</p>
+                  <p className="text-gray-400 text-sm">AI Agent 分析證據、进行法律推理，与其他仲裁員的 Agent 協作。</p>
                 </div>
               </div>
               <div className="flex items-start">

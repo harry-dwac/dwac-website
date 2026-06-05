@@ -14,9 +14,9 @@ export default function FeesZhCn() {
       {/* Hero */}
       <section className="bg-navy-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">费用收取</h1>
+          <h1 className="text-4xl font-bold mb-4">費用收取</h1>
           <p className="text-xl text-gray-300 max-w-2xl">
-            DWAC 仲裁费用 — 按贸仲标准五折收费
+            DWAC 仲裁費用 — 按贸仲標準五折收费
           </p>
         </div>
       </section>
@@ -25,9 +25,9 @@ export default function FeesZhCn() {
       <section className="py-16 bg-navy-800/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gold-500/[0.06] border-l-4 border-gold-500 p-6 rounded-r-lg mb-8">
-            <h2 className="text-2xl font-bold text-white mb-4">费用结构</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">費用結構</h2>
             <p className="text-gray-300 leading-relaxed">
-              DWAC 费用按中国国际经济贸易仲裁委员会（贸仲/CIETAC）标准的五折收取，让数字世界纠纷的专业仲裁更加触手可及。所有费用均以人民币（RMB/&yen;）报价。
+              DWAC 費用按中国国际经济贸易仲裁委员会（贸仲/CIETAC）標準的五折收取，讓數字世界纠纷的专业仲裁更加触手可及。所有費用均以人民币（RMB/&yen;）报价。
             </p>
           </div>
         </div>
@@ -36,13 +36,13 @@ export default function FeesZhCn() {
       {/* Filing Fee Table */}
       <section className="py-16 bg-navy-800/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">立案费</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">立案費</h2>
           <div className="bg-navy-800/20 rounded-xl border border-gold-subtle/50 overflow-hidden mb-8">
             <table className="min-w-full divide-y divide-slate-200">
               <thead className="bg-navy-800/30">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-white">争议金额（人民币）</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-white">立案费</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-white">立案費</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">
@@ -89,7 +89,7 @@ export default function FeesZhCn() {
             </div>
           </div>
           <p className="text-gray-400 text-sm text-center">
-            注：仲裁员报酬根据实际争议金额和案件复杂程度计算。
+            注：仲裁员报酬根據實際争议金额和案件复杂程度计算。
           </p>
         </div>
       </section>
@@ -136,8 +136,8 @@ export default function FeesZhCn() {
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-12 h-12 bg-gold-500/[0.06]0 rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
                 <div>
-                  <h3 className="font-semibold text-white mb-1">余款在裁决书送达前支付完毕</h3>
-                  <p className="text-gray-400 text-sm">剩余 40% 在裁决书送达前缴清。</p>
+                  <h3 className="font-semibold text-white mb-1">余款在裁决书送達前支付完毕</h3>
+                  <p className="text-gray-400 text-sm">剩余 40% 在裁决书送達前缴清。</p>
                 </div>
               </div>
             </div>
@@ -154,8 +154,8 @@ export default function FeesZhCn() {
               <div className="text-5xl font-bold text-emerald-600 mb-4">特别优惠</div>
               <p className="text-xl text-gray-300 mb-4">调解成功</p>
               <p className="text-gray-400">
-                调解书送达后不再收费。<br />
-                已缴纳的 60% 即为全部费用。
+                調解書送達后不再收費。<br />
+                已繳納的 60% 即为全部費用。
               </p>
             </div>
           </div>
@@ -165,10 +165,10 @@ export default function FeesZhCn() {
       {/* Fee Reduction */}
       <section className="py-16 bg-navy-800/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">费用减免政策</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">費用減免政策</h2>
           <div className="bg-navy-800/30 p-8 rounded-xl border border-gold-subtle/50">
             <p className="text-gray-300 leading-relaxed mb-6">
-              DWAC 为发展中国家当事人和小微企业提供费用减免。申请人可提交费用减免申请并附相关证明材料。
+              DWAC 为發展中國家當事人和小微企業提供費用減免。申請人可提交費用減免申请并附相关证明材料。
             </p>
             <h3 className="font-semibold text-white mb-4">申请资格：</h3>
             <ul className="space-y-2 text-gray-400">
@@ -176,19 +176,19 @@ export default function FeesZhCn() {
                 <svg className="w-5 h-5 text-gold-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                联合国分类的发展中国家当事人
+                联合国分类的發展中國家當事人
               </li>
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-gold-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                年营业收入低于标准的小微企业
+                年营业收入低于標準的小微企業
               </li>
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-gold-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                DWAC 认为应当减免的其他情况
+                DWAC 认为应当减免的其他情況
               </li>
             </ul>
           </div>
@@ -198,13 +198,13 @@ export default function FeesZhCn() {
       {/* Cost Allocation */}
       <section className="py-16 bg-navy-800/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">费用分担</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">費用分擔</h2>
           <div className="bg-navy-800/20 p-8 rounded-xl border border-gold-subtle/50">
             <p className="text-gray-300 leading-relaxed mb-4">
-              <strong>一般原则：</strong>败诉方应承担仲裁费用，并补偿胜诉方因办理案件而支出的合理费用。
+              <strong>一般原則：</strong>敗訴方应承担仲裁費用，并补偿勝訴方因辦理案件而支出的合理费用。
             </p>
             <p className="text-gray-300 leading-relaxed">
-              <strong>例外：</strong>仲裁庭如认定情况特殊，可另行决定费用分担方式。
+              <strong>例外：</strong>仲裁庭如認定情況特殊，可另行決定費用分擔方式。
             </p>
           </div>
         </div>
@@ -308,8 +308,8 @@ export default function FeesZhCn() {
       {/* CTA */}
       <section className="py-16 bg-gradient-gold text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">费用有疑问？</h2>
-          <p className="text-gold-300 mb-8 max-w-2xl mx-auto">联系秘书处获取详细费用计算或费用减免申请。</p>
+          <h2 className="text-3xl font-bold mb-4">費用有疑問？</h2>
+          <p className="text-gold-300 mb-8 max-w-2xl mx-auto">联系秘书处獲取詳細費用計算或費用減免申请。</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/zh-tw/contact/" className="px-6 py-3 bg-navy-800/20 text-gold-500 font-semibold rounded-lg hover:bg-navy-800/40 transition-colors">
               聯繫我們
