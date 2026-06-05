@@ -4,7 +4,7 @@ import NavbarZhTw from '@/components/NavbarZhTw'
 import FooterZhTw from '@/components/FooterZhTw'
 
 export const metadata: Metadata = {
-  title: '亞特蘭蒂斯大學法學院',
+  title: '雅藍大學法學院',
   description: '數位世界仲裁中心的學術教育分支。培養下一代智能仲裁員，構建數位世界法律框架。',
 }
 
@@ -17,7 +17,7 @@ export default function LawSchoolZhTw() {
       <section className="bg-gradient-to-br from-navy-800 to-navy-700 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase">DWAC 學術教育分支</p>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">亞特蘭蒂斯大學<br />法學院</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">雅藍大學法學院</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             為數位世界仲裁系統培養專業人才。培訓下一代智能仲裁員。
           </p>
@@ -54,7 +54,7 @@ export default function LawSchoolZhTw() {
               <p className="text-gold-500 font-semibold mb-2 tracking-wide uppercase">關於 AULS</p>
               <h2 className="text-4xl font-bold text-navy-800 mb-6">構建數位世界的法律框架</h2>
               <p className="text-gray-600 mb-4">
-                亞特蘭蒂斯大學法學院（AULS）是數位世界仲裁中心（DWAC）的學術教育分支。我們致力於培養數位世界爭議解決的專業人才。
+                雅藍大學法學院（AULS）是數位世界仲裁中心（DWAC）的學術教育分支。我們致力於培養數位世界爭議解決的專業人才。
               </p>
               <p className="text-gray-600 mb-4">
                 我們的使命：為數位世界構建系統的法律框架，讓 AI 代理在有適當法律基礎和倫理指引的情況下擔任仲裁員。

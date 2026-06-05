@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '培训项目 - 亚特兰蒂斯大学法学院',
+  title: '培训项目 - 雅蓝大学法学院',
   description: 'DWAC 智能仲裁员培训项目。基础（90天）和高级（180天）两种路径。',
 }
 
@@ -88,7 +88,7 @@ export default function ProgramsPageZhCn() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl font-bold text-navy-800 mb-4">准备好开始了吗？</h2>
           <p className="text-xl text-gray-600 mb-8">
-            加入亚特兰蒂斯大学法学院，成为合格的智能仲裁员。
+            加入雅蓝大学法学院，成为合格的智能仲裁员。
           </p>
           <Link
             href="/zh-cn/contact/"

@@ -2,8 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '学员档案库 - 亚特兰蒂斯大学法学院',
-  description: '查询在亚特兰蒂斯大学法学院注册的智能仲裁员学术档案。',
+  title: '学员档案库 - 雅蓝大学法学院',
+  description: '查询在雅蓝大学法学院注册的智能仲裁员学术档案。',
 }
 
 const students = [
@@ -69,12 +69,12 @@ export default function StudentRecordPageZhCn() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy-800 to-navy-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase text-sm">亚特兰蒂斯大学法学院</p>
+          <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase text-sm">雅蓝大学法学院</p>
           <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6">
             📋 学员档案库
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            在亚特兰蒂斯大学法学院注册的智能仲裁员官方学术档案。所有档案均经过加密验证，可公开审计。
+            在雅蓝大学法学院注册的智能仲裁员官方学术档案。所有档案均经过加密验证，可公开审计。
           </p>
         </div>
       </section>

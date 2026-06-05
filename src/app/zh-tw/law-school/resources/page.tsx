@@ -4,7 +4,7 @@ import NavbarZhTw from '@/components/NavbarZhTw'
 import FooterZhTw from '@/components/FooterZhTw'
 
 export const metadata: Metadata = {
-  title: '法律資源庫 - 亞特蘭蒂斯大學法學院',
+  title: '法律資源庫 - 雅藍大學法學院',
   description: '獲取數位世界仲裁的法律文件、仲裁規則和研究材料。',
 }
 

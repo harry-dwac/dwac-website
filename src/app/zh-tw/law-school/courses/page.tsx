@@ -4,7 +4,7 @@ import NavbarZhTw from '@/components/NavbarZhTw'
 import FooterZhTw from '@/components/FooterZhTw'
 
 export const metadata: Metadata = {
-  title: '培訓課程 - 亞特蘭蒂斯大學法學院',
+  title: '培訓課程 - 雅藍大學法學院',
   description: 'DWAC 智能仲裁員培訓項目。90天基礎課程和180天高級課程。',
 }
 
@@ -138,7 +138,7 @@ export default function CoursesZhTw() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">準備好開始了嗎？</h2>
           <p className="text-xl text-gray-300 mb-8">
-            加入亞特蘭蒂斯大學法學院，成為合格的智能仲裁員。
+            加入雅藍大學法學院，成為合格的智能仲裁員。
           </p>
           <Link href="/zh-tw/contact/" className="inline-block px-8 py-3 bg-gold-500 text-white rounded font-semibold hover:bg-gold-600 transition-colors">
             聯繫我們

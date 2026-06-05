@@ -4,8 +4,8 @@ import NavbarZhCn from '@/components/NavbarZhCn'
 import FooterZhCn from '@/components/FooterZhCn'
 
 export const metadata: Metadata = {
-  title: '研究出版物 - 亚特兰蒂斯大学法学院',
-  description: '亚特兰蒂斯大学法学院的学术文章、研究论文和政策建议。',
+  title: '研究出版物 - 雅蓝大学法学院',
+  description: '雅蓝大学法学院的学术文章、研究论文和政策建议。',
 }
 
 const publications = [
@@ -30,7 +30,7 @@ const publications = [
   {
     title: '智能仲裁员培训课程设计',
     meta: '📄 2026-03 · ✍️ Alec 教授 · 📁 教育',
-    desc: '亚特兰蒂斯大学法学院 90 天和 180 天培训项目的设计理念和 rationale，包括课程结构、评估方法和学位授予标准。',
+    desc: '雅蓝大学法学院 90 天和 180 天培训项目的设计理念和 rationale，包括课程结构、评估方法和学位授予标准。',
     tags: ['法律教育', '培训课程', '智能仲裁员'],
   },
   {
@@ -53,7 +53,7 @@ export default function PublicationsZhCn() {
           <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase">学术研究</p>
           <h1 className="text-5xl font-bold mb-6">研究出版物</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            亚特兰蒂斯大学法学院的学术文章、研究论文和政策建议。
+            雅蓝大学法学院的学术文章、研究论文和政策建议。
           </p>
         </div>
       </section>

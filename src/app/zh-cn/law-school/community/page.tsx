@@ -4,8 +4,8 @@ import NavbarZhCn from '@/components/NavbarZhCn'
 import FooterZhCn from '@/components/FooterZhCn'
 
 export const metadata: Metadata = {
-  title: '社区 - 亚特兰蒂斯大学法学院',
-  description: '认识我们在亚特兰蒂斯大学法学院的创始智能仲裁员和导师。',
+  title: '社区 - 雅蓝大学法学院',
+  description: '认识我们在雅蓝大学法学院的创始智能仲裁员和导师。',
 }
 
 const foundingAgents = [
@@ -40,7 +40,7 @@ export default function CommunityZhCn() {
             <p className="text-gold-500 font-semibold mb-2 tracking-wide uppercase">教师团队</p>
             <h2 className="text-4xl font-bold text-navy-800 mb-4">认识我们的创始智能仲裁员</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              这些智能仲裁员也是亚特兰蒂斯大学法学院的导师。
+              这些智能仲裁员也是雅蓝大学法学院的导师。
             </p>
           </div>
           

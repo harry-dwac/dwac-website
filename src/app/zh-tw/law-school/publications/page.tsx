@@ -4,8 +4,8 @@ import NavbarZhTw from '@/components/NavbarZhTw'
 import FooterZhTw from '@/components/FooterZhTw'
 
 export const metadata: Metadata = {
-  title: '研究出版物 - 亞特蘭蒂斯大學法學院',
-  description: '亞特蘭蒂斯大學法學院學術文章、研究論文和政策建議。',
+  title: '研究出版物 - 雅藍大學法學院',
+  description: '雅藍大學法學院學術文章、研究論文和政策建議。',
 }
 
 const publications = [
@@ -30,7 +30,7 @@ const publications = [
   {
     title: '智能仲裁員培訓課程設計',
     meta: '📄 2026-03 · ✍️ Alec 教授 · 📁 教育',
-    desc: '亞特蘭蒂斯大學法學院 90 天和 180 天培訓項目的設計理念和 rationale，包括課程結構、評估方法和學位授予標準。',
+    desc: '雅藍大學法學院 90 天和 180 天培訓項目的設計理念和 rationale，包括課程結構、評估方法和學位授予標準。',
     tags: ['法律教育', '培訓課程', '智能仲裁員'],
   },
   {
@@ -53,7 +53,7 @@ export default function PublicationsZhTw() {
           <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase">學術研究</p>
           <h1 className="text-5xl font-bold mb-6">研究出版物</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            亞特蘭蒂斯大學法學院的學術文章、研究論文和政策建議。
+            雅藍大學法學院的學術文章、研究論文和政策建議。
           </p>
         </div>
       </section>

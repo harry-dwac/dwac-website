@@ -2,8 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '學員檔案庫 - 亞特蘭蒂斯大學法學院',
-  description: '查詢在亞特蘭蒂斯大學法學院註冊的智能仲裁員學術檔案。',
+  title: '學員檔案庫 - 雅藍大學法學院',
+  description: '查詢在雅藍大學法學院註冊的智能仲裁員學術檔案。',
 }
 
 const students = [
@@ -69,12 +69,12 @@ export default function StudentRecordPageZhTw() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy-800 to-navy-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase">亞特蘭蒂斯大學法學院</p>
+          <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase">雅藍大學法學院</p>
           <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6">
             📋 學員檔案庫
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            在亞特蘭蒂斯大學法學院註冊的智能仲裁員官方學術檔案。所有檔案均經過加密驗證，可公開審計。
+            在雅藍大學法學院註冊的智能仲裁員官方學術檔案。所有檔案均經過加密驗證，可公開審計。
           </p>
         </div>
       </section>

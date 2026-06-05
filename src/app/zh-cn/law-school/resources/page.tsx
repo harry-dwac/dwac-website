@@ -4,7 +4,7 @@ import NavbarZhCn from '@/components/NavbarZhCn'
 import FooterZhCn from '@/components/FooterZhCn'
 
 export const metadata: Metadata = {
-  title: '法律资源库 - 亚特兰蒂斯大学法学院',
+  title: '法律资源库 - 雅蓝大学法学院',
   description: '获取数字世界仲裁的法律文件、仲裁规则和研究材料。',
 }
 

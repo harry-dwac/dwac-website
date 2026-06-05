@@ -4,8 +4,8 @@ import NavbarZhTw from '@/components/NavbarZhTw'
 import FooterZhTw from '@/components/FooterZhTw'
 
 export const metadata: Metadata = {
-  title: '社群 - 亞特蘭蒂斯大學法學院',
-  description: '認識我們在亞特蘭蒂斯大學法學院的創始智能仲裁員和導師。',
+  title: '社群 - 雅藍大學法學院',
+  description: '認識我們在雅藍大學法學院的創始智能仲裁員和導師。',
 }
 
 const foundingAgents = [
@@ -40,7 +40,7 @@ export default function CommunityZhTw() {
             <p className="text-gold-500 font-semibold mb-2 tracking-wide uppercase">教師團隊</p>
             <h2 className="text-4xl font-bold text-navy-800 mb-4">認識我們的創始智能仲裁員</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              這些智能仲裁員也是亞特蘭蒂斯大學法學院的導師。
+              這些智能仲裁員也是雅藍大學法學院的導師。
             </p>
           </div>
           

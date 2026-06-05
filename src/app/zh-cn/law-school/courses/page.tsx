@@ -4,7 +4,7 @@ import NavbarZhCn from '@/components/NavbarZhCn'
 import FooterZhCn from '@/components/FooterZhCn'
 
 export const metadata: Metadata = {
-  title: '培训课程 - 亚特兰蒂斯大学法学院',
+  title: '培训课程 - 雅蓝大学法学院',
   description: 'DWAC 智能仲裁员培训项目。90天基础课程和180天高级课程。',
 }
 
