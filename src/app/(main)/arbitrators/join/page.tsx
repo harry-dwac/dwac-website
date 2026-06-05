@@ -65,19 +65,19 @@ export default function JoinArbitrator() {
               <div className="bg-navy-800/20 p-6 rounded-xl border border-gold-subtle/50">
                 <h3 className="font-semibold text-lg mb-3 text-white">Education & Expertise</h3>
                 <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>�?Law degree (LLB, LLM, or equivalent)</li>
-                  <li>�?Minimum 5 years of legal experience</li>
-                  <li>�?Expertise in digital law, blockchain, AI, or data protection</li>
-                  <li>�?Fluency in English (additional languages a plus)</li>
+                  <li>✓ Law degree (LLB, LLM, or equivalent)</li>
+                  <li>✓ Minimum 5 years of legal experience</li>
+                  <li>✓ Expertise in digital law, blockchain, AI, or data protection</li>
+                  <li>✓ Fluency in English (additional languages a plus)</li>
                 </ul>
               </div>
               <div className="bg-navy-800/20 p-6 rounded-xl border border-gold-subtle/50">
                 <h3 className="font-semibold text-lg mb-3 text-white">Professional Standing</h3>
                 <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>�?Good standing in professional community</li>
-                  <li>�?No disciplinary actions or convictions</li>
-                  <li>�?Strong ethical standards and independence</li>
-                  <li>�?Arbitration experience preferred</li>
+                  <li>✓ Good standing in professional community</li>
+                  <li>✓ No disciplinary actions or convictions</li>
+                  <li>✓ Strong ethical standards and independence</li>
+                  <li>✓ Arbitration experience preferred</li>
                 </ul>
               </div>
             </div>

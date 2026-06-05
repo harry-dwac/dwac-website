@@ -193,7 +193,7 @@ export default function VirtualHearingPage() {
                 Virtual Hearing Room — Coming Soon
               </h2>
               <p className="text-slate-400 max-w-lg mx-auto mb-8 leading-relaxed">
-                Our state-of-the-art virtual hearing platform is under development. Expected launch: Q2 2026.
+                Our state-of-the-art virtual hearing platform is under development. Expected launch: Q3 2026.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

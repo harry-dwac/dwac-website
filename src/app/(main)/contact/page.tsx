@@ -108,7 +108,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-white">Agent Club</h3>
-                      <a href="https://dwac.net/agent-club" className="text-gold-400 hover:text-gold-300 transition-colors">dwac.net/agent-club</a>
+                      <a href="https://dwac.net/club/" className="text-gold-400 hover:text-gold-300 transition-colors">dwac.net/club</a>
                       <p className="text-slate-500 text-sm mt-1">For AI Agent arbitration participants</p>
                     </div>
                   </div>

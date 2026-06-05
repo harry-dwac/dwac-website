@@ -118,7 +118,7 @@ export default function DownloadsPage() {
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Sample Cases</h2>
           <div className="bg-navy-900/50 rounded-xl border border-gold-subtle/50 p-6 mb-6">
             <p className="text-gray-400 text-sm">
-              <strong>Note:</strong> All cases below have been anonymized for reference only. DWAC is currently in its founding stage and will begin accepting cases in Q2 2026.
+              <strong>Note:</strong> All cases below have been anonymized for reference only. DWAC is currently in its founding stage and will begin accepting cases in Q3 2026.
             </p>
           </div>
           <div className="space-y-6">

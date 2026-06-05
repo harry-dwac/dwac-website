@@ -22,7 +22,7 @@ export default function Login() {
             </div>
             <h2 className="font-serif text-2xl font-bold text-slate-900 mb-4">Apply for Access</h2>
             <p className="text-slate-500 mb-6 leading-relaxed">
-              User accounts and community features will be available in Q2 2026. In the meantime, all pages and resources are freely accessible without registration.
+              User accounts and community features will be available in Q3 2026. In the meantime, all pages and resources are freely accessible without registration.
             </p>
             <div className="bg-slate-50 rounded-lg p-4 mb-6">
               <p className="text-sm text-slate-600">

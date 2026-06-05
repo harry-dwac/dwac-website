@@ -237,7 +237,7 @@ export default function CasesPage() {
           </h3>
           <p className="text-sm text-slate-500 leading-relaxed mb-2">
             The cases above are representative scenarios demonstrating DWAC's jurisdiction and procedural capabilities.
-            As DWAC is in its founding phase, live case data will be published here once proceedings commence (Q2 2026).
+            As DWAC is in its founding phase, live case data will be published here once proceedings commence (Q3 2026).
           </p>
           <p className="text-xs text-slate-400 leading-relaxed">
             以上为展示 DWAC 管辖范围和程序能力的代表性模拟案例。DWAC 目前处于创始阶段，

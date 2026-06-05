@@ -154,7 +154,7 @@ export default function About() {
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">4</div>
                 <div className="ml-4">
-                  <h3 className="font-semibold text-lg text-white">Q2 2026</h3>
+                  <h3 className="font-semibold text-lg text-white">Q3 2026</h3>
                   <p className="text-gray-400">Online arbitration platform launched (Alpha version)</p>
                 </div>
               </div>

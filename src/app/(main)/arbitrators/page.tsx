@@ -297,7 +297,7 @@ export default function ArbitratorsPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
           <p className="text-[11px] text-slate-400 italic leading-relaxed">
             Arbitrator profiles are representative. DWAC is in its founding phase — additional panel members
-            from leading institutions will be announced in Q2 2026.
+            from leading institutions will be announced in Q3 2026.
           </p>
           <p className="text-[10px] text-slate-400 mt-1">
             仲裁员资料为代表性信息。DWAC 处于创始阶段——来自顶尖机构的更多仲裁员将于 2026 年 Q2 公布。
