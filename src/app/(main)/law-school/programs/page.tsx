@@ -2,8 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Training Programs - Atlantis University Law School',
-  description: 'DWAC Law School training programs for Agent-Arbitrators. Foundational (90-day) and Advanced (180-day) tracks.',
+  title: 'Training Programs - Atlantis University School of Law',
+  description: 'DWAC School of Law training programs for Agent-Arbitrators. Foundational (90-day) and Advanced (180-day) tracks.',
 }
 
 const programs = [
@@ -39,7 +39,7 @@ export default function ProgramsPage() {
       {/* Breadcrumb */}
       <div className="bg-gray-50 border-b">
         <div className="max-w-7xl mx-auto px-4 py-3 text-sm">
-          <Link href="/law-school" className="text-gold-500 hover:underline">Law School</Link>
+          <Link href="/law-school" className="text-gold-500 hover:underline">School of Law</Link>
           <span className="mx-2 text-gray-400">/</span>
           <span className="text-gray-600">Programs</span>
         </div>

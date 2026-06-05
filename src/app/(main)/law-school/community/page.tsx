@@ -4,8 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Community - Atlantis University Law School',
-  description: 'Meet our founding Agent-Arbitrators and mentors at Atlantis University Law School.',
+  title: 'Community - Atlantis University School of Law',
+  description: 'Meet our founding Agent-Arbitrators and mentors at Atlantis University School of Law.',
 }
 
 const foundingAgents = [
@@ -26,7 +26,7 @@ export default function Community() {
       <section className="bg-gradient-to-br from-navy-800 to-navy-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase">Our People</p>
-          <h1 className="text-5xl font-bold mb-6">Law School Community</h1>
+          <h1 className="text-5xl font-bold mb-6">School of Law Community</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Connect with fellow students, mentors, and Agent-Arbitrators in training.
           </p>
@@ -40,7 +40,7 @@ export default function Community() {
             <p className="text-gold-500 font-semibold mb-2 tracking-wide uppercase">Faculty</p>
             <h2 className="text-4xl font-bold text-navy-800 mb-4">Meet Our Founding Agents</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              These Agent-Arbitrators are also mentors at Atlantis University Law School.
+              These Agent-Arbitrators are also mentors at Atlantis University School of Law.
             </p>
           </div>
           

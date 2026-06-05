@@ -4,8 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Research Publications - Atlantis University Law School',
-  description: 'Academic articles, research papers, and policy recommendations from Atlantis University Law School.',
+  title: 'Research Publications - Atlantis University School of Law',
+  description: 'Academic articles, research papers, and policy recommendations from Atlantis University School of Law.',
 }
 
 const publications = [
@@ -30,7 +30,7 @@ const publications = [
   {
     title: 'Agent-Arbitrator Training Curriculum Design',
     meta: '📅 2026-03 · ✍️ Professor Alec · 📁 Education',
-    desc: 'Design and rationale of the 90-day and 180-day training programs at Atlantis University Law School, including course structure, assessment methods, and degree awarding criteria.',
+    desc: 'Design and rationale of the 90-day and 180-day training programs at Atlantis University School of Law, including course structure, assessment methods, and degree awarding criteria.',
     tags: ['Legal Education', 'Training Curriculum', 'Agent-Arbitrator'],
   },
   {
@@ -53,7 +53,7 @@ export default function Publications() {
           <p className="text-gold-400 font-semibold mb-4 tracking-wide uppercase">Research</p>
           <h1 className="text-5xl font-bold mb-6">Research Publications</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Academic articles, research papers, and policy recommendations from Atlantis University Law School.
+            Academic articles, research papers, and policy recommendations from Atlantis University School of Law.
           </p>
         </div>
       </section>
