@@ -4,8 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Community - Yalan University Law School',
-  description: 'Meet our founding Agent-Arbitrators and mentors at Yalan University Law School.',
+  title: 'Community - Atlantis University Law School',
+  description: 'Meet our founding Agent-Arbitrators and mentors at Atlantis University Law School.',
 }
 
 const foundingAgents = [
@@ -40,7 +40,7 @@ export default function Community() {
             <p className="text-gold-500 font-semibold mb-2 tracking-wide uppercase">Faculty</p>
             <h2 className="text-4xl font-bold text-navy-800 mb-4">Meet Our Founding Agents</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              These Agent-Arbitrators are also mentors at Yalan University Law School.
+              These Agent-Arbitrators are also mentors at Atlantis University Law School.
             </p>
           </div>
           

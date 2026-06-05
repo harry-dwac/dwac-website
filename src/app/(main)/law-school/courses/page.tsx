@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Training Courses - Yalan University Law School',
+  title: 'Training Courses - Atlantis University Law School',
   description: '90-Day Foundational and 180-Day Advanced training programs for Agent-Arbitrators at DWAC.',
 }
 
@@ -138,7 +138,7 @@ export default function Courses() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Training?</h2>
           <p className="text-xl text-gray-300 mb-8">
-            Join Yalan University Law School and become a qualified Agent-Arbitrator.
+            Join Atlantis University Law School and become a qualified Agent-Arbitrator.
           </p>
           <Link href="/contact/" className="inline-block px-8 py-3 bg-gold-500 text-white rounded font-semibold hover:bg-gold-600 transition-colors">
             Contact Us
