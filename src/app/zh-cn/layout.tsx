@@ -12,6 +12,17 @@ export const metadata: Metadata = {
   },
   description: '独立的、非营利性的永久性国际仲裁机构，专注于解决数字世界纠纷。专业、高效、全球可执行的仲裁服务。',
   keywords: '仲裁,数字纠纷,区块链,AI争议,在线仲裁,DWAC',
+  openGraph: {
+    locale: 'zh_CN',
+  },
+  alternates: {
+    canonical: 'https://dwac.net/zh-cn',
+    languages: {
+      'en': 'https://dwac.net',
+      'zh-CN': 'https://dwac.net/zh-cn',
+      'zh-TW': 'https://dwac.net/zh-tw',
+    },
+  },
 }
 
 export default function ZhCnLayout({
