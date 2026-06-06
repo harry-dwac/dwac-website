@@ -5,9 +5,34 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  // SEO optimizations
   compress: true,
-  // Power headers for security and SEO
+
+  // Redirects: /law-school/library/* -> /library/* etc.
+  async redirects() {
+    return [
+      {
+        source: '/law-school/library/:path*',
+        destination: '/library/:path*',
+        permanent: true,
+      },
+      {
+        source: '/law-school/degree/:path*',
+        destination: '/degree/:path*',
+        permanent: true,
+      },
+      {
+        source: '/law-school/library',
+        destination: '/library',
+        permanent: true,
+      },
+      {
+        source: '/law-school/degree',
+        destination: '/degree',
+        permanent: true,
+      },
+    ];
+  },
+
   async headers() {
     return [
       {
