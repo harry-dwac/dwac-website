@@ -79,7 +79,7 @@ const coreModules = [
   {
     icon: <VideoIcon />,
     title: 'Video Hearing Room',
-    subtitle: '视频庭审厅',
+    subtitle: 'HD Video Conferencing',
     desc: 'Multi-party HD video conferencing with gallery view, speaker spotlight, and picture-in-picture for document review during proceedings. Supports up to 20 concurrent participants with adaptive bandwidth.',
     features: ['HD 1080p Video', 'Gallery & Spotlight', 'Screen Sharing', 'Bandwidth Adaptive', 'Recording & Playback'],
     color: 'cyan',
@@ -87,7 +87,7 @@ const coreModules = [
   {
     icon: <MicIcon />,
     title: 'AI Real-time Transcription',
-    subtitle: 'AI 实时笔录',
+    subtitle: 'Real-time Transcription',
     desc: 'Speech-to-text powered by multi-language ASR models with legal domain fine-tuning. Auto-speaker diarization, legal term recognition, and instant searchable transcripts.',
     features: ['Multi-language ASR', 'Speaker Diarization', 'Legal Term NER', 'Searchable Export', 'Live Edit Mode'],
     color: 'gold',
@@ -95,7 +95,7 @@ const coreModules = [
   {
     icon: <DocIcon />,
     title: 'Smart Evidence Hub',
-    subtitle: '智能证据中心',
+    subtitle: 'Evidence Management',
     desc: 'Centralized evidence management with version control, chain-of-custody tracking, hash verification, and AI-assisted relevance scoring. Supports PDF, images, videos, emails, and blockchain data.',
     features: ['Version Control', 'Hash Verification', 'AI Relevance Score', 'Timeline View', 'Bulk Upload'],
     color: 'emerald',
@@ -103,7 +103,7 @@ const coreModules = [
   {
     icon: <BotIcon />,
     title: 'AI Arbitration Assistant',
-    subtitle: 'AI 仲裁助手',
+    subtitle: 'AI-Powered Analysis',
     desc: 'Agent-powered case analysis, procedural guidance, precedent retrieval, and draft generation. The assistant supports arbitrators in research while maintaining full human decision authority.',
     features: ['Case Analysis', 'Precedent Search', 'Draft Generation', 'Procedural Guide', 'Compliance Check'],
     color: 'violet',
@@ -111,12 +111,12 @@ const coreModules = [
 ]
 
 const processFlow = [
-  { step: '1', title: 'Case Filing', subtitle: '立案申请', icon: '📋', desc: 'Online submission of Request for Arbitration with auto-docketing, fee calculation, and respondent notification via email/SMS.' },
-  { step: '2', title: 'Preliminary Review', subtitle: '初步审查', icon: '🔍', desc: 'Secretariat reviews filing completeness. AI-assisted jurisdiction check and procedural compliance scan within 48 hours.' },
-  { step: '3', title: 'Tribunal Formation', subtitle: '仲裁庭组建', icon: '⚖️', desc: 'Party-appointed or Chairman-selected arbitrators confirmed. Conflict-of-interest declarations collected digitally.' },
-  { step: '4', title: 'Document Exchange', subtitle: '文书交换', icon: '📂', desc: 'Secure document portal for Statement of Claim, Defense, evidence bundles. Automated service confirmation and deadline tracking.' },
-  { step: '5', title: 'Virtual Hearing', subtitle: '在线庭审', icon: '🎥', desc: 'Live video hearing with real-time transcription, simultaneous interpretation, evidence presentation, and witness examination.' },
-  { step: '6', title: 'Deliberation & Award', subtitle: '评议与裁决', icon: '✍️', desc: 'Secure deliberation room for tribunal. Draft award with AI-assisted consistency check. E-signature and blockchain notarization.' },
+  { step: '1', title: 'Case Filing', subtitle: 'Submit Request', icon: '📋', desc: 'Online submission of Request for Arbitration with auto-docketing, fee calculation, and respondent notification via email/SMS.' },
+  { step: '2', title: 'Preliminary Review', subtitle: 'Completeness Check', icon: '🔍', desc: 'Secretariat reviews filing completeness. AI-assisted jurisdiction check and procedural compliance scan within 48 hours.' },
+  { step: '3', title: 'Tribunal Formation', subtitle: 'Arbitrator Selection', icon: '⚖️', desc: 'Party-appointed or Chairman-selected arbitrators confirmed. Conflict-of-interest declarations collected digitally.' },
+  { step: '4', title: 'Document Exchange', subtitle: 'Secure Portal', icon: '📂', desc: 'Secure document portal for Statement of Claim, Defense, evidence bundles. Automated service confirmation and deadline tracking.' },
+  { step: '5', title: 'Virtual Hearing', subtitle: 'Live Video', icon: '🎥', desc: 'Live video hearing with real-time transcription, simultaneous interpretation, evidence presentation, and witness examination.' },
+  { step: '6', title: 'Deliberation & Award', subtitle: 'Secure Room', icon: '✍️', desc: 'Secure deliberation room for tribunal. Draft award with AI-assisted consistency check. E-signature and blockchain notarization.' },
 ]
 
 const techSpecs = [
