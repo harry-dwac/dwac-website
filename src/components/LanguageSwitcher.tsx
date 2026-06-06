@@ -40,7 +40,7 @@ export default function LanguageSwitcher() {
             : 'bg-navy-600/50 text-gray-500 hover:text-gray-300 transition-colors'
         }`}
       >
-        简
+        SC
       </Link>
       <Link
         href={links.zhTW}
@@ -50,7 +50,7 @@ export default function LanguageSwitcher() {
             : 'bg-navy-600/50 text-gray-500 hover:text-gray-300 transition-colors'
         }`}
       >
-        繁
+        TC
       </Link>
     </div>
   );
