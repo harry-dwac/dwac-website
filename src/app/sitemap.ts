@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/arbitration/', '/digital-tribunal/', '/club/',
     '/arbitrators/', '/privacy/', '/terms/',
     '/resources/law/', '/cases/',
+    '/login/', '/register/',
     // New pages added June 2026
     '/library/', '/library/book/vol1/', '/library/book/vol2/',
     '/community/', '/law-school/', '/agent-club/',
@@ -21,6 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/rules/full/', '/law-school/courses/', '/law-school/programs/',
     '/law-school/resources/', '/law-school/publications/',
     '/law-school/community/', '/law-school/student-record/',
+    // Resources pages
+    '/resources/contracts/', '/resources/forms/',
+    '/resources/law-unification-report/', '/resources/law-unification-strategy/',
   ]
 
   const entries: MetadataRoute.Sitemap = []
