@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '以法治统一推动两岸统一进程的策略建议 ',
+  title: '以法治统一推动两岸统一进程的策略建议 | DWAC',
   description: '关于以司法管辖权延伸推动两岸法治统一的策略建议，内部参阅',
 }
 

@@ -31,7 +31,7 @@ export default function Dispute() {
             </p>
 
             <ol className="space-y-4 mb-8 list-decimal list-inside text-gray-300">
-              <li><strong>審查管轄範圍</strong> — 確認您的爭議屬於我中心管轄範圍（數字平臺爭議、智能合約、AI Agent（电子代理人）、數字資產、數據爭議等）</li>
+              <li><strong>審查管轄範圍</strong> — 確認您的爭議屬於我中心管轄範圍（數字平臺爭議、智能合約、AI代理、數字資產、數據爭議等）</li>
               <li><strong>準備相關材料</strong> — 收集與爭議相關的所有證據、合同、通信記錄及其他文件</li>
               <li><strong>提交申請</strong> — 填寫仲裁請求表或直接聯繫我們</li>
               <li><strong>繳納受理費</strong> — 根據爭議金額繳納相應的仲裁費用</li>
@@ -44,7 +44,7 @@ export default function Dispute() {
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
                 <li>• 跨境數字平臺爭議</li>
                 <li>• 智能合約履行爭議</li>
-                <li>• AI Agent（电子代理人）與自主系統爭議</li>
+                <li>• AI代理與自主系統爭議</li>
                 <li>• 數字資產糾紛（NFT、代幣、虛擬財產）</li>
                 <li>• 數據所有權與流轉爭議</li>
                 <li>• 平臺服務爭議（賬號封禁、內容移除）</li>

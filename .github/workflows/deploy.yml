@@ -1,18 +1,17 @@
-name: Build and Deploy
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [Harry-dwac]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pages: write
       id-token: write
-      deployments: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,18 +30,10 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: '1'
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: f74ac4021b9a32d29f0d5a3996fefc85
-          projectName: dwac-website
-          directory: ./out
-
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'

@@ -214,7 +214,7 @@ const templates = {
     },
     {
       icon: '🤖',
-      title: 'AI Agent（电子代理人）服務協議',
+      title: 'AI代理服務協議',
       id: 'TMPL-PLT-002',
       desc: 'Terms for AI agent services with identity verification requirements.',
       tags: ['AI Agent', 'DID', '⚖️ DWAC仲裁條款'],
@@ -274,7 +274,7 @@ export default function ContractsPage() {
             合同<span className="text-gold-400">模板</span>
           </h1>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            可直接使用的合同模板，含DWAC仲裁條款，適用於數位服務、AI Agent（电子代理人）和跨境交易。
+            可直接使用的合同模板，含DWAC仲裁條款，適用於數位服務、AI代理和跨境交易。
           </p>
         </div>
       </section>

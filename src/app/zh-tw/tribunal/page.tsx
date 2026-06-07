@@ -138,7 +138,7 @@ export default function TribunalZhCn() {
                 <div className="flex-shrink-0 w-10 h-10 bg-gold-500/[0.06]0 rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
                 <div>
                   <h3 className="font-semibold text-white mb-1">AI 執行程式</h3>
-                  <p className="text-gray-400 text-sm">AI Agent 分析證據、进行法律推理，与其他仲裁員的 Agent 協作。</p>
+                  <p className="text-gray-400 text-sm">AI Agent 分析证据、进行法律推理，与其他仲裁员的 Agent 協作。</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -196,10 +196,10 @@ export default function TribunalZhCn() {
           <h2 className="text-3xl font-bold mb-4">有疑問？</h2>
           <p className="text-gold-300 mb-8 max-w-2xl mx-auto">秘書處随时为您提供仲裁庭組建相關問題的解答。</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/zh-tw/contact/" className="px-6 py-3 bg-navy-800/20 text-gold-500 font-semibold rounded-lg hover:bg-navy-800/40 transition-colors">
+            <Link href="/zh-cn/contact/" className="px-6 py-3 bg-navy-800/20 text-gold-500 font-semibold rounded-lg hover:bg-navy-800/40 transition-colors">
               聯繫我們
             </Link>
-            <Link href="/zh-tw/fees/" className="px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-navy-800/20/10 transition-colors">
+            <Link href="/zh-cn/fees/" className="px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-navy-800/20/10 transition-colors">
               查看費用表
             </Link>
           </div>

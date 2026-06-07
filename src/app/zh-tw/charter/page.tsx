@@ -1,11 +1,3 @@
-
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: '數字世界憲章 - 數字世界仲裁中心',
-  description: '數字世界憲章：透過法治治理數字世界的基礎性檔案。',
-}
-
 import Link from 'next/link'
 
 export default function CharterZhTw() {

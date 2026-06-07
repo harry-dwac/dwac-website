@@ -55,15 +55,9 @@ export default function FooterZhCn() {
 
         {/* Divider */}
         <div className="mt-12 pt-8 border-t border-gold-subtle/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-            <p className="text-xs text-gray-600">
-              © {new Date().getFullYear()} 数字世界仲裁中心 (DWAC). 保留所有权利。
-            </p>
-            <div className="flex items-center gap-4">
-              <Link href="/zh-cn/privacy/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">隐私政策</Link>
-              <Link href="/zh-cn/terms/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">服务条款</Link>
-            </div>
-          </div>
+          <p className="text-xs text-gray-600">
+            © {new Date().getFullYear()} 数字世界仲裁中心 (DWAC). 保留所有权利。
+          </p>
           <div className="flex items-center gap-4">
             <Link href="/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">EN</Link>
             <Link href="/zh-cn/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">简体中文</Link>

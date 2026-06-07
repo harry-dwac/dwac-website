@@ -16,7 +16,7 @@ export default function EvidenceZhCn() {
             <li>智能合约代码及区块链交易记录</li>
             <li>通信记录（邮件、聊天记录等）</li>
             <li>平台记录（账户活动、服务协议等）</li>
-            <li>AI Agent（电子代理人）交互文档</li>
+            <li>AI代理交互文档</li>
           </ul>
           <Link href="/zh-cn/contact/" className="inline-flex items-center px-6 py-3 bg-gradient-gold text-white font-semibold rounded-lg hover:bg-gold-600 transition-colors">
             联系我们

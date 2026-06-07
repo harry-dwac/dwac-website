@@ -1,198 +1,135 @@
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '仲裁服务 - 数字世界仲裁中心',
+  description: '专业的数字世界争议仲裁服务。公平、高效、全球可执行。',
+}
+
 import Link from 'next/link'
 
-export default function ArbitrationZhCn() {
+export default function ArbitrationOnlineZhCn() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-navy text-white pt-[120px] pb-16 lg:pt-[140px] lg:pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="text-xs font-bold tracking-[3px] uppercase text-gold-500 mb-3 block">专业争议解决</span>
-          <h1 className="font-serif text-4xl lg:text-5xl font-bold mb-6">仲裁服务</h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            DWAC为数字世界纠纷提供高效、专业、可在全球执行的仲裁服务。
+      <section className="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-gold-500 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-20 w-80 h-80 bg-gold-500 rounded-full blur-3xl" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="inline-block px-4 py-1.5 bg-gold-500/10 border border-gold-500/20 rounded-full text-gold-400 text-sm font-medium mb-6">
+            🖥️ 在线仲裁
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">在线仲裁平台</h1>
+          <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
+            DWAC 提供安全、高效、全数字化的仲裁平台。在线提交争议、上传证据、参与线上听证——全部在线完成。
           </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link href="/zh-cn/arbitration-flow/" className="px-6 py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-bold rounded-lg hover:shadow-lg hover:shadow-gold-500/30 transition-all">
+              查看仲裁流程 →
+            </Link>
+            <Link href="/zh-cn/contact/" className="px-6 py-3 border border-gold-500/40 text-gold-400 font-semibold rounded-lg hover:bg-gold-500/10 transition-all">
+              联系我们
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Why Arbitration */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">为什么选择DWAC</span>
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">DWAC优势</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">
-              专为数字时代打造的专业能力，兼具传统仲裁的执行力。
-            </p>
-          </div>
-
+      {/* Features */}
+      <section className="py-16 bg-navy-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">平台功能</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group text-center p-8 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div className="w-16 h-16 mx-auto mb-6 bg-cyan-50 rounded-xl flex items-center justify-center group-hover:bg-cyan-100 transition-colors">
-                <svg className="w-8 h-8 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            <div className="bg-navy-800/40 p-8 rounded-2xl border border-slate-700/50 hover:border-gold-500/30 transition-all">
+              <div className="w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-7 h-7 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">全球可执行</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                裁决可在170多个国家和地区根据《纽约公约》执行，配有专门的跨境执行机制。
+              <h3 className="text-xl font-bold text-white mb-3">无纸化立案</h3>
+              <p className="text-slate-400 leading-relaxed">
+                在线提交索赔、证据和文件。平台支持大文件上传和校验和验证。
               </p>
             </div>
 
-            <div className="group text-center p-8 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div className="w-16 h-16 mx-auto mb-6 bg-amber-50 rounded-xl flex items-center justify-center group-hover:bg-amber-100 transition-colors">
-                <svg className="w-8 h-8 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div className="bg-navy-800/40 p-8 rounded-2xl border border-slate-700/50 hover:border-gold-500/30 transition-all">
+              <div className="w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-7 h-7 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">快速高效</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                默认90天解决争议。简易程序仅30天。全程在线进行。
+              <h3 className="text-xl font-bold text-white mb-3">线上听证</h3>
+              <p className="text-slate-400 leading-relaxed">
+                随时随地参与听证。集成视频平台支持证据展示、实时转录和安全录制。
               </p>
             </div>
 
-            <div className="group text-center p-8 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div className="w-16 h-16 mx-auto mb-6 bg-emerald-50 rounded-xl flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
-                <svg className="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-.75M2 13h2" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a10 10 0 0118 8 4 4 0 00-16 0z" />
+            <div className="bg-navy-800/40 p-8 rounded-2xl border border-slate-700/50 hover:border-gold-500/30 transition-all">
+              <div className="w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-7 h-7 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                 </svg>
               </div>
-              <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">AI赋能</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                创新的仲裁员-Agent机制，将AI效率与人类专业判断和问责制相结合。
+              <h3 className="text-xl font-bold text-white mb-3">安全保密</h3>
+              <p className="text-slate-400 leading-relaxed">
+                端到端加密通信。基于角色的访问控制确保只有授权方可以访问案件材料。
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What We Handle */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-navy-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-500 mb-3 block">专业领域</span>
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">我们处理的纠纷</h2>
-            <p className="text-slate-400 max-w-xl mx-auto">
-              DWAC专注于数字世界特有的争议类型
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div className="group p-5 rounded-xl border border-gold-subtle/30 bg-navy-800/30 hover:bg-navy-800/50 transition-all duration-300">
-              <h3 className="font-semibold text-white text-sm mb-2">智能合约</h3>
-              <p className="text-slate-400 text-xs">履行与执行纠纷</p>
-            </div>
-            <div className="group p-5 rounded-xl border border-gold-subtle/30 bg-navy-800/30 hover:bg-navy-800/50 transition-all duration-300">
-              <h3 className="font-semibold text-white text-sm mb-2">AI代理责任</h3>
-              <p className="text-slate-400 text-xs">自主系统决策争议</p>
-            </div>
-            <div className="group p-5 rounded-xl border border-gold-subtle/30 bg-navy-800/30 hover:bg-navy-800/50 transition-all duration-300">
-              <h3 className="font-semibold text-white text-sm mb-2">数字资产</h3>
-              <p className="text-slate-400 text-xs">NFT、代币、虚拟财产</p>
-            </div>
-            <div className="group p-5 rounded-xl border border-gold-subtle/30 bg-navy-800/30 hover:bg-navy-800/50 transition-all duration-300">
-              <h3 className="font-semibold text-white text-sm mb-2">数据合规</h3>
-              <p className="text-slate-400 text-xs">跨境数据纠纷</p>
-            </div>
-            <div className="group p-5 rounded-xl border border-gold-subtle/30 bg-navy-800/30 hover:bg-navy-800/50 transition-all duration-300">
-              <h3 className="font-semibold text-white text-sm mb-2">电子商务</h3>
-              <p className="text-slate-400 text-xs">平台责任与账号封禁</p>
-            </div>
-            <div className="group p-5 rounded-xl border border-gold-subtle/30 bg-navy-800/30 hover:bg-navy-800/50 transition-all duration-300">
-              <h3 className="font-semibold text-white text-sm mb-2">域名与知识产权</h3>
-              <p className="text-slate-400 text-xs">数字知识产权争议</p>
-            </div>
-            <div className="group p-5 rounded-xl border border-gold-subtle/30 bg-navy-800/30 hover:bg-navy-800/50 transition-all duration-300">
-              <h3 className="font-semibold text-white text-sm mb-2">网络安全</h3>
-              <p className="text-slate-400 text-xs">数据泄露责任纠纷</p>
-            </div>
-            <div className="group p-5 rounded-xl border border-gold-subtle/30 bg-navy-800/30 hover:bg-navy-800/50 transition-all duration-300">
-              <h3 className="font-semibold text-white text-sm mb-2">数字支付</h3>
-              <p className="text-slate-400 text-xs">跨境支付争议</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Process */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">操作流程</span>
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">仲裁流程</h2>
-          </div>
-
-          <div className="space-y-6">
-            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-slate-200">
-              <div className="flex-shrink-0 w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center text-navy-900 font-bold">1</div>
-              <div>
-                <h3 className="font-semibold text-slate-900 mb-1">提交申请</h3>
-                <p className="text-slate-500 text-sm">通过联系表单或电子邮件提交仲裁申请及相关证明材料。</p>
+      {/* How It Works */}
+      <section className="py-16 bg-navy-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white text-center mb-4">工作流程</h2>
+          <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto">
+            我们简化的在线仲裁流程专为高效和公平而设计。
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              { step: "1", title: "提交索赔", desc: "在线提交争议并附上支持文件" },
+              { step: "2", title: "分配仲裁员", desc: "根据专业知识分配中立仲裁员" },
+              { step: "3", title: "线上听证", desc: "参与在线听证并提交证据" },
+              { step: "4", title: "作出裁决", desc: "作出有约束力的裁决并在国际范围内执行" },
+            ].map((item) => (
+              <div key={item.step} className="relative">
+                <div className="bg-navy-800/60 p-6 rounded-2xl border border-slate-700/50 text-center">
+                  <div className="w-12 h-12 bg-gold-500 text-navy-900 font-bold rounded-full flex items-center justify-center mx-auto mb-4">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-slate-400 text-sm">{item.desc}</p>
+                </div>
+                {item.step !== "4" && (
+                  <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gold-500/20 -translate-x-6" />
+                )}
               </div>
-            </div>
-            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-slate-200">
-              <div className="flex-shrink-0 w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center text-navy-900 font-bold">2</div>
-              <div>
-                <h3 className="font-semibold text-slate-900 mb-1">组成仲裁庭</h3>
-                <p className="text-slate-500 text-sm">DWAC在7个工作日内组成仲裁庭，指定仲裁员Agent和人类仲裁员。</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-slate-200">
-              <div className="flex-shrink-0 w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center text-navy-900 font-bold">3</div>
-              <div>
-                <h3 className="font-semibold text-slate-900 mb-1">审理程序</h3>
-                <p className="text-slate-500 text-sm">AI Agent分析证据、进行法律研究、起草文件。人类仲裁员提供监督和审查。</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-slate-200">
-              <div className="flex-shrink-0 w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center text-navy-900 font-bold">4</div>
-              <div>
-                <h3 className="font-semibold text-slate-900 mb-1">裁决与执行</h3>
-                <p className="text-slate-500 text-sm">人类仲裁员审查并签署裁决书。可在170多个国家和地区根据《纽约公约》执行。</p>
-              </div>
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="border-y border-gold-subtle bg-navy-950">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-gold-subtle/30">
-          <div className="py-10 px-6 text-center">
-            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">170+</div>
-            <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">可执行国家/地区</div>
-          </div>
-          <div className="py-10 px-6 text-center">
-            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">90</div>
-            <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">天默认解决</div>
-          </div>
-          <div className="py-10 px-6 text-center">
-            <div className="font-serif text-3xl lg:text-4xl font-bold text-cyan-400 mb-1">100%</div>
-            <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">在线审理</div>
-          </div>
-          <div className="py-10 px-6 text-center">
-            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">50%</div>
-            <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">贸仲费率标准</div>
+          <div className="text-center mt-10">
+            <Link href="/zh-cn/arbitration-flow/" className="text-gold-400 hover:text-gold-300 font-semibold">
+              查看详细流程 →
+            </Link>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-navy">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="relative p-12 lg:p-16 rounded-xl border border-gold-subtle bg-navy-800/30">
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">准备开始？</h2>
-            <p className="text-slate-400 mb-8 max-w-lg mx-auto leading-relaxed">
-              无论您需要解决争议还是想了解更多服务详情，我们随时为您提供帮助。
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/zh-cn/contact/" className="px-8 py-3.5 bg-gradient-gold text-navy-900 font-bold text-sm tracking-wide rounded-md hover:shadow-[0_0_30px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 transition-all">
-                提交争议
-              </Link>
-              <Link href="/zh-cn/rules/" className="px-8 py-3.5 border border-gold-500/30 text-gold-400 font-semibold text-sm tracking-wide rounded-md hover:bg-gold-500/[0.05] hover:border-gold-500/50 transition-all">
-                查看规则
-              </Link>
-            </div>
+      <section className="py-16 bg-navy-950">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">准备提交争议？</h2>
+          <p className="text-slate-400 mb-8 max-w-xl mx-auto">
+            我们的在线平台让启动仲裁流程变得简单。立即获取费用估算并提交您的索赔。
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/zh-cn/dispute/" className="px-8 py-3.5 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-bold rounded-lg hover:shadow-lg hover:shadow-gold-500/30 transition-all">
+              提交争议
+            </Link>
+            <Link href="/zh-cn/fee-calculator/" className="px-8 py-3.5 border border-gold-500/40 text-gold-400 font-semibold rounded-lg hover:bg-gold-500/10 transition-all">
+              计算费用
+            </Link>
           </div>
         </div>
       </section>

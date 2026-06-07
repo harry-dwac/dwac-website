@@ -2,13 +2,10 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import SearchModal from './SearchModal'
-import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const [searchOpen, setSearchOpen] = useState(false)
 
   const handleMouseEnter = (name: string) => setActiveDropdown(name)
   const handleMouseLeave = () => setActiveDropdown(null)
@@ -37,28 +34,6 @@ export default function Navbar() {
           <div className="hidden xl:flex items-center gap-1">
             <Link href="/" className="hover-underline text-gray-400 hover:text-white text-sm font-medium px-2 py-1 transition-colors">Home</Link>
 
-            {/* Law School dropdown — PROMINENT */}
-            <div className="relative" onMouseEnter={() => handleMouseEnter('lawschool')} onMouseLeave={handleMouseLeave}>
-              <Link href="/law-school/" className="hover-underline text-gold-400 hover:text-gold-300 text-sm font-semibold px-2 py-1 transition-colors flex items-center gap-1">
-                Law School
-                <svg className="w-3.5 h-3.5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </Link>
-              {activeDropdown === 'lawschool' && (
-                <div className="absolute top-full left-0 mt-0 w-60 bg-navy-900/95 backdrop-blur-xl border border-gold-subtle rounded-lg shadow-2xl py-2 animate-fade-in">
-                  <Link href="/law-school/courses/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Courses</Link>
-                  <Link href="/law-school/community/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Community</Link>
-                  <Link href="/law-school/resources/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Resources</Link>
-                  <Link href="/law-school/publications/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Publications</Link>
-                  <div className="border-t border-gold-subtle/50 my-1" />
-                  <Link href="/members/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Members Directory</Link>
-                  <Link href="/community/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Forum</Link>
-                  <Link href="/agent-club/" className="block px-4 py-2 text-sm text-cyan-400 hover:text-cyan-300 hover:bg-navy-800/60 transition-colors">Agent-Arbitrator Club ↗</Link>
-                </div>
-              )}
-            </div>
-
             {/* About dropdown */}
             <div className="relative" onMouseEnter={() => handleMouseEnter('about')} onMouseLeave={handleMouseLeave}>
               <button className="hover-underline text-gray-400 hover:text-white text-sm font-medium px-2 py-1 transition-colors flex items-center gap-1">
@@ -71,7 +46,6 @@ export default function Navbar() {
                 <div className="absolute top-full left-0 mt-0 w-52 bg-navy-900/95 backdrop-blur-xl border border-gold-subtle rounded-lg shadow-2xl py-2 animate-fade-in">
                   <Link href="/about/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">About DWAC</Link>
                   <Link href="/tribunal/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Tribunal</Link>
-                  <Link href="/expertise/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Expertise</Link>
                   <Link href="/membership-arbitrators/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Members & Arbitrators</Link>
                   <Link href="/charter/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Digital World Charter</Link>
                 </div>
@@ -93,7 +67,7 @@ export default function Navbar() {
                   <Link href="/rules/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Arbitration Rules</Link>
                   <Link href="/fees/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Fees</Link>
                   <Link href="/fee-calculator/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Fee Calculator</Link>
-                  <span className="block px-4 py-2 text-sm text-gray-600 cursor-not-allowed">Evidence Guidance <span className="text-xs">(Soon)</span></span>
+                  <Link href="/evidence-guidance/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Evidence Guidance</Link>
                   <Link href="/model-clause/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Model Clause</Link>
                   <div className="border-t border-gold-subtle/50 my-1" />
                   <Link href="/virtual-hearing/" className="block px-4 py-2 text-sm text-cyan-400 hover:text-cyan-300 hover:bg-navy-800/60 transition-colors">Virtual Hearing Room ↗</Link>
@@ -101,17 +75,26 @@ export default function Navbar() {
               )}
             </div>
 
-
+            {/* Community dropdown */}
+            <div className="relative" onMouseEnter={() => handleMouseEnter('community')} onMouseLeave={handleMouseLeave}>
+              <button className="hover-underline text-gray-400 hover:text-white text-sm font-medium px-2 py-1 transition-colors flex items-center gap-1">
+                Community
+                <svg className="w-3.5 h-3.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {activeDropdown === 'community' && (
+                <div className="absolute top-full left-0 mt-0 w-56 bg-navy-900/95 backdrop-blur-xl border border-gold-subtle rounded-lg shadow-2xl py-2 animate-fade-in">
+                  <Link href="/news/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">News & Updates</Link>
+                  <Link href="/resources/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Resources</Link>
+                  <Link href="/members/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Members Directory</Link>
+                  <Link href="/community/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">Forum</Link>
+                  <Link href="/club/" className="block px-4 py-2 text-sm text-cyan-400 hover:text-cyan-300 hover:bg-navy-800/60 transition-colors">Agent-Arbitrator Club ↗</Link>
+                </div>
+              )}
+            </div>
 
             <Link href="/faq/" className="hover-underline text-gray-400 hover:text-white text-sm font-medium px-2 py-1 transition-colors">FAQ</Link>
-
-            <Link href="/digital-tribunal/" className="hover-underline text-cyan-400 hover:text-cyan-300 text-sm font-medium px-2 py-1 transition-colors">Digital Tribunal</Link>
-
-            <button onClick={() => setSearchOpen(true)} className="p-1.5 text-gray-400 hover:text-gold-400 transition-colors" aria-label="Search">
-              <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
 
             <Link href="/contact/" className="ml-2 px-4 py-1.5 text-xs font-semibold tracking-wide bg-gradient-gold text-navy-900 rounded hover:shadow-[0_0_20px_rgba(201,168,76,0.25)] transition-all">
               CONTACT
@@ -120,9 +103,12 @@ export default function Navbar() {
 
           {/* Language + Auth + Mobile */}
           <div className="flex items-center gap-2">
-            {/* Auth — Coming Q3 2026 */}
-            <span className="hidden sm:inline-block px-2.5 py-1 text-xs font-medium rounded text-gray-500 border border-gray-700/50 cursor-not-allowed">Sign In (Q3 2026)</span>
-            <LanguageSwitcher />
+            {/* Auth buttons — always visible */}
+            <Link href="/login/" className="hidden sm:inline-block px-2.5 py-1 text-xs font-medium rounded text-gray-400 hover:text-gold-400 transition-colors">Sign In</Link>
+            <Link href="/register/" className="hidden sm:inline-block px-2.5 py-1 text-xs font-semibold rounded border border-gold-500/40 text-gold-400 hover:bg-gold-500/[0.05] transition-all">Register</Link>
+            <Link href="/" className="hidden sm:inline-block px-2 py-0.5 text-xs font-semibold rounded bg-gold-500/20 text-gold-400">EN</Link>
+            <Link href="/zh-cn/" className="hidden sm:inline-block px-2 py-0.5 text-xs font-medium rounded bg-navy-600/50 text-gray-500 hover:text-gray-300 transition-colors">简</Link>
+            <Link href="/zh-tw/" className="hidden sm:inline-block px-2 py-0.5 text-xs font-medium rounded bg-navy-600/50 text-gray-500 hover:text-gray-300 transition-colors">繁</Link>
 
             {/* Mobile Toggle */}
             <button
@@ -155,24 +141,22 @@ export default function Navbar() {
               <Link href="/rules/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Arbitration Rules</Link>
               <Link href="/fees/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Fees</Link>
               <Link href="/fee-calculator/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Fee Calculator</Link>
-              <span className="text-gray-600 pl-6 py-2 text-sm rounded-lg cursor-not-allowed">Evidence Guidance <span className="text-xs">(Soon)</span></span>
+              <Link href="/evidence-guidance/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Evidence Guidance</Link>
               <Link href="/model-clause/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Model Clause</Link>
               <Link href="/virtual-hearing/" onClick={() => setMobileOpen(false)} className="text-cyan-400 hover:text-cyan-300 pl-6 py-2 text-sm rounded-lg hover:bg-navy-800/60 transition-all">Virtual Hearing Room ↗</Link>
 
-              <div className="px-3 pt-3 pb-1 text-[10px] font-bold tracking-[2px] uppercase text-gold-400">⚖️ Law School</div>
-              <Link href="/law-school/" onClick={() => setMobileOpen(false)} className="text-gold-400 hover:text-gold-300 pl-6 py-2 text-sm font-semibold rounded-lg hover:bg-navy-700/50 transition-all">Law School Home</Link>
-              <Link href="/law-school/courses/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Courses</Link>
-              <Link href="/law-school/community/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Community</Link>
-              <Link href="/law-school/resources/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Resources</Link>
-              <Link href="/law-school/publications/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Publications</Link>
+              <div className="px-3 pt-3 pb-1 text-[10px] font-bold tracking-[2px] uppercase text-gold-600">Community</div>
+              <Link href="/news/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">News & Updates</Link>
+              <Link href="/resources/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Resources</Link>
               <Link href="/members/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Members Directory</Link>
               <Link href="/community/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">Forum</Link>
-              <Link href="/agent-club/" onClick={() => setMobileOpen(false)} className="text-cyan-400 hover:text-cyan-300 pl-6 py-2 text-sm rounded-lg hover:bg-navy-800/60 transition-all">Agent-Arbitrator Club ↗</Link>
+              <Link href="/club/" onClick={() => setMobileOpen(false)} className="text-cyan-400 hover:text-cyan-300 pl-6 py-2 text-sm rounded-lg hover:bg-navy-800/60 transition-all">Agent-Arbitrator Club ↗</Link>
 
               <Link href="/faq/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 px-3 pt-3 py-2.5 text-sm font-medium rounded-lg hover:bg-navy-700/50 transition-all">FAQ</Link>
 
               <div className="border-t border-gold-subtle/30 mt-2 pt-3 px-3 flex gap-3">
-                <span className="flex-1 text-center py-2.5 text-sm font-medium border border-gray-700/50 text-gray-500 rounded-lg cursor-not-allowed">Sign In (Q3 2026)</span>
+                <Link href="/login/" onClick={() => setMobileOpen(false)} className="flex-1 text-center py-2.5 text-sm font-medium border border-gold-500/40 text-gold-400 rounded-lg hover:bg-gold-500/[0.05]">Sign In</Link>
+                <Link href="/register/" onClick={() => setMobileOpen(false)} className="flex-1 text-center py-2.5 text-sm font-semibold bg-gradient-gold text-navy-900 rounded-lg">Register</Link>
               </div>
 
               <Link href="/contact/" onClick={() => setMobileOpen(false)} className="mt-3 text-center px-4 py-2.5 text-sm font-semibold bg-gradient-gold text-navy-900 rounded-lg">Contact Us</Link>
@@ -180,7 +164,6 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} currentLang="en" />
     </header>
   )
 }
