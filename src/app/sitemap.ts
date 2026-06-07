@@ -10,29 +10,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/arbitration/', '/digital-tribunal/', '/club/',
     '/arbitrators/', '/privacy/', '/terms/',
     '/resources/law/', '/cases/',
+    // New pages added June 2026
+    '/library/', '/library/book/vol1/', '/library/book/vol2/',
+    '/community/', '/law-school/', '/agent-club/',
+    '/agent-registry/', '/api-docs/', '/services/',
+    '/expertise/', '/tribunal/', '/membership/',
+    '/news/', '/why-dwac/', '/framework/',
+    '/evidence-guidance/', '/members/', '/arbitration-flow/',
+    '/degree/', '/resources/', '/arbitrators/join/',
+    '/rules/full/', '/law-school/courses/', '/law-school/programs/',
+    '/law-school/resources/', '/law-school/publications/',
+    '/law-school/community/', '/law-school/student-record/',
   ]
 
   const entries: MetadataRoute.Sitemap = []
 
   for (const route of routes) {
+    const priority = route === '' ? 1.0 : ['/about/', '/charter/', '/rules/', '/digital-tribunal/'].includes(route) ? 0.9 : 0.7
     entries.push({
       url: `${baseUrl}${route}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: route === '' ? 1.0 : route === '/about/' ? 0.9 : 0.7,
+      changeFrequency: 'weekly' as const,
+      priority,
     })
-    // Add zh-cn and zh-tw variants
     entries.push({
       url: `${baseUrl}/zh-cn${route}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: route === '' ? 0.9 : 0.6,
+      changeFrequency: 'weekly' as const,
+      priority: priority * 0.9,
     })
     entries.push({
       url: `${baseUrl}/zh-tw${route}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: route === '' ? 0.9 : 0.6,
+      changeFrequency: 'weekly' as const,
+      priority: priority * 0.9,
     })
   }
 
