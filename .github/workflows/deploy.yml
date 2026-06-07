@@ -1,4 +1,4 @@
-name: Build and Deploy to GitHub Pages
+name: Build and Deploy
 
 on:
   push:
@@ -40,6 +40,7 @@ jobs:
           user_email: 'github-actions[bot]@users.noreply.github.com'
 
       - name: Deploy to Cloudflare Pages
+        if: vars.CF_DEPLOY == 'true'
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
