@@ -2,7 +2,7 @@ name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, Harry-dwac]
   workflow_dispatch:
 
 jobs:
@@ -12,6 +12,7 @@ jobs:
       contents: write
       pages: write
       id-token: write
+      deployments: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,7 +34,15 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./out
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          projectName: dwac-website
+          directory: out
