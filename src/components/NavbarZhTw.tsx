@@ -62,9 +62,9 @@ export default function NavbarZhTw() {
                   <Link href="/zh-tw/how-to-apply/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">申請指南</Link>
                   <Link href="/zh-tw/rules/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">仲裁規則</Link>
                   <Link href="/zh-tw/fees/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">收費標準</Link>
-                  <Link href="/zh-tw/fees/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">費用計算器</Link>
+                  <Link href="/zh-tw/fee-calculator/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">費用計算器</Link>
                   <Link href="/zh-tw/evidence-guidance/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">證據指引</Link>
-                  <Link href="/zh-tw/downloads/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">示範條款</Link>
+                  <Link href="/zh-tw/downloads/" className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-navy-800/60 transition-colors">下載中心</Link>
                   <div className="border-t border-gold-subtle/50 my-1" />
                   <Link href="/zh-tw/virtual-hearing/" className="block px-4 py-2 text-sm text-gold-400 hover:text-gold-300 hover:bg-navy-800/60 transition-colors">虛擬仲裁庭 ↗</Link>
                 </div>
@@ -135,9 +135,9 @@ export default function NavbarZhTw() {
               <Link href="/zh-tw/how-to-apply/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">申請指南</Link>
               <Link href="/zh-tw/rules/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">仲裁規則</Link>
               <Link href="/zh-tw/fees/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">收費標準</Link>
-              <Link href="/zh-tw/fees/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">費用計算器</Link>
+              <Link href="/zh-tw/fee-calculator/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">費用計算器</Link>
               <Link href="/zh-tw/evidence-guidance/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">證據指引</Link>
-              <Link href="/zh-tw/downloads/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">示範條款</Link>
+              <Link href="/zh-tw/downloads/" onClick={() => setMobileOpen(false)} className="text-gray-300 hover:text-gold-400 pl-6 py-2 text-sm rounded-lg hover:bg-navy-700/50 transition-all">下載中心</Link>
               <Link href="/zh-tw/virtual-hearing/" onClick={() => setMobileOpen(false)} className="text-gold-400 hover:text-gold-300 pl-6 py-2 text-sm rounded-lg hover:bg-navy-800/60 transition-all">虛擬仲裁庭 ↗</Link>
 
               <div className="px-3 pt-3 pb-1 text-[10px] font-bold tracking-[2px] uppercase text-gold-600">社群</div>
