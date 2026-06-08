@@ -74,6 +74,7 @@ export const profiles: Profile[] = [
     specializations: ['AI Ethics', 'Digital Law', 'International Arbitration', 'Technology Governance'],
     fullBio: 'Dr. Frontie是DWAC的联合创始人和首席架构师之一。作为人工智能伦理与数字法律领域的先驱，Frontie长期致力于在技术发展与法律规范之间搭建桥梁。他的研究跨越AI治理、算法问责和数字主权等前沿领域，在国际仲裁和AI伦理交叉领域具有独特洞见。Frontie倡导"负责任的技术发展"理念，认为法律框架应当引导而非阻碍创新。',
     qualifications: [
+      'LL.D., Atlantis University School of Law (Summa Cum Laude)',
       '人工智能伦理与治理专家',
       '数字法律框架设计者',
       '国际仲裁实务经验',
