@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Resources pages
     '/resources/contracts/', '/resources/forms/',
     '/resources/law-unification-report/', '/resources/law-unification-strategy/',
+    '/payment/', '/forum/',
   ]
 
   const entries: MetadataRoute.Sitemap = []
