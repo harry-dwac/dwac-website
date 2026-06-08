@@ -36,8 +36,8 @@ export default function FooterZhTw() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/zh-tw/how-to-apply/" className="text-gray-500 hover:text-gold-400 transition-colors">提交仲裁</Link></li>
               <li><Link href="/zh-tw/fees/" className="text-gray-500 hover:text-gold-400 transition-colors">收費標準</Link></li>
-              <li><Link href="/zh-tw/fees/" className="text-gray-500 hover:text-gold-400 transition-colors">費用計算器</Link></li>
-              <li><Link href="/zh-tw/downloads/" className="text-gray-500 hover:text-gold-400 transition-colors">示範條款</Link></li>
+              <li><Link href="/zh-tw/fee-calculator/" className="text-gray-500 hover:text-gold-400 transition-colors">費用計算器</Link></li>
+              <li><Link href="/zh-tw/model-clause/" className="text-gray-500 hover:text-gold-400 transition-colors">示範條款</Link></li>
               <li><Link href="/zh-tw/evidence-guidance/" className="text-gray-500 hover:text-gold-400 transition-colors">證據指引</Link></li>
             </ul>
           </div>
