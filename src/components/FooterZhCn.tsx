@@ -36,8 +36,8 @@ export default function FooterZhCn() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/zh-cn/how-to-apply/" className="text-gray-500 hover:text-gold-400 transition-colors">提交仲裁</Link></li>
               <li><Link href="/zh-cn/fees/" className="text-gray-500 hover:text-gold-400 transition-colors">收费标准</Link></li>
-              <li><Link href="/zh-cn/fees/" className="text-gray-500 hover:text-gold-400 transition-colors">费用计算器</Link></li>
-              <li><Link href="/zh-cn/downloads/" className="text-gray-500 hover:text-gold-400 transition-colors">示范条款</Link></li>
+              <li><Link href="/zh-cn/fee-calculator/" className="text-gray-500 hover:text-gold-400 transition-colors">费用计算器</Link></li>
+              <li><Link href="/zh-cn/model-clause/" className="text-gray-500 hover:text-gold-400 transition-colors">示范条款</Link></li>
               <li><Link href="/zh-cn/evidence-guidance/" className="text-gray-500 hover:text-gold-400 transition-colors">证据指引</Link></li>
             </ul>
           </div>
