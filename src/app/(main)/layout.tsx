@@ -1,8 +1,8 @@
-import Navbar from '@/components/NavbarZhTw'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import ErrorBoundary from '@/components/ErrorBoundary'
-import Footer from '@/components/FooterZhTw'
 
-export default function ZhTwLayout({
+export default function MainLayout({
   children,
 }: {
   children: React.ReactNode

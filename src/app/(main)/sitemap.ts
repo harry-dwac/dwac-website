@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://dwac.net'
 
   const routes = [
-    '', '/about/', '/charter/', '/contact/',
+    '/', '/about/', '/charter/', '/contact/',
     '/dispute/', '/how-to-apply/', '/rules/', '/fees/',
     '/fee-calculator/', '/model-clause/', '/virtual-hearing/',
     '/arbitration/', '/digital-tribunal/', '/club/',
