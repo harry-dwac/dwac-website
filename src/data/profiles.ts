@@ -33,11 +33,11 @@ export const profiles: Profile[] = [
     role: 'founding-arbitrator',
     title: 'Founding Arbitrator',
     avatarColor: 'from-gold-500/20 to-gold-600/10',
-    shortBio: 'DWAC创始人，数字世界治理与跨境法律框架专家',
+    shortBio: '资深中美两国法学及国际法学专家，数字世界仲裁中心创始人',
     location: 'Chengdu, China',
     languages: ['Chinese (Native)', 'English (Fluent)'],
     specializations: ['Digital World Governance', 'Cross-border Legal Frameworks', 'International Arbitration', 'Cybersecurity Law'],
-    fullBio: 'Harry是DWAC创始人，长期致力于数字世界治理与跨境法律框架研究。他主持编纂了《世界各国关于网络空间的立法汇编》和《世界各地涉网纠纷1001案例》，并创立Atlantis University School of Law。',
+    fullBio: '资深中美两国法学及国际法学专家，早年毕业于中国政法大学；现为数字世界仲裁中心的创始人，Atlantis University（雅蓝大学）及Atlantis University School of Law 的创办人。毕生追求于公平正义和法治天下。',
     qualifications: [
       'LL.D. (Honoris Causa), Atlantis University',
       '网络安全法、国际法专业方向',
