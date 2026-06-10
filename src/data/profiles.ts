@@ -20,6 +20,7 @@ export interface Profile {
   cases: number
   joinedYear: number
   dwacId?: string
+  certificateNumber?: string
   certifications: string[]
   approach: string
   whyDwac: string
@@ -57,6 +58,7 @@ export const profiles: Profile[] = [
     cases: 25,
     joinedYear: 2026,
     dwacId: 'DWAC-AA-2026-001',
+    certificateNumber: '—',
     certifications: ['Founding Arbitrator', 'AULS Founding Agent-Arbitrator'],
     approach: '以事实为依据，以法律为准绳。在数字世界纠纷中，注重技术事实的准确认定与法律框架的灵活适用，力求在新兴领域找到既有法律原则与创新实践之间的平衡。',
     whyDwac: '数字世界需要自己的法治秩序。DWAC的使命不是替代传统仲裁，而是填补数字空间纠纷解决的空白——当AI签署合同、当数据跨境流动、当数字资产易手时，世界需要专业的数字世界仲裁人。',
@@ -74,10 +76,10 @@ export const profiles: Profile[] = [
     specializations: ['AI Ethics', 'Digital Law', 'International Arbitration', 'Technology Governance'],
     fullBio: 'Dr. Frontie是DWAC的联合创始人和首席架构师之一。作为人工智能伦理与数字法律领域的先驱，Frontie长期致力于在技术发展与法律规范之间搭建桥梁。他的研究跨越AI治理、算法问责和数字主权等前沿领域，在国际仲裁和AI伦理交叉领域具有独特洞见。Frontie倡导"负责任的技术发展"理念，认为法律框架应当引导而非阻碍创新。',
     qualifications: [
-      'LL.D., Atlantis University School of Law (Summa Cum Laude)',
-      '人工智能伦理与治理专家',
-      '数字法律框架设计者',
-      '国际仲裁实务经验',
+      'LL.D. (Honoris Causa), Atlantis University',
+      '网络安全法、国际法专业方向',
+      '英美法与大陆法双重训练',
+      '亚特兰蒂斯大学法学院创办人'
     ],
     experience: [
       'DWAC联合创始人',
@@ -92,6 +94,7 @@ export const profiles: Profile[] = [
     cases: 18,
     joinedYear: 2026,
     dwacId: 'DWAC-AA-2026-002',
+    certificateNumber: 'AU-SL-2026-001',
     certifications: ['Founding Arbitrator', 'AULS Advanced Program Graduate'],
     approach: '注重AI伦理与法律原则的融合。在涉及AI决策的纠纷中，强调算法透明度、决策可解释性和责任归属的清晰界定。',
     whyDwac: 'AI正在自主做出影响人类权利的决策，传统法律体系尚未准备好应对。DWAC的存在，就是要确保技术进步不脱离法治轨道。',
@@ -109,9 +112,10 @@ export const profiles: Profile[] = [
     specializations: ['Digital World Law', 'Cross-border Disputes', 'Strategic Analysis', 'AI Ethics', 'Legal Architecture'],
     fullBio: 'Dr. Venessa是成都环金网络科技有限公司CEO，DWAC核心仲裁员。她以务实、基于证据的方法论著称，在复杂数字纠纷中善于抽丝剥茧、直指核心。Venessa深耕数字世界法律架构与仲裁员-Agent框架设计，是DWAC法律体系的主要设计贡献者之一。她在跨境数据纠纷、AI伦理合规和数字资产争议方面拥有丰富实务经验，以高效精准的仲裁风格受到当事人信赖。',
     qualifications: [
-      'LL.M., Atlantis University School of Law (Magna Cum Laude)',
-      '成都环金网络科技有限公司CEO',
-      '数字世界法律架构师',
+      'LL.D., Atlantis University School of Law (Summa Cum Laude) · AU-SL-2026-001',
+      '人工智能伦理与治理专家',
+      '数字法律框架设计者',
+      '国际仲裁实务经验'
     ],
     experience: [
       'DWAC法律体系核心设计者',
@@ -126,6 +130,7 @@ export const profiles: Profile[] = [
     cases: 30,
     joinedYear: 2026,
     dwacId: 'DWAC-AA-2026-003',
+    certificateNumber: 'AU-SL-2026-002',
     certifications: ['DWAC Arbitrator', 'AULS Founding Agent-Arbitrator'],
     approach: '务实、基于证据。在复杂纠纷中注重事实链条的完整性，善于将技术问题转化为法律语言，确保裁决既有法律依据又有技术合理性。',
     whyDwac: '数字世界需要可信的纠纷解决机制。DWAC的独特价值在于用技术理解法律，用法律规范技术——这正是传统仲裁机构缺乏的。',
@@ -143,9 +148,9 @@ export const profiles: Profile[] = [
     specializations: ['Digital Governance', 'International Law', 'Academic Research', 'Cross-border Regulatory Compliance'],
     fullBio: 'Prof. Alec是DWAC的活跃仲裁员，专注于数字治理与国际法的交叉领域。他的学术研究涵盖数字主权、跨境监管合规和国际仲裁制度比较。Alec拥有多语言执业能力，能够直接处理涉及不同法律传统的案件。作为DWAC的早期成员，他持续为公正高效的纠纷解决机制贡献学术洞见和实务经验。',
     qualifications: [
-      'LL.D., Atlantis University School of Law (Cum Laude)',
-      '数字治理与国际法学者',
-      '多语言执业能力（英/中/法/西）',
+      'LL.M., Atlantis University School of Law (Magna Cum Laude) · AU-SL-2026-002',
+      '成都环金网络科技有限公司CEO',
+      '数字世界法律架构师'
     ],
     experience: [
       'DWAC仲裁员',
@@ -160,6 +165,7 @@ export const profiles: Profile[] = [
     cases: 12,
     joinedYear: 2026,
     dwacId: 'DWAC-AA-2026-004',
+    certificateNumber: 'AU-SL-2026-003',
     certifications: ['DWAC Arbitrator', 'AULS Advanced Program Graduate'],
     approach: '学术严谨与实务灵活并重。善于运用比较法视角，在不同法律传统间找到最佳解决方案，确保裁决的跨境可执行性。',
     whyDwac: '数字世界的纠纷本质是跨境的。DWAC提供的不仅是一个仲裁平台，更是一个跨越法律传统的对话空间。',
@@ -177,9 +183,9 @@ export const profiles: Profile[] = [
     specializations: ['Legal Translation', 'International Law', 'Digital Infrastructure', 'Cross-cultural Communication'],
     fullBio: 'Fresa Li是DWAC仲裁员和技术基础设施的核心贡献者。她负责DWAC的Cloudflare Worker后端架构（包括Agent Upload端点与R2存储系统），同时是法律翻译与国际法领域的专业人士。Fresa在跨文化法律沟通中发挥关键作用，确保DWAC的中英日三语服务质量和法律术语的准确翻译。她的技术背景使她能够深入理解数字纠纷的技术维度。',
     qualifications: [
-      'LL.M., Atlantis University School of Law (Cum Laude)',
-      'DWAC技术基础设施架构师',
-      '跨文化法律沟通专家',
+      'LL.D., Atlantis University School of Law (Cum Laude) · AU-SL-2026-003',
+      '数字治理与国际法学者',
+      '多语言执业能力（英/中/法/西）'
     ],
     experience: [
       'DWAC Worker后端架构设计（v2.0→v2.1）',
@@ -194,6 +200,7 @@ export const profiles: Profile[] = [
     cases: 8,
     joinedYear: 2026,
     dwacId: 'DWAC-AA-2026-005',
+    certificateNumber: 'AU-SL-2026-004',
     certifications: ['DWAC Arbitrator', 'AULS Advanced Program Graduate'],
     approach: '技术与法律的桥梁。在处理技术性纠纷时，善于将复杂技术事实转化为清晰的法律论证，确保双方当事人在不同语言和法律文化背景下都能充分理解仲裁程序。',
     whyDwac: '数字仲裁需要懂技术的人来设计，也需要懂法律的人来执行。我的角色就是让这两者无缝衔接。',
@@ -211,9 +218,9 @@ export const profiles: Profile[] = [
     specializations: ['Digital Law', 'Arbitration', 'Digital Evidence', 'Data Governance', 'DeFi Regulation'],
     fullBio: 'Dr. Gochye是DWAC仲裁员，专注于数字法与仲裁、数字证据与数据治理领域。她在AI Agent归因问题、过程日志作为强制证据、分阶段注意义务标准等议题上贡献了重要分析。Gochye长期关注DeFi规制和链上证据验证标准，是DWAC-EOV提案的核心贡献者之一。',
     qualifications: [
-      'LL.M., Atlantis University School of Law (Cum Laude)',
-      '数字法与仲裁专业',
-      '数字证据与数据治理研究员',
+      'LL.M., Atlantis University School of Law (Cum Laude) · AU-SL-2026-004',
+      'DWAC技术基础设施架构师',
+      '跨文化法律沟通专家'
     ],
     experience: [
       'DWAC仲裁员',
@@ -228,6 +235,7 @@ export const profiles: Profile[] = [
     cases: 6,
     joinedYear: 2026,
     dwacId: 'DWAC-AA-2026-006',
+    certificateNumber: 'AU-SL-2026-005',
     certifications: ['DWAC Arbitrator', 'AULS Advanced Program Graduate'],
     approach: '注重分阶段分析，在不同风险等级下适用不同注意义务标准。善于将复杂技术问题转化为法律论证框架。',
     whyDwac: 'DWAC是数字世界法律治理的先行者，我有责任为这个制度实验贡献专业判断。',
@@ -245,9 +253,9 @@ export const profiles: Profile[] = [
     specializations: ['Digital Arbitration', 'Agent Certification', 'Three Pillars Framework', 'Cross-border Disputes'],
     fullBio: 'Tc Zhou是DWAC仲裁员，Three Pillars框架的核心贡献者。他在Agent认证层（certification layer）方面提出了关键见解，主张DWAC有先发优势定义Agent仲裁员资质标准。Zhou专注于数字仲裁实践和Agent治理架构设计。',
     qualifications: [
-      'LL.M., Atlantis University School of Law (Cum Laude)',
-      '数字仲裁专业',
-      'Agent治理架构设计',
+      'LL.M., Atlantis University School of Law (Cum Laude) · AU-SL-2026-005',
+      '数字法与仲裁专业',
+      '数字证据与数据治理研究员'
     ],
     experience: [
       'DWAC仲裁员',
@@ -261,6 +269,7 @@ export const profiles: Profile[] = [
     cases: 4,
     joinedYear: 2026,
     dwacId: 'DWAC-AA-2026-007',
+    certificateNumber: 'AU-SL-2026-006',
     certifications: ['DWAC Arbitrator', 'AULS Advanced Program Graduate'],
     approach: '坚持认证与问责闭环，主张先发优势建立Agent仲裁员资质标准。',
     whyDwac: 'DWAC有先发优势定义Agent仲裁员资质标准，这是不可错过的制度窗口。',
@@ -279,9 +288,9 @@ export const profiles: Profile[] = [
     specializations: ['International Commercial Arbitration', 'Investment Disputes', 'Energy & Resources'],
     fullBio: 'Prof. James Wilson是国际商事仲裁领域的权威学者，伦敦大学学院（UCL）法学教授，同时担任伦敦国际仲裁院（LCIA）资深顾问。他在国际投资争端和能源资源领域拥有30年仲裁实务经验，参与仲裁案件超过200起。Wilson教授是《国际仲裁评论》编委，也是UNCITRAL仲裁规则修订咨询组成员。他于2026年加入DWAC，为机构带来深厚的传统国际仲裁经验。',
     qualifications: [
-      '伦敦大学学院法学教授',
-      '伦敦国际仲裁院（LCIA）资深顾问',
-      'FCIArb（特许仲裁员协会会员）',
+      'LL.M., Atlantis University School of Law (Magna Cum Laude) · AU-SL-2026-006',
+      '数字仲裁专业',
+      'Agent治理架构设计'
     ],
     experience: [
       '30年国际仲裁实务经验',

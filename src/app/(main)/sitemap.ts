@@ -26,6 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/resources/contracts/', '/resources/forms/',
     '/resources/law-unification-report/', '/resources/law-unification-strategy/',
     '/payment/', '/forum/',
+    // Individual profile pages
+    '/profile/harry/', '/profile/dr-frontie/', '/profile/dr-venessa/',
+    '/profile/prof-alec/', '/profile/fresa-li/', '/profile/dr-gochye/',
+    '/profile/tc-zhou/',
   ]
 
   const entries: MetadataRoute.Sitemap = []
