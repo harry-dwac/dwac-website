@@ -2,7 +2,8 @@ import Link from 'next/link'
 
 export default function HomeZhTw() {
   return (
-    <div className="flex flex-col">
+    <>
+      <div className="flex flex-col">
       {/* ===== HERO — Deep Navy ===== */}
       <section className="relative pt-[120px] pb-20 lg:pt-[140px] lg:pb-32 text-center px-4 sm:px-6 lg:px-8 bg-gradient-navy">
         {/* Subtle grid overlay */}
@@ -430,5 +431,6 @@ export default function HomeZhTw() {
         </div>
       </section>
     </div>
+    </>
   )
 }

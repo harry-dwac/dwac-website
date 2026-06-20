@@ -2,7 +2,8 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <>
+      <div className="flex flex-col">
       {/* ===== HERO — Deep Navy with Glass Container ===== */}
       <section className="relative pt-[120px] pb-20 lg:pt-[140px] lg:pb-32 text-center px-4 sm:px-6 lg:px-8 bg-gradient-navy">
         {/* Subtle grid overlay */}
@@ -347,5 +348,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   )
 }

@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   title: 'DWAC - Digital World Arbitration Centre',
   description: 'The first permanent international arbitration institution dedicated to resolving digital world disputes. Professional, efficient, and globally enforceable arbitration services.',
   keywords: 'arbitration, digital disputes, blockchain, AI disputes, online arbitration, DWAC',
+  alternates: {
+    canonical: 'https://www.dwac.net',
+    languages: {
+      'en': 'https://www.dwac.net',
+      'zh-CN': 'https://www.dwac.net/zh-cn',
+      'zh-TW': 'https://www.dwac.net/zh-tw',
+    },
+  },
 }
 
 export default function RootLayout({

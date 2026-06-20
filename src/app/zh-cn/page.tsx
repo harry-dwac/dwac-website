@@ -2,7 +2,8 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <>
+      <div className="flex flex-col">
       {/* Hero Section */}
       <section className="bg-navy-800 text-white py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -226,5 +227,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   )
 }
