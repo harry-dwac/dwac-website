@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'DWAC Club - DWAC',
+}
+
 
 const clubFeatures = [
   {

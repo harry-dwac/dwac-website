@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: '新聞動態 - 数字世界仲裁中心',
+}
+
 
 const featuredNews = [
   {

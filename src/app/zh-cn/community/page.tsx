@@ -1,5 +1,9 @@
 import Link from 'next/link'
 import WalineComment from '@/components/WalineComment'
+export const metadata = {
+  title: '社区 - 数字世界仲裁中心',
+}
+
 
 const features = [
   {

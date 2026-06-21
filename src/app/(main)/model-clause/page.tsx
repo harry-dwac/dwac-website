@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'Model Arbitration Clause - DWAC',
+}
+
 
 export default function ModelClause() {
   return (

@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'Fee Schedule - DWAC',
+}
+
 
 export default function Fees() {
   return (

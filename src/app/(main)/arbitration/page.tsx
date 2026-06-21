@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'Arbitration - DWAC',
+}
+
 
 export default function Arbitration() {
   return (

@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: '資源中心 - 数字世界仲裁中心',
+}
+
 
 interface ResourceCategoryProps {
   icon: React.ReactNode

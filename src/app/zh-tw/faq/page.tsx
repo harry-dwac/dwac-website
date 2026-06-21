@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: '常見問題 - 数字世界仲裁中心',
+}
+
 
 export default function FAQZhTw() {
   return (

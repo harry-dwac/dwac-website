@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'DWAC 俱乐部 - 数字世界仲裁中心',
+}
+
 
 const clubFeatures = [
   {

@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'Resources - DWAC',
+}
+
 
 interface ResourceCategoryProps {
   icon: React.ReactNode

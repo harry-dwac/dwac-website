@@ -1,4 +1,8 @@
 import Link from "next/link"
+export const metadata = {
+  title: '服務項目 - 数字世界仲裁中心',
+}
+
 
 export default function Services() {
   return (

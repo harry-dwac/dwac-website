@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: '仲裁員會員 - 数字世界仲裁中心',
+}
+
 
 export default function MembershipArbitratorsZhTw() {
   return (

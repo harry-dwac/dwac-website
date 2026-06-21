@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'FAQ - DWAC',
+}
+
 
 export default function FAQ() {
   const faqs = [

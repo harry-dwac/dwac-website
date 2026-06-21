@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: '在线听证 - 数字世界仲裁中心',
+}
+
 
 const features = [
   {

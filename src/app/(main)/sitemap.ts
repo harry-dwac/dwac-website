@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://dwac.net'
+  const baseUrl = 'https://www.dwac.net'
 
   const routes = [
     '/', '/about/', '/charter/', '/contact/',

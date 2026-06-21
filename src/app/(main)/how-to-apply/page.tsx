@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'How to Apply - DWAC',
+}
+
 
 export default function HowToApply() {
   return (

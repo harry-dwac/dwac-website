@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'Dispute Resolution - DWAC',
+}
+
 
 export default function Dispute() {
   return (

@@ -1,5 +1,9 @@
 import Link from 'next/link'
 import WalineComment from '@/components/WalineComment'
+export const metadata = {
+  title: 'Community - DWAC',
+}
+
 
 const features = [
   {

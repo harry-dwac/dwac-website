@@ -1,3 +1,6 @@
+export const metadata = {
+  title: 'Membership - DWAC',
+}
 ﻿import Link from 'next/link'
 
 export default function Membership() {

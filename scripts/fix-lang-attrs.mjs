@@ -120,6 +120,18 @@ async function fixFile(filepath) {
     changed = true;
   }
 
+  // Inject og:image if missing
+  if (!content.includes('og:image')) {
+    content = content.replace(/(<\/head>)/, `  <meta property="og:image" content="${BASE}/og-image.png"/>\n  <meta property="og:image:width" content="1200"/>\n  <meta property="og:image:height" content="630"/>\n  $1`);
+    changed = true;
+  }
+
+  // Inject og:title if missing (use page title)
+  if (!content.includes('og:title')) {
+    content = content.replace(/(<\/head>)/, `  <meta property="og:title" content="DWAC - Digital World Arbitration Centre"/>\n  <meta property="og:description" content="The world's first permanent international arbitration institution dedicated to resolving digital world disputes."/>\n  $1`);
+    changed = true;
+  }
+
   // Inject JSON-LD into homepages
   const relPath = filepath.replace(outDir + '/', '').replace(outDir, '');
   const isHomepage = relPath === 'index.html' || relPath === 'zh-cn/index.html' || relPath === 'zh-tw/index.html';

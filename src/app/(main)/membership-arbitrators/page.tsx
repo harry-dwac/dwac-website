@@ -1,3 +1,6 @@
+export const metadata = {
+  title: 'Arbitrator Membership - DWAC',
+}
 ﻿import Link from 'next/link'
 
 export default function MembershipArbitrators() {

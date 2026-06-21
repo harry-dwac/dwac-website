@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'News & Updates - DWAC',
+}
+
 
 const featuredNews = [
   {

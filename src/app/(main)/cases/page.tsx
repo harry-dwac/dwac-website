@@ -1,4 +1,8 @@
 import Link from 'next/link'
+export const metadata = {
+  title: 'Case Management - DWAC',
+}
+
 
 export default function Cases() {
   return (
