@@ -1,5 +1,9 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: '数字世界仲裁中心 - DWAC',
+}
+
 export default function Home() {
   return (
     <>

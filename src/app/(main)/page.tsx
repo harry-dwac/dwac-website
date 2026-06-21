@@ -1,5 +1,9 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'DWAC - Digital World Arbitration Centre',
+}
+
 export default function Home() {
   return (
     <>

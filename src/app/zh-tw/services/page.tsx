@@ -1,6 +1,6 @@
 import Link from "next/link"
 export const metadata = {
-  title: '服務項目 - 数字世界仲裁中心',
+  title: '服務項目 - 數位世界仲裁中心',
 }
 
 
