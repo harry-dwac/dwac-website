@@ -55,9 +55,10 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="mt-12 pt-8 border-t border-gold-subtle/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} Digital World Arbitration Centre (DWAC). All rights reserved.
-          </p>
+          <div className="text-xs text-gray-600">
+            <p>© {new Date().getFullYear()} Digital World Arbitration Centre (DWAC). All rights reserved.</p>
+            <p className="mt-1">Developed and supported by: Chengdu Huanjin Network Technology Co., Ltd.</p>
+          </div>
           <div className="flex items-center gap-4">
             <Link href="/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">EN</Link>
             <Link href="/zh-cn/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">简体中文</Link>

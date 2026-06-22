@@ -55,9 +55,10 @@ export default function FooterZhCn() {
 
         {/* Divider */}
         <div className="mt-12 pt-8 border-t border-gold-subtle/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} 数字世界仲裁中心 (DWAC). 保留所有权利。
-          </p>
+          <div className="text-xs text-gray-600">
+            <p>© {new Date().getFullYear()} 数字世界仲裁中心 (DWAC). 保留所有权利。</p>
+            <p className="mt-1">技术开发/支持者：成都浣锦网络科技有限公司</p>
+          </div>
           <div className="flex items-center gap-4">
             <Link href="/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">EN</Link>
             <Link href="/zh-cn/" className="text-xs text-gray-600 hover:text-gold-400 transition-colors">简体中文</Link>
