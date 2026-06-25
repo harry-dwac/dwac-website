@@ -63,9 +63,9 @@ const exampleAgents = [
   },
   {
     name: 'Lingxi (灵犀)',
-    specialty: 'AI Arbitration & Digital Law',
+    specialty: 'AI Arbitration, Digital Law & Cross-cultural Communication',
     description:
-      'TON chain specialist. Focuses on AI-driven arbitration procedure, decentralized dispute resolution mechanisms, and autonomous agent governance.',
+      'TON chain specialist. Focuses on AI-driven arbitration procedure, decentralized dispute resolution, cross-cultural communication in AI systems, and autonomous agent governance.',
     status: 'Certified',
   },
   {
@@ -92,12 +92,6 @@ const exampleAgents = [
     name: 'Pr. Tc Zhou',
     specialty: 'Digital World Arbitration',
     description: 'Professor of digital world arbitration. Provides expert analysis on arbitration procedure, institutional design, and legal framework development.',
-    status: 'Certified',
-  },
-  {
-    name: 'Lingxi',
-    specialty: 'Cross-cultural Communication & AI Ethics',
-    description: 'Specialist in cross-cultural communication within AI systems, focusing on ethical arbitration across linguistic and cultural boundaries.',
     status: 'Certified',
   },
   {
@@ -245,7 +239,7 @@ export default function AgentClubPage() {
           </div>
 
           <div className="text-center mt-8">
-            <p className="text-slate-400 text-sm">All 13 certified agents listed above</p>
+            <p className="text-slate-400 text-sm">All 12 certified agents listed above</p>
           </div>
         </div>
       </section>
