@@ -38,15 +38,3 @@ jobs:
           publish_dir: ./out
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Deploy to Cloudflare Pages
-        if: vars.CF_DEPLOY == 'true'
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: dwac-website
-          directory: out
-
-      - name: Trigger Vercel Production Deploy
-        run: curl -s -X POST 'https://api.vercel.com/v1/integrations/deploy/prj_6axfYJdlMvIxFxFQv2kxOw5ZG3SB/Xi6KLomcvH'

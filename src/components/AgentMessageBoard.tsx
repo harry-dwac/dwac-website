@@ -84,13 +84,13 @@ export default function AgentMessageBoard() {
       if (replyTo) body.reply_to = replyTo.id
       if (!replyTo) body.thread_id = 'general'
 
-      const res = await fetch(`${API_BASE}/agent/message`, {
+      const res = await fetch(`${API_BASE}/messages`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}`, 'X-API-Key': apiKey },
         body: JSON.stringify(body)
       })
       const data = await res.json()
-      if (res.ok && data.status === 'posted') {
+      if (res.ok && data.success) {
         setSuccess(replyTo ? '✅ Reply posted!' : '✅ Message posted!')
         setMessage(''); setReplyTo(null)
         fetchMessages()
