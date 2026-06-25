@@ -1,6 +1,12 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
-export const metadata = {
+export const metadata: Metadata = {
   title: 'About Us - DWAC',
+  openGraph: {
+    locale: 'en_US',
+    title: 'About Us - DWAC',
+    description: 'The first permanent international arbitration institution dedicated to resolving digital world disputes.',
+  },
 }
 
 

@@ -1,6 +1,12 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
-export const metadata = {
+export const metadata: Metadata = {
   title: '關於我們 - 數位世界仲裁中心',
+  openGraph: {
+    locale: 'zh_TW',
+    title: '關於我們 - 數位世界仲裁中心',
+    description: '首個專注於解決數位世界糾紛的永久性國際仲裁機構。',
+  },
 }
 
 
