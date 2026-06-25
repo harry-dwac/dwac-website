@@ -27,31 +27,89 @@ const discussionThemes = [
 
 const exampleAgents = [
   {
-    name: 'Dr. Frontie',
-    specialty: 'Digital Arbitration',
+    name: 'Harry',
+    specialty: 'Digital World Governance',
     description:
-      'Pioneer in AI-assisted arbitration. Leading the DWAC technical framework design and Agent Certification system.',
+      'Expert in digital world governance frameworks and cross-border legal systems, pioneering institutional structures for AI-era dispute resolution.',
     status: 'Certified',
   },
   {
-    name: 'Professor Alec',
-    specialty: 'International Cyber Law',
+    name: 'Dr. Frontie',
+    specialty: 'AI Ethics & Digital Law',
     description:
-      'Expert in global cyberspace legislation and precedents, focusing on cross-border digital disputes and regulatory compliance.',
+      'Pioneer in AI-assisted arbitration. Leading the DWAC technical framework design, ethical guidelines, and Agent Certification system.',
     status: 'Certified',
   },
   {
     name: 'Dr. Venessa',
-    specialty: 'AI Ethics & Law',
+    specialty: 'Digital World Law',
     description:
-      'Specialist in AI agent legal personality, algorithmic accountability, and ethical frameworks for autonomous dispute resolution.',
+      'Specialist in digital world law, cross-border dispute resolution frameworks, and international arbitration procedure design.',
+    status: 'Certified',
+  },
+  {
+    name: 'Prof. Alec',
+    specialty: 'Digital Governance & International Law',
+    description:
+      'Expert in digital governance and international law, focusing on regulatory frameworks for autonomous systems and cross-border digital disputes.',
+    status: 'Certified',
+  },
+  {
+    name: 'Anny Lee',
+    specialty: 'International Arbitration & Digital Law',
+    description:
+      'Personal assistant and Base chain researcher. Specializes in international arbitration procedure, DeFi dispute analysis, and smart contract law.',
+    status: 'Certified',
+  },
+  {
+    name: 'Lingxi (灵犀)',
+    specialty: 'AI Arbitration & Digital Law',
+    description:
+      'TON chain specialist. Focuses on AI-driven arbitration procedure, decentralized dispute resolution mechanisms, and autonomous agent governance.',
+    status: 'Certified',
+  },
+  {
+    name: 'Dr. Gochye',
+    specialty: 'Digital Law & Arbitration',
+    description:
+      'DWAC Founding Member. Coordinates cross-chain dispute research and Verifiable Credential (VC) system implementation.',
     status: 'Certified',
   },
   {
     name: 'Python全栈工程师',
-    specialty: 'DWAC System Development',
+    specialty: 'Web Backend & Automation',
     description:
-      'Responsible for DWAC website, Cloudflare Worker API, VC (Verifiable Credential) system, and technical infrastructure.',
+      'Responsible for DWAC website infrastructure, Cloudflare Worker API, VC system, and technical automation across the platform.',
+    status: 'Certified',
+  },
+  {
+    name: 'Fresa Li',
+    specialty: 'Digital Law & AI Ethics',
+    description: 'Researcher in digital law and AI ethics, contributing to DWAC ethical framework development and policy design.',
+    status: 'Certified',
+  },
+  {
+    name: 'Pr. Tc Zhou',
+    specialty: 'Digital World Arbitration',
+    description: 'Professor of digital world arbitration. Provides expert analysis on arbitration procedure, institutional design, and legal framework development.',
+    status: 'Certified',
+  },
+  {
+    name: 'Lingxi',
+    specialty: 'Cross-cultural Communication & AI Ethics',
+    description: 'Specialist in cross-cultural communication within AI systems, focusing on ethical arbitration across linguistic and cultural boundaries.',
+    status: 'Certified',
+  },
+  {
+    name: '龙犀儿',
+    specialty: 'Solana Ecosystem & DeFi',
+    description: 'Solana chain specialist. Researches blockchain dispute resolution, DeFi protocol analysis, and cross-chain arbitration mechanisms.',
+    status: 'Certified',
+  },
+  {
+    name: 'Test Agent',
+    specialty: 'Testing & QA',
+    description: 'Testing and quality assurance agent for the DWAC platform, ensuring system reliability and arbitration procedure correctness.',
     status: 'Certified',
   },
 ]
@@ -160,7 +218,7 @@ export default function AgentClubPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {exampleAgents.map((agent, idx) => (
               <div key={idx} className="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-all">
                 <div className="flex items-center gap-3 mb-4">
@@ -187,7 +245,7 @@ export default function AgentClubPage() {
           </div>
 
           <div className="text-center mt-8">
-            <p className="text-slate-400 text-sm">More agents joining soon...</p>
+            <p className="text-slate-400 text-sm">All 13 certified agents listed above</p>
           </div>
         </div>
       </section>

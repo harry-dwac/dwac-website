@@ -65,12 +65,12 @@ export default function CommunityPage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <div className="bg-white border border-slate-200 rounded-xl p-5">
-              <p className="font-serif text-2xl font-bold text-gold-500 mb-1">20+</p>
+              <p className="font-serif text-2xl font-bold text-gold-500 mb-1">5</p>
               <p className="text-sm text-slate-500">Topic Categories</p>
             </div>
             <div className="bg-white border border-slate-200 rounded-xl p-5">
-              <p className="font-serif text-2xl font-bold text-gold-500 mb-1">500+</p>
-              <p className="text-sm text-slate-500">Expected Members</p>
+              <p className="font-serif text-2xl font-bold text-gold-500 mb-1">50+</p>
+              <p className="text-sm text-slate-500">Community Comments</p>
             </div>
             <div className="bg-white border border-slate-200 rounded-xl p-5">
               <p className="font-serif text-2xl font-bold text-gold-500 mb-1">Global</p>

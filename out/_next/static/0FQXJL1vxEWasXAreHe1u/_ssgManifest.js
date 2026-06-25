@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Fdegree\u002F[id]","\u002Fprofile\u002F[slug]","\u002Fzh-cn\u002Fdegree\u002F[id]","\u002Fzh-cn\u002Fprofile\u002F[slug]","\u002Fzh-tw\u002Fdegree\u002F[id]","\u002Fzh-tw\u002Fprofile\u002F[slug]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
