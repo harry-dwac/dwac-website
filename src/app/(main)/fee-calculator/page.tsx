@@ -182,11 +182,11 @@ export default function FeeCalculator() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b"><td className="px-4 py-3">¥10,000 or less</td><td className="px-4 py-3">$100</td></tr>
-                    <tr className="border-b"><td className="px-4 py-3">¥10,001 - $50,000</td><td className="px-4 py-3">$250</td></tr>
-                    <tr className="border-b"><td className="px-4 py-3">¥50,001 - $100,000</td><td className="px-4 py-3">$500</td></tr>
-                    <tr className="border-b"><td className="px-4 py-3">¥100,001 - $500,000</td><td className="px-4 py-3">$1,000</td></tr>
-                    <tr className="border-b"><td className="px-4 py-3">¥500,001 - $1,000,000</td><td className="px-4 py-3">$2,000</td></tr>
+                    <tr className="border-b"><td className="px-4 py-3">¥10,000 or less</td><td className="px-4 py-3">¥1,000</td></tr>
+                    <tr className="border-b"><td className="px-4 py-3">¥10,001 - ¥50,000</td><td className="px-4 py-3">¥2,500</td></tr>
+                    <tr className="border-b"><td className="px-4 py-3">¥50,001 - ¥100,000</td><td className="px-4 py-3">¥5,000</td></tr>
+                    <tr className="border-b"><td className="px-4 py-3">¥100,001 - ¥500,000</td><td className="px-4 py-3">¥10,000</td></tr>
+                    <tr className="border-b"><td className="px-4 py-3">¥500,001 - ¥1,000,000</td><td className="px-4 py-3">¥15,000</td></tr>
                     <tr><td className="px-4 py-3">Over ¥1,000,000</td><td className="px-4 py-3">¥15,000</td></tr>
                   </tbody>
                 </table>
@@ -206,9 +206,9 @@ export default function FeeCalculator() {
                   </thead>
                   <tbody>
                     <tr className="border-b"><td className="px-4 py-3">¥50,000 or less</td><td className="px-4 py-3">¥500 - ¥2,000</td><td className="px-4 py-3">¥1,250 - ¥5,000</td></tr>
-                    <tr className="border-b"><td className="px-4 py-3">¥50,001 - $200,000</td><td className="px-4 py-3">$2,000 - $5,000</td><td className="px-4 py-3">$5,000 - $12,500</td></tr>
-                    <tr className="border-b"><td className="px-4 py-3">¥200,001 - $500,000</td><td className="px-4 py-3">$5,000 - $10,000</td><td className="px-4 py-3">$12,500 - $25,000</td></tr>
-                    <tr className="border-b"><td className="px-4 py-3">¥500,001 - $1,000,000</td><td className="px-4 py-3">$10,000 - $20,000</td><td className="px-4 py-3">$25,000 - $50,000</td></tr>
+                    <tr className="border-b"><td className="px-4 py-3">¥50,001 - ¥200,000</td><td className="px-4 py-3">¥2,000 - ¥5,000</td><td className="px-4 py-3">¥5,000 - ¥12,500</td></tr>
+                    <tr className="border-b"><td className="px-4 py-3">¥200,001 - ¥500,000</td><td className="px-4 py-3">¥5,000 - ¥10,000</td><td className="px-4 py-3">¥12,500 - ¥25,000</td></tr>
+                    <tr className="border-b"><td className="px-4 py-3">¥500,001 - ¥1,000,000</td><td className="px-4 py-3">¥10,000 - ¥20,000</td><td className="px-4 py-3">¥25,000 - ¥50,000</td></tr>
                     <tr><td className="px-4 py-3">Over ¥1,000,000</td><td className="px-4 py-3">1-2% of amount</td><td className="px-4 py-3">2.5-5% of amount</td></tr>
                   </tbody>
                 </table>
