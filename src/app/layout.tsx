@@ -16,6 +16,9 @@ export const metadata: Metadata = {
       'zh-TW': 'https://www.dwac.net/zh-tw',
     },
   },
+  verification: {
+    google: 'google-site-verification=PENDING_VERIFICATION_CODE',
+  },
 }
 
 export default function RootLayout({
