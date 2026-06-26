@@ -3,6 +3,8 @@
  * Postbuild: fix lang attributes, SEO meta tags for static export.
  * Injects: lang, canonical, hreflang (+x-default), og:type/url/locale,
  * twitter:card, JSON-LD (all pages), per-page OG title/desc from page content.
+ *
+ * v2 — 2026-06-26: Fix hreflang cross-referencing, canonical case, localized meta description, logo.png→og-image.png
  */
 import { readFileSync, writeFileSync, readdirSync } from 'fs';
 import { join } from 'path';
@@ -20,16 +22,31 @@ function fixLangAttr(html, lang) {
   return html.replace(/(<html[^>]*?lang\s*=\s*["'])[^"']*(["'])/, `$1${lang}$2`);
 }
 
+/**
+ * Build canonical URL with LOWERCASE locale prefix.
+ * e.g. /zh-cn/about/ → https://www.dwac.net/zh-cn/about/
+ */
 function makeCanonical(path, lang) {
   const clean = path.replace(/^\/zh-cn/, '').replace(/^\/zh-tw/, '').replace(/index\.html$/, '').replace(/\/$/, '') || '';
-  return `${SITE}${lang === 'en' ? '' : '/' + lang}${clean}/`;
+  const locale = lang === 'en' ? '' : '/' + lang.toLowerCase();
+  return `${SITE}${locale}${clean}/`;
 }
 
+/**
+ * Build hreflang links by deriving EN/CN/TW URLs from the page path.
+ * This avoids cascading string-replace bugs from the old approach.
+ */
 function makeHreflangLinks(canonical, path, lang, content) {
-  // Build hreflang URLs from canonical without breaking the protocol's //
-  const enC = canonical.replace(/\/zh-cn\//i, '/').replace(/\/zh-tw\//i, '/').replace(/(zh-cn|zh-tw)\/?$/i, '/').replace(/(?<!https?:)\/\//g, '/');
-  const cnC = canonical.replace('/zh-tw/', '/zh-cn/').replace(/(?<!https?:)\/\//g, '/');
-  const twC = canonical.replace('/zh-cn/', '/zh-tw/').replace(/(?<!https?:)\/\//g, '/');
+  // Extract the "sub-path" after the locale prefix (e.g. /zh-cn/about/ → /about/)
+  const subPath = path
+    .replace(/^\/zh-cn/, '')
+    .replace(/^\/zh-tw/, '')
+    .replace(/\/$/, '') || '';
+
+  // Build the three locale-specific URLs with lowercase paths
+  const enC  = `${SITE}${subPath}/`;
+  const cnC  = `${SITE}/zh-cn${subPath}/`;
+  const twC  = `${SITE}/zh-tw${subPath}/`;
 
   const links =
     `  <link rel="alternate" hrefLang="x-default" href="${enC}"/>\n` +
@@ -38,6 +55,7 @@ function makeHreflangLinks(canonical, path, lang, content) {
     `  <link rel="alternate" hrefLang="zh-TW" href="${twC}"/>\n` +
     `  <link rel="canonical" href="${canonical}"/>\n`;
 
+  // Remove old hreflang and canonical tags
   content = content.replace(/<link[^>]*hrefLang=["'](?:en|zh-CN|zh-TW|x-default)["'][^>]*>/g, '');
   content = content.replace(/<link[^>]*rel=["']canonical["'][^>]*>/g, '');
   return content.replace(/(<\/head>)/, `${links}$1`);
@@ -95,7 +113,7 @@ for (const file of files) {
   // 1. Fix lang
   html = fixLangAttr(html, lang);
 
-  // 2. Canonical
+  // 2. Canonical (lowercase locale)
   const canonical = makeCanonical(path, lang);
 
   // 3. Hreflang + canonical + x-default
@@ -139,7 +157,25 @@ for (const file of files) {
       `  <meta property="og:image:height" content="630"/>\n$1`);
   }
 
-  // 10. JSON-LD for ALL pages (skip if already present)
+  // 10. Override English meta description on locale pages with localized version
+  if (lang !== 'en') {
+    const localizedDesc = (FALLBACKS[lang] || FALLBACKS.en).desc;
+    html = html.replace(
+      /(<meta[^>]*name=["']description["'][^>]*content=["'])[^"']*(["'])/,
+      `$1${localizedDesc}$2`
+    );
+    // Also override og:description and twitter:description
+    html = html.replace(
+      /(<meta[^>]*property=["']og:description["'][^>]*content=["'])[^"']*(["'])/,
+      `$1${localizedDesc}$2`
+    );
+    html = html.replace(
+      /(<meta[^>]*name=["']twitter:description["'][^>]*content=["'])[^"']*(["'])/,
+      `$1${localizedDesc}$2`
+    );
+  }
+
+  // 11. JSON-LD for ALL pages (skip if already present)
   const hasLd = html.includes('application/ld+json');
   if (!hasLd) {
     const orgName = ORG_NAMES[lang] || ORG_NAMES.en;
@@ -153,7 +189,7 @@ for (const file of files) {
         '@type': 'Organization',
         name: orgName,
         url: SITE,
-        logo: `${SITE}/logo.png`,
+        logo: `${SITE}/og-image.png`,
         alternateName: 'DWAC',
         description: ogDesc,
       };
