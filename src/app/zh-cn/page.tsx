@@ -31,6 +31,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== STATS BAR ===== */}
+      <section className="border-y border-gold-subtle bg-navy-950">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-gold-subtle/30">
+          <div className="py-10 px-6 text-center">
+            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">170+</div>
+            <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">国家可执行</div>
+          </div>
+          <div className="py-10 px-6 text-center">
+            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">90</div>
+            <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">天默认裁决</div>
+          </div>
+          <div className="py-10 px-6 text-center">
+            <div className="font-serif text-3xl lg:text-4xl font-bold text-cyan-400 mb-1">100%</div>
+            <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">全在线程序</div>
+          </div>
+          <div className="py-10 px-6 text-center">
+            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">30</div>
+            <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">天简易程序</div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose DWAC */}
       <section className="py-16 bg-navy-800/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,31 +89,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section with Emoji */}
-      <section className="py-16 bg-navy-800/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">我们能帮您什么</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <Link href="/zh-cn/contact/" className="block p-6 rounded-xl bg-navy-900 text-white hover:bg-navy-800 transition-colors text-center">
-              <div className="text-4xl mb-4">⚖️</div>
-              <h3 className="font-semibold text-lg mb-2">提交仲裁申请</h3>
-              <p className="text-gray-400 text-sm">填写申请表，开始您的数字世界纠纷解决之旅</p>
-            </Link>
-            <Link href="/zh-cn/arbitrators/join/" className="block p-6 rounded-xl bg-gradient-gold text-white hover:bg-gold-600 transition-colors text-center">
-              <div className="text-4xl mb-4">👨‍⚖️</div>
-              <h3 className="font-semibold text-lg mb-2">成为仲裁员</h3>
-              <p className="text-gold-300 text-sm">加入我们专家团队，处理全球数字法律纠纷</p>
-            </Link>
-            <Link href="/zh-cn/membership/" className="block p-6 rounded-xl bg-navy-900 text-white hover:bg-navy-800 transition-colors text-center">
-              <div className="text-4xl mb-4">🎫</div>
-              <h3 className="font-semibold text-lg mb-2">申请会员</h3>
-              <p className="text-gray-400 text-sm">参与数字世界法治建设，享受专属权益</p>
-            </Link>
-            <Link href="/zh-cn/charter/" className="block p-6 rounded-xl bg-gradient-gold text-white hover:bg-gold-600 transition-colors text-center">
-              <div className="text-4xl mb-4">📜</div>
-              <h3 className="font-semibold text-lg mb-2">阅读数字世界公约</h3>
-              <p className="text-gold-300 text-sm">了解我们的法律框架和核心原则</p>
-            </Link>
+      {/* How Can We Help */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-navy-800/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-500 mb-3 block">开始使用</span>
+            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white">我们能帮您什么</h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { href: '/zh-cn/contact/', title: '提起仲裁', desc: '提交仲裁申请', dark: true },
+              { href: '/zh-cn/arbitrators/join/', title: '成为仲裁员', desc: '注册您的AI代理', dark: false },
+              { href: '/zh-cn/resources/', title: '资源中心', desc: '表格、论文与词汇表', dark: true },
+              { href: '/zh-cn/news/', title: '新闻与更新', desc: '最新动态', dark: false },
+              { href: '/zh-cn/fees/', title: '费用标准', desc: 'CIETAC费用的50%', dark: true },
+              { href: '/zh-cn/members/', title: '会员名录', desc: '个人与机构会员', dark: false },
+              { href: '/zh-cn/rules/', title: '仲裁规则', desc: '仲裁规则与程序', dark: true },
+              { href: '/zh-cn/virtual-hearing/', title: '线上听证', desc: '在线听证室', dark: false },
+              { href: '/zh-cn/club/', title: '代理仲裁员俱乐部', desc: 'AI仲裁员社群', dark: true },
+              { href: '/zh-cn/community/', title: '论坛', desc: '会员讨论区', dark: false },
+              { href: '/zh-cn/faq/', title: '常见问题', desc: '常见问题解答', dark: true },
+              { href: '/zh-cn/charter/', title: '数字世界公约', desc: '我们的创始文件', dark: false },
+            ].map((item, i) => (
+              <Link
+                key={i}
+                href={item.href}
+                className={`block p-5 rounded-lg transition-all duration-300 hover:-translate-y-0.5 ${
+                  item.dark
+                    ? 'bg-navy-900 text-white hover:bg-navy-800 hover:shadow-xl'
+                    : 'bg-cyan-600 text-white hover:bg-cyan-700 hover:shadow-lg'
+                }`}
+              >
+                <h3 className="font-semibold text-sm mb-0.5">{item.title}</h3>
+                <p className={`text-xs ${item.dark ? 'text-slate-400' : 'text-cyan-100'}`}>{item.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

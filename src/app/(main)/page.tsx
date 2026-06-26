@@ -286,6 +286,97 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== MILESTONES ===== */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-navy-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Milestones</h2>
+          <div className="max-w-3xl mx-auto">
+            <div className="space-y-8">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">1</div>
+                <div className="ml-4">
+                  <h3 className="font-semibold text-lg text-white">2025</h3>
+                  <p className="text-gray-400">DWAC initiated and established</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">2</div>
+                <div className="ml-4">
+                  <h3 className="font-semibold text-lg text-white">Q4 2025</h3>
+                  <p className="text-gray-400">Founding council established</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">3</div>
+                <div className="ml-4">
+                  <h3 className="font-semibold text-lg text-white">Q1 2026</h3>
+                  <p className="text-gray-400">Arbitration rules published, first panel of arbitrators established</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">4</div>
+                <div className="ml-4">
+                  <h3 className="font-semibold text-lg text-white">Q2 2026</h3>
+                  <p className="text-gray-400">Online arbitration platform launched (Alpha)</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold">5</div>
+                <div className="ml-4">
+                  <h3 className="font-semibold text-lg text-white">Q3 2026</h3>
+                  <p className="text-gray-400">Trial operation, accepting simulated cases</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-8 h-8 bg-gold-500/[0.06]0 rounded-full flex items-center justify-center text-white font-bold">6</div>
+                <div className="ml-4">
+                  <h3 className="font-semibold text-lg text-white">2027+</h3>
+                  <p className="text-gray-400">Global expansion, establishing regional offices</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== NEWS ===== */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-navy-800/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Latest News</h2>
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <article className="bg-navy-800/20 p-6 rounded-xl shadow-sm">
+              <div className="flex gap-2 mb-3">
+                <span className="text-gray-500 text-sm">Apr 2026</span>
+                <span className="bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full">Announcement</span>
+              </div>
+              <h3 className="font-semibold text-lg text-white mb-2">Digital World Arbitration Centre Established</h3>
+              <p className="text-gray-400 text-sm">DWAC officially launched as the first permanent international arbitration institution dedicated to resolving disputes in the digital world.</p>
+            </article>
+            <article className="bg-navy-800/20 p-6 rounded-xl shadow-sm">
+              <div className="flex gap-2 mb-3">
+                <span className="text-gray-500 text-sm">Apr 2026</span>
+                <span className="bg-purple-500 text-white text-xs px-2 py-0.5 rounded-full">Arbitrators</span>
+              </div>
+              <h3 className="font-semibold text-lg text-white mb-2">First Panel of Arbitrators Announced</h3>
+              <p className="text-gray-400 text-sm">The founding arbitrator team, consisting of Harry Zhou (Harry), Dr. Frontie, Dr. Venessa, and Prof. Alec, officially unveiled.</p>
+            </article>
+            <article className="bg-navy-800/20 p-6 rounded-xl shadow-sm">
+              <div className="flex gap-2 mb-3">
+                <span className="text-gray-500 text-sm">Apr 2026</span>
+                <span className="bg-gradient-gold text-navy-900 font-bold text-xs px-2 py-0.5 rounded-full">Document</span>
+              </div>
+              <h3 className="font-semibold text-lg text-white mb-2">Digital World Charter Published</h3>
+              <p className="text-gray-400 text-sm">As the foundational document for the rule of law in the digital world, the Digital World Charter has been officially released.</p>
+            </article>
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/news/" className="text-gold-500 font-semibold hover:text-gold-400">
+              View more news →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ===== HOW CAN WE HELP — Alternating grid ===== */}
       <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">

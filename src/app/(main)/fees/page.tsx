@@ -12,7 +12,7 @@ export default function Fees() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Fee Schedule</h1>
           <p className="text-xl text-gray-300 max-w-2xl">
-            DWAC arbitration fees �?50% of CIETAC rates
+            DWAC arbitration fees — 50% of CIETAC rates
           </p>
         </div>
       </section>

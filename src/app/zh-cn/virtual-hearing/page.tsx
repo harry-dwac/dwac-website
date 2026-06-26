@@ -187,7 +187,7 @@ export default function VirtualHearingPage() {
                 <span className="text-xs font-semibold tracking-[2px] uppercase text-cyan-400">即将推出</span>
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-4">
-                虚拟仲裁庭 — 2025年上线
+                虚拟仲裁庭 — 2026年Q3上线
               </h2>
               <p className="text-slate-400 max-w-lg mx-auto mb-8 leading-relaxed">
                 我们正在开发最先进的虚拟庭审平台。成为首批体验在线仲裁未来的用户。
