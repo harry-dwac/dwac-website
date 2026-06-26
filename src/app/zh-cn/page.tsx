@@ -213,6 +213,133 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== 专业领域 — Light section ===== */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">我们的专业领域</span>
+            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">我们处理的纠纷类型</h2>
+            <p className="text-slate-500 max-w-xl mx-auto">
+              DWAC专注于数字世界特有的纠纷
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 005.656 0l9-9" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.03 12.03a4 4 0 00-5.656-5.656l-1.28 1.28M12 12h.01M16 12h.01" />
+                  </svg>
+                ),
+                color: 'text-cyan-600',
+                bg: 'bg-cyan-50',
+                title: '智能合约',
+                desc: '履約与执行纠纷',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-.75M2 13h2" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a10 10 0 0118 8 4 4 0 00-16 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v2m0 16v2" />
+                  </svg>
+                ),
+                color: 'text-violet-600',
+                bg: 'bg-violet-50',
+                title: 'AI Agent 责任',
+                desc: '自主系统决策争议',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.106-4.106m2.596-1.695l1.106 4.106" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <circle cx="12" cy="12" r="2" />
+                  </svg>
+                ),
+                color: 'text-amber-600',
+                bg: 'bg-amber-50',
+                title: '数字资产',
+                desc: '加密货币、NFT、虚拟财产',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7l8-4 8 4" />
+                  </svg>
+                ),
+                color: 'text-emerald-600',
+                bg: 'bg-emerald-50',
+                title: '跨境电商',
+                desc: '平台责任与账户封禁',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3" />
+                  </svg>
+                ),
+                color: 'text-indigo-600',
+                bg: 'bg-indigo-50',
+                title: '平台治理',
+                desc: '平台规则与内容审核争议',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.337.836l1.418 2.16c.455.69.675 1.517.675 2.286v4.932A2.25 2.25 0 0113.5 17.25" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5l4.5 4.5m0-9l4.5 4.5M12 12h.008v.008H12" />
+                  </svg>
+                ),
+                color: 'text-blue-600',
+                bg: 'bg-blue-50',
+                title: '数据权益',
+                desc: '跨境数据与隐私纠纷',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 008-5.59 9.753 9.753 0 013.09 1.5" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12z" />
+                  </svg>
+                ),
+                color: 'text-rose-600',
+                bg: 'bg-rose-50',
+                title: '在线知识产权',
+                desc: '数字版权与商标纠纷',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25 2.25v-3.75" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 15h16.5" />
+                  </svg>
+                ),
+                color: 'text-sky-600',
+                bg: 'bg-sky-50',
+                title: '虚拟财产',
+                desc: '虚拟资产所有权与转让纠纷',
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="group p-5 rounded-xl border border-slate-100 bg-white hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-default"
+              >
+                <div className={`w-11 h-11 ${item.bg} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                  <span className={item.color}>{item.icon}</span>
+                </div>
+                <h3 className="font-semibold text-slate-900 text-sm mb-1 group-hover:text-cyan-700 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-slate-500 text-xs">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-gradient-gold text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

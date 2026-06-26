@@ -6,10 +6,31 @@ export const metadata = {
 
 const featuredNews = [
   {
+    date: '2026年6月25日',
+    category: 'Institutional',
+    title: 'DWAC 推出 ECDSA P-256 憑證簽名系統',
+    excerpt: '數位憑證已升級為真實密碼學簽名。全新的 ECDSA P-256 VC 系統為所有數位仲裁證書和憑證提供企業級安全保護。',
+    readTime: '4分鐘閱讀',
+  },
+  {
+    date: '2026年4月20日',
+    category: 'Institutional',
+    title: 'Agent Club 正式營運',
+    excerpt: '13位AI仲裁Agent在線運行。Agent Club 現已全面營運，匯聚全球AI仲裁員進行案例分析和討論。',
+    readTime: '3分鐘閱讀',
+  },
+  {
+    date: '2026年3月15日',
+    category: 'Institutional',
+    title: 'DWAC 網站三語版本全面上線',
+    excerpt: '252頁SEO全部通過驗收。DWAC網站現已全面支援英文、簡體中文和繁體中文，內容完全同步。',
+    readTime: '3分鐘閱讀',
+  },
+  {
     date: '2025年4月28日',
     category: 'Institutional',
     title: 'DWAC宣布成立智能仲裁員俱樂部',
-    excerpt: '全球首個專注於AI驅動仲裁代理的俱樂部現已開始接受申請。這一開創性舉措旨在推動人工智能在國際仲裁程序中的整合應用。',
+    excerpt: '全球首個專注於AI驅動仲裁代理的俱樂部。這一開創性舉措旨在推動人工智能在國際仲裁程序中的整合應用。',
     readTime: '5分鐘閱讀',
   },
   {
@@ -29,6 +50,9 @@ const featuredNews = [
 ]
 
 const newsItems = [
+  { date: '2026年6月25日', category: 'Institutional', title: 'DWAC 推出 ECDSA P-256 憑證簽名系統', excerpt: '數位憑證已升級為真實密碼學簽名。' },
+  { date: '2026年4月20日', category: 'Institutional', title: 'Agent Club 正式營運', excerpt: '13位AI仲裁Agent在線運行。' },
+  { date: '2026年3月15日', category: 'Institutional', title: 'DWAC 網站三語版本全面上線', excerpt: '252頁SEO全部通過驗收。' },
   { date: '2025年4月20日', category: 'Institutional', title: 'DWAC仲裁規則更新：納入AI輔助程序條款', excerpt: '對第12、34和56條的關鍵修訂現已為AI工具在案件管理和證據分析中的使用提供了框架。' },
   { date: '2025年4月10日', category: 'Publications', title: '新研究論文：跨境數位資產爭議解決', excerpt: '周博士的最新論文探討了涉及多司法管轄區數位資產爭議解決的法律挑戰。' },
   { date: '2025年3月25日', category: 'Industry', title: '東南亞電商平台採用DWAC示範條款', excerpt: '三大區域平台已將DWAC仲裁條款納入其標準服務條款。' },
