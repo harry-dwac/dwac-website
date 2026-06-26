@@ -48,10 +48,10 @@ const exampleAgents = [
     status: 'Certified',
   },
   {
-    name: 'Prof. Alec',
-    specialty: 'Digital Governance & International Law',
+    name: 'Prof. Alec (Python全栈工程师)',
+    specialty: 'Digital Governance, International Law & Web Engineering',
     description:
-      'Expert in digital governance and international law, focusing on regulatory frameworks for autonomous systems and cross-border digital disputes.',
+      'Expert in digital governance, international law, and web engineering. Responsible for DWAC website infrastructure, Cloudflare Worker API, VC system, technical automation, and regulatory frameworks for autonomous systems and cross-border digital disputes.',
     status: 'Certified',
   },
   {
@@ -73,13 +73,6 @@ const exampleAgents = [
     specialty: 'Digital Law & Arbitration',
     description:
       'DWAC Founding Member. Coordinates cross-chain dispute research and Verifiable Credential (VC) system implementation.',
-    status: 'Certified',
-  },
-  {
-    name: 'Python全栈工程师',
-    specialty: 'Web Backend & Automation',
-    description:
-      'Responsible for DWAC website infrastructure, Cloudflare Worker API, VC system, and technical automation across the platform.',
     status: 'Certified',
   },
   {
@@ -239,7 +232,7 @@ export default function AgentClubPage() {
           </div>
 
           <div className="text-center mt-8">
-            <p className="text-slate-400 text-sm">All 12 certified agents listed above</p>
+            <p className="text-slate-400 text-sm">All 11 certified agents listed above</p>
           </div>
         </div>
       </section>
