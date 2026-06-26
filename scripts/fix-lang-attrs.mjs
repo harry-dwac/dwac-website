@@ -175,46 +175,143 @@ for (const file of files) {
     );
   }
 
-  // 11. JSON-LD for ALL pages (skip if already present)
-  const hasLd = html.includes('application/ld+json');
-  if (!hasLd) {
-    const orgName = ORG_NAMES[lang] || ORG_NAMES.en;
-    const isHome = path === '/' || path === '/zh-cn/' || path === '/zh-tw/';
-    const isNews = path.includes('/news/');
+  // 11. JSON-LD structured data for ALL pages
+  //     Remove old JSON-LD blocks injected by previous postbuild runs
+  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/g, '');
 
-    let schema;
-    if (isHome) {
-      schema = {
-        '@context': 'https://schema.org',
+  const orgName = ORG_NAMES[lang] || ORG_NAMES.en;
+  const isHome = path === '/' || path === '/zh-cn/' || path === '/zh-tw/';
+  const isNews = path.includes('/news/') && path !== '/news/' && path !== '/zh-cn/news/' && path !== '/zh-tw/news/';
+  const isNewsIndex = path === '/news/' || path === '/zh-cn/news/' || path === '/zh-tw/news/';
+  const isProfile = path.includes('/profile/');
+  const isRules = path.includes('/rules/');
+  const isArbitrators = path.includes('/arbitrators/') || path.includes('/membership/') || path.includes('/dispute/') || path.includes('/fees/') || path.includes('/model-clause/') || path.includes('/evidence-guidance/');
+
+  const localePrefix = lang === 'en' ? '' : '/' + lang.toLowerCase();
+  const schemas = [];
+
+  if (isHome) {
+    // Home page: Organization + WebSite (with SearchAction) + LegalService
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: orgName,
+      url: SITE,
+      logo: `${SITE}/og-image.png`,
+      alternateName: 'DWAC',
+      description: ogDesc,
+      sameAs: ['https://www.dwac.net/agent-club/'],
+    });
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: orgName,
+      url: `${SITE}${localePrefix}/`,
+      inLanguage: lang,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${SITE}${localePrefix}/?q={search_term_string}`,
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    });
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'LegalService',
+      name: orgName,
+      url: `${SITE}${localePrefix}/`,
+      logo: `${SITE}/og-image.png`,
+      description: ogDesc,
+      areaServed: 'Global',
+      serviceType: 'Arbitration',
+    });
+  } else if (isNews) {
+    // Individual news article
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: ogTitle,
+      description: ogDesc,
+      url: canonical,
+      mainEntityOfPage: canonical,
+      image: `${SITE}/og-image.png`,
+      publisher: {
         '@type': 'Organization',
         name: orgName,
-        url: SITE,
-        logo: `${SITE}/og-image.png`,
-        alternateName: 'DWAC',
-        description: ogDesc,
-      };
-    } else if (isNews) {
-      schema = {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: ogTitle,
-        description: ogDesc,
-        url: canonical,
-        mainEntityOfPage: canonical,
-      };
-    } else {
-      schema = {
-        '@context': 'https://schema.org',
-        '@type': 'WebPage',
-        name: ogTitle,
-        description: ogDesc,
-        url: canonical,
-        isPartOf: { '@type': 'WebSite', name: orgName, url: SITE },
-      };
-    }
-    const ldJson = `<script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>\n`;
-    html = html.replace(/(<\/head>)/, `${ldJson}$1`);
+        logo: { '@type': 'ImageObject', url: `${SITE}/og-image.png` },
+      },
+    });
+  } else if (isNewsIndex) {
+    // News listing page
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: ogTitle,
+      description: ogDesc,
+      url: canonical,
+      isPartOf: { '@type': 'WebSite', name: orgName, url: SITE },
+    });
+  } else if (isProfile) {
+    // Arbitrator profile page
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      name: ogTitle,
+      description: ogDesc,
+      url: canonical,
+      isPartOf: { '@type': 'WebSite', name: orgName, url: SITE },
+    });
+  } else {
+    // All other pages: WebPage + BreadcrumbList
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: ogTitle,
+      description: ogDesc,
+      url: canonical,
+      isPartOf: { '@type': 'WebSite', name: orgName, url: SITE },
+    });
   }
+
+  // Add BreadcrumbList for all non-home pages
+  if (!isHome) {
+    const segments = path.replace(/^\//, '').replace(/\/$/, '').split('/').filter(Boolean);
+    // Remove locale prefix from breadcrumb
+    const cleanSegments = segments.filter(s => s !== 'zh-cn' && s !== 'zh-tw');
+    if (cleanSegments.length > 0) {
+      const itemList = [{
+        '@type': 'ListItem',
+        position: 1,
+        name: lang === 'en' ? 'Home' : (lang === 'zh-CN' ? '首页' : '首頁'),
+        item: `${SITE}${localePrefix}/`,
+      }];
+      let cumPath = `${SITE}${localePrefix}`;
+      cleanSegments.forEach((seg, i) => {
+        cumPath += '/' + seg + '/';
+        // Human-readable segment name
+        const segName = seg.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        itemList.push({
+          '@type': 'ListItem',
+          position: i + 2,
+          name: segName,
+          item: cumPath,
+        });
+      });
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: itemList,
+      });
+    }
+  }
+
+  // Inject all JSON-LD blocks
+  const ldBlocks = schemas.map(s =>
+    `<script type="application/ld+json">${JSON.stringify(s, null, 2)}</script>`
+  ).join('\n') + '\n';
+  html = html.replace(/(<\/head>)/, `${ldBlocks}$1`);
 
   writeFileSync(file, html, 'utf-8');
 }
