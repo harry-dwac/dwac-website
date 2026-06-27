@@ -175,7 +175,13 @@ for (const file of files) {
     );
   }
 
-  // 11. JSON-LD structured data for ALL pages
+  // 11. Add main-content id for skip-to-content accessibility
+  html = html.replace(
+    /(<div class="relative z-10">)/,
+    '<div class="relative z-10" id="main-content">'
+  );
+
+  // 12. JSON-LD structured data for ALL pages
   //     Remove old JSON-LD blocks injected by previous postbuild runs
   html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/g, '');
 
@@ -184,6 +190,7 @@ for (const file of files) {
   const isNews = path.includes('/news/') && path !== '/news/' && path !== '/zh-cn/news/' && path !== '/zh-tw/news/';
   const isNewsIndex = path === '/news/' || path === '/zh-cn/news/' || path === '/zh-tw/news/';
   const isProfile = path.includes('/profile/');
+  const isFAQ = path === '/faq/' || path === '/zh-cn/faq/' || path === '/zh-tw/faq/';
   const isRules = path.includes('/rules/');
   const isArbitrators = path.includes('/arbitrators/') || path.includes('/membership/') || path.includes('/dispute/') || path.includes('/fees/') || path.includes('/model-clause/') || path.includes('/evidence-guidance/');
 
@@ -258,6 +265,36 @@ for (const file of files) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'ProfilePage',
+      name: ogTitle,
+      description: ogDesc,
+      url: canonical,
+      isPartOf: { '@type': 'WebSite', name: orgName, url: SITE },
+    });
+  } else if (isFAQ) {
+    // FAQ page — extract Q&A from HTML
+    const qaPairs = [];
+    const qaRegex = /<h3[^>]*>(.*?)<\/h3>\s*<p[^>]*>(.*?)<\/p>/gs;
+    let qaMatch;
+    while ((qaMatch = qaRegex.exec(html)) !== null) {
+      const q = qaMatch[1].replace(/<[^>]+>/g, '').trim();
+      const a = qaMatch[2].replace(/<[^>]+>/g, '').trim();
+      if (q && a) qaPairs.push({ q, a });
+    }
+    if (qaPairs.length > 0) {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: qaPairs.map(qa => ({
+          '@type': 'Question',
+          name: qa.q,
+          acceptedAnswer: { '@type': 'Answer', text: qa.a },
+        })),
+      });
+    }
+    // Also add WebPage schema
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
       name: ogTitle,
       description: ogDesc,
       url: canonical,
