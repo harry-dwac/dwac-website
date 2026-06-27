@@ -156,7 +156,6 @@ export default function FeeCalculator() {
                     <tr className="border-b"><td className="px-4 py-3">¥50,001 – ¥200,000</td><td className="px-4 py-3">¥2,500</td></tr>
                     <tr className="border-b"><td className="px-4 py-3">¥200,001 – ¥500,000</td><td className="px-4 py-3">¥5,000</td></tr>
                     <tr className="border-b"><td className="px-4 py-3">¥500,001 – ¥1,000,000</td><td className="px-4 py-3">¥10,000</td></tr>
-                    <tr className="border-b"><td className="px-4 py-3">¥500,001 – ¥1,000,000</td><td className="px-4 py-3">¥10,000</td></tr>
                     <tr><td className="px-4 py-3">¥1,000,000以上</td><td className="px-4 py-3">¥15,000</td></tr>
                   </tbody>
                 </table>

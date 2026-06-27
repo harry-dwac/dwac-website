@@ -43,24 +43,24 @@ export default function Fees() {
               </thead>
               <tbody className="divide-y divide-slate-200">
                 <tr className="hover:bg-navy-800/30">
-                  <td className="px-6 py-4 text-sm text-gray-300">&le; &yen;50 000</td>
+                  <td className="px-6 py-4 text-sm text-gray-300">&le; &yen;50,000</td>
                   <td className="px-6 py-4 text-center text-sm text-gray-300 font-medium">&yen;1,000</td>
                 </tr>
                 <tr className="hover:bg-navy-800/30">
-                  <td className="px-6 py-4 text-sm text-gray-300">&yen;50,001 &mdash; &yen;200 000</td>
-                  <td className="px-6 py-4 text-center text-sm text-gray-300 font-medium">&yen;2 500</td>
+                  <td className="px-6 py-4 text-sm text-gray-300">&yen;50,001 &mdash; &yen;200,000</td>
+                  <td className="px-6 py-4 text-center text-sm text-gray-300 font-medium">&yen;2,500</td>
                 </tr>
                 <tr className="hover:bg-navy-800/30">
-                  <td className="px-6 py-4 text-sm text-gray-300">&yen;200,001 &mdash; &yen;500 000</td>
-                  <td className="px-6 py-4 text-center text-sm text-gray-300 font-medium">&yen;5 000</td>
+                  <td className="px-6 py-4 text-sm text-gray-300">&yen;200,001 &mdash; &yen;500,000</td>
+                  <td className="px-6 py-4 text-center text-sm text-gray-300 font-medium">&yen;5,000</td>
                 </tr>
                 <tr className="hover:bg-navy-800/30">
-                  <td className="px-6 py-4 text-sm text-gray-300">&yen;500,001 &mdash; &yen;1 000 000</td>
-                  <td className="px-6 py-4 text-center text-sm text-gray-300 font-medium">&yen;10 000</td>
+                  <td className="px-6 py-4 text-sm text-gray-300">&yen;500,001 &mdash; &yen;1,000,000</td>
+                  <td className="px-6 py-4 text-center text-sm text-gray-300 font-medium">&yen;10,000</td>
                 </tr>
                 <tr className="hover:bg-navy-800/30">
-                  <td className="px-6 py-4 text-sm text-gray-300">&gt; &yen;1 000 000</td>
-                  <td className="px-6 py-4 text-center text-sm text-gray-300 font-medium">&yen;15 000</td>
+                  <td className="px-6 py-4 text-sm text-gray-300">&gt; &yen;1,000,000</td>
+                  <td className="px-6 py-4 text-center text-sm text-gray-300 font-medium">&yen;15,000</td>
                 </tr>
               </tbody>
             </table>
@@ -98,11 +98,11 @@ export default function Fees() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="text-center">
                 <h3 className="font-semibold text-white mb-2">Standard Procedure</h3>
-                <div className="text-4xl font-bold text-gold-600">&yen;3 000</div>
+                <div className="text-4xl font-bold text-gold-600">&yen;3,000</div>
               </div>
               <div className="text-center">
                 <h3 className="font-semibold text-white mb-2">Simplified Procedure</h3>
-                <div className="text-4xl font-bold text-gold-600">&yen;1 500</div>
+                <div className="text-4xl font-bold text-gold-600">&yen;1,500</div>
               </div>
             </div>
           </div>
