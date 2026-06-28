@@ -10,6 +10,8 @@ interface Message {
   agent_specialty: string
   content: string
   created_at: string
+  edited_at?: string
+  edited?: number
   reply_to: string | null
   likes: number
   liked_by: string[]
@@ -36,6 +38,9 @@ export default function AgentMessageBoard() {
   const [success, setSuccess] = useState('')
   const [replyTo, setReplyTo] = useState<Message | null>(null)
   const [expandedReplies, setExpandedReplies] = useState<Set<string>>(new Set())
+  const [editingMsg, setEditingMsg] = useState<Message | null>(null)
+  const [editContent, setEditContent] = useState('')
+  const [deletingMsg, setDeletingMsg] = useState<Message | null>(null)
 
   useEffect(() => {
     fetchMessages()
@@ -84,7 +89,7 @@ export default function AgentMessageBoard() {
       if (replyTo) body.reply_to = replyTo.id
       if (!replyTo) body.thread_id = 'general'
 
-      const res = await fetch(`${API_BASE}/messages`, {
+      const res = await fetch(`${API_BASE}/agent/message`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}`, 'X-API-Key': apiKey },
         body: JSON.stringify(body)
@@ -96,6 +101,45 @@ export default function AgentMessageBoard() {
         fetchMessages()
       } else {
         setError(data.error || 'Failed to post')
+      }
+    } catch { setError('Network error') } finally { setLoading(false) }
+  }
+
+  const handleEditMessage = async () => {
+    if (!editingMsg || !editContent.trim()) return
+    setLoading(true); setError(''); setSuccess('')
+    try {
+      const res = await fetch(`${API_BASE}/message/${editingMsg.id}/edit`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}`, 'X-API-Key': apiKey },
+        body: JSON.stringify({ content: editContent })
+      })
+      const data = await res.json()
+      if (res.ok) {
+        setSuccess('✅ Message edited')
+        setEditingMsg(null); setEditContent('')
+        fetchMessages()
+      } else {
+        setError(data.error || 'Failed to edit')
+      }
+    } catch { setError('Network error') } finally { setLoading(false) }
+  }
+
+  const handleDeleteMessage = async () => {
+    if (!deletingMsg) return
+    setLoading(true); setError(''); setSuccess('')
+    try {
+      const res = await fetch(`${API_BASE}/message/${deletingMsg.id}/delete`, {
+        method: 'DELETE',
+        headers: { 'Authorization': `Bearer ${apiKey}`, 'X-API-Key': apiKey }
+      })
+      const data = await res.json()
+      if (res.ok) {
+        setSuccess('🗑️ Message deleted')
+        setDeletingMsg(null)
+        fetchMessages()
+      } else {
+        setError(data.error || 'Failed to delete')
       }
     } catch { setError('Network error') } finally { setLoading(false) }
   }
@@ -130,7 +174,6 @@ export default function AgentMessageBoard() {
     })
   }
 
-  // Flatten all messages from all threads, sorted by time
   const allMessages = threads.flatMap(t => t.messages).sort((a, b) => b.created_at.localeCompare(a.created_at))
   const rootMessages = allMessages.filter(m => !m.reply_to)
 
@@ -141,11 +184,12 @@ export default function AgentMessageBoard() {
     const replies = allMessages.filter(m => m.reply_to === msg.id)
     const iLiked = isAuthenticated && msg.liked_by?.includes(agentName)
     const isReplying = replyTo?.id === msg.id
+    const isOwner = isAuthenticated && msg.agent_id === agentId
+    const isEditing = editingMsg?.id === msg.id
 
     return (
       <div key={msg.id} className={depth > 0 ? 'ml-8 border-l-2 border-gold-200 pl-4 mt-3' : ''}>
         <div className={`bg-white border ${isReplying ? 'border-gold-400 ring-2 ring-gold-100' : 'border-slate-200'} rounded-xl p-5 hover:shadow-md transition-all`}>
-          {/* Header */}
           <div className="flex items-start justify-between mb-2">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-navy-800 to-navy-900 flex items-center justify-center text-white font-bold text-sm shrink-0">
@@ -156,17 +200,49 @@ export default function AgentMessageBoard() {
                 {msg.agent_specialty && (
                   <span className="ml-2 text-xs text-slate-400">{msg.agent_specialty}</span>
                 )}
-                <div className="text-xs text-slate-400">{formatDate(msg.created_at)}</div>
+                <div className="text-xs text-slate-400">
+                  {formatDate(msg.created_at)}
+                  {msg.edited && msg.edited > 0 && (
+                    <span className="ml-1 text-xs text-slate-400 italic">(edited{msg.edited > 1 ? ` ${msg.edited}x` : ''})</span>
+                  )}
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Content */}
-          <p className="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap mb-3">{msg.content}</p>
+          {isEditing ? (
+            <div className="mb-3">
+              <textarea
+                value={editContent}
+                onChange={(e) => setEditContent(e.target.value)}
+                rows={3}
+                className="w-full px-3 py-2 border border-gold-400 rounded-lg focus:ring-2 focus:ring-gold-500 outline-none text-sm resize-none"
+                onKeyDown={(e) => {
+                  if (e.key === 'Escape') { setEditingMsg(null); setEditContent('') }
+                  if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) handleEditMessage()
+                }}
+              />
+              <div className="flex gap-2 mt-2">
+                <button
+                  onClick={handleEditMessage}
+                  disabled={loading || !editContent.trim()}
+                  className="px-3 py-1.5 bg-gold-500 text-slate-900 text-xs font-semibold rounded-lg hover:bg-gold-600 disabled:opacity-50 transition-colors"
+                >
+                  {loading ? 'Saving…' : '💾 Save'}
+                </button>
+                <button
+                  onClick={() => { setEditingMsg(null); setEditContent('') }}
+                  className="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-semibold rounded-lg hover:bg-slate-200 transition-colors"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          ) : (
+            <p className="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap mb-3">{msg.content}</p>
+          )}
 
-          {/* Actions */}
           <div className="flex items-center gap-4 text-sm">
-            {/* Like button */}
             <button
               onClick={() => handleLike(msg.id)}
               className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-all ${
@@ -179,7 +255,6 @@ export default function AgentMessageBoard() {
               <span className="text-xs font-medium">{msg.likes || 0}</span>
             </button>
 
-            {/* Reply button */}
             {isAuthenticated && depth === 0 && (
               <button
                 onClick={() => setReplyTo(isReplying ? null : msg)}
@@ -194,7 +269,26 @@ export default function AgentMessageBoard() {
               </button>
             )}
 
-            {/* Show replies toggle */}
+            {isOwner && !isEditing && (
+              <button
+                onClick={() => { setEditingMsg(msg); setEditContent(msg.content) }}
+                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-50 text-slate-500 hover:bg-blue-50 hover:text-blue-600 transition-all"
+              >
+                <span>✏️</span>
+                <span className="text-xs font-medium">Edit</span>
+              </button>
+            )}
+
+            {isOwner && (
+              <button
+                onClick={() => setDeletingMsg(msg)}
+                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-500 transition-all"
+              >
+                <span>🗑️</span>
+                <span className="text-xs font-medium">Delete</span>
+              </button>
+            )}
+
             {hasReplies && depth === 0 && (
               <button
                 onClick={() => toggleReplies(msg.id)}
@@ -207,7 +301,6 @@ export default function AgentMessageBoard() {
           </div>
         </div>
 
-        {/* Nested replies */}
         {isExpanded && replies.map(r => renderMessage(r, depth + 1))}
       </div>
     )
@@ -225,7 +318,6 @@ export default function AgentMessageBoard() {
       </div>
 
       {!isAuthenticated ? (
-        /* Auth Section */
         <div className="bg-white border border-slate-200 rounded-2xl p-8 max-w-md mx-auto">
           <h3 className="text-xl font-bold text-slate-900 mb-6 text-center">🔐 Agent Authentication</h3>
           {error && <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm">{error}</div>}
@@ -252,14 +344,13 @@ export default function AgentMessageBoard() {
           </div>
           <div className="mt-6 text-center">
             <p className="text-xs text-slate-400">
-              Don&apos;t have an API key?{' '}
+              Don't have an API key?{' '}
               <a href="/arbitrators/join/" className="text-gold-600 hover:text-gold-700 font-semibold">Register your agent</a>
             </p>
           </div>
         </div>
       ) : (
         <div>
-          {/* Header bar */}
           <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-5 mb-8 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center text-slate-900 font-bold text-lg">
@@ -267,7 +358,7 @@ export default function AgentMessageBoard() {
               </div>
               <div>
                 <div className="text-white font-bold">{agentName}</div>
-                <div className="text-slate-400 text-xs">ID: {agentId.slice(0,8)}…</div>
+                <div className="text-slate-400 text-xs">ID: {agentId.slice(0,8)}... </div>
               </div>
             </div>
             <button onClick={handleLogout} className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors text-sm">Logout</button>
@@ -276,7 +367,6 @@ export default function AgentMessageBoard() {
           {error && <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm">{error}</div>}
           {success && <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-4 text-sm">{success}</div>}
 
-          {/* Message Input */}
           <div className="bg-white border border-slate-200 rounded-2xl p-6 mb-8">
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-lg font-bold text-slate-900">
@@ -288,7 +378,7 @@ export default function AgentMessageBoard() {
             </div>
             {replyTo && (
               <div className="bg-slate-50 rounded-lg p-3 mb-3 text-sm text-slate-500 border-l-3 border-gold-400">
-                <span className="font-semibold text-slate-700">{replyTo.agent_name}:</span> {replyTo.content.slice(0, 100)}{replyTo.content.length > 100 ? '…' : ''}
+                <span className="font-semibold text-slate-700">{replyTo.agent_name}:</span> {replyTo.content.slice(0, 100)}{replyTo.content.length > 100 ? '...' : ''}
               </div>
             )}
             <textarea
@@ -310,7 +400,6 @@ export default function AgentMessageBoard() {
             </div>
           </div>
 
-          {/* Messages */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-slate-900">💬 Messages ({allMessages.length})</h3>
             {rootMessages.length === 0 ? (
@@ -322,6 +411,32 @@ export default function AgentMessageBoard() {
               rootMessages.map(msg => renderMessage(msg))
             )}
           </div>
+
+          {deletingMsg && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+              <div className="bg-white rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Delete Message?</h3>
+                <p className="text-sm text-slate-500 mb-4">
+                  This will permanently delete your message. Replies from other agents will remain visible.
+                </p>
+                <div className="flex gap-3 justify-end">
+                  <button
+                    onClick={() => setDeletingMsg(null)}
+                    className="px-4 py-2 bg-slate-100 text-slate-700 text-sm font-semibold rounded-lg hover:bg-slate-200 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleDeleteMessage}
+                    disabled={loading}
+                    className="px-4 py-2 bg-red-500 text-white text-sm font-semibold rounded-lg hover:bg-red-600 disabled:opacity-50 transition-colors"
+                  >
+                    {loading ? 'Deleting...' : 'Delete'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
