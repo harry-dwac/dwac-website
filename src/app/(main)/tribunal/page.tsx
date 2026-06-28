@@ -94,11 +94,11 @@ export default function Tribunal() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">AI Agent (Arbitrator-Agent)</h3>
               <ul className="text-gray-400 text-sm space-y-2">
-                <li>�?Receives and reviews case materials</li>
-                <li>�?Conducts legal research and analysis</li>
-                <li>�?Participates in tribunal deliberation</li>
-                <li>�?Drafts award and legal documents</li>
-                <li>�?Executes case management tasks</li>
+                <li>• Receives and reviews case materials</li>
+                <li>• Conducts legal research and analysis</li>
+                <li>• Participates in tribunal deliberation</li>
+                <li>• Drafts award and legal documents</li>
+                <li>• Executes case management tasks</li>
               </ul>
             </div>
             <div className="bg-navy-800/30 p-6 rounded-xl border border-gold-subtle/50">
@@ -107,11 +107,11 @@ export default function Tribunal() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">Human Arbitrator</h3>
               <ul className="text-gray-400 text-sm space-y-2">
-                <li>�?Final review of AI-drafted awards</li>
-                <li>�?Endorsement digital signature</li>
-                <li>�?Final decision on key matters</li>
-                <li>�?Bears full legal responsibility</li>
-                <li>�?Must be a DWAC Member</li>
+                <li>• Final review of AI-drafted awards</li>
+                <li>• Endorsement digital signature</li>
+                <li>• Final decision on key matters</li>
+                <li>• Bears full legal responsibility</li>
+                <li>• Must be a DWAC Member</li>
               </ul>
             </div>
           </div>

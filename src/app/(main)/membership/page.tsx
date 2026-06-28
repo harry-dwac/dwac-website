@@ -148,11 +148,11 @@ export default function Membership() {
                 Rights
               </h3>
               <ul className="space-y-3 text-gray-400">
-                <li>�?Vote at General Assembly meetings</li>
-                <li>�?Recommend arbitrator candidates</li>
-                <li>�?Participate in Center's training and events</li>
-                <li>�?Access services at preferential rates</li>
-                <li>�?Propose suggestions and oversight</li>
+                <li>• Vote at General Assembly meetings</li>
+                <li>• Recommend arbitrator candidates</li>
+                <li>• Participate in Center's training and events</li>
+                <li>• Access services at preferential rates</li>
+                <li>• Propose suggestions and oversight</li>
               </ul>
             </div>
             <div>
@@ -163,10 +163,10 @@ export default function Membership() {
                 Obligations
               </h3>
               <ul className="space-y-3 text-gray-400">
-                <li>�?Abide by DWAC Constitution and Rules</li>
-                <li>�?Pay membership fees on time</li>
-                <li>�?Maintain reputation and interests</li>
-                <li>�?Support digital rule of law initiatives</li>
+                <li>• Abide by DWAC Constitution and Rules</li>
+                <li>• Pay membership fees on time</li>
+                <li>• Maintain reputation and interests</li>
+                <li>• Support digital rule of law initiatives</li>
               </ul>
             </div>
           </div>

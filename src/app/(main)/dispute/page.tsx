@@ -38,13 +38,13 @@ export default function Dispute() {
             <div className="bg-gold-500/[0.06] border border-gold-subtle p-6 rounded-xl mb-6">
               <h3 className="text-lg font-semibold text-gold-400 mb-4">What We Handle</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
-                <li>�?Cross-border digital platform disputes</li>
-                <li>�?Smart contract performance issues</li>
-                <li>�?AI agent and autonomous system disputes</li>
-                <li>�?Digital asset conflicts (NFTs, tokens, virtual property)</li>
-                <li>�?Data ownership and transfer disputes</li>
-                <li>�?Platform service disputes (account bans, content removal)</li>
-                <li>�?Other digital world disputes by agreement</li>
+                <li>• Cross-border digital platform disputes</li>
+                <li>• Smart contract performance issues</li>
+                <li>• AI Agent and autonomous system disputes</li>
+                <li>• Digital asset conflicts (NFTs, tokens, virtual property)</li>
+                <li>• Data ownership and transfer disputes</li>
+                <li>• Platform service disputes (account bans, content removal)</li>
+                <li>• Other digital world disputes by agreement</li>
               </ul>
             </div>
 
@@ -52,11 +52,11 @@ export default function Dispute() {
             <div className="bg-gold-500/[0.06] border border-gold-subtle p-6 rounded-xl mb-6">
               <h3 className="text-lg font-semibold text-gold-400 mb-4">Filing Requirements</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
-                <li>�?Complete arbitration request form</li>
-                <li>�?Copy of relevant contracts or agreements</li>
-                <li>�?Evidence and documentation</li>
-                <li>�?Registration fee payment</li>
-                <li>�?Contact information for all parties involved</li>
+                <li>• Complete arbitration request form</li>
+                <li>• Copy of relevant contracts or agreements</li>
+                <li>• Evidence and documentation</li>
+                <li>• Registration fee payment</li>
+                <li>• Contact information for all parties involved</li>
               </ul>
             </div>
 

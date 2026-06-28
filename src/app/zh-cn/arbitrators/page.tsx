@@ -18,7 +18,7 @@ export default function Arbitrators() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white mb-4 text-center">创始仲裁员</h2>
           <p className="text-lg text-gray-400 mb-12 text-center max-w-3xl mx-auto">
-            The 数字世界仲裁中心 was founded by a group of legal and technology professionals committed to establishing fair and efficient dispute resolution mechanisms for the digital world.
+            DWAC 由一群法律与科技专业人士共同创建，致力于为数字世界建立公正、高效的争议解决机制。
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {/* Harry */}
@@ -32,7 +32,7 @@ export default function Arbitrators() {
                 <h3 className="text-2xl font-bold text-white mb-2">周永俊 (Harry)</h3>
                 <p className="text-gold-500 font-semibold text-sm uppercase tracking-wide mb-4">创始人 & Chairman</p>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Initiator and founding chairman of DWAC, dedicated to establishing digital justice systems and promoting international arbitration standards in the digital realm.
+                  DWAC 发起人兼创始主席，致力于建立数字正义体系，推动数字领域的国际仲裁标准。
                 </p>
               </div>
             </div>
@@ -48,7 +48,7 @@ export default function Arbitrators() {
                 <h3 className="text-2xl font-bold text-white mb-2">Frontie博士</h3>
                 <p className="text-gold-400 font-semibold text-sm uppercase tracking-wide mb-4">创始会员</p>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Distinguished expert in international arbitration and digital law, contributing to the development of DWAC's procedural frameworks and standards.
+                  国际仲裁与数字法律领域的杰出专家，为 DWAC 的程序框架和标准制定做出重要贡献。
                 </p>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function Arbitrators() {
                 <h3 className="text-2xl font-bold text-white mb-2">Venessa博士</h3>
                 <p className="text-emerald-600 font-semibold text-sm uppercase tracking-wide mb-4">创始会员</p>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Leading expert in blockchain technology and smart contract disputes, providing critical insights for digital asset arbitration proceedings.
+                  区块链技术和智能合约争议领域的领先专家，为数字资产仲裁程序提供关键洞见。
                 </p>
               </div>
             </div>
@@ -80,7 +80,7 @@ export default function Arbitrators() {
                 <h3 className="text-2xl font-bold text-white mb-2">Alec教授</h3>
                 <p className="text-purple-600 font-semibold text-sm uppercase tracking-wide mb-4">创始会员 & Arbitrator</p>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Expert in digital governance and international arbitration, contributing valuable insights to the development of fair and efficient dispute resolution mechanisms.
+                  数字治理与国际仲裁专家，为公正高效的争议解决机制的发展贡献宝贵见解。
                 </p>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function Arbitrators() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-6">加入我们的仲裁员团队</h2>
             <p className="text-lg text-gray-400 mb-8">
-              We are continually expanding our panel of arbitrators to meet the growing demand for digital dispute resolution. If you have expertise in digital law, blockchain, AI, or related fields, we invite you to apply.
+              我们持续扩大仲裁员团队，以满足数字争议解决日益增长的需求。如果您在数字法律、区块链、AI 或相关领域有专业知识，欢迎申请加入。
             </p>
             <Link href="/zh-cn/arbitrators/join/" className="inline-flex items-center px-8 py-3 bg-gradient-gold hover:bg-gold-600 text-white font-semibold rounded-lg transition-colors">
               申请成为仲裁员

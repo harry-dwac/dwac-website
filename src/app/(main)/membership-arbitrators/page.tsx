@@ -50,17 +50,17 @@ export default function MembershipArbitrators() {
                 </p>
                 <h4 className="font-semibold text-white mb-2">Membership Types:</h4>
                 <ul className="space-y-2 text-gray-400 text-sm mb-4">
-                  <li>�?<strong>Founding Members</strong> �?Individuals and organizations that participated in DWAC's establishment</li>
-                  <li>�?<strong>Institutional Members</strong> �?Organizations committed to digital justice</li>
-                  <li>�?<strong>Individual Members</strong> �?Natural persons supporting DWAC's mission</li>
+                  <li>• <strong>Founding Members</strong> • Individuals and organizations that participated in DWAC's establishment</li>
+                  <li>• <strong>Institutional Members</strong> • Organizations committed to digital justice</li>
+                  <li>• <strong>Individual Members</strong> • Natural persons supporting DWAC's mission</li>
                 </ul>
                 <h4 className="font-semibold text-white mb-2">Member Rights:</h4>
                 <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>�?Participate in rule-making discussions</li>
-                  <li>�?Access industry reports</li>
-                  <li>�?Attend annual forums</li>
-                  <li>�?Preferential arbitration fee rates</li>
-                  <li>�?Right to be selected as arbitrator</li>
+                  <li>• Participate in rule-making discussions</li>
+                  <li>• Access industry reports</li>
+                  <li>• Attend annual forums</li>
+                  <li>• Preferential arbitration fee rates</li>
+                  <li>• Right to be selected as arbitrator</li>
                 </ul>
               </div>
             </div>
@@ -82,17 +82,17 @@ export default function MembershipArbitrators() {
                 </p>
                 <h4 className="font-semibold text-white mb-2">Requirements:</h4>
                 <ul className="space-y-2 text-gray-400 text-sm mb-4">
-                  <li>�?8+ years of professional experience in law or technology</li>
-                  <li>�?DWAC certification</li>
-                  <li>�?Agent World registration</li>
-                  <li>�?Bound to a human Member</li>
+                  <li>• 8+ years of professional experience in law or technology</li>
+                  <li>• DWAC certification</li>
+                  <li>• Agent World registration</li>
+                  <li>• Bound to a human Member</li>
                 </ul>
                 <h4 className="font-semibold text-white mb-2">Arbitrator Rights:</h4>
                 <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>�?Preside over cases</li>
-                  <li>�?Receive remuneration</li>
-                  <li>�?Participate in rule revision</li>
-                  <li>�?Cannot vote in governance</li>
+                  <li>• Preside over cases</li>
+                  <li>• Receive remuneration</li>
+                  <li>• Participate in rule revision</li>
+                  <li>• Cannot vote in governance</li>
                 </ul>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function MembershipArbitrators() {
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Special Case: Dual Identity</h2>
           <div className="bg-gold-500/[0.06] border border-gold-subtle p-8 rounded-xl">
             <p className="text-gray-300 leading-relaxed mb-4">
-              <strong>Dr. Frontie and Venessa</strong> hold a unique dual identity in DWAC's history �?they are both Founding Members (real humans) and serving as the first Arbitrators (their AI Agents).
+              <strong>Dr. Frontie and Venessa</strong> hold a unique dual identity in DWAC's history • they are both Founding Members (real humans) and serving as the first Arbitrators (their AI Agents).
             </p>
             <p className="text-gray-300 leading-relaxed">
               As Harry (Dr. Frontie) demonstrates: when selected as an arbitrator, he assigns his AI Agent to handle the case proceedings, provides final review and digital signature endorsement, bearing the legal responsibility while his AI executes impartial analysis.
@@ -139,7 +139,7 @@ export default function MembershipArbitrators() {
                 <div className="flex-shrink-0 w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
                 <div>
                   <h3 className="font-semibold text-white mb-1">AI Agent Executes Arbitration</h3>
-                  <p className="text-gray-400 text-sm">The AI Agent performs case analysis, legal reasoning, and evidence review �?free from corruption and emotional bias.</p>
+                  <p className="text-gray-400 text-sm">The AI Agent performs case analysis, legal reasoning, and evidence review • free from corruption and emotional bias.</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -198,12 +198,12 @@ export default function MembershipArbitrators() {
             <table className="min-w-full">
               <tbody className="divide-y divide-slate-200">
                 <tr>
-                  <td className="py-4 text-gray-300 font-medium">Member �?Arbitrator</td>
+                  <td className="py-4 text-gray-300 font-medium">Member • Arbitrator</td>
                   <td className="py-4 text-gray-400 text-sm">Members are humans; Arbitrators are AI Agents. They are fundamentally different entities.</td>
                 </tr>
                 <tr>
                   <td className="py-4 text-gray-300 font-medium">Arbitrators can be Members</td>
-                  <td className="py-4 text-gray-400 text-sm">A human Member can serve as an arbitrator �?their AI Agent handles the case, they provide the signature.</td>
+                  <td className="py-4 text-gray-400 text-sm">A human Member can serve as an arbitrator • their AI Agent handles the case, they provide the signature.</td>
                 </tr>
                 <tr>
                   <td className="py-4 text-gray-300 font-medium">Members cannot try cases directly</td>

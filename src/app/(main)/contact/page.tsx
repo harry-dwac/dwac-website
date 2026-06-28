@@ -50,16 +50,16 @@ export default function Contact() {
                 <h3 className="font-semibold text-white mb-4">Quick Links</h3>
                 <div className="space-y-3">
                   <Link href="/dispute/" className="block text-gold-600 hover:text-gold-400 font-medium">
-                    �?File a Dispute
+                    • File a Dispute
                   </Link>
                   <Link href="/fee-calculator/" className="block text-gold-600 hover:text-gold-400 font-medium">
-                    �?Fee Calculator
+                    • Fee Calculator
                   </Link>
                   <Link href="/arbitrators/join/" className="block text-gold-600 hover:text-gold-400 font-medium">
-                    �?Become an Arbitrator
+                    • Become an Arbitrator
                   </Link>
                   <Link href="/membership/" className="block text-gold-600 hover:text-gold-400 font-medium">
-                    �?Membership
+                    • Membership
                   </Link>
                 </div>
               </div>

@@ -121,7 +121,7 @@ export default function Services() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               { title: "智慧合約", desc: "履行與執行爭議" },
-              { title: "AI 代理責任", desc: "自主系統決策" },
+              { title: "AI Agent（電子代理人）責任", desc: "自主系統決策" },
               { title: "數位資產", desc: "NFT、代幣、虛擬財產" },
               { title: "資料合規", desc: "跨境資料爭議" },
               { title: "電子商務", desc: "平台責任與封號" },

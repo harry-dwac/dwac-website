@@ -65,7 +65,7 @@ export default function About() {
                 Digital justice everywhere, for everyone
               </p>
               <p className="text-gray-400">
-                In the future, every digital entity—whether an AI agent, a digital platform, or a cross-border data owner—will find fair, professional, and efficient dispute resolution at DWAC.
+                In the future, every digital entity—whether an AI Agent, a digital platform, or a cross-border data owner—will find fair, professional, and efficient dispute resolution at DWAC.
               </p>
               <p className="text-gray-400 mt-4">
                 We believe that through continuous effort, an orderly and fair digital world rule of law will eventually be established.
@@ -187,9 +187,9 @@ export default function About() {
             <h3 className="text-2xl font-bold text-white mb-2">Yongjun Zhou</h3>
             <p className="text-gold-600 font-medium mb-4">Founder of DWAC</p>
             <ul className="space-y-2 text-gray-400">
-              <li>�?Compiler of the "Global Cyber Law Compendium"</li>
-              <li>�?Chief Drafter of the "Digital World Charter (Model Code)"</li>
-              <li>�?Initiator of DWAC</li>
+              <li>• Compiler of the "Global Cyber Law Compendium"</li>
+              <li>• Chief Drafter of the "Digital World Charter (Model Code)"</li>
+              <li>• Initiator of DWAC</li>
             </ul>
           </div>
         </div>

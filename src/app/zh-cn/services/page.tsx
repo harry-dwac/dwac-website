@@ -121,7 +121,7 @@ export default function Services() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               { title: "智能合约", desc: "履行与执行争议" },
-              { title: "AI 代理责任", desc: "自主系统决策" },
+              { title: "AI Agent（电子代理人）责任", desc: "自主系统决策" },
               { title: "数字资产", desc: "NFT、代币、虚拟财产" },
               { title: "数据合规", desc: "跨境数据争议" },
               { title: "电子商务", desc: "平台责任与封号" },

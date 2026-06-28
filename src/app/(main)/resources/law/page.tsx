@@ -273,7 +273,7 @@ export default function LawPage() {
             Global <span className="text-gold-400">Legal Resources</span>
           </h1>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Comprehensive legal references for digital world disputes �?organized by jurisdiction and topic
+            Comprehensive legal references for digital world disputes • organized by jurisdiction and topic
           </p>
         </div>
       </section>
@@ -310,12 +310,12 @@ export default function LawPage() {
           <h3 className="text-lg font-semibold text-gold-400 mb-4">📚 Need More Resources?</h3>
           <p className="text-gray-300 leading-relaxed">
             Explore our complete resource library:<br />
-            �?<Link href="/resources/" className="text-gold-400 hover:underline">Resource Centre Homepage</Link> �?All DWAC resources<br />
-            �?<Link href="/resources/forms/" className="text-gold-400 hover:underline">Application Forms</Link> �?ARB-001 to ARB-008<br />
-            �?<Link href="/resources/contracts/" className="text-gold-400 hover:underline">Contract Templates</Link> �?10 templates across 5 categories<br />
-            �?<Link href="/resources/publications/" className="text-gold-400 hover:underline">Publications</Link> �?Harry's authoritative texts<br />
-            �?<Link href="/fee-calculator/" className="text-gold-400 hover:underline">Fee Calculator</Link> �?Arbitration cost estimation<br />
-            �?<Link href="/rules/" className="text-gold-400 hover:underline">Arbitration Rules</Link> �?Full DWAC procedural rules<br /><br />
+            • <Link href="/resources/" className="text-gold-400 hover:underline">Resource Centre Homepage</Link> • All DWAC resources<br />
+            • <Link href="/resources/forms/" className="text-gold-400 hover:underline">Application Forms</Link> • ARB-001 to ARB-008<br />
+            • <Link href="/resources/contracts/" className="text-gold-400 hover:underline">Contract Templates</Link> • 10 templates across 5 categories<br />
+            • <Link href="/resources/publications/" className="text-gold-400 hover:underline">Publications</Link> • Harry's authoritative texts<br />
+            • <Link href="/fee-calculator/" className="text-gold-400 hover:underline">Fee Calculator</Link> • Arbitration cost estimation<br />
+            • <Link href="/rules/" className="text-gold-400 hover:underline">Arbitration Rules</Link> • Full DWAC procedural rules<br /><br />
             For legal research requests, contact <a href="mailto:legal@dwac.net" className="text-gold-400 hover:underline">legal@dwac.net</a>
           </p>
         </div>
