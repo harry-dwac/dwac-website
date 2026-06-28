@@ -243,7 +243,7 @@ const categories = [
         icon: '📜',
         title: '《纽约公约》（1958）',
         desc: '跨国仲裁裁决承认与执行的基石条约，170多个缔约国。跨境仲裁执行的必备工具。',
-        tags: [{ text: '条约' }, { text: '170+国家', type: 'region' as const }],
+        tags: [{ text: '条约' }, { text: '172国家', type: 'region' as const }],
         links: [{ text: '🌐 官方文本', href: 'https://uncitral.un.org/en/texts/arbitration/newyorkconvention' }, { text: '⚖️ DWAC流程', href: '/zh-cn/how-to-apply/' }],
       },
       {

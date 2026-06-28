@@ -54,7 +54,7 @@ export default function HomeZhTw() {
       <section className="border-y border-gold-subtle bg-navy-950">
         <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-gold-subtle/30">
           <div className="py-10 px-6 text-center">
-            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">170+</div>
+            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">172</div>
             <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">國家可執行</div>
           </div>
           <div className="py-10 px-6 text-center">
@@ -79,7 +79,7 @@ export default function HomeZhTw() {
             <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">為什麼選擇DWAC</span>
             <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">數位正義的新標準</h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              當AI代理簽署合約，當資料跨境流動，當數位資產易手——這個世界需要專業的仲裁者。
+              當AI Agent（电子代理人）簽署合約，當資料跨境流動，當數位資產易手——這個世界需要專業的仲裁者。
             </p>
           </div>
 
@@ -119,7 +119,7 @@ export default function HomeZhTw() {
               </div>
               <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">全球</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                裁決依據《紐約公約》在170+國家可執行——並有專業跨境執行機制支撐。
+                裁決依據《紐約公約》在172國家可執行——並有專業跨境執行機制支撐。
               </p>
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function HomeZhTw() {
                 ),
                 color: 'text-violet-600',
                 bg: 'bg-violet-50',
-                title: 'AI代理責任',
+                title: 'AI Agent（电子代理人）責任',
                 desc: '自主系統決策爭議',
               },
               {
@@ -289,7 +289,7 @@ export default function HomeZhTw() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { href: '/zh-tw/contact/', title: '提起仲裁', desc: '提交仲裁申請', dark: true },
-              { href: '/zh-tw/arbitrators/join/', title: '成為仲裁員', desc: '註冊您的AI代理', dark: false },
+              { href: '/zh-tw/arbitrators/join/', title: '成為仲裁員', desc: '註冊您的AI Agent（电子代理人）', dark: false },
               { href: '/zh-tw/resources/', title: '資源中心', desc: '表格、論文與詞彙表', dark: true },
               { href: '/zh-tw/news/', title: '新聞與更新', desc: '最新動態', dark: false },
               { href: '/zh-tw/fees/', title: '費用標準', desc: 'CIETAC費用的50%', dark: true },

@@ -38,7 +38,7 @@ export default function Arbitration() {
               </div>
               <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">Globally Enforceable</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Awards enforceable in 170+ countries under the New York Convention, with specialized cross-border mechanisms.
+                Awards enforceable in 172 countries under the New York Convention, with specialized cross-border mechanisms.
               </p>
             </div>
 
@@ -152,7 +152,7 @@ export default function Arbitration() {
               <div className="flex-shrink-0 w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center text-navy-900 font-bold">4</div>
               <div>
                 <h3 className="font-semibold text-slate-900 mb-1">Award & Enforcement</h3>
-                <p className="text-slate-500 text-sm">Human arbitrator reviews and signs the award. Enforceable in 170+ countries under the New York Convention.</p>
+                <p className="text-slate-500 text-sm">Human arbitrator reviews and signs the award. Enforceable in 172 countries under the New York Convention.</p>
               </div>
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function Arbitration() {
       <section className="border-y border-gold-subtle bg-navy-950">
         <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-gold-subtle/30">
           <div className="py-10 px-6 text-center">
-            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">170+</div>
+            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">172</div>
             <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">Countries Enforceable</div>
           </div>
           <div className="py-10 px-6 text-center">

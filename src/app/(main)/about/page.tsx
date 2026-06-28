@@ -33,7 +33,7 @@ export default function About() {
                 Establishing rule of law for the digital world
               </p>
               <p className="mb-4">
-                When the boundaries of the physical world are no longer obstacles, when AI agents begin to sign contracts, when NFTs become digital assets, when data flows across borders as naturally as breathing...
+                When the boundaries of the physical world are no longer obstacles, when AI Agents begin to sign contracts, when NFTs become digital assets, when data flows across borders as naturally as breathing...
               </p>
               <p className="mb-4">
                 The digital world needs its own arbiter.
@@ -170,7 +170,7 @@ export default function About() {
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 bg-gold-500/[0.06]0 rounded-full flex items-center justify-center text-white font-bold">6</div>
                 <div className="ml-4">
-                  <h3 className="font-semibold text-lg text-white">2027+</h3>
+                  <h3 className="font-semibold text-lg text-white">2026 Q4</h3>
                   <p className="text-gray-400">Global expansion, regional offices established</p>
                 </div>
               </div>

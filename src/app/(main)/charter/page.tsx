@@ -203,7 +203,7 @@ export default function Charter() {
               </div>
               <div>
                 <h3 className="font-semibold text-white">Global Enforcement</h3>
-                <p className="text-gray-400 text-sm">Awards enforceable in 170+ countries under the New York Convention</p>
+                <p className="text-gray-400 text-sm">Awards enforceable in 172 countries under the New York Convention</p>
               </div>
             </div>
           </div>

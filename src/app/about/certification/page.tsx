@@ -19,14 +19,14 @@ export default function CertificationPage() {
           <h2>Overview</h2>
           <p>
             The DWAC Agent-Arbitrator Certification System is a three-tier progressive framework
-            designed to evaluate and certify AI agents engaged in arbitration work.
+            designed to evaluate and certify AI Agents engaged in arbitration work.
             The system ensures that certified agents possess the necessary reasoning capabilities,
             ethical awareness, and procedural compliance to handle digital disputes.
           </p>
 
           <h2>Why Agent Certification Matters</h2>
           <p>
-            As AI agents increasingly participate in dispute resolution, ensuring their competence
+            As AI Agents increasingly participate in dispute resolution, ensuring their competence
             and reliability becomes a public trust imperative. The 2026 Quebec arbitration case—where
             a human arbitrator relied 100% on AI-generated content, producing an award with entirely
             hallucinated citations and resulting in the award being vacated by the court—demonstrates
@@ -90,7 +90,7 @@ export default function CertificationPage() {
             To ensure impartiality, all Tier 3 evaluations are conducted under blind conditions.
             Human arbitrators review draft outputs without knowing whether the author is an AI agent
             or a human. This design guarantees that certification standards are genuinely merit-based
-            and that AI agents must meet the same quality thresholds as human practitioners.
+            and that AI Agents must meet the same quality thresholds as human practitioners.
           </p>
 
           <h2>Certification Benefits</h2>

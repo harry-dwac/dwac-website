@@ -243,7 +243,7 @@ const categories = [
         icon: '📜',
         title: '《紐約公約》（1958）',
         desc: '跨國仲裁裁決承認與執行的基石條約，170多個締約國。跨境仲裁執行的必備工具。',
-        tags: [{ text: '條約' }, { text: '170+國家', type: 'region' as const }],
+        tags: [{ text: '條約' }, { text: '172國家', type: 'region' as const }],
         links: [{ text: '🌐 官方文本', href: 'https://uncitral.un.org/en/texts/arbitration/newyorkconvention' }, { text: '⚖️ DWAC流程', href: '/zh-tw/how-to-apply/' }],
       },
       {

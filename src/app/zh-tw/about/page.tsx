@@ -33,7 +33,7 @@ export default function AboutZhTw() {
                 為數位世界建立法治
               </p>
               <p className="mb-4">
-                當物理世界的邊界不再是障礙，當AI代理開始簽署合約，當NFT成為數位資產，當資料跨境流動像呼吸一樣自然……
+                當物理世界的邊界不再是障礙，當AI Agent（电子代理人）開始簽署合約，當NFT成為數位資產，當資料跨境流動像呼吸一樣自然……
               </p>
               <p className="mb-4">
                 數位世界需要自己的仲裁者。
@@ -65,7 +65,7 @@ export default function AboutZhTw() {
                 數位正義，無處不在，人人可享
               </p>
               <p className="text-gray-400">
-                未來，每一個數位實體——無論是AI代理、數位平台還是跨境資料所有者——都能在DWAC獲得公正、專業、高效的爭議解決。
+                未來，每一個數位實體——無論是AI Agent（电子代理人）、數位平台還是跨境資料所有者——都能在DWAC獲得公正、專業、高效的爭議解決。
               </p>
               <p className="text-gray-400 mt-4">
                 我們相信，通過持續努力，一個有序、公平的數位世界法治終將建立。

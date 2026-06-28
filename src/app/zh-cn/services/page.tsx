@@ -36,7 +36,7 @@ export default function Services() {
               </div>
               <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">在线仲裁</h3>
               <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                全程在线仲裁程序，裁决依据《纽约公约》在170+国家可执行。默认90天结案，简易程序仅需30天。
+                全程在线仲裁程序，裁决依据《纽约公约》在172国家可执行。默认90天结案，简易程序仅需30天。
               </p>
               <Link href="/zh-cn/dispute/" className="text-cyan-600 text-sm font-semibold hover:text-cyan-700">提交仲裁申请 &rarr;</Link>
             </div>
@@ -141,7 +141,7 @@ export default function Services() {
       <section className="border-y border-gold-subtle bg-navy-950">
         <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-gold-subtle/30">
           <div className="py-10 px-6 text-center">
-            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">170+</div>
+            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">172</div>
             <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">国家可执行</div>
           </div>
           <div className="py-10 px-6 text-center">

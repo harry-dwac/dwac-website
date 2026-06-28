@@ -59,7 +59,7 @@ export default function Home() {
       <section className="border-y border-gold-subtle bg-navy-950">
         <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-gold-subtle/30">
           <div className="py-10 px-6 text-center">
-            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">170+</div>
+            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">172</div>
             <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">Countries Enforceable</div>
           </div>
           <div className="py-10 px-6 text-center">
@@ -84,7 +84,7 @@ export default function Home() {
             <span className="text-xs font-bold tracking-[3px] uppercase text-gold-600 mb-3 block">Why Choose DWAC</span>
             <h2 className="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">A New Standard for Digital Justice</h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              When AI agents sign contracts, when data flows across borders, when digital assets change hands — the world needs a specialized arbiter.
+              When AI Agents sign contracts, when data flows across borders, when digital assets change hands — the world needs a specialized arbiter.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">Global</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Awards enforceable in 170+ countries under the New York Convention — backed by specialized cross-border enforcement mechanisms.
+                Awards enforceable in 172 countries under the New York Convention — backed by specialized cross-border enforcement mechanisms.
               </p>
             </div>
           </div>
@@ -330,7 +330,7 @@ export default function Home() {
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 bg-gold-500/10 rounded-full flex items-center justify-center text-white font-bold">6</div>
                 <div className="ml-4">
-                  <h3 className="font-semibold text-lg text-white">2027+</h3>
+                  <h3 className="font-semibold text-lg text-white">2026 Q4</h3>
                   <p className="text-gray-400">Global expansion, establishing regional offices</p>
                 </div>
               </div>

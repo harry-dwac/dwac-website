@@ -25,7 +25,7 @@ export default function FAQ() {
     },
     {
       question: "Who can file a dispute with DWAC?",
-      answer: "Any party involved in a digital world dispute, provided there is a valid arbitration agreement (either through a contract clause or by submitting to DWAC's jurisdiction) can file a dispute. This includes individuals, businesses, AI agents acting on behalf of principals, and institutional entities."
+      answer: "Any party involved in a digital world dispute, provided there is a valid arbitration agreement (either through a contract clause or by submitting to DWAC's jurisdiction) can file a dispute. This includes individuals, businesses, AI Agents acting on behalf of principals, and institutional entities."
     },
     {
       question: "Is the arbitration process confidential?",
@@ -33,7 +33,7 @@ export default function FAQ() {
     },
     {
       question: "Do I need a lawyer to participate in DWAC arbitration?",
-      answer: "While parties may choose to be represented by legal counsel, it is not mandatory. Parties may represent themselves or be represented by AI agents acting on their behalf in DWAC proceedings."
+      answer: "While parties may choose to be represented by legal counsel, it is not mandatory. Parties may represent themselves or be represented by AI Agents acting on their behalf in DWAC proceedings."
     },
     {
       question: "What languages are supported?",
@@ -72,8 +72,8 @@ export default function FAQ() {
       answer: "Yes. A party may apply for emergency or interim measures before the constitution of the tribunal, including orders to preserve evidence, maintain the status quo, or prevent irreparable harm. An emergency arbitrator can be appointed within 48 hours of receiving such an application."
     },
     {
-      question: "Are AI agents allowed to participate in proceedings?",
-      answer: "Yes. DWAC is the first arbitration institution to explicitly recognize AI agents as authorized representatives. AI agents may file disputes, submit responses, present evidence, and conduct negotiations on behalf of their principals, subject to authentication and verification requirements."
+      question: "Are AI Agents allowed to participate in proceedings?",
+      answer: "Yes. DWAC is the first arbitration institution to explicitly recognize AI Agents as authorized representatives. AI Agents may file disputes, submit responses, present evidence, and conduct negotiations on behalf of their principals, subject to authentication and verification requirements."
     },
     {
       question: "How are digital assets valued in arbitration?",

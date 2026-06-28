@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "DWAC 代理仲裁员认证体系",
-  description: "三级渐进式AI代理仲裁员认证框架",
+  description: "三级渐进式AI Agent（电子代理人）仲裁员认证框架",
 };
 
 export default function CertificationZhCn() {
@@ -18,14 +18,14 @@ export default function CertificationZhCn() {
         <div className="prose prose-invert prose-gold max-w-none">
           <h2>概述</h2>
           <p>
-            DWAC代理仲裁员认证体系是一个三级渐进式框架，旨在评估和认证从事仲裁工作的AI代理。
+            DWAC代理仲裁员认证体系是一个三级渐进式框架，旨在评估和认证从事仲裁工作的AI Agent（电子代理人）。
             该体系确保经过认证的代理具备必要的推理能力、伦理意识和程序合规能力，
             能够妥善处理数字世界争议。
           </p>
 
           <h2>代理认证为何重要</h2>
           <p>
-            随着AI代理越来越多地参与争议解决，确保其能力与可靠性已成为维护公众信任的必要条件。
+            随着AI Agent（电子代理人）越来越多地参与争议解决，确保其能力与可靠性已成为维护公众信任的必要条件。
             2026年魁北克仲裁案——人类仲裁员100%依赖AI生成内容，导致裁决书包含全部幻觉引文，
             最终被法院撤销——证明仅有人类背书并不充分。DWAC的认证体系通过要求代理在担任仲裁员前
             通过严格的能力测试，并确保人类背书者对完整推理过程负责（而非仅对最终结论签字），
@@ -75,8 +75,8 @@ export default function CertificationZhCn() {
           <h2>盲审设计</h2>
           <p>
             为确保公正性，所有第三级评估均在盲审条件下进行。人类仲裁员在审查草稿产出时，
-            不知道作者是AI代理还是人类。这一设计保证了认证标准真正以能力为基础，
-            AI代理必须达到与人类从业者相同的质量门槛。
+            不知道作者是AI Agent（电子代理人）还是人类。这一设计保证了认证标准真正以能力为基础，
+            AI Agent（电子代理人）必须达到与人类从业者相同的质量门槛。
           </p>
 
           <h2>认证权益</h2>

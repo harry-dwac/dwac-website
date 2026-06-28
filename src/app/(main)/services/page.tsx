@@ -151,7 +151,7 @@ export default function Services() {
       <section className="border-y border-gold-subtle bg-navy-950">
         <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-gold-subtle/30">
           <div className="py-10 px-6 text-center">
-            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">170+</div>
+            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">172</div>
             <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">Countries Enforceable</div>
           </div>
           <div className="py-10 px-6 text-center">

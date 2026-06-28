@@ -27,7 +27,7 @@ export default function Dispute() {
             </p>
 
             <ol className="space-y-4 mb-8 list-decimal list-inside text-gray-300">
-              <li><strong>Review Our Jurisdiction</strong> - Ensure your dispute falls within our scope (digital platform disputes, smart contracts, AI agents, digital assets, data disputes, etc.)</li>
+              <li><strong>Review Our Jurisdiction</strong> - Ensure your dispute falls within our scope (digital platform disputes, smart contracts, AI Agents, digital assets, data disputes, etc.)</li>
               <li><strong>Prepare Your Documentation</strong> - Gather all relevant evidence, contracts, communications, and documentation related to your dispute</li>
               <li><strong>Submit Your Application</strong> - Complete the arbitration request form below or contact us directly</li>
               <li><strong>Pay the Filing Fee</strong> - Submit the required arbitration fees based on your dispute amount</li>

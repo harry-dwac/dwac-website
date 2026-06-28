@@ -234,8 +234,8 @@ const categories = [
       {
         icon: '📜',
         title: 'New York Convention (1958)',
-        desc: 'The cornerstone treaty for recognizing and enforcing foreign arbitral awards across 170+ signatory nations. Essential for cross-border arbitration enforcement.',
-        tags: [{ text: 'Treaty' }, { text: '170+ Nations', type: 'region' as const }],
+        desc: 'The cornerstone treaty for recognizing and enforcing foreign arbitral awards across 172 signatory nations. Essential for cross-border arbitration enforcement.',
+        tags: [{ text: 'Treaty' }, { text: '172 Nations', type: 'region' as const }],
         links: [{ text: '🌐 Official Text', href: 'https://uncitral.un.org/en/texts/arbitration/newyorkconvention' }, { text: '⚖️ DWAC Process', href: '/arbitration-flow/' }],
       },
       {

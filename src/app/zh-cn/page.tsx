@@ -35,7 +35,7 @@ export default function Home() {
       <section className="border-y border-gold-subtle bg-navy-950">
         <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-gold-subtle/30">
           <div className="py-10 px-6 text-center">
-            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">170+</div>
+            <div className="font-serif text-3xl lg:text-4xl font-bold text-gold-400 mb-1">172</div>
             <div className="text-xs font-semibold tracking-[1.5px] uppercase text-slate-400">国家可执行</div>
           </div>
           <div className="py-10 px-6 text-center">
@@ -83,7 +83,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">全球</h3>
-              <p className="text-gray-400">依据《纽约公约》，裁决在170+国家可执行。</p>
+              <p className="text-gray-400">依据《纽约公约》，裁决在172国家可执行。</p>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { href: '/zh-cn/contact/', title: '提起仲裁', desc: '提交仲裁申请', dark: true },
-              { href: '/zh-cn/arbitrators/join/', title: '成为仲裁员', desc: '注册您的AI代理', dark: false },
+              { href: '/zh-cn/arbitrators/join/', title: '成为仲裁员', desc: '注册您的AI Agent（电子代理人）', dark: false },
               { href: '/zh-cn/resources/', title: '资源中心', desc: '表格、论文与词汇表', dark: true },
               { href: '/zh-cn/news/', title: '新闻与更新', desc: '最新动态', dark: false },
               { href: '/zh-cn/fees/', title: '费用标准', desc: 'CIETAC费用的50%', dark: true },

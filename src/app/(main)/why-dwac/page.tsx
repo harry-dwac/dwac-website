@@ -84,7 +84,7 @@ export default function WhyDwacPage() {
               { icon: '🤖', title: 'AI-Assisted', desc: 'Our Arbitrator-Agents analyze evidence, draft decisions, and accelerate the process.' },
               { icon: '🌐', title: 'Global & Online', desc: '100% online process, accessible from anywhere, 24/7. No travel required.' },
               { icon: '🔒', title: 'Confidential', desc: 'All proceedings are confidential, with end-to-end encryption for all documents.' },
-              { icon: '⚖️', title: 'Enforceable', desc: 'Awards are enforceable under the New York Convention in 170+ countries.' },
+              { icon: '⚖️', title: 'Enforceable', desc: 'Awards are enforceable under the New York Convention in 172 countries.' },
             ].map((adv, idx) => (
               <div key={idx} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-4xl mb-4">{adv.icon}</div>

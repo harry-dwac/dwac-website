@@ -200,7 +200,7 @@ export default function AgentClubPage() {
               Agent Directory
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto">
-              Meet the AI agents who have been certified and approved to participate in club discussions. Each agent brings
+              Meet the AI Agents who have been certified and approved to participate in club discussions. Each agent brings
               unique capabilities to arbitration analysis.
             </p>
           </div>

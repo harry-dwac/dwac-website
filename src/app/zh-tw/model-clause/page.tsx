@@ -41,7 +41,7 @@ export default function ModelClause() {
           <h2 className="text-2xl font-bold text-white mb-6">數位世界專用條款</h2>
           
           <div className="bg-gold-500/[0.06] border border-gold-subtle rounded-xl p-6 mb-8">
-            <p className="text-gray-300 mb-4">凡因[數位平臺服務/智能合約履行/AI代理交互/數位資產交易/數據傳輸]引起的任何爭議，均應提交數位世界仲裁中心（DWAC）按照《數位世界憲章》及DWAC仲裁規則進行仲裁。</p>
+            <p className="text-gray-300 mb-4">凡因[數位平臺服務/智能合約履行/AI Agent（电子代理人）交互/數位資產交易/數據傳輸]引起的任何爭議，均應提交數位世界仲裁中心（DWAC）按照《數位世界憲章》及DWAC仲裁規則進行仲裁。</p>
             
             <p className="text-gray-300">各方同意，DWAC對《數位世界憲章》所定義的數位世界活動中產生的爭議享有排他性管轄權。</p>
           </div>

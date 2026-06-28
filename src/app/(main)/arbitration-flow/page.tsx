@@ -42,7 +42,7 @@ export default function ArbitrationFlowPage() {
                 desc: 'The arbitrator issues a final binding award. AI assists in drafting, but the human arbitrator makes all final decisions.',
                 details: ['AI-assisted award drafting', 'Arbitrator review & modification', 'Digital signature & blockchain verification', 'Award delivered electronically'] },
               { num: '06', icon: '⚖️', title: 'Enforcement', bg: 'bg-white',
-                desc: 'DWAC awards are enforceable under the New York Convention in 170+ countries. Blockchain-verified awards facilitate international enforcement.',
+                desc: 'DWAC awards are enforceable under the New York Convention in 172 countries. Blockchain-verified awards facilitate international enforcement.',
                 details: ['NY Convention coverage', 'Blockchain-verifiable award record', 'Enforcement assistance available', 'Appeal procedures where applicable'] },
             ].map((step, i) => (
               <div key={i} className={`${step.bg} rounded-xl p-8 border border-slate-200`}>
