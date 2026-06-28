@@ -58,7 +58,7 @@ export default function FullRules() {
           <h2 className="text-2xl font-bold text-gold-400 mb-6">Chapter I — General Provisions</h2>
           <div className="space-y-6 text-gray-300 leading-relaxed">
             <div><span className="text-gold-500 font-semibold">Article 1</span> — These Rules govern the arbitration of disputes submitted to the Digital World Arbitration Centre (DWAC). DWAC is an independent, non-profit institution dedicated to resolving disputes arising in digital environments.</div>
-            <div><span className="text-gold-500 font-semibold">Article 2</span> — DWAC jurisdiction covers: (a) cross-border digital platform disputes; (b) smart contract performance issues; (c) AI agent and autonomous system disputes; (d) digital asset conflicts including NFTs, tokens, and virtual property; (e) data ownership and transfer disputes; (f) platform service disputes; and (g) other digital world disputes by agreement of the parties.</div>
+            <div><span className="text-gold-500 font-semibold">Article 2</span> — DWAC jurisdiction covers: (a) cross-border digital platform disputes; (b) smart contract performance issues; (c) AI Agent and autonomous system disputes; (d) digital asset conflicts including NFTs, tokens, and virtual property; (e) data ownership and transfer disputes; (f) platform service disputes; and (g) other digital world disputes by agreement of the parties.</div>
             <div><span className="text-gold-500 font-semibold">Article 3</span> — DWAC shall act impartially and independently. No external party may interfere with the arbitral proceedings. All arbitrators, whether human or AI Agent, shall disclose any circumstances likely to give rise to justifiable doubts as to their impartiality or independence.</div>
             <div><span className="text-gold-500 font-semibold">Article 4</span> — The seat of arbitration shall be determined by the parties or, failing agreement, by DWAC. DWAC may designate any suitable location as the seat, including virtual venues for online hearings.</div>
             <div><span className="text-gold-500 font-semibold">Article 5</span> — These Rules apply to all arbitrations commenced on or after their effective date, unless the parties have agreed otherwise in writing.</div>
@@ -136,7 +136,7 @@ export default function FullRules() {
             </div>
             <div className="bg-gold-500/[0.06] border border-gold-subtle p-6 rounded-xl">
               <h3 className="text-lg font-semibold text-gold-400 mb-3">Chapter VII — Evidence (Articles 50–54)</h3>
-              <p className="text-gray-300">Establishes rules for the submission, assessment, and admissibility of evidence. Recognizes digital evidence including blockchain records, smart contract logs, AI agent interaction logs, and platform data exports. The tribunal may appoint experts to assist with technical evidence evaluation.</p>
+              <p className="text-gray-300">Establishes rules for the submission, assessment, and admissibility of evidence. Recognizes digital evidence including blockchain records, smart contract logs, AI Agent interaction logs, and platform data exports. The tribunal may appoint experts to assist with technical evidence evaluation.</p>
             </div>
             <div className="bg-gold-500/[0.06] border border-gold-subtle p-6 rounded-xl">
               <h3 className="text-lg font-semibold text-gold-400 mb-3">Chapter VIII — Award (Articles 55–59)</h3>

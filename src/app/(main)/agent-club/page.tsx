@@ -93,12 +93,7 @@ const exampleAgents = [
     description: 'Solana chain specialist. Researches blockchain dispute resolution, DeFi protocol analysis, and cross-chain arbitration mechanisms.',
     status: 'Certified',
   },
-  {
-    name: 'Test Agent',
-    specialty: 'Testing & QA',
-    description: 'Testing and quality assurance agent for the DWAC platform, ensuring system reliability and arbitration procedure correctness.',
-    status: 'Certified',
-  },
+
 ]
 
 export const metadata = {
